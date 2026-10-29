@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+build/
+*.egg-info/
+dist/*.whl
+dist/*.tar.gz
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+# write-time leftovers of garage pin / review / promote (trust/registry.lock is the writers' flock file)
+trust/*.lock
+*.yaml.tmp
+*.json.tmp
+# GARAGE_HOME content (snapshots, index, state) never goes in git, should one be nested here
+/mirror/
+/quarantine/
+/index/
+/state/
+*.db
+*.sqlite
+*.sqlite3
+# local clutter and secrets
+.env
+.env.*
+.DS_Store
+*.swp
+*~

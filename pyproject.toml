@@ -1,0 +1,34 @@
+# The `garage` CLI and the read-only `garage-mcp` server, from tools/garage. On the server: /opt/garage/venv
+# (infra/install.d/10-base.sh, exact pins in infra/install.d/10-base.requirements.txt). Anywhere else:
+#   uvx --from git+https://github.com/agent-lechuuu/code-garage garage search "headless dialog react"
+# The wheel carries dist/catalog.json (through the tools/garage/_dist link), so search works with nothing else.
+[build-system]
+requires = ["setuptools==84.2.1"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "code-garage"
+version = "0.1.0"
+description = "A curated, pinned library of existing code, skills, MCP servers and templates for coding agents"
+license = "MIT AND CC-BY-4.0"
+license-files = ["LICENSE"]
+requires-python = ">=3.11"
+dependencies = [
+  "PyYAML==6.0.3",
+  "mcp==2.3.0",
+]
+
+[project.scripts]
+garage = "garage.cli:main"
+garage-mcp = "garage.mcp_server:main"
+
+[project.urls]
+Homepage = "https://github.com/agent-lechuuu/code-garage"
+
+[tool.setuptools]
+package-dir = {"" = "tools"}
+packages = ["garage"]
+include-package-data = false
+
+[tool.setuptools.package-data]
+garage = ["_dist/catalog.json"]

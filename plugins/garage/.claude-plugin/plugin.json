@@ -1,0 +1,10 @@
+{
+  "name": "garage",
+  "displayName": "Code Garage",
+  "description": "Find and reuse curated, pinned code, agent skills, MCP servers and templates instead of building from scratch.",
+  "author": {"name": "agent-lechuuu", "url": "https://github.com/agent-lechuuu"},
+  "homepage": "https://github.com/agent-lechuuu/code-garage",
+  "repository": "https://github.com/agent-lechuuu/code-garage",
+  "license": "MIT",
+  "keywords": ["catalog", "reuse", "skills", "mcp", "templates", "search"]
+}

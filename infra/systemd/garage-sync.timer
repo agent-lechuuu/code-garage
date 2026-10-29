@@ -1,0 +1,10 @@
+[Unit]
+Description=garage: daily sync at 03:40 (catalog, mirror, index)
+
+[Timer]
+OnCalendar=*-*-* 03:40
+RandomizedDelaySec=20min
+Persistent=true
+
+[Install]
+WantedBy=timers.target

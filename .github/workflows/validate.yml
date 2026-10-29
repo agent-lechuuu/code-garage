@@ -1,0 +1,40 @@
+# Every push and PR: the catalog is valid (schema, unique ids, see_also, licence/trust policy), the generated files
+# (INDEX.md, dist/) are fresh, nothing that doesn't belong in git, and the catalog/CLI unit tests pass.
+# Actions pinned by commit sha (tags can move): checkout v7.0.1, setup-python v7.1.0.
+name: validate
+on:
+  push:
+    branches: [main]
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    env:   # job-level env can't use the runner context (runner.temp): GARAGE_HOME is set in the first step
+      GARAGE_REPO: ${{ github.workspace }}
+    steps:
+      - name: GARAGE_HOME in the runner's temp folder
+        run: echo "GARAGE_HOME=$RUNNER_TEMP/garage" >> "$GITHUB_ENV"
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0  # v7.1.0
+        with:
+          python-version: "3.14"
+      - name: dependencies (exact pins)
+        run: python -m pip install --no-deps PyYAML==6.0.3
+      - name: catalog valid (schema, ids, see_also, policy)
+        run: python -I tools/garage validate
+      - name: INDEX.md and dist/ fresh (run `garage build` and commit them)
+        run: python -I tools/garage build --check
+      - name: no media, archives, databases or big files
+        run: git ls-files -z | xargs -0 python -I tools/garage validate --guard
+      - name: unit tests (catalog, search, CLI)
+        run: python -I -m unittest discover -s tests/t1 -v
+      - name: search answers fast and small
+        run: |
+          python -I tools/garage index
+          python -I tools/garage search --json headless dialog react | python -I -c \
+            "import json,sys; d=sys.stdin.read(); r=json.loads(d); assert r and len(d.encode()) <= 3072, len(d)"

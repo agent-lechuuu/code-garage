@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/agent-lechuuu/code-garage/blob/main/schema/catalog.schema.json",
+  "title": "Code Garage catalog slice (catalog/<slice>.yaml)",
+  "description": "One slice of the catalog. YAML dates are read as YYYY-MM-DD strings. Cross-file rules (unique topic ids, see_also resolving, id prefix = slice, area = the id's second part) are checked by `garage validate`.",
+  "type": "object",
+  "required": ["slice", "generated", "topics"],
+  "additionalProperties": false,
+  "properties": {
+    "slice": {"type": "string", "pattern": "^[a-z0-9]+$"},
+    "generated": {"$ref": "#/$defs/date"},
+    "topics": {"type": "array", "items": {"$ref": "#/$defs/topic"}}
+  },
+  "$defs": {
+    "date": {"type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"},
+    "topic_id": {"type": "string", "pattern": "^[a-z0-9]+(\\.[a-z0-9][a-z0-9-]*){2,}$"},
+    "topic": {
+      "type": "object",
+      "required": ["id", "title", "area", "why", "resources"],
+      "additionalProperties": false,
+      "properties": {
+        "id": {"$ref": "#/$defs/topic_id"},
+        "title": {"type": "string", "minLength": 3, "maxLength": 120},
+        "area": {"type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$"},
+        "why": {"type": "string", "minLength": 10, "maxLength": 600},
+        "tags": {"type": "array", "items": {"type": "string", "pattern": "^[a-z0-9][a-z0-9.+#-]*$"}, "uniqueItems": true},
+        "practices": {
+          "type": "array",
+          "maxItems": 8,
+          "items": {
+            "type": "object",
+            "required": ["text"],
+            "additionalProperties": false,
+            "properties": {
+              "text": {"type": "string", "minLength": 5, "maxLength": 600},
+              "source": {"type": "string", "pattern": "^https?://"}
+            }
+          }
+        },
+        "resources": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/resource"}},
+        "see_also": {"type": "array", "items": {"$ref": "#/$defs/topic_id"}, "uniqueItems": true}
+      }
+    },
+    "resource": {
+      "type": "object",
+      "required": ["name", "url", "kind", "license", "tier", "use"],
+      "additionalProperties": false,
+      "properties": {
+        "name": {"type": "string", "minLength": 1, "maxLength": 160},
+        "url": {"type": "string", "pattern": "^https?://[^\\s#]+(#[^\\s]*)?$"},
+        "kind": {"enum": ["repo", "skill", "mcp", "plugin", "list", "docs", "guide", "checklist", "template", "snippet", "codepen", "tool", "dataset", "course"]},
+        "license": {"type": "string", "pattern": "^(none|NOASSERTION|[A-Za-z0-9.+-]+( (WITH|OR|AND) [A-Za-z0-9.+-]+)*)$"},
+        "license_note": {"type": "string", "maxLength": 200},
+        "stars": {"type": "integer", "minimum": 0},
+        "pushed": {"$ref": "#/$defs/date"},
+        "archived": {"type": "boolean"},
+        "tier": {"enum": [1, 2, 3]},
+        "use": {"enum": ["vendor", "install", "reference", "skill", "mcp", "template", "plugin"]},
+        "path": {"type": "string", "pattern": "^[^/].*[^/]$|^[^/]$"},
+        "install": {"type": "string", "maxLength": 300},
+        "note": {"type": "string", "maxLength": 600}
+      }
+    }
+  }
+}

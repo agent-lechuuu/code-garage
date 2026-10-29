@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+# garage: the Code Garage CLI (garage-mcp: its read-only MCP server). Nothing machine-specific is baked in:
+#   1. a garage install: $GARAGE_VENV (default /opt/garage/venv) + the package in $GARAGE_REPO/tools
+#      (default $GARAGE_HOME/repo; GARAGE_HOME defaults to /data/apps/garage when it exists, else ~/.garage),
+#      or in the checkout this plugin sits in;
+#   2. else uvx from GitHub: uvx --from git+https://github.com/agent-lechuuu/code-garage[@$GARAGE_REF] garage.
+set -euo pipefail
+entry=garage mod=garage
+if [[ ${GARAGE_ENTRY:-} == mcp ]]; then entry=garage-mcp mod=garage.mcp_server; fi
+unset GARAGE_ENTRY
+
+home=${GARAGE_HOME:-}
+if [[ -z $home ]]; then
+  if [[ -d /data/apps/garage ]]; then home=/data/apps/garage; else home=$HOME/.garage; fi
+fi
+repo=${GARAGE_REPO:-$home/repo}
+self=$(readlink -f "${BASH_SOURCE[0]}")
+checkout=$(dirname "$(dirname "$(dirname "$(dirname "$self")")")")   # <repo>/plugins/garage/bin/garage -> <repo>
+venv=${GARAGE_VENV:-/opt/garage/venv}
+
+if [[ -x $venv/bin/python ]]; then
+  for tools in "$repo/tools" "$checkout/tools"; do
+    [[ -f $tools/garage/__init__.py ]] || continue
+    exec "$venv/bin/python" -I -c '
+import runpy, sys
+tools, mod = sys.argv[1], sys.argv[2]
+sys.path.insert(0, tools)
+sys.argv = [sys.argv[3]] + sys.argv[4:]
+runpy.run_module(mod, run_name="__main__", alter_sys=True)' "$tools" "$mod" "$entry" "$@"
+  done
+fi
+
+if command -v uvx >/dev/null 2>&1; then
+  exec uvx --quiet --from "git+https://github.com/agent-lechuuu/code-garage${GARAGE_REF:+@$GARAGE_REF}" "$entry" "$@"
+fi
+echo "$entry: no garage install found ($venv + $repo/tools) and no uvx." >&2
+echo "Install uv (https://docs.astral.sh/uv/) or see docs/use-anywhere.md in agent-lechuuu/code-garage." >&2
+exit 127

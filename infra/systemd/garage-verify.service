@@ -1,0 +1,36 @@
+# Weekly freshness sweep, no Claude: GitHub GraphQL over every catalog repo (archived, moved, gone, licence changed),
+# lychee over the other URLs; writes reports/verify-<ISO week>.md and opens a PR "verify <week>" (git worktree under
+# state/, never the deployed checkout). Without gh credentials or an origin it writes the report and stops.
+[Unit]
+Description=garage: weekly verify (archived/moved/gone/licence + dead links) -> report + PR
+After=network-online.target
+Wants=network-online.target
+OnFailure=lechu-alert@%N.service
+
+[Service]
+Type=oneshot
+User=garage
+Group=garage
+UMask=0022
+Environment=GARAGE_HOME=/data/apps/garage HOME=/var/lib/garage GIT_TERMINAL_PROMPT=0
+WorkingDirectory=/data/apps/garage
+ExecStart=/usr/local/bin/garage verify --pr
+Nice=10
+IOSchedulingClass=idle
+MemoryMax=512M
+TasksMax=64
+TimeoutStartSec=1h
+PrivateTmp=yes
+PrivateDevices=yes
+ProtectSystem=strict
+ProtectHome=yes
+ProtectKernelTunables=yes
+ProtectKernelModules=yes
+ProtectControlGroups=yes
+RestrictSUIDSGID=yes
+RestrictNamespaces=yes
+LockPersonality=yes
+NoNewPrivileges=yes
+CapabilityBoundingSet=
+RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6
+ReadWritePaths=/data/apps/garage /var/lib/garage

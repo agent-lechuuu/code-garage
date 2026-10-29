@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "garage": {
+      "command": "${CLAUDE_PLUGIN_ROOT}/bin/garage-mcp",
+      "args": []
+    }
+  }
+}

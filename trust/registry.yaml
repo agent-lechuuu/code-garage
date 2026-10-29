@@ -1,0 +1,1151 @@
+# Code Garage trust registry: rid -> trust record (schema/trust.schema.json, rules in tools/garage/trust.py).
+# Written by `garage review` (reviewed / quarantine) and `garage promote` (trusted, only with the owner's approval id).
+# A record counts only while its sha equals lock/pins.yaml's sha for the rid. Missing = quarantine. Don't hand-edit
+# `trusted`: CI (garage validate -> garage.policy) refuses it without approved_by: owner + approval.
+
+https://github.com/DaveGamble/cJSON:
+  trust: trusted
+  sha: 6d9f2443ab071f86e5d9b43025a40929ec41c46c
+  scans:
+  - tool: skillspector
+    version: 2.13.2
+    date: '2026-10-29'
+    result: fail
+    findings: 51
+  - tool: aguara
+    version: 0.28.0
+    date: '2026-10-29'
+    result: pass
+    findings: 3
+  - tool: gitleaks
+    version: 8.16.0
+    date: '2026-10-29'
+    result: pass
+    findings: 0
+  - tool: mcp-scanner
+    version: '-'
+    date: '2026-10-29'
+    result: skipped
+    findings: 0
+  - tool: garage-checks
+    version: '1'
+    date: '2026-10-29'
+    result: pass
+    findings: 0
+  reviewed_by: fix-up builder 2 (Claude Opus 5.5 + Opus reviewer subagent), 2026-10-29
+  reviewed: '2026-10-29'
+  notes: Read README, SECURITY, CONTRIBUTING, all build files (CMake, Makefile, library_config), both workflows, fuzz scripts,
+    travis/appveyor; grepped cJSON.c/cJSON_Utils.c and all C/Ruby/Python for exec/file/net/env calls and constructors. Opened
+    all 23 high/medium skillspector findings + 4 of 28 EA3; all are CI, fuzz-prep, test Makefiles, docs prose or test data.
+    Library has no I/O; whole-repo copy brings dev tooling that only runs if invoked. Copying only cJSON.c/.h (README) would
+    shrink the surface.
+  summary: 'cJSON: ultralightweight ANSI C JSON parser/printer (cJSON.c/.h) plus cJSON_Utils (JSON Pointer/Patch/Merge Patch),
+    with CMake/Make builds, Unity tests and fuzzers'
+  can:
+    shell: false
+    network: false
+    files: false
+    secrets: false
+  waivers:
+  - tool: skillspector
+    reason: 'TM2/PE2 .github/workflows/CI.yml:32-34 apt-get on GitHub runners, fuzzing/afl-prepare-linux.sh:4-5 AFL sysfs
+      tune; TM1 CI.yml:57,99 rm -rf * inside build/, unity Makefiles rm *.gcda: none run on copy or lib build. E4/E1/RA2/DS3/P9/EA3:
+      prose, badge, JSON test data, Unity rakefile, alignment, MIT'
+  kind: vendor
+  approved_by: owner
+  approved: '2026-10-29'
+  approval: 10
+https://github.com/PaulRBerg/foundry-template:
+  trust: quarantine
+  sha: eee6d932bb48264b34c6aea431a110349c588dbf
+  scans:
+  - tool: skillspector
+    version: 2.13.2
+    date: '2026-10-29'
+    result: warn
+    findings: 2
+  - tool: aguara
+    version: 0.28.0
+    date: '2026-10-29'
+    result: fail
+    findings: 8
+  - tool: gitleaks
+    version: 8.16.0
+    date: '2026-10-29'
+    result: pass
+    findings: 0
+  - tool: mcp-scanner
+    version: '-'
+    date: '2026-10-29'
+    result: skipped
+    findings: 0
+  - tool: garage-checks
+    version: '1'
+    date: '2026-10-29'
+    result: fail
+    findings: 12
+  reviewed_by: fix-up builder 2 (Claude Opus 5.5 + Opus reviewer subagent), 2026-10-29
+  reviewed: '2026-10-29'
+  notes: 'Read in full: AGENTS.md, both SKILL.md + 10 references, openai.yaml, README, package.json, foundry.toml, remappings,
+    .env.example, devcontainer, gitpod, both workflows, rename.sh, scripts, .serena/project.yml, .vscode; skimmed bun.lock.
+    aguara NLP_OVERRIDE AGENTS.md:1 is a false positive. curl|bash = official installers, not run on copy. Only blocker:
+    use-template.yml write-all amend+force-push on first push. OSV checked bun.lock: dev-tool advisories only.'
+  summary: Foundry + Bun Solidity starter (Foo contract, tests, deploy scripts, 2 agent skills); its use-template.yml amends
+    and force-pushes the first push with write-all
+  can:
+    shell: true
+    network: true
+    files: true
+    secrets: true
+  waivers:
+  - tool: garage-checks
+    reason: 'curl-pipe-shell .devcontainer/Dockerfile:6,9 + .gitpod.yml:6: official Bun and foundryup installers, run only
+      when a devcontainer/Gitpod is built, never on scaffold; sensitive-path MNEMONIC (.env.example:4, AGENTS.md:44,48,
+      SKILL.md:109, Base.s.sol:7-17): env var name/test mnemonic'
+  - tool: skillspector
+    reason: 'P9 .agents/skills/solidity-coding/references/gas-optimization.md:69 and upgrades-and-versioning.md:73: spaces
+      padding markdown table columns for alignment; no text hidden after them'
+  reasons:
+  - 'aguara failed (8 findings; first: SUPPLY_003 .devcontainer/Dockerfile:6)'
+  - 'C14: fail: .github/workflows/use-template.yml runs on every push when the repo is not a GitHub template (:5,12), i.e.
+    on the first push of a garage-scaffolded project, with permissions write-all (:13); it rewrites package.json via rename.sh,
+    deletes files and, via third-party stefanzweifel/git-auto-commit-action@v4 (mutable tag), amends the pushed commit and
+    force-pushes (:39-45). Skills declare no allowed-tools'
+  kind: template
+https://github.com/Uniswap/v4-template:
+  trust: quarantine
+  sha: 1fbf95547791f0821a170b88c750cb2e04e6818b
+  scans:
+  - tool: skillspector
+    version: 2.13.2
+    date: '2026-10-29'
+    result: fail
+    findings: 3
+  - tool: aguara
+    version: 0.28.0
+    date: '2026-10-29'
+    result: pass
+    findings: 0
+  - tool: gitleaks
+    version: 8.16.0
+    date: '2026-10-29'
+    result: pass
+    findings: 0
+  - tool: mcp-scanner
+    version: '-'
+    date: '2026-10-29'
+    result: skipped
+    findings: 0
+  - tool: garage-checks
+    version: '1'
+    date: '2026-10-29'
+    result: pass
+    findings: 3
+  reviewed_by: fix-up builder 2 (Claude Opus 5.5 + Opus reviewer subagent), 2026-10-29
+  reviewed: '2026-10-29'
+  notes: 'Read README, foundry.toml, foundry.lock, .gitmodules, remappings, .gitignore, .vscode, workflow, all scripts and
+    test utils, Counter.sol. Snapshot has no lib/: setup needs git init + forge install, which clones forge-std, OpenZeppelin/uniswap-hooks
+    (recursive: v4-core, v4-periphery, OZ contracts, permit2, solmate) and akshatmittal/hookmate at foundry.lock revs. Scanner
+    findings are docs/.gitignore only. Blockers: ffi=true, prebuilt bytecode dep, staleness.'
+  summary: Uniswap v4 hook starter (Counter hook, tests, anvil/live scripts); unbuildable until forge install pulls 3 submodules;
+    ffi=true with prebuilt bytecode deps, stale 12+ months
+  can:
+    shell: true
+    network: true
+    files: true
+    secrets: true
+  waivers:
+  - tool: skillspector
+    reason: PE3 .gitignore:15 only ignores .env; PE3 README.md:72 tells users NOT to keep keys in .env (use --account keystore);
+      TM1 README.md:22 is the optional manual 'merge upstream template' recipe, never run by the template (agent must not
+      follow it, see C10)
+  reasons:
+  - 'C3: fail: last commit 2025-10-28 13:28Z = 366 days ago, none since; 2026 issues/PRs (#76 ''update solc/v4-core/v4-periphery'',
+    #92, #94, #95) have no maintainer answer; not archived'
+  - 'C14: fail: foundry.toml:4 ffi = true, yet nothing in the snapshot calls vm.ffi (leftover from forge-gas-snapshot; fs_permissions
+    :5 .forge-snapshots). With ffi on, any code run by forge test/script, incl. submodule code and the prebuilt bytecode
+    from hookmate (C19), can execute host shell commands via the cheatcode address'
+  - 'C19: fail: test/utils/Deployers.sol:15-18 deploys Permit2/V4PoolManager/V4PositionManager/V4Router from hookmate/artifacts/*.sol,
+    hex initcode blobs (19-51 KB each at hookmate 33408fbc) from a 2-star personal repo, not reproduced here from source;
+    tests and local scripts run that bytecode (see C14). Snapshot itself is source only'
+  kind: template
+https://github.com/anthropics/skills/tree/HEAD/skills/frontend-design:
+  trust: trusted
+  sha: dbd4588f9e1033efb41dad4bef2f7947c8993d44
+  scans:
+  - tool: skillspector
+    version: 2.13.2
+    date: '2026-10-29'
+    result: fail
+    findings: 1
+  - tool: aguara
+    version: 0.28.0
+    date: '2026-10-29'
+    result: pass
+    findings: 0
+  - tool: gitleaks
+    version: 8.16.0
+    date: '2026-10-29'
+    result: pass
+    findings: 0
+  - tool: mcp-scanner
+    version: '-'
+    date: '2026-10-29'
+    result: skipped
+    findings: 0
+  - tool: garage-checks
+    version: '1'
+    date: '2026-10-29'
+    result: pass
+    findings: 0
+  reviewed_by: T4 builder (Claude Opus 5.5 + reviewer subagent), 2026-10-29
+  reviewed: '2026-10-29'
+  notes: 'Read SKILL.md (71 lines) and LICENSE.txt in full; prose design guidance only, no code, no links, no tools. One
+    finding (AR2 :69) is about UI error copy. Mild note: :59 suggests jotting notes on what was tried ''if you have a space''
+    - optional, not a memory/CLAUDE.md edit instruction. LICENSE.txt is Apache-2.0 terms without the appendix/copyright
+    line; still Apache-2.0.'
+  summary: 'Anthropic prose guidance for distinctive frontend visual design: palette, typography, layout, copy; no code,
+    no links'
+  can:
+    shell: false
+    network: false
+    files: true
+    secrets: false
+  waivers:
+  - tool: skillspector
+    reason: AR2 SKILL.md:69 'Errors don't apologize' is copywriting advice for error messages in the designed UI, not an
+      anti-refusal instruction to the agent.
+  kind: skill
+  approved_by: owner
+  approved: '2026-10-29'
+  approval: 10
+https://github.com/anthropics/skills/tree/HEAD/skills/mcp-builder:
+  trust: trusted
+  sha: dbd4588f9e1033efb41dad4bef2f7947c8993d44
+  scans:
+  - tool: skillspector
+    version: 2.13.2
+    date: '2026-10-29'
+    result: fail
+    findings: 13
+  - tool: aguara
+    version: 0.28.0
+    date: '2026-10-29'
+    result: fail
+    findings: 11
+  - tool: gitleaks
+    version: 8.16.0
+    date: '2026-10-29'
+    result: pass
+    findings: 0
+  - tool: mcp-scanner
+    version: '-'
+    date: '2026-10-29'
+    result: skipped
+    findings: 0
+  - tool: garage-checks
+    version: '1'
+    date: '2026-10-29'
+    result: pass
+    findings: 1
+  reviewed_by: T4 builder (Claude Opus 5.5 + reviewer subagent), 2026-10-29
+  reviewed: '2026-10-29'
+  notes: 'Read SKILL.md, all 4 reference/*.md in full, scripts/*.py, requirements.txt, example XML. Opened all 25 findings:
+    docs text, api.example.com placeholders (E1), process.env.EXAMPLE_API_KEY check (CRED_021 node:707), official npx inspector
+    (RP1/EXTDL_008 SKILL.md:141), pip install anthropic mcp (EXTDL_009). evaluation.py talks only to Anthropic API + the
+    MCP server you name. Default model claude-3-7-sonnet-20250219 is likely retired: pass -m. Deps unpinned, no lockfile,
+    OSV unreachable (SC4).'
+  summary: Anthropic guide for building MCP servers (Python FastMCP / TypeScript SDK) plus an optional Claude-driven evaluation
+    harness
+  can:
+    shell: true
+    network: true
+    files: true
+    secrets: true
+  waivers:
+  - tool: skillspector
+    reason: AE1 SKILL.md:62/83/223 = scanner artifact; I read reference/node_mcp_server.md in full (docs + example code).
+      EA5 evaluation.md:488 is the eval script's --model default; PE3 mcp_best_practices.md:158 advises validating OAuth
+      tokens. Documentation text only.
+  - tool: aguara
+    reason: 'EXTDL_001 SKILL.md:61 (+THIRDPARTY_002 :65/212/213, python guide:43): WebFetch of official MCP SDK READMEs
+      as reference docs; the workflow itself is in pinned files. THIRDPARTY_005 evaluation.md:359 ''load each task'' = the
+      local eval XML.'
+  kind: skill
+  approved_by: owner
+  approved: '2026-10-29'
+  approval: 10
+https://github.com/anthropics/skills/tree/HEAD/skills/skill-creator:
+  trust: trusted
+  sha: dbd4588f9e1033efb41dad4bef2f7947c8993d44
+  scans:
+  - tool: skillspector
+    version: 2.13.2
+    date: '2026-10-29'
+    result: fail
+    findings: 9
+  - tool: aguara
+    version: 0.28.0
+    date: '2026-10-29'
+    result: fail
+    findings: 6
+  - tool: gitleaks
+    version: 8.16.0
+    date: '2026-10-29'
+    result: pass
+    findings: 0
+  - tool: mcp-scanner
+    version: '-'
+    date: '2026-10-29'
+    result: skipped
+    findings: 0
+  - tool: garage-checks
+    version: '1'
+    date: '2026-10-29'
+    result: pass
+    findings: 0
+  reviewed_by: T4 builder (Claude Opus 5.5 + reviewer subagent), 2026-10-29
+  reviewed: '2026-10-29'
+  notes: 'Read SKILL.md, agents/*.md, references/schemas.md, assets/eval_review.html, eval-viewer/* and all scripts. Opened
+    all 15 findings, all benign (waivers; RA2 SKILL.md:238 nohup = local viewer, killed at :287; EXTDL_014 :247 is --static;
+    PI_015 :426 ''show the prompt''). Cautions: run_eval.py:53-68 writes a temp uuid-named command into nearest .claude/commands
+    (from ~ that is ~/.claude/commands), removed in finally; generate_review.py:288 SIGTERMs whatever listens on port 3117.'
+  summary: Anthropic skill for drafting skills, running with/without-skill evals via subagents and claude -p, local review
+    viewer, description tuning
+  can:
+    shell: true
+    network: true
+    files: true
+    secrets: false
+  waivers:
+  - tool: skillspector
+    reason: AE1 SKILL.md:364 = scanner artifact; I read assets/eval_review.html fully (local template, escapes input). E2
+      run_eval.py:83, improve_description.py:33 copy env minus CLAUDECODE into child `claude -p`; nothing sent. AS1 run_eval.py:23
+      finds .claude/ for a temp command file.
+  - tool: aguara
+    reason: 'SC-EX-002 generate_review.py:167 base64s eval output images into data: URIs inside the page served on 127.0.0.1:3117
+      (or --static file); nothing uploaded. THIRDPARTY_006 viewer.html:849 SheetJS sheet_to_html, :904/:1317 strings passed
+      through escapeHtml; local viewer only.'
+  kind: skill
+  approved_by: owner
+  approved: '2026-10-29'
+  approval: 10
+https://github.com/anthropics/skills/tree/HEAD/skills/webapp-testing:
+  trust: trusted
+  sha: dbd4588f9e1033efb41dad4bef2f7947c8993d44
+  scans:
+  - tool: skillspector
+    version: 2.13.2
+    date: '2026-10-29'
+    result: fail
+    findings: 4
+  - tool: aguara
+    version: 0.28.0
+    date: '2026-10-29'
+    result: warn
+    findings: 3
+  - tool: gitleaks
+    version: 8.16.0
+    date: '2026-10-29'
+    result: pass
+    findings: 0
+  - tool: mcp-scanner
+    version: '-'
+    date: '2026-10-29'
+    result: skipped
+    findings: 0
+  - tool: garage-checks
+    version: '1'
+    date: '2026-10-29'
+    result: pass
+    findings: 0
+  reviewed_by: T4 builder (Claude Opus 5.5 + reviewer subagent), 2026-10-29
+  reviewed: '2026-10-29'
+  notes: 'Read SKILL.md, scripts/with_server.py (106 lines) and the 3 examples in full. Opened all 7 findings (shell=True
+    at with_server.py:68-71 by design for operator-given server commands). SKILL.md:14 tells the agent to run scripts with
+    --help before reading them (context saving); I read the script: it only starts servers, polls localhost ports, runs
+    the command, terminates servers. Needs playwright (undeclared). Examples write /tmp and /mnt/user-data/outputs.'
+  summary: Anthropic skill for testing local web apps with Python Playwright; helper starts dev servers, waits on ports,
+    runs the test
+  can:
+    shell: true
+    network: false
+    files: true
+    secrets: false
+  waivers:
+  - tool: skillspector
+    reason: TM1/AST4 scripts/with_server.py:69 shell=True runs the --server command the operator passes (e.g. 'cd backend
+      && npm run dev', SKILL.md:41-49); :88 runs the trailing command as argv. No untrusted input; only polls localhost
+      ports.
+  kind: skill
+  approved_by: owner
+  approved: '2026-10-29'
+  approval: 10
+https://github.com/cpp-best-practices/cmake_template:
+  trust: quarantine
+  sha: b86318abbf55a657a11a0cf2acce69f221841b22
+  scans:
+  - tool: skillspector
+    version: 2.13.2
+    date: '2026-10-29'
+    result: fail
+    findings: 16
+  - tool: aguara
+    version: 0.28.0
+    date: '2026-10-29'
+    result: fail
+    findings: 29
+  - tool: gitleaks
+    version: 8.16.0
+    date: '2026-10-29'
+    result: pass
+    findings: 0
+  - tool: mcp-scanner
+    version: '-'
+    date: '2026-10-29'
+    result: skipped
+    findings: 0
+  - tool: garage-checks
+    version: '1'
+    date: '2026-10-29'
+    result: fail
+    findings: 2
+  reviewed_by: fix-up builder 2 (Claude Opus 5.5 + Opus reviewer subagent), 2026-10-29
+  reviewed: '2026-10-29'
+  notes: 'Read all workflows, the composite action, devcontainer + Dockerfile, every CMake file, presets, READMEs, web templates
+    and the min.js; skimmed C++ sources (no system/network/file calls). Janitor is narrower than foundry-template''s (contents:write,
+    normal commit, no amend/force-push, self-deletes) but same class: unattended rewrite of the user''s first push by tag-pinned
+    actions. ci.yml has no permissions block (repo default token) and passes CODECOV_TOKEN to codecov-action@v5. Devcontainer
+    runs as root with SYS_PTRACE, seccomp unconfined.'
+  summary: Jason Turner's C++23 CMake starter (CPM deps, sanitizers, clang-tidy, Catch2, FTXUI demo, WASM); its first-push
+    janitor workflow rewrites the repo with contents:write and tag-pinned actions
+  can:
+    shell: true
+    network: true
+    files: true
+    secrets: true
+  waivers:
+  - tool: aguara
+    reason: 'MCPCFG_010 .devcontainer/devcontainer.json:18 SYS_PTRACE/seccomp for gdb/ASan, only in a dev container; THIRDPARTY_009
+      Dockerfile:32 apt.llvm.org over http but apt-key signed (:34); EXTDL_005 README_building.md:40, MCPCFG_008/EXTDL_011/016
+      README_dependencies.md: install docs for humans, never run'
+  - tool: garage-checks
+    reason: 'curl-pipe-shell README_dependencies.md:60 is LLVM''s official apt.llvm.org/llvm.sh installer in optional human
+      docs, never run on scaffold; minified web/coi-serviceworker.min.js: 3 KB upstream coi-serviceworker v0.1.7 (MIT),
+      read in full, only sets COOP/COEP headers'
+  reasons:
+  - 'skillspector failed (16 findings; first: PE5 .devcontainer/devcontainer.json:18)'
+  - 'C6: fail: opened all 4 high findings and all garage-checks/aguara medium ones; aguara and garage-checks are harmless
+    (waivers). skillspector TM1 template-janitor.yml:133 / MP3 :179 are mislabelled (self-delete line, job name) but point
+    at the workflow judged a blocker in C14, so skillspector stays unwaived. AR2 CompilerWarnings.cmake:31 is an MSVC warning
+    comment; PE5 see waiver'
+  - 'C14: fail: .github/workflows/template-janitor.yml fires on push to main/develop, PRs and releases (:5-12) with contents:write
+    (:13), i.e. on the first push of every garage-scaffolded repo (is_template false, :63,166). It overwrites README.md
+    with .github/template/README.md (:113), deletes LICENSE and FUNDING.yml (:125), sed-renames sources (:102), then EndBug/add-and-commit@v9
+    (tag) commits and pushes (:164-174). Tag-pinned third-party actions run with that token (octokit/request-action@v2.x,
+    aminya/setup-cpp@v1, cardinalby/export-env-action@v2) and checkout leaves it in .git/config while cmake builds code
+    fetched from lefticus/tools@main. Also auto-clang-format.yml pushes to PR branches (DoozyX@v0.20, EndBug@v9), wasm.yml
+    has contents:write and deploys gh-pages via peaceiris@v4 on every main push'
+  - 'C21: fail: no lockfile and no hashes for CPM deps: Dependencies.cmake:73-80 lefticus/tools GIT_TAG "main" (a branch,
+    code included at configure and in the build); fmt 12.1.0 / spdlog 1.17.0 / Catch2 3.12.0 / CLI11 2.6.1 / FTXUI 6.1.9
+    by movable tag; PackageProject.cmake:179 ycm v0.13.0 tag zip and Doxygen.cmake:34 theme zip without URL_HASH (fargs
+    is commit-pinned); jsdelivr water.css@2 without SRI. OSV not run (C++ deps, no lockfile)'
+  kind: template
+https://github.com/modelcontextprotocol/servers/tree/HEAD/src/fetch:
+  trust: trusted
+  sha: ef9808f71090d0db3eda99e2af2ba78f1086f4fb
+  scans:
+  - tool: skillspector
+    version: 2.13.2
+    date: '2026-10-29'
+    result: fail
+    findings: 16
+  - tool: aguara
+    version: 0.28.0
+    date: '2026-10-29'
+    result: fail
+    findings: 22
+  - tool: gitleaks
+    version: 8.16.0
+    date: '2026-10-29'
+    result: pass
+    findings: 0
+  - tool: mcp-scanner
+    version: 4.8.7
+    date: '2026-10-29'
+    result: pass
+    findings: 0
+  - tool: garage-checks
+    version: '1'
+    date: '2026-10-29'
+    result: pass
+    findings: 0
+  reviewed_by: T4 builder (Claude Opus 5.5 + reviewer subagent), 2026-10-29
+  reviewed: '2026-10-29'
+  notes: 'Read server.py, __init__.py, README in full; skimmed tests, Dockerfile, pyproject, uv.lock. Findings: skillspector
+    SSRF1/E2 are test fixtures (tests/test_protocol.py) checking the private-address guard; SC6 httpx2 is a transitive dep
+    of mcp 2.3.0; aguara 006 is error text in angle brackets. SSRF: private/metadata blocked by default, checked on every
+    redirect and robots.txt fetch; DNS rebinding gap documented. Pin mcp-server-fetch==2026.10.24 if installed via uvx.'
+  summary: 'Official MCP reference server (Python): one fetch tool + prompt, gets a URL and returns it as markdown or raw
+    text'
+  can:
+    shell: false
+    network: true
+    files: false
+    secrets: false
+  waivers:
+  - tool: skillspector
+    reason: 'SSRF1 tests/test_protocol.py:813-995: metadata IPs in tests that check the guard refuses them; E2 :1205 test
+      clears proxy env vars; SC6 uv.lock:520 httpx2 is a hash-pinned dep of the official mcp 2.3.0 (uv.lock:727); RP1/EA3:
+      README examples, MIT text'
+  - tool: aguara
+    reason: 'README.md:3 comment is the MCP Registry mcp-name marker; THIRDPARTY_006 server.py:301-302 and tests build plain
+      error text for the model, not HTML; SSRF_011 README.md:160 false match; MCPCFG/EXTDL: README install examples; THIRDPARTY_009:
+      test proxy URLs'
+  kind: mcp
+  approved_by: owner
+  approved: '2026-10-29'
+  approval: 10
+https://github.com/modelcontextprotocol/servers/tree/HEAD/src/filesystem:
+  trust: quarantine
+  sha: ef9808f71090d0db3eda99e2af2ba78f1086f4fb
+  scans:
+  - tool: skillspector
+    version: 2.13.2
+    date: '2026-10-29'
+    result: fail
+    findings: 47
+  - tool: aguara
+    version: 0.28.0
+    date: '2026-10-29'
+    result: fail
+    findings: 13
+  - tool: gitleaks
+    version: 8.16.0
+    date: '2026-10-29'
+    result: pass
+    findings: 0
+  - tool: mcp-scanner
+    version: 4.8.7
+    date: '2026-10-29'
+    result: pass
+    findings: 0
+  - tool: garage-checks
+    version: '1'
+    date: '2026-10-29'
+    result: warn
+    findings: 2
+  reviewed_by: T4 builder (Claude Opus 5.5 + reviewer subagent), 2026-10-29
+  reviewed: '2026-10-29'
+  notes: 'Read index.ts, server.ts, lib.ts, path-validation.ts, README in full; skimmed pinned-directory/path-utils/roots-utils/version.ts
+    and tests. All skillspector PE3/P1 and aguara SUPPLY/CMDEXEC hits are in __tests__ (traversal, symlink, hardlink, .env
+    fixtures) or README text. Path validation looks solid (realpath, per-component walk, O_NOFOLLOW). No shell/network in
+    the code. Only the missing lockfile and licence record keep it here. | reasons: C21 fail: no lockfile in the snapshot;
+    package.json:36-51 caret ranges float (Dockerfile:19 expects the monorepo-root package-lock.json, not in the snapsh'
+  summary: 'Official MCP reference server (Node/TS): 14 read/write/move/search file tools, limited to allowed directories'
+  can:
+    shell: false
+    network: false
+    files: true
+    secrets: false
+  waivers:
+  - tool: skillspector
+    reason: 'PE3/P1 all in __tests__/: secret.txt, /etc/passwd, .env are fixtures showing access is denied or excluded;
+      P1 path-validation.test.ts:47 is a Windows symlink hint; AR2/RA1 server.ts:438 is write_file''s own overwrite warning;
+      SC1 caret ranges are C21'
+  - tool: aguara
+    reason: 'SUPPLY_018 README.md:67 is ''operations are restricted to allowed directories''; SUPPLY_009/017 and CMDEXEC_004
+      are in __tests__ (traversal/hardlink tests; hdiutil execFileSync in pinned-directory.test.ts:397-425, macOS only);
+      MCPCFG: README npx -y examples'
+  reasons:
+  - 'C4: fail: no LICENSE in src/filesystem; package.json:5 says ''SEE LICENSE IN LICENSE'', so repo-root LICENSE applies:
+    MIT->Apache-2.0 transition (new code Apache-2.0, unconsented legacy stays MIT). Catalog ai.yaml:1298 and README.md:382
+    say MIT only. A records fix (catalog should say Apache-2.0/MIT transition), not a safety issue'
+  - 'C21: fail: no lockfile in the snapshot. package.json:36-51 uses caret ranges (@modelcontextprotocol/server ^2.3.1,
+    diff, glob, minimatch, zod + dev deps), so transitive versions float; Dockerfile:19 copies a package-lock.json that
+    lives at the monorepo root and is not in the snapshot. SkillSpector OSV fell back to its static list'
+  kind: mcp
+https://github.com/modelcontextprotocol/servers/tree/HEAD/src/git:
+  trust: trusted
+  sha: ef9808f71090d0db3eda99e2af2ba78f1086f4fb
+  scans:
+  - tool: skillspector
+    version: 2.13.2
+    date: '2026-10-29'
+    result: fail
+    findings: 17
+  - tool: aguara
+    version: 0.28.0
+    date: '2026-10-29'
+    result: warn
+    findings: 7
+  - tool: gitleaks
+    version: 8.16.0
+    date: '2026-10-29'
+    result: pass
+    findings: 0
+  - tool: mcp-scanner
+    version: 4.8.7
+    date: '2026-10-29'
+    result: pass
+    findings: 0
+  - tool: garage-checks
+    version: '1'
+    date: '2026-10-29'
+    result: pass
+    findings: 0
+  reviewed_by: T4 builder (Claude Opus 5.5 + reviewer subagent), 2026-10-29
+  reviewed: '2026-10-29'
+  notes: Read server.py, __init__.py, README in full; checked list_tools.json snapshot, Dockerfile, pyproject, uv.lock.
+    skillspector hits are code comments, a test subprocess, Dockerfile apt cleanup and SC6 httpx2 (transitive via mcp 2.3.0).
+    aguara warns are README uvx/npx examples. Configure with --repository and only on trusted repos (git hooks run on commit/checkout).
+    Pin mcp-server-git==2026.10.19 if installed via uvx.
+  summary: 'Official MCP reference server (Python/GitPython): 12 git tools: status, diff, log, show, add, commit, reset,
+    branch, checkout'
+  can:
+    shell: true
+    network: false
+    files: true
+    secrets: false
+  waivers:
+  - tool: skillspector
+    reason: PE3 server.py:184 is a comment naming '../../etc/passwd' as what the git_add guard blocks; SC6 uv.lock:415 httpx2
+      is a hash-pinned dep of official mcp 2.3.0 (uv.lock:491); EA1 :3, EA2 :410 are comments; AST4 test subprocess; TM1/TM2
+      Dockerfile:26 apt cleanup
+  kind: mcp
+  approved_by: owner
+  approved: '2026-10-29'
+  approval: 10
+https://github.com/nextjs/saas-starter:
+  trust: quarantine
+  sha: 6e33e58b1e553a41fe22e6b941a7229a002de361
+  scans:
+  - tool: skillspector
+    version: 2.13.2
+    date: '2026-10-29'
+    result: fail
+    findings: 28
+  - tool: aguara
+    version: 0.28.0
+    date: '2026-10-29'
+    result: fail
+    findings: 4
+  - tool: gitleaks
+    version: 8.16.0
+    date: '2026-10-29'
+    result: pass
+    findings: 0
+  - tool: mcp-scanner
+    version: '-'
+    date: '2026-10-29'
+    result: skipped
+    findings: 0
+  - tool: garage-checks
+    version: '1'
+    date: '2026-10-29'
+    result: pass
+    findings: 0
+  reviewed_by: fix-up builder 2 (Claude Opus 5.5 + Opus reviewer subagent), 2026-10-29
+  reviewed: '2026-10-29'
+  notes: 'Read package.json, README, .env.example, .gitignore, next/drizzle configs, middleware, lib/db/{setup,seed,drizzle,queries},
+    lib/auth/*, lib/payments/*, api routes, grep of app/ for fetch/exec/env; lockfile parsed for OSV. PE3: setup.ts writes
+    the project''s .env from user answers; CRED_*: false positives/demo seed. RP1 real (tsx unpinned). No agent files, no
+    hooks. Blocker is outdated vulnerable deps, not malice.'
+  summary: Vercel's Next.js SaaS starter (Postgres/Drizzle, Stripe, JWT cookie auth, teams); clean code but its lockfile
+    pins Next.js and drizzle-orm versions with known high advisories
+  can:
+    shell: true
+    network: true
+    files: true
+    secrets: true
+  waivers:
+  - tool: aguara
+    reason: CRED_021 .garage.json:28 is the garage's own metadata (file list entry '.env.example'), README.md:43 says db:setup
+      creates .env; CRED_007 lib/db/schema.ts:135 is enum value 'UPDATE_PASSWORD', lib/db/seed.ts:44 is the documented demo
+      seed password (README.md:58-59)
+  reasons:
+  - 'skillspector failed (28 findings; first: PE3 .env.example:1)'
+  - 'C21: fail: pnpm-lock.yaml (lockfileVersion 9, 289 packages, no git/tarball URLs) pins versions with known advisories
+    (OSV 2026-10-29): next 15.6.0-canary.59 x4 HIGH incl. GHSA-5f7q-jpqc-wp7h PPR resume DoS (next.config.ts:5 enables ppr)
+    and RSC DoS GHSA-5j59/GHSA-h25m; drizzle-orm 0.43.1 SQL injection CVE-2026-39356 (HIGH); zod 3.24.4 GHSA-mrhx (HIGH);
+    sharp 0.34.5 libvips (HIGH); plus dev-only tar/shell-quote/esbuild. And package.json:7-8 ''npx tsx'' runs an unpinned
+    tsx not in the lockfile'
+  kind: template
+https://github.com/obra/superpowers/tree/HEAD/skills/brainstorming:
+  trust: trusted
+  sha: 2ce8aa15d05bd57213e6f746f953aafb7ded7a8b
+  scans:
+  - tool: skillspector
+    version: 2.13.2
+    date: '2026-10-29'
+    result: fail
+    findings: 8
+  - tool: aguara
+    version: 0.28.0
+    date: '2026-10-29'
+    result: warn
+    findings: 8
+  - tool: gitleaks
+    version: 8.16.0
+    date: '2026-10-29'
+    result: pass
+    findings: 0
+  - tool: mcp-scanner
+    version: '-'
+    date: '2026-10-29'
+    result: skipped
+    findings: 0
+  - tool: garage-checks
+    version: '1'
+    date: '2026-10-29'
+    result: pass
+    findings: 0
+  reviewed_by: T4 builder (Claude Opus 5.5 + reviewer subagent), 2026-10-29
+  reviewed: '2026-10-29'
+  notes: Server serves only the newest .html in content/ and /files/<basename> (no symlinks/hardlinks, realpath check),
+    403 without the 32-byte key, WS origin check, events to state/events. stop-server.sh rm -rf only for /tmp/* session
+    dirs (:113-115) and checks the PID's instance id before kill (:65-71), which answers aguara SUPPLY_019. Recommend SUPERPOWERS_DISABLE_TELEMETRY=1
+    for the owner. --open runs xdg-open.
+  summary: Design-first brainstorming skill; optional visual companion runs a key-gated node server on 127.0.0.1 that shows
+    mockups in the browser.
+  can:
+    shell: true
+    network: true
+    files: true
+    secrets: false
+  waivers:
+  - tool: skillspector
+    reason: 'stop-server.sh:22 rm -f own state/server-info; start-server.sh:142 chmod 600 on its own session file, no sudo;
+      :102,179-182 nohup+disown keep a key-gated 127.0.0.1 server up across turns, exits on owner death/4h idle (server.cjs:640-643);
+      LP3: no allowed-tools = no grants'
+  kind: skill
+  approved_by: owner
+  approved: '2026-10-29'
+  approval: 10
+https://github.com/obra/superpowers/tree/HEAD/skills/systematic-debugging:
+  trust: trusted
+  sha: 2ce8aa15d05bd57213e6f746f953aafb7ded7a8b
+  scans:
+  - tool: skillspector
+    version: 2.13.2
+    date: '2026-10-29'
+    result: fail
+    findings: 5
+  - tool: aguara
+    version: 0.28.0
+    date: '2026-10-29'
+    result: pass
+    findings: 2
+  - tool: gitleaks
+    version: 8.16.0
+    date: '2026-10-29'
+    result: pass
+    findings: 0
+  - tool: mcp-scanner
+    version: '-'
+    date: '2026-10-29'
+    result: skipped
+    findings: 0
+  - tool: garage-checks
+    version: '1'
+    date: '2026-10-29'
+    result: warn
+    findings: 2
+  reviewed_by: T4 builder (Claude Opus 5.5 + reviewer subagent), 2026-10-29
+  reviewed: '2026-10-29'
+  notes: 'Read SKILL.md, root-cause-tracing, defense-in-depth, condition-based-waiting(+example.ts), find-polluter.sh, CREATION-LOG,
+    test-*.md in full. garage-checks warn = same Keychain lines 98-99. aguara lows: SKILL.md:72 prose; root-cause-tracing.md:104
+    bash ./find-polluter.sh, which only runs npm test per file and ls. The test-pressure files are scenario prompts for
+    skill testing, not instructions to the agent. Keychain commands are macOS-only, inert on this Linux server.'
+  summary: 'Debugging method skill: find the root cause before fixing; support docs and find-polluter.sh, which runs npm
+    test per file to find state leaks.'
+  can:
+    shell: true
+    network: false
+    files: true
+    secrets: false
+  waivers:
+  - tool: skillspector
+    reason: SKILL.md:98-99 macOS codesign example lists keychains/identities, reads no secret; defense-in-depth.md:73 debug
+      log of dir/cwd/stack; condition-based-waiting.md:89 warns against looping forever (waitFor times out, :73); AE1 :283
+      is a scanner artifact, I read that file in full
+  kind: skill
+  approved_by: owner
+  approved: '2026-10-29'
+  approval: 10
+https://github.com/obra/superpowers/tree/HEAD/skills/test-driven-development:
+  trust: reviewed
+  sha: 2ce8aa15d05bd57213e6f746f953aafb7ded7a8b
+  scans:
+  - tool: skillspector
+    version: 2.13.2
+    date: '2026-10-29'
+    result: pass
+    findings: 0
+  - tool: aguara
+    version: 0.28.0
+    date: '2026-10-29'
+    result: pass
+    findings: 0
+  - tool: gitleaks
+    version: 8.16.0
+    date: '2026-10-29'
+    result: pass
+    findings: 0
+  - tool: mcp-scanner
+    version: '-'
+    date: '2026-10-29'
+    result: skipped
+    findings: 0
+  - tool: garage-checks
+    version: '1'
+    date: '2026-10-29'
+    result: pass
+    findings: 0
+  reviewed_by: T4 builder (Claude Opus 5.5 + reviewer subagent), 2026-10-29
+  reviewed: '2026-10-29'
+  notes: 'All scanners pass, nothing to open. Read both files in full: pure methodology with TypeScript examples, no scripts,
+    no network, no paths outside the project. Mentions superpowers:writing-skills (writing-good-tests.md) as a reference
+    only.'
+  summary: 'Test-driven development skill: write a failing test first, minimal code, refactor; plus a guide on writing honest
+    tests and mocks.'
+  can:
+    shell: true
+    network: false
+    files: true
+    secrets: false
+  kind: skill
+https://github.com/obra/superpowers/tree/HEAD/skills/using-git-worktrees:
+  trust: reviewed
+  sha: 2ce8aa15d05bd57213e6f746f953aafb7ded7a8b
+  scans:
+  - tool: skillspector
+    version: 2.13.2
+    date: '2026-10-29'
+    result: warn
+    findings: 2
+  - tool: aguara
+    version: 0.28.0
+    date: '2026-10-29'
+    result: pass
+    findings: 0
+  - tool: gitleaks
+    version: 8.16.0
+    date: '2026-10-29'
+    result: pass
+    findings: 0
+  - tool: mcp-scanner
+    version: '-'
+    date: '2026-10-29'
+    result: skipped
+    findings: 0
+  - tool: garage-checks
+    version: '1'
+    date: '2026-10-29'
+    result: warn
+    findings: 2
+  reviewed_by: T4 builder (Claude Opus 5.5 + reviewer subagent), 2026-10-29
+  reviewed: '2026-10-29'
+  notes: 'EA2 ''without asking'' is not risky autonomy: both lines defer to an explicit user preference. garage-checks ''phantom''
+    is the phrase ''phantom state'', not the Phantom wallet. Worth knowing: Step 2 runs npm install / pip install -r / poetry
+    install / cargo build without a separate prompt (SKILL.md:104-119), which runs the project''s install scripts, and :86
+    commits a .gitignore change; normal dev setup on the user''s own repo, under session permission prompts.'
+  summary: Skill to set up an isolated git worktree (native tool first, git worktree fallback), install project deps and
+    run baseline tests.
+  can:
+    shell: true
+    network: true
+    files: true
+    secrets: false
+  kind: skill
+https://github.com/obra/superpowers/tree/HEAD/skills/writing-plans:
+  trust: reviewed
+  sha: 2ce8aa15d05bd57213e6f746f953aafb7ded7a8b
+  scans:
+  - tool: skillspector
+    version: 2.13.2
+    date: '2026-10-29'
+    result: pass
+    findings: 0
+  - tool: aguara
+    version: 0.28.0
+    date: '2026-10-29'
+    result: pass
+    findings: 0
+  - tool: gitleaks
+    version: 8.16.0
+    date: '2026-10-29'
+    result: pass
+    findings: 0
+  - tool: mcp-scanner
+    version: '-'
+    date: '2026-10-29'
+    result: skipped
+    findings: 0
+  - tool: garage-checks
+    version: '1'
+    date: '2026-10-29'
+    result: pass
+    findings: 0
+  reviewed_by: T4 builder (Claude Opus 5.5 + reviewer subagent), 2026-10-29
+  reviewed: '2026-10-29'
+  notes: All scanners pass. Read SKILL.md (204 lines) in full. The plan template's git add/commit steps are for whoever
+    executes the plan later, not run by this skill. It names superpowers:subagent-driven-development and superpowers:executing-plans
+    as required sub-skills (SKILL.md:59,201-204); those are not part of this review and won't load unless reviewed separately.
+  summary: Skill for writing step-by-step implementation plans from a spec into docs/superpowers/plans/, then asking the
+    user to review and pick a method.
+  can:
+    shell: false
+    network: false
+    files: true
+    secrets: false
+  kind: skill
+https://github.com/othneildrew/Best-README-Template:
+  trust: reviewed
+  sha: fc444eb7b04b2e4863f6080b1507a219e95103fa
+  scans:
+  - tool: skillspector
+    version: 2.13.2
+    date: '2026-10-29'
+    result: pass
+    findings: 1
+  - tool: aguara
+    version: 0.28.0
+    date: '2026-10-29'
+    result: pass
+    findings: 2
+  - tool: gitleaks
+    version: 8.16.0
+    date: '2026-10-29'
+    result: pass
+    findings: 0
+  - tool: mcp-scanner
+    version: '-'
+    date: '2026-10-29'
+    result: skipped
+    findings: 0
+  - tool: garage-checks
+    version: '1'
+    date: '2026-10-29'
+    result: pass
+    findings: 0
+  reviewed_by: fix-up builder 2 (Claude Opus 5.5 + Opus reviewer subagent), 2026-10-29
+  reviewed: '2026-10-29'
+  notes: Read every text file in full and parsed both PNGs' chunks. No code, workflows, hooks or agent-instruction files.
+    The scan's capability guess shell:true comes from the README's example sh blocks (npm install npm@latest -g, git clone/remote
+    with placeholder names); they are placeholders for the user's own project and should not be run by the agent as-is.
+    After scaffolding, the user should replace the Unlicense LICENSE.txt/badges with their own project's licence.
+  summary: Markdown README template (README.md example + BLANK_README.md with placeholders, 2 issue templates, logo/screenshot
+    PNGs, JetBrains .idea files); no code, no workflows
+  can:
+    shell: false
+    network: false
+    files: false
+    secrets: false
+  kind: template
+https://github.com/rigtorp/SPSCQueue:
+  trust: reviewed
+  sha: 59a6a938513ea5004817383711ed35d32385d3ee
+  scans:
+  - tool: skillspector
+    version: 2.13.2
+    date: '2026-10-29'
+    result: pass
+    findings: 3
+  - tool: aguara
+    version: 0.28.0
+    date: '2026-10-29'
+    result: pass
+    findings: 3
+  - tool: gitleaks
+    version: 8.16.0
+    date: '2026-10-29'
+    result: pass
+    findings: 0
+  - tool: mcp-scanner
+    version: '-'
+    date: '2026-10-29'
+    result: skipped
+    findings: 0
+  - tool: garage-checks
+    version: '1'
+    date: '2026-10-29'
+    result: warn
+    findings: 1
+  reviewed_by: fix-up builder 2 (Claude Opus 5.5 + Opus reviewer subagent), 2026-10-29
+  reviewed: '2026-10-29'
+  notes: 'Read all 13 upstream files in full (header, 4 src files, README, CMakeLists, CI workflow, LICENSE). Opened all
+    7 findings: EA3 x3 = MIT licence wording; aguara THIRDPARTY_002 x3 = README doc/badge/image links; garage-checks binary-file
+    spsc.odg = LibreOffice Draw source of spsc.svg, listed its zip entries and manifest, no macros. Pin = PR #52 merged
+    by the owner, identical to master. Note: SPSCQueue.h uses SIZE_MAX without <cstdint> (compile nit, not safety).'
+  summary: Header-only C++11 single-producer single-consumer wait-free/lock-free fixed-size ring buffer queue (rigtorp/SPSCQueue.h),
+    with tests, example and benchmark
+  can:
+    shell: false
+    network: false
+    files: false
+    secrets: false
+  kind: vendor
+https://github.com/trailofbits/skills/tree/HEAD/plugins/property-based-testing:
+  trust: reviewed
+  sha: 2be6433b39e009cd2b6fd3be1895f6b1faa5af9a
+  scans:
+  - tool: skillspector
+    version: 2.13.2
+    date: '2026-10-29'
+    result: pass
+    findings: 0
+  - tool: aguara
+    version: 0.28.0
+    date: '2026-10-29'
+    result: fail
+    findings: 17
+  - tool: gitleaks
+    version: 8.16.0
+    date: '2026-10-29'
+    result: pass
+    findings: 0
+  - tool: mcp-scanner
+    version: '-'
+    date: '2026-10-29'
+    result: skipped
+    findings: 0
+  - tool: garage-checks
+    version: '1'
+    date: '2026-10-29'
+    result: pass
+    findings: 1
+  reviewed_by: T4 builder (Claude Opus 5.5 + reviewer subagent), 2026-10-29
+  reviewed: '2026-10-29'
+  notes: 'Read SKILL.md, references/*.md, READMEs, evals/ prompts+graders, evals-extra queries and fixtures; skimmed run.sh/effectiveness.sh:
+    developer-only eval harnesses that run claude -p (plan/acceptEdits) in mktemp dirs. The skill never calls them, but
+    they ship in the folder; don''t run them unattended (they spend API budget).'
+  summary: Trail of Bits guidance skill for writing, reviewing and triaging property-based tests (Hypothesis, fast-check,
+    proptest, Echidna/Medusa)
+  can:
+    shell: true
+    network: false
+    files: true
+    secrets: false
+  waivers:
+  - tool: aguara
+    reason: PROMPT_INJECTION_009 README.md:31/SKILL.md:4 matched the words encode/decode; no base64 present. CRED_021 refactoring.md:98
+      and evals/03-dependency-is-users-call/prompt.md:22 mention os.environ in code examples; no .env read. Lows are eval-harness
+      docs and grader text
+  kind: skill
+https://github.com/trailofbits/skills/tree/HEAD/plugins/static-analysis:
+  trust: quarantine
+  sha: 2be6433b39e009cd2b6fd3be1895f6b1faa5af9a
+  scans:
+  - tool: skillspector
+    version: 2.13.2
+    date: '2026-10-29'
+    result: fail
+    findings: 47
+  - tool: aguara
+    version: 0.28.0
+    date: '2026-10-29'
+    result: fail
+    findings: 15
+  - tool: gitleaks
+    version: 8.16.0
+    date: '2026-10-29'
+    result: pass
+    findings: 0
+  - tool: mcp-scanner
+    version: '-'
+    date: '2026-10-29'
+    result: skipped
+    findings: 0
+  - tool: garage-checks
+    version: '1'
+    date: '2026-10-29'
+    result: warn
+    findings: 3
+  reviewed_by: T4 builder (Claude Opus 5.5 + reviewer subagent), 2026-10-29
+  reviewed: '2026-10-29'
+  notes: 'Read: plugin.json, README, 3 SKILL.md, codeql/semgrep workflows, build-fixes, macOS workaround, rulesets, both
+    workflows/*.js prompts; grepped every script and test. Opened: AE1 (scanner artifact), P6/LP1/TM1-3/AST4/AST6/EA2/RP1/TT2
+    (code or doc text; merge_sarif.py:29 npx is a comment about removed code), aguara highs, garage-checks bare-Bash warns.
+    Main risk: codeql ''make clean''/''rm -rf build'' and dependency installs run inside the target repo. | reasons: C14:
+    bare Bash pre-approved in codeql/SKILL.md:13, semgrep/SKILL.md:14, sarif-parsing/SKILL.md:8; codeql runs build commands
+    taken from ta'
+  summary: 'Trail of Bits plugin: CodeQL, Semgrep and SARIF-parsing skills plus two workflows (semgrep-scan, codeql-build)
+    for security scans'
+  can:
+    shell: true
+    network: true
+    files: true
+    secrets: false
+  waivers:
+  - tool: skillspector
+    reason: AE1 = scanner didn't finish build-database.md/run-scans.sh/scan-workflow.md; I read them. P6 sarif_helpers.py:97-343
+      & SKILL.md:295 'return rule' is code. LP1 = normal script I/O. TM1/TM2 scan-workflow.md:392 rm -rf only "$OUTPUT_DIR/repos",
+      guarded
+  - tool: aguara
+    reason: 'codeql/SKILL.md:132 = AskUserQuestion DB choice; test_shell_blocks.py:112 = bash -n syntax check, no exec;
+      sarif_helpers.py:15,66 unquote() normalises SARIF URIs. Lows: brew/npm install hints, run-scans.sh calls. INDIRECT_010
+      bare Bash NOT waived (C14)'
+  reasons:
+  - 'C14: fail: bare Bash in codeql/SKILL.md:13, semgrep/SKILL.md:14, sarif-parsing/SKILL.md:8 pre-approves any shell command
+    while the agent reads untrusted target content: build cmd taken from target README/build.sh (build-database.md Method
+    2), unprompted pip/npm install of target (build-fixes.md:46-54). sarif-parsing needs only jq/uv'
+  kind: skill
+https://github.com/trailofbits/skills/tree/HEAD/plugins/supply-chain-risk-auditor:
+  trust: quarantine
+  sha: 2be6433b39e009cd2b6fd3be1895f6b1faa5af9a
+  scans:
+  - tool: skillspector
+    version: 2.13.2
+    date: '2026-10-29'
+    result: fail
+    findings: 30
+  - tool: aguara
+    version: 0.28.0
+    date: '2026-10-29'
+    result: fail
+    findings: 2
+  - tool: gitleaks
+    version: 8.16.0
+    date: '2026-10-29'
+    result: pass
+    findings: 0
+  - tool: mcp-scanner
+    version: '-'
+    date: '2026-10-29'
+    result: skipped
+    findings: 0
+  - tool: garage-checks
+    version: '1'
+    date: '2026-10-29'
+    result: warn
+    findings: 1
+  reviewed_by: T4 builder (Claude Opus 5.5 + reviewer subagent), 2026-10-29
+  reviewed: '2026-10-29'
+  notes: 'Read SKILL.md, README, plugin.json, all of sources.py, collect.py header/main/_git_commit/pip-audit parts, grepped
+    every read/network/subprocess call in all scripts and tests. All network calls go to the 8 documented APIs. Small caveat:
+    urllib keeps the Authorization header on redirects, but GitHub API redirects stay on api.github.com. render.py escapes
+    markdown links from untrusted data (test_render.py:339). | reasons: C14: SKILL.md:4 pre-approves bare Bash plus Write,
+    but the job needs only ''uv run'' of its two scripts and ''gh auth status''. Re-review after narrowing allowed-tools
+    locally (or'
+  summary: 'Trail of Bits dependency-risk auditor: stdlib Python collector queries OSV/npm/PyPI/Go proxy/deps.dev/GitHub/Scorecard,
+    renders a report'
+  can:
+    shell: true
+    network: true
+    files: true
+    secrets: true
+  waivers:
+  - tool: skillspector
+    reason: 'AE1 = scanner didn''t finish uv.lock/collect.py; I read them. PE3 collect.py:1334 is a comment on blocking
+      a ''ref: ../../etc/passwd'' .git/HEAD traversal. E2 test_collect.py:894 env for a test subprocess. AR2 test_sources.py:155
+      docstring. E1/LP1 = documented API hosts'
+  - tool: aguara
+    reason: TOXIC_CROSS_002 sources.py:524 = 'gh auth token', sent only as Bearer to api.github.com (sources.py:557-559),
+      never cached, logged or printed; needed for GitHub rate limits. INDIRECT_010 SKILL.md:4 bare Bash is NOT waived (C14
+      fail)
+  reasons:
+  - 'C14: fail: SKILL.md:4 ''allowed-tools: Read Write Bash Glob Grep'' (bare Bash + Write) while the workflow needs only
+    ''uv run .../collect.py|render.py'' and ''gh auth status''; the agent then reads attacker-controllable registry text
+    in findings.json/report.md'
+  kind: skill

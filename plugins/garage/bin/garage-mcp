@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# garage-mcp: the garage's read-only MCP server (stdio; --http HOST:PORT for the tailnet stack). Same lookup as garage.
+set -euo pipefail
+GARAGE_ENTRY=mcp exec "$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")/garage" "$@"

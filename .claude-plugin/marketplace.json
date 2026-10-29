@@ -1,0 +1,14 @@
+{
+  "name": "code-garage",
+  "owner": {"name": "agent-lechuuu", "url": "https://github.com/agent-lechuuu"},
+  "description": "Code Garage: a curated, pinned library of existing code, agent skills, MCP servers and templates for coding agents.",
+  "plugins": [
+    {
+      "name": "garage",
+      "source": "./plugins/garage",
+      "description": "Search the garage before building, then add items with their licence and a pinned commit.",
+      "category": "development",
+      "tags": ["catalog", "reuse", "skills", "mcp"]
+    }
+  ]
+}

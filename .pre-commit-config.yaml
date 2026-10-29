@@ -1,0 +1,31 @@
+# Checks before every commit. All local (no downloads): sudo apt install pre-commit gitleaks yamllint
+# Set up once per clone: pre-commit install. CI (.github/workflows/validate.yml) runs the same garage checks.
+repos:
+  - repo: local
+    hooks:
+      - id: gitleaks
+        name: no secrets (gitleaks)
+        entry: gitleaks protect --staged --redact --no-banner
+        language: system
+        pass_filenames: false
+      - id: repo-guard
+        name: no media, archives, databases, snapshots or files over 10 MB
+        entry: python3 -I tools/garage validate --guard
+        language: system
+      - id: yamllint
+        name: yaml (yamllint)
+        entry: 'yamllint --strict -d "{extends: relaxed, rules: {line-length: disable, truthy: disable}}"'
+        language: system
+        types: [yaml]
+      - id: garage-validate
+        name: catalog valid (garage validate)
+        entry: env GARAGE_REPO=. python3 -I tools/garage validate
+        language: system
+        pass_filenames: false
+        files: ^(catalog/|lock/|trust/|schema/|tools/garage/)
+      - id: garage-build-fresh
+        name: INDEX.md and dist/ fresh (garage build --check)
+        entry: env GARAGE_REPO=. python3 -I tools/garage build --check
+        language: system
+        pass_filenames: false
+        files: ^(catalog/|lock/|trust/|tools/garage/(index|catalog)\.py)

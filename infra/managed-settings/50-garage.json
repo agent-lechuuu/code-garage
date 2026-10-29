@@ -1,0 +1,11 @@
+{
+  "extraKnownMarketplaces": {
+    "code-garage": {
+      "source": {"source": "directory", "path": "/data/apps/garage/repo"},
+      "autoUpdate": false
+    }
+  },
+  "enabledPlugins": {
+    "garage@code-garage": true
+  }
+}

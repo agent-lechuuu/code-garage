@@ -1,0 +1,213 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/agent-lechuuu/code-garage/schema/trust.schema.json",
+  "title": "Code Garage trust registry (trust/registry.yaml)",
+  "description": "rid (normalised URL) -> trust record. Missing = quarantine. Rules beyond the shape (sha equals the pin, waivers for failed scans, never-vendor list) are in tools/garage/policy.py.",
+  "type": "object",
+  "propertyNames": {
+    "pattern": "^https?://"
+  },
+  "additionalProperties": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "trust",
+      "sha"
+    ],
+    "properties": {
+      "trust": {
+        "enum": [
+          "quarantine",
+          "reviewed",
+          "trusted"
+        ]
+      },
+      "sha": {
+        "type": "string",
+        "pattern": "^[0-9a-f]{40}$",
+        "description": "the commit the record is for; counts only while it equals lock/pins.yaml's sha"
+      },
+      "scans": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "tool",
+            "version",
+            "date",
+            "result",
+            "findings"
+          ],
+          "properties": {
+            "tool": {
+              "type": "string",
+              "minLength": 1
+            },
+            "version": {
+              "type": "string"
+            },
+            "date": {
+              "type": "string",
+              "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+            },
+            "result": {
+              "enum": [
+                "pass",
+                "warn",
+                "fail",
+                "skipped",
+                "error"
+              ]
+            },
+            "findings": {
+              "type": "integer",
+              "minimum": 0
+            }
+          }
+        }
+      },
+      "reviewed_by": {
+        "type": "string",
+        "minLength": 1
+      },
+      "reviewed": {
+        "type": "string",
+        "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+      },
+      "approved_by": {
+        "const": "owner"
+      },
+      "approved": {
+        "type": "string",
+        "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+      },
+      "approval": {
+        "type": "integer",
+        "minimum": 1,
+        "description": "the approval broker's request id (lechu-ask garage.promote)"
+      },
+      "notes": {
+        "type": "string"
+      },
+      "summary": {
+        "type": "string",
+        "maxLength": 200,
+        "description": "one line: what the item is (the owner's card)"
+      },
+      "can": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "shell": {
+            "type": "boolean"
+          },
+          "network": {
+            "type": "boolean"
+          },
+          "files": {
+            "type": "boolean"
+          },
+          "secrets": {
+            "type": "boolean"
+          }
+        }
+      },
+      "waivers": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "tool",
+            "reason"
+          ],
+          "properties": {
+            "tool": {
+              "type": "string",
+              "minLength": 1
+            },
+            "reason": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        }
+      },
+      "reasons": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "description": "why the item stays in quarantine"
+      },
+      "kind": {
+        "type": "string"
+      },
+      "history": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    },
+    "allOf": [
+      {
+        "if": {
+          "properties": {
+            "trust": {
+              "enum": [
+                "reviewed",
+                "trusted"
+              ]
+            }
+          }
+        },
+        "then": {
+          "required": [
+            "reviewed_by",
+            "reviewed",
+            "scans"
+          ],
+          "properties": {
+            "scans": {
+              "minItems": 1
+            }
+          }
+        }
+      },
+      {
+        "if": {
+          "properties": {
+            "trust": {
+              "const": "trusted"
+            }
+          }
+        },
+        "then": {
+          "required": [
+            "approved_by",
+            "approved",
+            "approval"
+          ]
+        },
+        "else": {
+          "not": {
+            "anyOf": [
+              {
+                "required": [
+                  "approved_by"
+                ]
+              },
+              {
+                "required": [
+                  "approval"
+                ]
+              }
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

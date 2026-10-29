@@ -1,0 +1,5 @@
+slice: garage
+generated: 2026-10-29
+# Our own items: templates, snippets and skills written for the garage (same schema as the other slices;
+# topic ids garage.<area>.<topic>). Empty until we write the first one.
+topics: []
