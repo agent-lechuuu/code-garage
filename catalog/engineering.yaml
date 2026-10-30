@@ -2226,9 +2226,9 @@ topics:
         note: Language-official naming rules; see also go.dev/doc/effective_go#names.
 
   - id: engineering.architecture.code-review
-    title: Code review practice
+    title: Code review practice, and Claude code-review skills and plugins
     area: architecture
-    why: Review and respond to reviews the way Google's eng-practices describe; automate the first pass with agents.
+    why: Review and respond to reviews the way Google's eng-practices describe; automate the first pass with a Claude Code code-review plugin or skill.
     practices:
       - text: Approve when the change improves overall code health, not when it is perfect.
         source: https://google.github.io/eng-practices/review/reviewer/standard.html

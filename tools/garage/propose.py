@@ -82,3 +82,74 @@ def propose(url, topic, why, name=None, kind=None, use=None, license=None, dry_r
     except OSError as e:
         return {"ok": False, "errors": [f"can't write {path}: {e} (use --out DIR)"], "warnings": warnings}
     return result
+
+
+def _insert(text, topic, block):
+    """Put a rendered resource block at the end of TOPIC's resources list in a slice file's text; None if absent."""
+    lines = text.splitlines(keepends=True)
+    start = next((i for i, l in enumerate(lines) if l.rstrip() == f"  - id: {topic}"), None)
+    if start is None:
+        return None
+    end = next((i for i in range(start + 1, len(lines))
+                if lines[i].strip() and not lines[i].startswith("   ")), len(lines))
+    res = next((i for i in range(start, end) if lines[i].rstrip() == "    resources:"), None)
+    if res is None:
+        at, block = end, "    resources:\n" + block
+    else:
+        at = next((i for i in range(res + 1, end)
+                   if lines[i].strip() and not lines[i].startswith("      ")), end)
+    while at > start and not lines[at - 1].strip():
+        at -= 1
+    return "".join(lines[:at]) + block + "".join(lines[at:])
+
+
+def accept(files, dry_run=False):
+    """`garage accept PROPOSAL...`: move approved proposals into catalog/<slice>.yaml (end of the topic's resources)
+    and delete the proposal files. The text is inserted, so the rest of the slice file keeps its layout. The item
+    enters as `quarantine` (no trust record); pin it with `garage pin`, then `garage build`."""
+    import yaml
+    cat = catalog.load()
+    out, errors, edits = [], [], {}
+    for f in files:
+        p = yaml.safe_load(Path(f).read_text(encoding="utf-8")) or {}
+        res = dict(p.get("resource") or {})
+        topic = p.get("topic")
+        t = catalog.topic(cat, topic)
+        if not res.get("url") or not t:
+            errors.append(f"{f}: needs resource.url and an existing topic (got {topic!r})")
+            continue
+        rid = catalog.normalize_url(res["url"])
+        if rid in cat["resources"]:
+            errors.append(f"{f}: already in the catalog: {rid}")
+            continue
+        if p.get("quality"):
+            res["note"] = (str(res.get("note", "")).rstrip() + " Quality: " + str(p["quality"]).strip()).strip()
+        if len(str(res.get("note", ""))) > 600:
+            errors.append(f"{f}: note + quality is {len(res['note'])} characters (catalog limit 600): shorten them")
+            continue
+        if isinstance(res.get("pushed"), str) and re.fullmatch(r"\d{4}-\d{2}-\d{2}", res["pushed"]):
+            res["pushed"] = datetime.date.fromisoformat(res["pushed"])
+        keep = ("name", "url", "kind", "license", "license_note", "stars", "pushed", "archived", "tier", "use",
+                "path", "install", "note")
+        res = {k: res[k] for k in keep if k in res}
+        block = "".join("      " + l + "\n" for l in
+                        yaml.safe_dump([res], sort_keys=False, allow_unicode=True, width=110).splitlines())
+        slice_file = paths.repo() / "catalog" / f"{t.get('slice') or topic.split('.')[0]}.yaml"
+        text = edits.get(slice_file) or slice_file.read_text(encoding="utf-8")
+        new = _insert(text, topic, block)
+        if new is None:
+            errors.append(f"{f}: topic {topic} not found in {slice_file.name}")
+            continue
+        edits[slice_file] = new
+        out.append({"proposal": str(f), "rid": rid, "topic": topic, "file": slice_file.name})
+    if errors:
+        return {"ok": False, "errors": errors, "accepted": []}
+    if not dry_run:
+        for path, text in edits.items():
+            yaml.safe_load(text)  # still valid YAML, or nothing is written
+        for path, text in edits.items():
+            path.write_text(text, encoding="utf-8")
+        for r in out:
+            Path(r["proposal"]).unlink()
+    return {"ok": True, "accepted": out, "dry_run": bool(dry_run),
+            "next": "garage pin <rid> for each, then garage validate and garage build"}

@@ -15,6 +15,7 @@ Areas: [evm](#evm) (13) · [standards](#standards) (10) · [specs](#specs) (1) �
 - [Foundry Book (getfoundry.sh) + llms.txt](https://getfoundry.sh/llms.txt) · Apache-2.0 · t1 · reference
 - [foundry-toolchain GitHub Action](https://github.com/foundry-rs/foundry-toolchain) · Apache-2.0 · 279★ · t1 · install
 - [awesome-foundry](https://github.com/crisgarner/awesome-foundry) · MIT · 1.2k★ · t3 · reference
+- [Ouroboros Press ops scripts: cast + foundry keystore, confirm-gated sends](https://github.com/AaroneGeorge/ouroboros-press/tree/main/scripts) · MIT · t3 · reference
 
 See also: `web3.evm.foundry-fuzz-invariant`, `web3.evm.deployment-scripts`, `web3.agents.mcp-evm`
 
@@ -309,6 +310,7 @@ See also: `web3.aa.erc7579-modules`, `web3.aa.eip7702`, `web3.aa.safe`
 - [Solady EIP7702Proxy + LibEIP7702 + ERC7821](https://github.com/Vectorized/solady/tree/HEAD/src/accounts) · MIT · 3.4k★ · t1 · install
 - [Ithaca account](https://github.com/ithacaxyz/account) · MIT · 327★ · t2 · reference
 - [MetaMask Delegation Framework](https://github.com/MetaMask/delegation-framework) · Apache-2.0 · 231★ · t2 · reference
+- [BrainBudget delegation.ts: ERC-7710 budget delegation and A2A sub-delegation (MetaMask smart-accounts-kit)](https://github.com/AaroneGeorge/Brain-Budget/blob/main/packages/shared/src/delegation.ts) · LicenseRef-owner-grant · t3 · vendor · **quarantine**
 
 See also: `web3.aa.erc4337`, `web3.aa.erc7579-modules`
 
@@ -612,6 +614,7 @@ See also: `web3.solana.security-pitfalls`, `web3.security.formal-verification`
 - [wallet-ui](https://github.com/wallet-ui/wallet-ui) · MIT · 43★ · t2 · install
 - [Mobile Wallet Adapter](https://github.com/solana-mobile/mobile-wallet-adapter) · Apache-2.0 · 329★ · t1 · install
 - [Sign In With Solana](https://github.com/phantom/sign-in-with-solana) · MIT · 158★ · t1 · install
+- [Ledger-gated signing demo: agent proposes, a Ledger (Speculos) approves, Solana devnet](https://github.com/AaroneGeorge/Ledger-Gated-Signing) · LicenseRef-owner-grant · t3 · template · **quarantine**
 
 See also: `web3.solana.kit-web3js`, `web3.standards.siwe`
 
@@ -1105,6 +1108,7 @@ See also: `web3.chains.starknet-cairo`, `web3.evm.templates-hackathon`
 - [OWASP Smart Contract Top 10](https://github.com/OWASP/www-project-smart-contract-top-10) · CC-BY-NC-SA-4.0 · 91★ · t2 · reference
 - [solcurity](https://github.com/transmissions11/solcurity) · none · 2.2k★ · t2 · reference
 - [awesome-audits-checklists](https://github.com/TradMod/awesome-audits-checklists) · none · 333★ · t3 · reference
+- [buidl-kit security knowledge: EVM and Solana audit checklists, ship gate, incident lessons](https://github.com/AaroneGeorge/build-kit/tree/main/knowledge/security) · MIT · t3 · reference
 
 See also: `web3.security.best-practice-guides`, `web3.security.audit-workflow-reporting`
 
@@ -1189,6 +1193,7 @@ See also: `web3.security.vulnerability-catalogs`, `web3.defi.flash-loans`
 - [Paradigm CTF archives](https://github.com/paradigmxyz/paradigm-ctf-2023) · none · 97★ · t2 · reference
 - [EVM puzzles](https://github.com/fvictorio/evm-puzzles) · none · 847★ · t2 · reference
 - [Secureum RACEs](https://secureum.substack.com/) · none · t2 · reference
+- [buidl-kit vulnerable fixtures: Anchor escrow and Solidity vault with answer keys](https://github.com/AaroneGeorge/build-kit/tree/main/samples) · MIT · t3 · reference
 
 See also: `web3.solana.learning-ctf`, `web3.security.learning-paths`
 
@@ -1225,6 +1230,7 @@ See also: `web3.security.audit-contests-bounties`, `web3.zk.security`
 - [Immunefi forge-poc-templates](https://github.com/immunefi-team/forge-poc-templates) · LGPL-3.0 · 494★ · t1 · reference · **quarantine**
 - [Cyfrin security & auditing course](https://github.com/Cyfrin/security-and-auditing-full-course-s23) · GPL-3.0 · 2k★ · t1 · reference
 - [smart-contract-audit skill (EVMbench-style)](https://github.com/greatpie/smart-contract-audit-skill) · none · 100★ · t3 · skill · **quarantine**
+- [Ouroboros Press threat model (worked example for one contract)](https://github.com/AaroneGeorge/ouroboros-press/blob/main/THREAT-MODEL.md) · MIT · t3 · reference
 
 See also: `web3.security.checklists`, `web3.agents.skills-security`
 
@@ -1329,5 +1335,8 @@ See also: `web3.agents.skills-solana`, `web3.solana.kit-web3js`
 - [Solana Agent Kit](https://github.com/sendaifun/solana-agent-kit) · Apache-2.0 · 1.7k★ · t2 · install
 - [Solana Pay CLI (x402/MPP/AP2)](https://github.com/solana-foundation/pay) · MIT · 1.8k★ · t2 · install
 - [ERC-8004 Trustless Agents](https://eips.ethereum.org/EIPS/eip-8004) · CC0-1.0 · t3 · reference
+- [FirstBuyer: x402 seller compliance checker with 13 failure fixtures and an eval matrix](https://github.com/AaroneGeorge/First-Buy) · LicenseRef-owner-grant · t3 · reference
+- [Ouroboros Press: ownerless contract that pays an agent swarm per job (Foundry)](https://github.com/AaroneGeorge/ouroboros-press) · MIT · t3 · reference
+- [Warden: x402 spend-control proxy for agents (policy engine, Merkle receipts, anchor contracts)](https://github.com/AaroneGeorge/warden) · LicenseRef-owner-grant · t3 · reference
 
 See also: `web3.aa.erc7579-modules`, `web3.solana.hackathon-templates`

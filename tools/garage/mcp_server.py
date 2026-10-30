@@ -162,6 +162,8 @@ def local_path(rid):
 
 def licence_duty(lic):
     lic = str(lic or "").strip()
+    if lic == "LicenseRef-owner-grant":
+        return "no LICENSE file; the owner allows copying it into the owner's own projects, nobody else's"
     if lic in NO_LICENCE:
         return "no licence found: link and read only; do not copy its code anywhere"
     if "GPL" in lic.upper():

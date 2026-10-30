@@ -64,6 +64,18 @@ topics:
         tier: 3
         use: reference
         note: Curated plugins/templates/articles; stale since 2024, use as a seed only.
+      - name: 'Ouroboros Press ops scripts: cast + foundry keystore, confirm-gated sends'
+        url: https://github.com/AaroneGeorge/ouroboros-press/tree/main/scripts
+        kind: tool
+        license: MIT
+        pushed: 2026-10-21
+        tier: 3
+        use: reference
+        note: 'lib.sh (325 lines) plus 13 numbered scripts: wallet readiness, import, launch, fund, commission, status,
+          inscribe, verify, reset, demo. Prefers a foundry keystore (cast wallet new) and strips any 64-hex line from
+          output; env file parsed as KEY=value, never sourced. Chain-specific values are constants at the top of lib.sh.
+          Quality: Careful key handling; needs cast, jq, curl, bc. Default ENV_FILE is a path on the author''s machine
+          (override with ENV_FILE=...). No shell tests.'
     see_also: [web3.evm.foundry-fuzz-invariant, web3.evm.deployment-scripts, web3.agents.mcp-evm]
 
   - id: web3.evm.foundry-fuzz-invariant
@@ -1375,6 +1387,20 @@ topics:
         tier: 2
         use: reference
         note: Production 7702/4337 smart account with caveat-based delegations.
+      - name: 'BrainBudget delegation.ts: ERC-7710 budget delegation and A2A sub-delegation (MetaMask smart-accounts-kit)'
+        url: https://github.com/AaroneGeorge/Brain-Budget/blob/main/packages/shared/src/delegation.ts
+        kind: snippet
+        license: LicenseRef-owner-grant
+        license_note: "No LICENSE file. The author and owner (AaroneGeorge) allows copying it into the owner's own
+          projects (2026-10-30). Anyone else: all rights reserved; ask the author."
+        pushed: 2026-06-15
+        tier: 3
+        use: vendor
+        note: '151 lines over @metamask/smart-accounts-kit + viem. Scope Erc20TransferAmount with LimitedCalls and Timestamp
+          caveats; sub-delegation uses parentDelegation + random salt; redemption always SingleDefault mode (batch modes
+          break some caveats). Pairs with x402 erc7710 settlement and EIP-7702 accounts in accounts.ts. New topic wanted:
+          web3.aa.erc7710-delegation. Quality: Compact and commented. No unit tests; the e2e scripts hit Base. The library
+          API moves fast: check the smart-accounts-kit version.'
     see_also: [web3.aa.erc4337, web3.aa.erc7579-modules]
 
   - id: web3.aa.erc7579-modules
@@ -2713,6 +2739,19 @@ topics:
         tier: 1
         use: install
         note: Spec and verifier for the signIn feature.
+      - name: 'Ledger-gated signing demo: agent proposes, a Ledger (Speculos) approves, Solana devnet'
+        url: https://github.com/AaroneGeorge/Ledger-Gated-Signing
+        kind: repo
+        license: LicenseRef-owner-grant
+        license_note: "No LICENSE file. The author and owner (AaroneGeorge) allows copying it into the owner's own
+          projects (2026-10-30). Anyone else: all rights reserved; ask the author."
+        pushed: 2026-06-11
+        tier: 3
+        use: template
+        note: '215-line CommonJS script over @ledgerhq/device-management-kit, device-signer-kit-solana, device-transport-kit-speculos
+          and @solana/web3.js 1.x. setup.sh builds the Ledger Solana app ELF in Ledger''s Docker builder; run-speculos.sh
+          serves the device at :5000. Devnet only; derivation path 44''/501''/0''. Quality: Works as a demo; no tests;
+          needs Docker and a from-source Ledger app build. Carries an unused ethers / ethereum signer dependency.'
     see_also: [web3.solana.kit-web3js, web3.standards.siwe]
 
   - id: web3.solana.rpc-indexing-streaming
@@ -4776,6 +4815,18 @@ topics:
         tier: 3
         use: reference
         note: Index of protocol-specific checklists (incl. Decurity CDP/LSD/AMM lists).
+      - name: 'buidl-kit security knowledge: EVM and Solana audit checklists, ship gate, incident lessons'
+        url: https://github.com/AaroneGeorge/build-kit/tree/main/knowledge/security
+        kind: guide
+        license: MIT
+        pushed: 2026-08-29
+        tier: 3
+        use: reference
+        note: 'Four files: evm-audit-checklist.md, solana-audit-checklist.md, ship-gate-checklist.md, incident-lessons.md.
+          Each lists its sources and a last_verified date (2026-08-25). Written for an agent to read before a review;
+          pairs with the auditor subagents in agents/. Quality: Concrete and well sourced (Solodit, solcurity, sealevel-attacks,
+          Neodyme, Trail of Bits). It is a secondary source: re-check version numbers against the primaries before relying
+          on them.'
     see_also: [web3.security.best-practice-guides, web3.security.audit-workflow-reporting]
 
   - id: web3.security.best-practice-guides
@@ -5171,6 +5222,17 @@ topics:
         tier: 2
         use: reference
         note: Monthly timed quizzes; x676f64/secureum-mind_map (MIT) holds the Epoch 0 curriculum.
+      - name: 'buidl-kit vulnerable fixtures: Anchor escrow and Solidity vault with answer keys'
+        url: https://github.com/AaroneGeorge/build-kit/tree/main/samples
+        kind: repo
+        license: MIT
+        pushed: 2026-08-29
+        tier: 3
+        use: reference
+        note: 'Read-only fixtures, not buildable on purpose: vulnerable-escrow (Anchor, lib.rs) and vulnerable-vault (Solidity).
+          Each seeds 3 bugs and ships ANSWERS.md to hold back from the reviewer. Could serve as a regression fixture for
+          security skills in the garage itself. Quality: Small (one source file each); answers documented; DO NOT DEPLOY
+          notice present.'
     see_also: [web3.solana.learning-ctf, web3.security.learning-paths]
 
   - id: web3.security.audit-contests-bounties
@@ -5339,6 +5401,16 @@ topics:
         tier: 3
         use: skill
         note: Script-driven detect/patch/exploit pipeline; runs shell, git clone and anvil. No licence file; review scripts before use.
+      - name: Ouroboros Press threat model (worked example for one contract)
+        url: https://github.com/AaroneGeorge/ouroboros-press/blob/main/THREAT-MODEL.md
+        kind: guide
+        license: MIT
+        pushed: 2026-10-21
+        tier: 3
+        use: reference
+        note: 'One page: flows table (in, out, who triggers), what is impossible, why a tempting admin gate was removed,
+          trusted parties, cost of each attack. Usable as a template for a contract''s THREAT-MODEL.md. Alternative topic:
+          security.threatmodel.method. Quality: Specific to one contract; the structure transfers, the content does not.'
     see_also: [web3.security.checklists, web3.agents.skills-security]
 
   - id: web3.security.learning-paths
@@ -5812,4 +5884,45 @@ topics:
         tier: 3
         use: reference
         note: On-chain agent identity/reputation registries; emerging.
+      - name: 'FirstBuyer: x402 seller compliance checker with 13 failure fixtures and an eval matrix'
+        url: https://github.com/AaroneGeorge/First-Buy
+        kind: repo
+        license: LicenseRef-owner-grant
+        license_note: "No LICENSE file. The author and owner (AaroneGeorge) allows copying it into the owner's own
+          projects (2026-10-30). Anyone else: all rights reserved; ask the author."
+        pushed: 2026-07-20
+        tier: 3
+        use: reference
+        note: 'Express 5 on Vercel, OKX x402 packages, viem. src/core/checks.ts is pure; test/fixtures.ts boots 13 deliberately
+          broken sellers; eval/run.ts asserts outcomes with payment and buyer mocked. The README''s Invariants section
+          is worth reading. X Layer / USDT0 constants. Quality: Good separation (pure checks, guarded fetch, breaker,
+          deadline). The eval runs with SSRF_ALLOW_PRIVATE=1, so the SSRF guard itself is not exercised by the matrix.
+          Hot-wallet design documented; keys only via env.'
+      - name: 'Ouroboros Press: ownerless contract that pays an agent swarm per job (Foundry)'
+        url: https://github.com/AaroneGeorge/ouroboros-press
+        kind: repo
+        license: MIT
+        pushed: 2026-10-21
+        tier: 3
+        use: reference
+        note: 'Solidity 0.8.26 + OpenZeppelin, Foundry. No owner, upgrade, pause or withdraw by construction. 32 unit
+          + 3 fork tests: reentrancy through a malicious counterparty mock, callback under a 200k gas stipend, cool-down
+          doubling, fuzzed JSON body. THREAT-MODEL.md and keystore-first ops scripts included. Chain constants (Robinhood
+          Chain 4663, IMD Intake v2) are hard-coded by design. Quality: High: tests cover the stated invariants; the threat
+          model says what is impossible and why. scripts/lib.sh has a machine-specific ENV_FILE default; fork tests need
+          a live RPC.'
+      - name: 'Warden: x402 spend-control proxy for agents (policy engine, Merkle receipts, anchor contracts)'
+        url: https://github.com/AaroneGeorge/warden
+        kind: repo
+        license: LicenseRef-owner-grant
+        license_note: "No LICENSE file. The author and owner (AaroneGeorge) allows copying it into the owner's own
+          projects (2026-10-30). Anyone else: all rights reserved; ask the author."
+        pushed: 2026-08-10
+        tier: 3
+        use: reference
+        note: 'Next.js 16 + viem; Foundry contracts (ReceiptAnchor, PolicyRegistry, 11 tests); 16 TS unit tests for the
+          pure policy engine and the Merkle code; agent client in apps/agent; default WARDEN_SETTLE_MODE=simulated. Hackathon
+          build on Arc testnet. Quality: The policy engine (apps/web/src/lib/policy.ts) is pure and well tested. Merkle
+          leaves are single-hashed sorted pairs, not the OZ double-hashed leaf format: fine for receipts, do not reuse
+          for airdrops. In-memory store; shared demo instance.'
     see_also: [web3.aa.erc7579-modules, web3.solana.hackathon-templates]

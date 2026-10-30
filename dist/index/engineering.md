@@ -485,9 +485,9 @@ See also: `engineering.devex.codemods-structural-refactoring`, `engineering.test
 - [naming-cheatsheet](https://github.com/kettanaito/naming-cheatsheet) · MIT · 14.2k★ · t1 · reference
 - [PEP 8 naming + Effective Go names](https://peps.python.org/pep-0008/#naming-conventions) · none · t1 · reference
 
-### Code review practice
+### Code review practice, and Claude code-review skills and plugins
 
-`engineering.architecture.code-review`: Review and respond to reviews the way Google's eng-practices describe; automate the first pass with agents.
+`engineering.architecture.code-review`: Review and respond to reviews the way Google's eng-practices describe; automate the first pass with a Claude Code code-review plugin or skill.
 
 - [Google eng-practices](https://github.com/google/eng-practices) · CC-BY-3.0 · 23.3k★ · t1 · reference · archived
 - [Conventional Comments](https://conventionalcomments.org/) · none · t1 · reference

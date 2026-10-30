@@ -80,7 +80,10 @@ def add(ref, into="vendor", dest=None, dry_run=False):
     if target.exists() and (not target.is_dir() or any(target.iterdir())):
         return dict(out, ok=False, action="refused", dest=str(target), reason=f"{target} exists and is not empty")
     lic = str(res.get("license") or "none")
-    if not catalog.is_permissive(lic):
+    if catalog.owner_grant(lic):
+        out["licence_warning"] = ("no LICENSE file: copied with the owner's permission for the owner's own projects ("
+                                  + str(res.get("license_note") or "") + ")")
+    elif not catalog.is_permissive(lic):
         out["licence_warning"] = (f"licence {lic}: keep its LICENSE/NOTICE files and check the terms before "
                                   "shipping (copyleft or unclear licences have duties)")
     if dry_run:

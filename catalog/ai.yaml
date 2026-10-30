@@ -562,6 +562,18 @@ topics:
         tier: 2
         use: install
         note: Large community marketplace of agents/skills/commands for Claude Code, Codex, Cursor, OpenCode; successor to the archived wshobson/commands.
+      - name: 'buidl-kit (AaroneGeorge/build-kit): Claude Code plugin for Solana/EVM builds'
+        url: https://github.com/AaroneGeorge/build-kit
+        kind: plugin
+        license: MIT
+        pushed: 2026-08-29
+        tier: 3
+        use: plugin
+        note: 'Owner-made plugin: brief, scout, build, debrief, ship commands; EVM and Solana security-auditor subagents;
+          a hackathon-build skill; knowledge/ with sources and last_verified dates (2026-08); scripts/validate.sh runs
+          in CI. .mcp.json declares a remote HTTP MCP (mcp.solana.com): review before install. Quality: Own structural
+          validator in CI; no other tests. Knowledge dated 2026-08 with version claims (Anchor 1.x) to re-verify. Promotional
+          README.'
     see_also: [ai.skills.discovery, ai.claude-code.subagents]
 
   - id: ai.claude-code.dev-workflow-plugins
@@ -1029,6 +1041,29 @@ topics:
         tier: 2
         use: reference
         note: Cron-style prompts locally or as cloud routines (/docs/en/routines.md).
+      - name: 'fake_claude.py: stdlib stand-in for the claude CLI (stream-json events) for tests'
+        url: https://github.com/AaroneGeorge/harness2-cc/blob/main/tests/fakes/fake_claude.py
+        kind: snippet
+        license: Apache-2.0
+        pushed: 2026-10-17
+        tier: 3
+        use: vendor
+        note: 'Stdlib only, no network. Env-steered behaviours: reply text, harness file edits, is_error results, max-budget
+          overshoot, empty result, 60 s hang, delivered files, a call log, and flags omitted from --help to test flag
+          probing. Event shapes mirror Claude Code 2.1.302. Put it first on PATH as `claude` in tests. Quality: Clear
+          docstring; exercised by the repo''s 110 tests. The event schema may drift from newer Claude Code versions.'
+      - name: 'Harness2 for Claude Code (harness2-cc): improve CLAUDE.md, skills and hooks with a fixed model'
+        url: https://github.com/AaroneGeorge/harness2-cc
+        kind: repo
+        license: Apache-2.0
+        pushed: 2026-10-17
+        tier: 3
+        use: reference
+        note: 'Apache-2.0 port of google-research/harness2 (NOTICE kept). Reusable parts: substrate/claude_code.py (claude
+          -p --output-format stream-json runner with flag probing against --help, process-group kill on timeout, trajectory
+          rendering); the task format (instruction.md + task.json + optional check.py or rubric.json); 110 pytest tests
+          over a fake claude. Runs claude with bypassPermissions: read before running. Alternative topic: ai.agents.harness-education.
+          Quality: Typed, stdlib only, 110 tests, DESIGN.md as a build contract. Real model calls when run; single commit.'
     see_also: [ai.llm-apps.claude-agent-sdk, engineering.ci.github-actions-fundamentals]
 
   - id: ai.claude-code.usage-costs
@@ -3269,6 +3304,16 @@ topics:
         tier: 2
         use: install
         note: Partitioning for 25+ file types; many system deps.
+      - name: 'Sanctum extract.ts: PDF, DOCX and DOC to text in pure JS with magic-byte fallback'
+        url: https://github.com/AaroneGeorge/Sanctum/blob/main/apps/server/src/extract.ts
+        kind: snippet
+        license: Apache-2.0
+        pushed: 2026-06-21
+        tier: 3
+        use: vendor
+        note: '118 lines. Format by extension with magic-byte fallback; 200k-character cap; reports image-only PDFs instead
+          of returning empty text; strips NUL bytes. No native binaries; Node >= 22. Quality: Small and readable; no unit
+          tests; depends on unpdf, mammoth and word-extractor.'
     see_also: [ai.llm-apps.ocr]
 
   - id: ai.llm-apps.ocr

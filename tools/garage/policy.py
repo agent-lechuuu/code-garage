@@ -15,6 +15,7 @@ Called by `garage validate` (T1) and CI on every PR. Rules (research/system-desi
 import re
 
 from . import trust as trust_mod
+from .catalog import OWNER_ACCOUNTS, OWNER_GRANT
 
 BAD_LICENCE = [
     (re.compile(r"(^|[^a-z])(a|l)?gpl", re.I), "copyleft (GPL/LGPL/AGPL): reference or run as a separate process only"),
@@ -48,6 +49,8 @@ VENDOR_USES = {"vendor", "template"}
 
 def licence_problem(lic):
     lic = str(lic if lic is not None else "").strip()
+    if lic == OWNER_GRANT:
+        return None
     for pat, why in BAD_LICENCE:
         if pat.search(lic):
             return why
@@ -77,6 +80,12 @@ def check(catalog, pins, trust):
     errors = []
     for rid, res in sorted(resources.items()):
         pin = pins.get(rid)
+        if str(res.get("license") or "").strip() == OWNER_GRANT:
+            account = rid.split("/")[3].lower() if rid.startswith("https://github.com/") and rid.count("/") >= 4 else ""
+            if account not in OWNER_ACCOUNTS:
+                errors.append(f"{rid}: {OWNER_GRANT} is only for the owner's own repos ({', '.join(sorted(OWNER_ACCOUNTS))})")
+            if not str(res.get("license_note") or "").strip():
+                errors.append(f"{rid}: {OWNER_GRANT} needs a license_note that says what the owner allowed")
         nv = never_vendor(rid)
         if res.get("use") in VENDOR_USES:
             if nv:
