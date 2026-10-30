@@ -811,6 +811,7 @@
 "https://github.com/benchmark-action/github-action-benchmark": {repo: "benchmark-action/github-action-benchmark", sha: "84ec6ea748925b6580796c05ce7a1c8fd0d15f3b", path: "", pinned: "2026-10-29", license_at_pin: "MIT", size_kb: 8451, policy: "readme"}
 "https://github.com/bennettfeely/clippy": {repo: "bennettfeely/clippy", sha: "2f8d59931d1d373fddc7e7b3bf5a220539fd818a", path: "", pinned: "2026-10-29", license_at_pin: "none", size_kb: 4712, policy: "link"}
 "https://github.com/bentoml/BentoML": {repo: "bentoml/BentoML", sha: "0aa1aea52b63b82100ff93675eff25f6428fb841", path: "", pinned: "2026-10-29", license_at_pin: "Apache-2.0", size_kb: 103819, policy: "readme"}
+"https://github.com/better-auth-ui/better-auth-ui": {repo: "better-auth-ui/better-auth-ui", sha: "fb4d83c94a760b74e1fb3487ee5866c689c19e09", path: "", pinned: "2026-10-30", license_at_pin: "MIT", size_kb: 39448, policy: "readme"}
 "https://github.com/better-auth/better-auth": {repo: "better-auth/better-auth", sha: "8f39145dc9fd8aee5ed9d2b0296c9ea1731591eb", path: "", pinned: "2026-10-29", license_at_pin: "MIT", size_kb: 165977, policy: "readme"}
 "https://github.com/better-auth/skills/tree/HEAD/better-auth": {repo: "better-auth/skills", sha: "20c9e88a5c007461a703f1c213572b073196113e", path: "better-auth", pinned: "2026-10-29", license_at_pin: "none", size_kb: 70, policy: "link"}
 "https://github.com/bheisler/criterion.rs": {repo: "bheisler/criterion.rs", sha: "3dbc6c618acb48885066422d81d50729aa17b2b7", path: "", pinned: "2026-10-29", license_at_pin: "Apache-2.0", size_kb: 5154, policy: "readme"}
@@ -1978,6 +1979,7 @@
 "https://github.com/metaplex-foundation/mpl-core": {repo: "metaplex-foundation/mpl-core", sha: "a5c35db436fdb6382ac75b1d59205d769c4762ea", path: "", pinned: "2026-10-29", license_at_pin: "NOASSERTION", size_kb: 5655, policy: "readme"}
 "https://github.com/metaplex-foundation/mpl-token-metadata": {repo: "metaplex-foundation/mpl-token-metadata", sha: "024a6f45a443389815cbfa8855fc1796bc89e4b3", path: "", pinned: "2026-10-29", license_at_pin: "NOASSERTION", size_kb: 6381, policy: "readme"}
 "https://github.com/metaplex-foundation/umi": {repo: "metaplex-foundation/umi", sha: "787e58f08a8a4b20669152786cdfa4e7fe4b822f", path: "", pinned: "2026-10-29", license_at_pin: "MIT", size_kb: 2426, policy: "readme"}
+"https://github.com/mgeier/rtrb": {repo: "mgeier/rtrb", sha: "5596032eda8043c5180ba05d9863e375f0890fbc", path: "", pinned: "2026-10-30", license_at_pin: "Apache-2.0", size_kb: 189, policy: "readme"}
 "https://github.com/mgreiler/secure-code-review-checklist": {repo: "mgreiler/secure-code-review-checklist", sha: "40ce5d4b28f4ab4db3897d4aee3b63d8cd1323ad", path: "", pinned: "2026-10-29", license_at_pin: "CC-BY-SA-4.0", size_kb: 60, policy: "snapshot"}
 "https://github.com/michaelhly/solana-py": {repo: "michaelhly/solana-py", sha: "2ed6b2f28ca2ba204bcd0f4a95593a38f94982de", path: "", pinned: "2026-10-29", license_at_pin: "MIT", size_kb: 4061, policy: "readme"}
 "https://github.com/michalsnik/aos": {repo: "michalsnik/aos", sha: "329fb34f777034345f4d3f4def4dc3bcc300cc2e", path: "", pinned: "2026-10-29", license_at_pin: "MIT", size_kb: 1465, policy: "readme"}
@@ -2757,6 +2759,7 @@
 "https://github.com/smithy-lang/smithy": {repo: "smithy-lang/smithy", sha: "47ebc08498d72dbc71e20ad2fe80121c7ba35ed1", path: "", pinned: "2026-10-29", license_at_pin: "Apache-2.0", size_kb: 218345, policy: "readme"}
 "https://github.com/smol-rs/smol": {repo: "smol-rs/smol", sha: "4157930176b44cb9831283aa4a68ea6d7ab8badf", path: "", pinned: "2026-10-29", license_at_pin: "Apache-2.0", size_kb: 1015, policy: "readme"}
 "https://github.com/smoltcp-rs/smoltcp": {repo: "smoltcp-rs/smoltcp", sha: "24bda3b4f982625d8453d4360172557d24921c76", path: "", pinned: "2026-10-29", license_at_pin: "0BSD", size_kb: 5104, policy: "readme"}
+"https://github.com/snapview/tokio-tungstenite": {repo: "snapview/tokio-tungstenite", sha: "76e10f08c488eb0032f136c7c56a437cd30164c2", path: "", pinned: "2026-10-30", license_at_pin: "MIT", size_kb: 266, policy: "readme"}
 "https://github.com/snyk/agent-scan": {repo: "snyk/agent-scan", sha: "a69e1c354ad0812c13da15dc64770e1c21786841", path: "", pinned: "2026-10-29", license_at_pin: "Apache-2.0", size_kb: 5757, policy: "readme"}
 "https://github.com/socketio/socket.io": {repo: "socketio/socket.io", sha: "1eaa582d3b453e3e6f522300ed05b10da0a0799b", path: "", pinned: "2026-10-29", license_at_pin: "MIT", size_kb: 33814, policy: "readme"}
 "https://github.com/software-mansion/radon-ide": {repo: "software-mansion/radon-ide", sha: "a20f9fad732864e9410fdc999d3a8580d9225ef0", path: "", pinned: "2026-10-29", license_at_pin: "NOASSERTION", size_kb: 178826, policy: "readme"}

@@ -334,7 +334,7 @@ See also: `frontend.agent.shadcn-registry-mcp`
 
 `frontend.components.animated-component-kits`: Eye-catching hero sections, text effects and backgrounds for landing pages; check the Commons Clause variants.
 
-- [magicui](https://github.com/magicuidesign/magicui) · MIT · 22.9k★ · t1 · vendor · **quarantine**
+- [magicui](https://github.com/magicuidesign/magicui) · MIT · 22.9k★ · t1 · vendor · **reviewed**
 - [react-bits](https://github.com/DavidHDev/react-bits) · LicenseRef-Commons-Clause · 50.5k★ · t1 · reference
 - [Aceternity UI](https://ui.aceternity.com/components) · MIT · t2 · vendor · **quarantine**
 - [animate-ui](https://github.com/imskyleen/animate-ui) · LicenseRef-Commons-Clause · 4.7k★ · t2 · reference
@@ -1426,7 +1426,7 @@ See also: `engineering.testing.e2e-browser-frameworks`
 `frontend.testing.playwright-for-ui`: Component testing (experimental) and letting agents see the rendered UI.
 
 - [playwright](https://github.com/microsoft/playwright) · Apache-2.0 · 98.7k★ · t1 · install
-- [playwright-mcp](https://github.com/microsoft/playwright-mcp) · Apache-2.0 · 38.8k★ · t1 · mcp · **quarantine**
+- [playwright-mcp](https://github.com/microsoft/playwright-mcp) · Apache-2.0 · 38.8k★ · t1 · mcp · **reviewed**
 - [webapp-testing (anthropics/skills)](https://github.com/anthropics/skills/tree/HEAD/skills/webapp-testing) · Apache-2.0 · 184.4k★ · t1 · skill · **trusted**
 
 See also: `engineering.testing.e2e-browser-frameworks`
@@ -1497,7 +1497,7 @@ See also: `engineering.testing.e2e-browser-frameworks`
 `frontend.agent.browser-and-devtools-mcp`: Agents verifying UI visually, reading console errors and perf traces.
 
 - [chrome-devtools-mcp](https://github.com/ChromeDevTools/chrome-devtools-mcp) · Apache-2.0 · 54.3k★ · t1 · mcp · **quarantine**
-- [playwright-mcp](https://github.com/microsoft/playwright-mcp) · Apache-2.0 · 38.8k★ · t1 · mcp · **quarantine**
+- [playwright-mcp](https://github.com/microsoft/playwright-mcp) · Apache-2.0 · 38.8k★ · t1 · mcp · **reviewed**
 - [Storybook MCP addon](https://github.com/storybookjs/storybook/tree/HEAD/code/addons/mcp) · MIT · 91.4k★ · t1 · mcp · **quarantine**
 - [webapp-testing (anthropics/skills)](https://github.com/anthropics/skills/tree/HEAD/skills/webapp-testing) · Apache-2.0 · 184.4k★ · t2 · skill · **trusted**
 
@@ -1511,7 +1511,7 @@ See also: `engineering.testing.browser-automation-for-agents`
 - [Mantine llms.txt](https://mantine.dev/llms.txt) · none · t2 · reference
 - [Next.js llms.txt](https://nextjs.org/docs/llms.txt) · none · t2 · reference
 - [Motion llms.txt](https://motion.dev/llms.txt) · none · t2 · reference
-- [context7](https://github.com/upstash/context7) · MIT · 63.8k★ · t1 · mcp · **quarantine**
+- [context7](https://github.com/upstash/context7) · MIT · 63.8k★ · t1 · mcp · **reviewed**
 
 See also: `ai.mcp.servers-docs`
 

@@ -8,7 +8,8 @@ topics:
   - id: ai.skills.format
     title: Agent Skills format (SKILL.md) and specification
     area: skills
-    why: The portable instruction-folder format every agent in the garage loads; know the frontmatter rules before writing or vendoring a skill.
+    why: The portable instruction-folder format every agent in the garage loads; read the frontmatter rules before you write a SKILL.md or vendor a skill.
+    tags: [skill, skills, skill.md, spec, specification, frontmatter, write, writing]
     practices:
       - text: name is 1-64 chars, lowercase/digits/hyphens, must equal the folder name; description is 1-1024 chars and must say what the skill does AND when to use it.
         source: https://agentskills.io/specification
@@ -52,9 +53,10 @@ topics:
     see_also: [ai.skills.creator, ai.skills.official]
 
   - id: ai.skills.official
-    title: Anthropic official skills repository
+    title: Anthropic official skills for Claude (anthropics/skills)
     area: skills
-    why: 'Anthropic''s reference skills: the canonical examples to copy structure from and to load directly.'
+    why: 'Anthropic''s reference Claude skills: the canonical examples to copy structure from and to load directly.'
+    tags: [claude, claude-code, anthropic, skills, official]
     resources:
       - name: anthropics/skills
         url: https://github.com/anthropics/skills/tree/HEAD/skills
@@ -79,9 +81,10 @@ topics:
     see_also: [ai.skills.format, ai.skills.documents, ai.skills.creator]
 
   - id: ai.skills.creator
-    title: Writing and evaluating skills (skill-creator)
+    title: 'Writing skills: how to write a SKILL.md (skill-creator, evals)'
     area: skills
-    why: Create, refine and benchmark skills instead of hand-writing SKILL.md files blind.
+    why: Write, test and improve an agent skill (SKILL.md) with the official skill-creator and its evals instead of hand-writing skills blind.
+    tags: [write, writing, author, authoring, skill.md, skill, skills, agent, agents, evals, skill-creator]
     practices:
       - text: 'Write the description for triggering: say what the skill does and when to use it, with the keywords a user would type.'
         source: https://platform.claude.com/docs/en/agents-and-tools/agent-skills/best-practices.md
@@ -98,7 +101,7 @@ topics:
         tier: 1
         use: skill
         path: skills/skill-creator
-        note: 'Official: create, improve, run evals and benchmark skills; optimizes descriptions for triggering. Runs bundled Python scripts (shell).'
+        note: 'Official: write a new SKILL.md, improve an existing skill, run evals and benchmark it; optimizes descriptions for triggering. Runs bundled Python scripts (shell).'
       - name: skill-creator plugin (claude-plugins-official)
         url: https://github.com/anthropics/claude-plugins-official/tree/HEAD/plugins/skill-creator
         kind: plugin
@@ -169,7 +172,7 @@ topics:
         tier: 1
         use: skill
         path: skills/test-driven-development
-        note: Strict red-green-refactor skill; pick this when you want the agent forced into failing-test-first.
+        note: The TDD skill for Claude Code and other agents (test-driven-development); strict red-green-refactor. Pick this one skill when the agent must be forced into failing-test-first.
       - name: systematic-debugging (superpowers)
         url: https://github.com/obra/superpowers/tree/HEAD/skills/systematic-debugging
         kind: skill
@@ -612,9 +615,10 @@ topics:
     see_also: [engineering.architecture.code-review, ai.claude-code.plugins]
 
   - id: ai.claude-code.subagents
-    title: Subagents and subagent collections
+    title: Claude Code subagents and subagent collections
     area: claude-code
-    why: Define focused subagents (.claude/agents/*.md) with their own tools and context instead of one overloaded session.
+    why: Define focused Claude Code subagents (.claude/agents/*.md) with their own tools and context instead of one overloaded session.
+    tags: [subagent, subagents, claude-code, agents, delegation]
     practices:
       - text: Give each subagent a narrow description that says when to delegate, restrict its tools, and keep its system prompt short; the parent sees only its final report.
         source: https://code.claude.com/docs/en/sub-agents.md
@@ -742,9 +746,10 @@ topics:
     see_also: [ai.claude-code.settings, security.ai.agent-guard-hooks]
 
   - id: ai.claude-code.memory
-    title: CLAUDE.md, rules and project memory
+    title: CLAUDE.md best practices, rules and project memory
     area: claude-code
-    why: The persistent instruction layer; a good CLAUDE.md is short, specific and points to files instead of pasting them.
+    why: 'The CLAUDE.md file is the persistent instruction layer; the best practices: short, specific rules that point to files instead of pasting them.'
+    tags: [claude-md, claude.md, memory, rules, best-practices, instructions, claude-code]
     practices:
       - text: Keep CLAUDE.md under a few hundred lines; put topic rules in .claude/rules/ and link to docs rather than inlining them.
         source: https://code.claude.com/docs/en/memory.md
@@ -1216,9 +1221,10 @@ topics:
     see_also: [ai.mcp.building]
 
   - id: ai.mcp.building
-    title: Building MCP servers (FastMCP, mcp-builder skill, scaffolds)
+    title: Building MCP servers (FastMCP, mcp-builder skill, templates and scaffolds)
     area: mcp
-    why: 'Write a good server in an afternoon: few, well-described tools, typed inputs, useful errors.'
+    why: 'Write a good MCP server in an afternoon, from a template or scaffold: few, well-described tools, typed inputs, useful errors.'
+    tags: [mcp, server, template, starter, scaffold, boilerplate, fastmcp, python, typescript]
     practices:
       - text: Design tools around agent workflows, not API endpoints; return concise, high-signal text and paginate large results.
         source: https://www.anthropic.com/research/writing-tools-for-agents
@@ -1467,9 +1473,10 @@ topics:
         note: Call remote MCP servers directly from the Claude API without running a client.
 
   - id: ai.mcp.servers-docs
-    title: MCP servers for library documentation
+    title: MCP servers for library documentation (Context7, GitMCP)
     area: mcp
-    why: 'Stop hallucinated APIs: pull current docs for the exact library version into context.'
+    why: 'Stop hallucinated APIs: Context7 and GitMCP pull current documentation for the exact library version into context.'
+    tags: [context7, documentation, docs, library, libraries, llms-txt, mcp]
     resources:
       - name: upstash/context7
         url: https://github.com/upstash/context7
@@ -1632,12 +1639,15 @@ topics:
         path: external_plugins/gitlab
         note: GitLab MRs, pipelines, issues; needs token.
       - name: gh CLI (no MCP)
-        url: https://code.claude.com/docs/en/best-practices.md
-        kind: guide
-        license: none
+        url: https://github.com/cli/cli
+        kind: tool
+        license: MIT
+        stars: 46798
+        pushed: 2026-10-29
+        archived: false
         tier: 1
-        use: reference
-        note: 'Anthropic''s own practice: a scoped gh CLI in Bash is often simpler and cheaper than an MCP server.'
+        use: install
+        note: 'Anthropic''s own practice (code.claude.com/docs/en/best-practices.md): a scoped gh CLI in Bash is often simpler and cheaper than an MCP server.'
 
   - id: ai.mcp.servers-web
     title: Web search and crawling MCP servers
@@ -1697,9 +1707,10 @@ topics:
     see_also: [ai.llm-apps.web-data]
 
   - id: ai.mcp.servers-data
-    title: Database MCP servers (cross-reference)
+    title: Database MCP servers (Postgres, MySQL, SQLite; cross-reference)
     area: mcp
-    why: Query schemas and data from the agent; prefer read-only modes. Full database topics live in the backend slice.
+    why: Query schemas and data in Postgres, MySQL or SQLite from the agent; prefer read-only modes. Full database topics live in the backend slice.
+    tags: [mcp, postgres, postgresql, mysql, sqlite, database, sql]
     resources:
       - name: bytebase/dbhub
         url: https://github.com/bytebase/dbhub

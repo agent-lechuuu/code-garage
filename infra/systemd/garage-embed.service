@@ -1,0 +1,43 @@
+# Search by meaning: one sentence-embedding model (all-MiniLM-L6-v2, ONNX on the CPU) for the whole server, so no
+# Claude session loads one. Started by garage-embed.socket on the first request; exits after an hour without one.
+# Reads nothing but the model in /opt/garage/models (sha256 checked at load) and needs no network.
+# Measured 2026-10-30 (this sandbox): ~160 MB after load, peak 384 MB embedding all 977 topics (45 s); 4 ms a query; start 0.9 s.
+[Unit]
+Description=garage: embedding service (search by meaning)
+Requires=garage-embed.socket
+After=garage-embed.socket
+
+[Service]
+Type=simple
+User=garage
+Group=garage
+Environment=GARAGE_HOME=/data/apps/garage GARAGE_MODELS=/opt/garage/models GARAGE_EMBED_THREADS=2 OMP_NUM_THREADS=2 HOME=/var/lib/garage
+ExecStart=/opt/garage/embed-venv/bin/python -I -c 'import runpy, sys; sys.path.insert(0, "/data/apps/garage/repo/tools"); sys.argv = ["garage-embed", "serve", "--idle", "3600"]; runpy.run_module("garage.semantic", run_name="__main__", alter_sys=True)'
+Restart=on-failure
+RestartSec=30
+Nice=10
+CPUQuota=200%
+MemoryHigh=450M
+MemoryMax=512M
+TasksMax=16
+PrivateNetwork=yes
+PrivateTmp=yes
+PrivateDevices=yes
+ProtectSystem=strict
+ProtectHome=yes
+ProtectKernelTunables=yes
+ProtectKernelModules=yes
+ProtectKernelLogs=yes
+ProtectControlGroups=yes
+ProtectClock=yes
+ProtectHostname=yes
+RestrictSUIDSGID=yes
+RestrictNamespaces=yes
+RestrictRealtime=yes
+LockPersonality=yes
+NoNewPrivileges=yes
+CapabilityBoundingSet=
+RestrictAddressFamilies=AF_UNIX
+SystemCallArchitectures=native
+SystemCallFilter=@system-service
+UMask=0077

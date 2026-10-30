@@ -24,6 +24,7 @@ WEIGHTS = "8.0, 6.0, 4.0, 3.0, 1.0"   # bm25 per column: title, name, tags, note
 CHUNK = 2000
 README_MAX = 4096
 SKILL_MAX = 16384
+EMBED_ON_SEARCH = 32   # new vectors a rebuild inside a search may ask for (garage index embeds them all)
 SCHEMA = """
 create table meta (k text primary key, v text);
 create table docs (id integer primary key, src text, topic text, rid text, slice text);
@@ -196,7 +197,19 @@ def _create(c, cat, fp):
     return stats
 
 
-def build(db=None, repo=None):
+def _vectors(c, old_db, embed_max):
+    """Search by meaning (garage.semantic, optional): each row's vector, reused from the old index or embedded."""
+    sem = optional("semantic")
+    if sem is None:
+        return {}
+    try:
+        return sem.attach(c, old_db, embed_max)
+    except Exception as e:   # noqa: BLE001 - the keyword index is complete without vectors
+        return {"semantic": f"skipped: {e}"[:200]}
+
+
+def build(db=None, repo=None, embed_max=None):
+    """embed_max: at most this many new vectors (None = all; the rebuild inside connect() keeps it small)."""
     t0 = time.time()
     db = Path(db) if db else paths.index_db()
     db.parent.mkdir(parents=True, exist_ok=True)
@@ -208,6 +221,7 @@ def build(db=None, repo=None):
     c.execute("pragma journal_mode=delete")   # readers of another user need no -shm file (WAL would)
     try:
         stats = _create(c, cat, fp)
+        stats.update(_vectors(c, db, embed_max))
     finally:
         c.close()
     os.chmod(tmp, 0o644)
@@ -257,7 +271,7 @@ def connect(repo=None, db=None):
     writable = os.access(db if db.exists() else db.parent if db.parent.exists() else db.parent.parent, os.W_OK)
     if writable:
         try:
-            build(db, repo)
+            build(db, repo, embed_max=EMBED_ON_SEARCH)
             c = _fresh(db, fp)
             if c:
                 return c
@@ -412,6 +426,9 @@ def health():
     try:
         ok = c.execute("pragma integrity_check").fetchone()[0] == "ok"
         n = c.execute("select count(*) from docs").fetchone()[0]
+        has_vec = c.execute("select 1 from sqlite_master where name = 'vec'").fetchone()
+        nv = c.execute("select count(*) from vec").fetchone()[0] if has_vec else 0
     finally:
         c.close()
-    return [("PASS" if ok else "FAIL", f"index {db}: {n} rows, {db.stat().st_size // 1024} kB")]
+    vec = f", {nv} topic vectors" if nv else ""
+    return [("PASS" if ok else "FAIL", f"index {db}: {n} rows{vec}, {db.stat().st_size // 1024} kB")]

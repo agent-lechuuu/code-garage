@@ -29,8 +29,8 @@ See also: `security.standards.owasp-top10`, `security.ai.llm-top10`
 
 `security.standards.cheat-sheets`: The single best set of short, prescriptive how-to pages; nearly every topic in this slice links to one. Mirror the whole repo once.
 
-- [OWASP/CheatSheetSeries](https://github.com/OWASP/CheatSheetSeries/tree/HEAD/cheatsheets) · CC-BY-SA-4.0 · 33.8k★ · t1 · vendor · **quarantine**
-- [Cheat Sheet Series site (rendered)](https://cheatsheetseries.owasp.org/) · CC-BY-SA-4.0 · t1 · reference
+- [OWASP Cheat Sheet Series](https://github.com/OWASP/CheatSheetSeries/tree/HEAD/cheatsheets) · CC-BY-SA-4.0 · 33.8k★ · t1 · vendor · **quarantine**
+- [OWASP Cheat Sheet Series site (rendered)](https://cheatsheetseries.owasp.org/) · CC-BY-SA-4.0 · t1 · reference
 - [OWASP Proactive Controls 2024](https://top10proactive.owasp.org/) · CC-BY-SA-4.0 · t1 · reference
 
 See also: `security.standards.proactive-controls`

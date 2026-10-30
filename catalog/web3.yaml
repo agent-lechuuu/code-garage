@@ -904,7 +904,8 @@ topics:
   - id: web3.standards.erc4626-vaults
     title: ERC-4626 tokenised vaults
     area: standards
-    why: The share-accounting standard for yield vaults; inflation attacks and rounding are the classic pitfalls.
+    why: The share-accounting standard for yield vault contracts in Solidity; inflation attacks and rounding are the classic pitfalls.
+    tags: [vault, vaults, erc4626, erc-4626, yield, tokenized-vault, solidity]
     practices:
       - text: Mitigate first-depositor inflation with virtual shares/decimals offset (OZ default) or a dead-shares seed deposit.
         source: https://docs.openzeppelin.com/contracts/5.x/erc4626
@@ -2490,9 +2491,10 @@ topics:
     see_also: [web3.solana.kit-web3js, web3.solana.pinocchio-native]
 
   - id: web3.solana.local-testing
-    title: Local testing (Surfpool, LiteSVM, Mollusk, test-validator)
+    title: Testing Solana programs (Surfpool, LiteSVM, Mollusk, Trident, test-validator)
     area: solana
-    why: Fast in-process tests and mainnet-forking local networks replace slow solana-test-validator runs.
+    why: 'Test Anchor and native programs fast: in-process SVMs for unit tests and a mainnet-forking local validator for integration tests replace slow solana-test-validator runs.'
+    tags: [testing, tests, test, anchor, solana, programs, litesvm, mollusk, surfpool, bankrun, fuzzing]
     practices:
       - text: Unit-test instructions with Mollusk/LiteSVM, integration-test on Surfpool with mainnet forking; reserve solana-test-validator for runtime-fidelity cases.
         source: https://github.com/solana-foundation/solana-dev-skill

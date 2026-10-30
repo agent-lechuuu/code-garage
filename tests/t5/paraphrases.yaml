@@ -1,0 +1,53 @@
+# Plain-word rewrites of needs in tests/eval/needs.yaml (E1's set), written by E2 before looking at any result:
+# the same need, said the way someone who does not know the jargon would say it. The expected answers are E1's
+# (looked up by `of`), so this file holds queries only. Used by tests/t5 to measure search by meaning, where keyword
+# search is weakest.
+paraphrases:
+  - {of: "Solidity ERC-4626 vault", q: "smart contract where users deposit tokens and get shares that earn yield"}
+  - {of: "Solana Anchor testing", q: "how do I test my Solana program before deploying it"}
+  - {of: "fuzz test Foundry invariants", q: "throw random inputs at my smart contract to find properties that break"}
+  - {of: "UUPS upgradeable proxy storage layout", q: "change a deployed contract's code later without losing its state"}
+  - {of: "EIP-712 typed data signature verify", q: "let users sign structured messages in their wallet and check them on chain"}
+  - {of: "ERC-4337 account abstraction bundler", q: "smart contract wallets where users don't pay gas themselves"}
+  - {of: "smart contract audit checklist", q: "list of things to check before my contract goes to mainnet"}
+  - {of: "Slither static analysis Solidity", q: "tool that scans contract source for vulnerabilities without running it"}
+  - {of: "Claude skill for code review", q: "teach the agent to review pull requests"}
+  - {of: "MCP server for Postgres", q: "let the coding agent query my database directly"}
+  - {of: "how to write a SKILL.md", q: "package instructions so the agent loads them only when relevant"}
+  - {of: "build an MCP server in Python FastMCP", q: "expose my python functions as tools the assistant can call"}
+  - {of: "Claude Code hook to block dangerous commands", q: "stop the agent from running rm -rf or other destructive shell commands"}
+  - {of: "CLAUDE.md best practices", q: "what to put in the project instructions file the agent reads at start"}
+  - {of: "prompt caching Anthropic API", q: "make repeated long prompts cheaper and faster with the Claude API"}
+  - {of: "run Claude Code in GitHub Actions", q: "have the agent run automatically on every pull request in CI"}
+  - {of: "Playwright MCP browser automation", q: "let the agent click around a website and take screenshots"}
+  - {of: "MCP tool poisoning security", q: "malicious tool descriptions that trick the agent"}
+  - {of: "Claude Code subagents", q: "split a big task across several helper agents with their own context"}
+  - {of: "low-latency ring buffer C++", q: "fast fixed-size queue to pass data between two threads in C++"}
+  - {of: "bash strict mode", q: "make my shell script stop on the first error and on unset variables"}
+  - {of: "arena allocator C", q: "allocate lots of small objects and free them all at once"}
+  - {of: "Rust error handling anyhow thiserror", q: "nice error types and propagating errors in Rust"}
+  - {of: "io_uring async IO Linux", q: "fastest way to do lots of file and network reads without blocking on linux"}
+  - {of: "perf flame graph profiling Linux", q: "find out which functions my program spends its time in"}
+  - {of: "systemd service hardening", q: "lock down a background service so it can't touch the rest of the system"}
+  - {of: "memory ordering acquire release atomics", q: "why does my lock-free code break on ARM but not x86"}
+  - {of: "zero-downtime Postgres migration", q: "change a big database table without taking the site down"}
+  - {of: "rate limiting algorithm", q: "stop one client from sending too many requests per second"}
+  - {of: "cursor pagination API", q: "return long lists from an API page by page without skipping items"}
+  - {of: "idempotency keys payments API", q: "make sure a retried request doesn't charge the customer twice"}
+  - {of: "Postgres as job queue SKIP LOCKED", q: "background jobs without running a separate queue server, just the database"}
+  - {of: "row level security multi-tenant Postgres", q: "keep each customer's data separate in one shared database"}
+  - {of: "passkeys WebAuthn server", q: "log in with fingerprint or face instead of passwords"}
+  - {of: "connection pooling Postgres pgbouncer", q: "too many database connections from serverless functions"}
+  - {of: "verify webhook signature", q: "check that incoming HTTP callbacks really come from the payment provider"}
+  - {of: "landing page hero animation", q: "eye-catching moving header for a marketing site"}
+  - {of: "accessible dialog headless React", q: "popup window component that works with keyboard and screen readers"}
+  - {of: "drag and drop sortable list React", q: "let users reorder items by dragging them"}
+  - {of: "virtualized list React large data", q: "show a table with 100k rows in the browser without lag"}
+  - {of: "OWASP input validation", q: "how to safely check what users type into forms on the server"}
+  - {of: "secret scanning pre-commit", q: "stop API keys from being committed to git"}
+  - {of: "password hashing argon2", q: "how should I store user passwords"}
+  - {of: "sanitize HTML user content XSS", q: "users can post rich text, keep scripts out of it"}
+  - {of: "prompt injection defence for agents", q: "web pages telling my agent to ignore its instructions"}
+  - {of: "conventional commits changelog release automation", q: "generate release notes and version numbers from commit messages"}
+  - {of: "property-based testing", q: "tests that generate many random inputs and shrink the failing one"}
+  - {of: "retry with exponential backoff and jitter", q: "calling a flaky service again after failures without hammering it"}

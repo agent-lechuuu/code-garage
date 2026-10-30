@@ -2021,7 +2021,17 @@ topics:
         archived: false
         tier: 1
         use: install
-        note: 'Idiomatic Go, context-aware (formerly nhooyr/websocket); gorilla/websocket is maintained again but slower cadence. Rust: tokio-tungstenite.'
+        note: Idiomatic Go, context-aware (formerly nhooyr/websocket); gorilla/websocket is maintained again but slower cadence.
+      - name: tokio-tungstenite (Rust)
+        url: https://github.com/snapview/tokio-tungstenite
+        kind: repo
+        license: MIT
+        stars: 2517
+        pushed: 2026-10-24
+        archived: false
+        tier: 1
+        use: install
+        note: The Rust WebSocket stack (tungstenite on Tokio); axum's ws extractor builds on it. cargo add tokio-tungstenite.
     see_also: [backend.api.server-sent-events, backend.runtimes.elixir-phoenix]
 
   - id: backend.api.server-sent-events
@@ -2078,9 +2088,10 @@ topics:
         note: Streaming parser for consuming SSE from fetch in JS/TS (used by AI SDKs).
 
   - id: backend.api.webhooks
-    title: Webhooks (sending and receiving)
+    title: Webhooks (sending, receiving, verifying signatures)
     area: api
-    why: Deliver and consume event callbacks with signatures, retries and replay protection.
+    why: 'Deliver and consume event callbacks: verify the HMAC signature and timestamp, retry with backoff, dedupe replays.'
+    tags: [webhook, webhooks, hmac, signature, verify, verification, callbacks, svix]
     practices:
       - text: Sign payloads (HMAC with timestamp), retry with exponential backoff, make consumers idempotent, and respond 2xx fast before processing.
         source: https://www.standardwebhooks.com/
@@ -2418,9 +2429,10 @@ topics:
         note: Certified OAuth 2.0/OIDC authorization server for Node when you must issue tokens yourself; OpenIddict for .NET.
 
   - id: backend.auth.app-auth-typescript
-    title: Application authentication for TypeScript apps
+    title: Application authentication for TypeScript apps (login, sessions, 2FA)
     area: auth
-    why: Add email/password, social login, sessions, 2FA and organisations to a TS app with one maintained framework.
+    why: Add email/password, social login, sessions, 2FA, organisations and a ready-made login page to a TS app with one maintained framework.
+    tags: [auth, login, signin, signup, login-page, session, better-auth]
     resources:
       - name: Better Auth
         url: https://github.com/better-auth/better-auth
@@ -2472,6 +2484,16 @@ topics:
         tier: 1
         use: reference
         note: The library is deprecated; the repo is now a concise guide to implementing session auth yourself.
+      - name: better-auth-ui (login page components)
+        url: https://github.com/better-auth-ui/better-auth-ui
+        kind: repo
+        license: MIT
+        stars: 1730
+        pushed: 2026-10-29
+        archived: false
+        tier: 2
+        use: install
+        note: Sign-in, sign-up, forgot-password, settings and organisation pages built on shadcn/ui + Tailwind for Better Auth (Next, Vite, TanStack); moved from daveyplate/.
 
   - id: backend.auth.app-auth-polyglot
     title: Application authentication for Python, Ruby and PHP
@@ -8016,9 +8038,10 @@ topics:
     see_also: [frontend.templates.nextjs-boilerplates-examples]
 
   - id: backend.agents.database-mcp-servers
-    title: Database MCP servers
+    title: Database MCP servers (Postgres, MySQL, SQLite, MongoDB)
     area: agents
-    why: Let an agent inspect schemas, run queries and tune indexes against real databases with read-only guard rails.
+    why: Let an agent inspect schemas, run queries and tune indexes against a real Postgres, MySQL, SQLite or MongoDB database, with read-only guard rails.
+    tags: [mcp, postgres, postgresql, mysql, sqlite, mongodb, database, sql]
     practices:
       - text: Connect MCP servers with a read-only database role and the server's restricted mode; never hand an agent the owner/superuser DSN.
         source: https://github.com/crystaldba/postgres-mcp

@@ -74,12 +74,13 @@ topics:
   - id: security.standards.cheat-sheets
     title: OWASP Cheat Sheet Series (topic map)
     area: standards
+    tags: [owasp, cheat-sheet, cheatsheet, cheatsheets, cheat-sheets]
     why: The single best set of short, prescriptive how-to pages; nearly every topic in this slice links to one. Mirror the whole repo once.
     practices:
       - text: Before implementing any security-sensitive feature, read the matching cheat sheet first; the series covers ~100 topics (XSS, CSRF, SSRF, SQLi, auth, sessions, password storage, crypto storage, key management, TLS, secrets, logging, CSP, headers, file upload, XXE, deserialization, Docker, Kubernetes, CI/CD, supply chain, NPM/Node, Django, Java, REST, GraphQL, microservices, prompt injection).
         source: https://cheatsheetseries.owasp.org/
     resources:
-      - name: OWASP/CheatSheetSeries
+      - name: OWASP Cheat Sheet Series
         url: https://github.com/OWASP/CheatSheetSeries/tree/HEAD/cheatsheets
         kind: repo
         license: CC-BY-SA-4.0
@@ -90,7 +91,7 @@ topics:
         use: vendor
         path: cheatsheets
         note: Markdown sources; vendor the cheatsheets folder so agents can grep it offline.
-      - name: Cheat Sheet Series site (rendered)
+      - name: OWASP Cheat Sheet Series site (rendered)
         url: https://cheatsheetseries.owasp.org/
         kind: docs
         license: CC-BY-SA-4.0

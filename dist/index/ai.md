@@ -8,7 +8,7 @@ Areas: [skills](#skills) (10) · [claude-code](#claude-code) (18) · [mcp](#mcp)
 
 ### Agent Skills format (SKILL.md) and specification
 
-`ai.skills.format`: The portable instruction-folder format every agent in the garage loads; know the frontmatter rules before writing or vendoring a skill.
+`ai.skills.format`: The portable instruction-folder format every agent in the garage loads; read the frontmatter rules before you write a SKILL.md or vendor a skill.
 
 - [Agent Skills specification](https://agentskills.io/specification) · none · t1 · reference
 - [agentskills/agentskills (spec repo + skills-ref validator)](https://github.com/agentskills/agentskills/tree/HEAD/skills-ref) · Apache-2.0 · 26.7k★ · t1 · reference
@@ -17,18 +17,18 @@ Areas: [skills](#skills) (10) · [claude-code](#claude-code) (18) · [mcp](#mcp)
 
 See also: `ai.skills.creator`, `ai.skills.official`
 
-### Anthropic official skills repository
+### Anthropic official skills for Claude (anthropics/skills)
 
-`ai.skills.official`: Anthropic's reference skills: the canonical examples to copy structure from and to load directly.
+`ai.skills.official`: Anthropic's reference Claude skills: the canonical examples to copy structure from and to load directly.
 
 - [anthropics/skills](https://github.com/anthropics/skills/tree/HEAD/skills) · LicenseRef-Mixed · 184.4k★ · t1 · skill · **quarantine**
 - [anthropics/skills template](https://github.com/anthropics/skills/tree/HEAD/template) · Apache-2.0 · t1 · template · **quarantine**
 
 See also: `ai.skills.format`, `ai.skills.documents`, `ai.skills.creator`
 
-### Writing and evaluating skills (skill-creator)
+### Writing skills: how to write a SKILL.md (skill-creator, evals)
 
-`ai.skills.creator`: Create, refine and benchmark skills instead of hand-writing SKILL.md files blind.
+`ai.skills.creator`: Write, test and improve an agent skill (SKILL.md) with the official skill-creator and its evals instead of hand-writing skills blind.
 
 - [skill-creator (anthropics/skills)](https://github.com/anthropics/skills/tree/HEAD/skills/skill-creator) · Apache-2.0 · 184.4k★ · t1 · skill · **trusted**
 - [skill-creator plugin (claude-plugins-official)](https://github.com/anthropics/claude-plugins-official/tree/HEAD/plugins/skill-creator) · Apache-2.0 · 45.1k★ · t1 · install · **quarantine**
@@ -147,16 +147,16 @@ See also: `ai.skills.discovery`, `ai.claude-code.subagents`
 `ai.claude-code.dev-workflow-plugins`: Anthropic-built plugins that give an agent a reviewed feature/PR/commit workflow out of the box.
 
 - [feature-dev](https://github.com/anthropics/claude-plugins-official/tree/HEAD/plugins/feature-dev) · Apache-2.0 · 45.1k★ · t1 · install · **quarantine**
-- [code-review](https://github.com/anthropics/claude-plugins-official/tree/HEAD/plugins/code-review) · Apache-2.0 · t1 · install · **quarantine**
+- [code-review](https://github.com/anthropics/claude-plugins-official/tree/HEAD/plugins/code-review) · Apache-2.0 · t1 · install · **reviewed**
 - [pr-review-toolkit](https://github.com/anthropics/claude-plugins-official/tree/HEAD/plugins/pr-review-toolkit) · Apache-2.0 · t1 · install · **quarantine**
 - [commit-commands + code-simplifier](https://github.com/anthropics/claude-plugins-official/tree/HEAD/plugins/commit-commands) · Apache-2.0 · t2 · install · **quarantine**
 - [ralph-loop](https://github.com/anthropics/claude-plugins-official/tree/HEAD/plugins/ralph-loop) · Apache-2.0 · t3 · install · **quarantine**
 
 See also: `engineering.architecture.code-review`, `ai.claude-code.plugins`
 
-### Subagents and subagent collections
+### Claude Code subagents and subagent collections
 
-`ai.claude-code.subagents`: Define focused subagents (.claude/agents/*.md) with their own tools and context instead of one overloaded session.
+`ai.claude-code.subagents`: Define focused Claude Code subagents (.claude/agents/*.md) with their own tools and context instead of one overloaded session.
 
 - [Create custom subagents (docs)](https://code.claude.com/docs/en/sub-agents.md) · none · t1 · reference
 - [VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents) · MIT · 26.1k★ · t2 · vendor · **quarantine**
@@ -186,9 +186,9 @@ See also: `ai.skills.workflow-packs`
 
 See also: `ai.claude-code.settings`, `security.ai.agent-guard-hooks`
 
-### CLAUDE.md, rules and project memory
+### CLAUDE.md best practices, rules and project memory
 
-`ai.claude-code.memory`: The persistent instruction layer; a good CLAUDE.md is short, specific and points to files instead of pasting them.
+`ai.claude-code.memory`: The CLAUDE.md file is the persistent instruction layer; the best practices: short, specific rules that point to files instead of pasting them.
 
 - [How Claude remembers your project (docs)](https://code.claude.com/docs/en/memory.md) · none · t1 · reference
 - [claude-md-management (official plugin)](https://github.com/anthropics/claude-plugins-official/tree/HEAD/plugins/claude-md-management) · Apache-2.0 · 45.1k★ · t1 · install · **quarantine**
@@ -334,9 +334,9 @@ See also: `ai.mcp.sdks`, `security.ai.mcp-security`
 
 See also: `ai.mcp.building`
 
-### Building MCP servers (FastMCP, mcp-builder skill, scaffolds)
+### Building MCP servers (FastMCP, mcp-builder skill, templates and scaffolds)
 
-`ai.mcp.building`: Write a good server in an afternoon: few, well-described tools, typed inputs, useful errors.
+`ai.mcp.building`: Write a good MCP server in an afternoon, from a template or scaffold: few, well-described tools, typed inputs, useful errors.
 
 - [mcp-builder (anthropics/skills)](https://github.com/anthropics/skills/tree/HEAD/skills/mcp-builder) · Apache-2.0 · 184.4k★ · t1 · skill · **trusted**
 - [mcp-server-dev (official plugin)](https://github.com/anthropics/claude-plugins-official/tree/HEAD/plugins/mcp-server-dev) · Apache-2.0 · 45.1k★ · t1 · install · **quarantine**
@@ -387,11 +387,11 @@ See also: `ai.mcp.servers-code`
 - [MCP tunnels (platform docs + official plugin)](https://platform.claude.com/docs/en/agents-and-tools/mcp-tunnels/overview.md) · none · t2 · reference
 - [MCP connector (Messages API)](https://platform.claude.com/docs/en/agents-and-tools/mcp-connector.md) · none · t2 · reference
 
-### MCP servers for library documentation
+### MCP servers for library documentation (Context7, GitMCP)
 
-`ai.mcp.servers-docs`: Stop hallucinated APIs: pull current docs for the exact library version into context.
+`ai.mcp.servers-docs`: Stop hallucinated APIs: Context7 and GitMCP pull current documentation for the exact library version into context.
 
-- [upstash/context7](https://github.com/upstash/context7) · MIT · 63.8k★ · t1 · mcp · **quarantine**
+- [upstash/context7](https://github.com/upstash/context7) · MIT · 63.8k★ · t1 · mcp · **reviewed**
 - [idosal/git-mcp (GitMCP)](https://github.com/idosal/git-mcp) · Apache-2.0 · 8.5k★ · t2 · mcp · **quarantine**
 - [llms.txt files of the docs you use](https://llmstxt.org/) · none · t1 · reference
 
@@ -401,7 +401,7 @@ See also: `ai.context.llms-txt`
 
 `ai.mcp.servers-browser`: Let the agent open pages, click, fill forms, read console/network and take screenshots for testing and research.
 
-- [microsoft/playwright-mcp](https://github.com/microsoft/playwright-mcp) · Apache-2.0 · 38.8k★ · t1 · mcp · **quarantine**
+- [microsoft/playwright-mcp](https://github.com/microsoft/playwright-mcp) · Apache-2.0 · 38.8k★ · t1 · mcp · **reviewed**
 - [ChromeDevTools/chrome-devtools-mcp](https://github.com/ChromeDevTools/chrome-devtools-mcp) · Apache-2.0 · 54.3k★ · t1 · mcp · **quarantine**
 - [vercel-labs/agent-browser](https://github.com/vercel-labs/agent-browser) · Apache-2.0 · 44.8k★ · t1 · install
 - [browser-use/browser-use](https://github.com/browser-use/browser-use) · MIT · 119.4k★ · t2 · install
@@ -426,7 +426,7 @@ See also: `ai.claude-code.code-intelligence`, `ai.context.codebase-understanding
 
 - [github/github-mcp-server](https://github.com/github/github-mcp-server) · MIT · 34k★ · t1 · mcp · **quarantine**
 - [gitlab external plugin (claude-plugins-official)](https://github.com/anthropics/claude-plugins-official/tree/HEAD/external_plugins/gitlab) · Apache-2.0 · 45.1k★ · t2 · install · **quarantine**
-- [gh CLI (no MCP)](https://code.claude.com/docs/en/best-practices.md) · none · t1 · reference
+- [gh CLI (no MCP)](https://github.com/cli/cli) · MIT · 46.8k★ · t1 · install
 
 ### Web search and crawling MCP servers
 
@@ -440,12 +440,12 @@ See also: `ai.claude-code.code-intelligence`, `ai.context.codebase-understanding
 
 See also: `ai.llm-apps.web-data`
 
-### Database MCP servers (cross-reference)
+### Database MCP servers (Postgres, MySQL, SQLite; cross-reference)
 
-`ai.mcp.servers-data`: Query schemas and data from the agent; prefer read-only modes. Full database topics live in the backend slice.
+`ai.mcp.servers-data`: Query schemas and data in Postgres, MySQL or SQLite from the agent; prefer read-only modes. Full database topics live in the backend slice.
 
-- [bytebase/dbhub](https://github.com/bytebase/dbhub) · MIT · 3.7k★ · t1 · mcp · **quarantine**
-- [crystaldba/postgres-mcp](https://github.com/crystaldba/postgres-mcp) · MIT · 3.4k★ · t2 · mcp · **quarantine**
+- [bytebase/dbhub](https://github.com/bytebase/dbhub) · MIT · 3.7k★ · t1 · mcp · **reviewed**
+- [crystaldba/postgres-mcp](https://github.com/crystaldba/postgres-mcp) · MIT · 3.4k★ · t2 · mcp · **reviewed**
 - [supabase/mcp](https://github.com/supabase/mcp) · Apache-2.0 · 3k★ · t2 · mcp · **quarantine**
 
 See also: `backend.databases.postgres-core`, `backend.agents.database-mcp-servers`

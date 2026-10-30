@@ -3517,7 +3517,7 @@ topics:
         tier: 1
         use: skill
         path: skills/test-driven-development
-        note: Agent skill enforcing failing-test-first; MIT. Part of the superpowers skill library.
+        note: The TDD skill for Claude Code agents (test-driven-development) enforcing failing-test-first; MIT. Part of the superpowers skill library.
       - name: kata-log
         url: https://kata-log.rocks/
         kind: list
@@ -5439,9 +5439,10 @@ topics:
     see_also: [security.scanning.container-images, engineering.ci.container-image-builds]
 
   - id: engineering.devops.docker-compose
-    title: Docker Compose for single-host deployments
+    title: Docker Compose for single-host production deployments
     area: devops
-    why: Run multi-container stacks on one server with healthchecks, profiles, secrets and image-update tooling.
+    why: Run multi-container stacks in production on one server with healthchecks, profiles, secrets and image-update tooling.
+    tags: [docker, compose, docker-compose, production, deployment, single-host, self-hosted]
     practices:
       - text: Pin image tags (not :latest) and let Renovate or Diun drive updates deliberately.
         source: https://docs.renovatebot.com/modules/manager/docker-compose/

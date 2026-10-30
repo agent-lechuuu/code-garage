@@ -1055,9 +1055,10 @@ topics:
     see_also: [systems.concurrency.lock-free-queues-rcu, systems.concurrency.thread-pools-task-graphs]
 
   - id: systems.rust.tracing
-    title: 'Observability: tracing, tokio-console, OpenTelemetry'
+    title: 'Logging and observability in Rust: tracing, log, tokio-console, OpenTelemetry'
     area: rust
-    why: Structured, span-based logging and diagnostics for Rust services.
+    why: Structured, span-based logging and diagnostics for Rust services; tracing (with tracing-subscriber) is the logging library to pick.
+    tags: [logging, log, logs, tracing, observability, rust]
     resources:
       - name: tracing
         url: https://github.com/tokio-rs/tracing
@@ -1950,9 +1951,10 @@ topics:
     see_also: [systems.concurrency.lock-free-queues-rcu, systems.concurrency.race-detection-model-checking]
 
   - id: systems.concurrency.lock-free-queues-rcu
-    title: Lock-free queues, RCU and wait-free structures
+    title: Lock-free queues and ring buffers (SPSC, MPMC), RCU and wait-free structures
     area: concurrency
-    why: Passing data between threads without locks in hot paths (SPSC/MPMC queues, RCU, hazard pointers).
+    why: 'Passing data between threads without locks in hot paths: SPSC ring buffers (circular buffers), MPMC queues, RCU, hazard pointers; C++ and Rust picks.'
+    tags: [ring-buffer, ringbuffer, circular-buffer, spsc, mpmc, lock-free, lockfree, wait-free, queue, low-latency, c++, rust]
     practices:
       - text: Prefer SPSC queues per producer/consumer pair over one MPMC queue; they are simpler and faster.
         source: https://github.com/rigtorp/awesome-lockfree
@@ -1969,6 +1971,16 @@ topics:
         tier: 1
         use: reference
         note: Erik Rigtorp's curated papers, talks and libraries.
+      - name: SPSCQueue (rigtorp)
+        url: https://github.com/rigtorp/SPSCQueue
+        kind: repo
+        license: MIT
+        stars: 1321
+        pushed: 2026-10-05
+        archived: false
+        tier: 1
+        use: vendor
+        note: 'Bounded single-producer single-consumer ring buffer (circular buffer) in C++11: one header, cache-line aware, wait-free; the low-latency SPSC queue to vendor. MPMCQueue is the sibling repo.'
       - name: moodycamel::ConcurrentQueue
         url: https://github.com/cameron314/concurrentqueue
         kind: repo
@@ -1979,17 +1991,17 @@ topics:
         archived: false
         tier: 1
         use: vendor
-        note: Header-only MPMC queue (and ReaderWriterQueue SPSC); the C++ default.
-      - name: SPSCQueue
-        url: https://github.com/rigtorp/SPSCQueue
+        note: Header-only MPMC lock-free queue for C++11 (ReaderWriterQueue is its SPSC sibling); the default when there are many producers.
+      - name: rtrb (Rust SPSC ring buffer)
+        url: https://github.com/mgeier/rtrb
         kind: repo
-        license: MIT
-        stars: 1321
-        pushed: 2026-10-05
+        license: MIT OR Apache-2.0
+        stars: 350
+        pushed: 2026-10-25
         archived: false
-        tier: 1
-        use: vendor
-        note: Minimal, cache-line-aware single-producer single-consumer queue; MPMCQueue in sibling repo.
+        tier: 2
+        use: install
+        note: Realtime-safe single-producer single-consumer ring buffer for Rust (no allocation or locks in push/pop); cargo add rtrb. agerasev/ringbuf is the alternative with direct slice access.
       - name: 1024cores (Dmitry Vyukov)
         url: https://www.1024cores.net/
         kind: docs

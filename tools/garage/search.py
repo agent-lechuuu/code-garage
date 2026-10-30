@@ -10,6 +10,8 @@ Query: words (letters, digits, _ and '), -word = NOT, the last word also as a pr
 word expanded with catalog/synonyms.yaml. All words first (AND), then any word (OR) to fill up to `limit`. Results
 are folded per topic: a topic's score is its best row; `best` is its best resource that passes the filters
 (a matching row first, then tier, then stars). license: an SPDX id, or "permissive". Answers stay under ~3 KB.
+When garage.semantic answers (the embedding service on the server), the 30 best keyword topics and the topics nearest
+in meaning are fused by reciprocal rank; when it doesn't, nothing changes.
 """
 import json
 import math
@@ -304,6 +306,92 @@ def _pick(cands, tid, hits):
     return max(cands, key=key)[0]
 
 
+def _row_filter(slice, fwhere, fargs):
+    """SQL (on docs d) and args: the row's slice, and only topics with a resource that passes the filters; a failing
+    resource row must not pick `best`."""
+    sql, args = "", []
+    if slice:
+        vals = [x.strip() for x in str(slice).split(",") if x.strip()]
+        sql += f" and d.slice in ({','.join('?' * len(vals))})"
+        args += vals
+    if fwhere:
+        sql += " and d.topic in (select topic from topic_res where " + _and(fwhere, "") + ")"
+        sql += (" and (d.rid is null or exists (select 1 from topic_res r where r.topic = d.topic and "
+                "r.rid = d.rid and " + _and(fwhere, "r.") + "))")
+        args += fargs + fargs
+    return sql, args
+
+
+def _keyword(c, pos, neg, core, soft, synonyms, prefs, rfilter, depth):
+    """FTS5: all core words (AND), then any word (OR) to fill up to `depth` topics. -> (order, scores, hits)."""
+    order, hits, scores = [], {}, {}
+    for mode in ("AND", "OR") if len(pos) > 1 else ("AND",):
+        terms = core if mode == "AND" else pos
+        sql = ("select d.topic, d.rid, bm25(docs_fts, " + index.WEIGHTS + ") as s from docs_fts "
+               "join docs d on d.id = docs_fts.rowid where docs_fts match ?")
+        args = [match_expr(terms, neg, mode, synonyms, soft if mode == "AND" else ())]
+        sql += rfilter[0] + " order by s limit 800"
+        score, h = _rank(c.execute(sql, args + rfilter[1]).fetchall(), prefs if prefs else None)
+        for tid in sorted(score, key=lambda t: -score[t]):
+            if tid not in scores and len(order) < depth:
+                order.append(tid)
+                scores[tid] = score[tid]
+        for k, v in h.items():
+            hits.setdefault(k, v)
+        if len(order) >= depth:
+            break
+    return order, scores, hits
+
+
+# ---- search by meaning (garage.semantic): only when its service answers, else the keyword ranking alone -----------
+# Measured on tests/eval/needs.yaml and tests/t5/paraphrases.yaml (tests/t5): the vectors re-rank the keyword
+# candidates; a heavier vector weight wins more plain-word queries but costs owner needs (tests/t1 NEEDS).
+
+RRF_K = 20          # reciprocal rank fusion: 1 / (RRF_K + rank)
+FTS_DEPTH = 30      # keyword topics taken into the fusion
+VEC_WEIGHT = 0.5    # the vector ranking's weight; the keyword ranking's is 1
+VEC_MIN = 0.55      # cosine a topic no keyword found needs to be offered (MiniLM: off-topic queries stay under 0.4)
+
+
+def _vector(c, q, neg, prefs, rfilter, k=100):
+    """-> {topic: similarity} of the topics nearest the query that pass the filters, or {} (off, no vectors, no
+    answer in time). The query's language/kind intent nudges each, as in the keyword ranking."""
+    sem = optional("semantic")
+    if sem is None:
+        return {}
+    try:
+        near = dict(sem.vector_hits(c, q, k))
+    except Exception:   # noqa: BLE001 - search by meaning is an extra: never fail a search over it
+        near = {}
+    if not near:
+        return {}
+    ids = list(near)
+    rows = c.execute(f"select d.id, d.topic from docs d where d.id in ({','.join('?' * len(ids))})" + rfilter[0],
+                     ids + rfilter[1]).fetchall()
+    if neg and rows:   # -word: a topic whose text has it is out, as in the keyword search
+        bad = {r[0] for r in c.execute(
+            f"select rowid from docs_fts where docs_fts match ? and rowid in ({','.join('?' * len(rows))})",
+            [" OR ".join(_quote(w) for w in neg)] + [r[0] for r in rows])}
+        rows = [r for r in rows if r[0] not in bad]
+    out = {}
+    for i, tid in rows:
+        f = prefs.factor(tid, None) if prefs else 1.0
+        out[tid] = max(out.get(tid, -1.0), near[i] * f ** 0.15)   # cosines sit close together: a gentle nudge
+    return out
+
+
+def _fuse(order, vscore, limit):
+    """Reciprocal rank fusion of the keyword order and the vector ranking -> (topics, fused scores)."""
+    fused = {}
+    for r, tid in enumerate(order):
+        fused[tid] = 1.0 / (RRF_K + r + 1)
+    for r, tid in enumerate(sorted(vscore, key=lambda t: -vscore[t])):
+        if tid in fused or vscore[tid] >= VEC_MIN:
+            fused[tid] = fused.get(tid, 0.0) + VEC_WEIGHT / (RRF_K + r + 1)
+    top = sorted(fused, key=lambda t: -fused[t])[:limit]
+    return top, {t: round(fused[t] * 100, 2) for t in top}
+
+
 def search(q, kind=None, use=None, slice=None, trust=None, license=None, limit=5):
     limit = max(1, min(int(limit or 5), 50))
     cat = catalog.load()
@@ -315,33 +403,14 @@ def search(q, kind=None, use=None, slice=None, trust=None, license=None, limit=5
     soft = [w for w in pos if w not in core]
     prefs = Prefs(cat, pos, langs, kinds)
     fwhere, fargs = _filters(kind, use, None, trust, license)
+    rfilter = _row_filter(slice, fwhere, fargs)
     c = index.connect()
     try:
-        order, hits, scores = [], {}, {}
-        for mode in ("AND", "OR") if len(pos) > 1 else ("AND",):
-            terms = core if mode == "AND" else pos
-            sql = ("select d.topic, d.rid, bm25(docs_fts, " + index.WEIGHTS + ") as s from docs_fts "
-                   "join docs d on d.id = docs_fts.rowid where docs_fts match ?")
-            args = [match_expr(terms, neg, mode, synonyms, soft if mode == "AND" else ())]
-            if slice:
-                vals = [x.strip() for x in str(slice).split(",") if x.strip()]
-                sql += f" and d.slice in ({','.join('?' * len(vals))})"
-                args += vals
-            if fwhere:   # only topics with a resource that passes; a failing resource row must not pick `best`
-                sql += " and d.topic in (select topic from topic_res where " + _and(fwhere, "") + ")"
-                sql += (" and (d.rid is null or exists (select 1 from topic_res r where r.topic = d.topic and "
-                        "r.rid = d.rid and " + _and(fwhere, "r.") + "))")
-                args += fargs + fargs
-            sql += " order by s limit 800"
-            score, h = _rank(c.execute(sql, args).fetchall(), prefs if prefs else None)
-            for tid in sorted(score, key=lambda t: -score[t]):
-                if tid not in scores and len(order) < limit:
-                    order.append(tid)
-                    scores[tid] = score[tid]
-            for k, v in h.items():
-                hits.setdefault(k, v)
-            if len(order) >= limit:
-                break
+        vscore = _vector(c, q, neg, prefs, rfilter)
+        order, scores, hits = _keyword(c, pos, neg, core, soft, synonyms, prefs, rfilter,
+                                       max(limit, FTS_DEPTH) if vscore else limit)
+        if vscore:
+            order, scores = _fuse(order, vscore, limit)
         out = []
         by_id = catalog.topics_by_id(cat)
         for tid in order:
@@ -510,6 +579,11 @@ def grep(ref, pattern, ignore_case=False, limit=100):
 def health():
     try:
         n = len(search("test", limit=1))
-        return [("PASS" if n else "FAIL", "search answers ('test' → %d)" % n)]
+        out = [("PASS" if n else "FAIL", "search answers ('test' → %d)" % n)]
     except Exception as e:   # noqa: BLE001
         return [("FAIL", f"search: {e}")]
+    sem = optional("semantic")
+    try:
+        return out + (sem.health() if sem is not None else [])
+    except Exception as e:   # noqa: BLE001 - an extra: never a FAIL of search itself
+        return out + [("WAIT", f"search by meaning: {e}")]

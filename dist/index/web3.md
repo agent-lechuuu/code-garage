@@ -205,7 +205,7 @@ See also: `web3.standards.eip712-signatures`
 
 ### ERC-4626 tokenised vaults
 
-`web3.standards.erc4626-vaults`: The share-accounting standard for yield vaults; inflation attacks and rounding are the classic pitfalls.
+`web3.standards.erc4626-vaults`: The share-accounting standard for yield vault contracts in Solidity; inflation attacks and rounding are the classic pitfalls.
 
 - [OZ ERC4626 + security guide](https://docs.openzeppelin.com/contracts/5.x/erc4626) · MIT · t1 · reference
 - [a16z erc4626-tests](https://github.com/a16z/erc4626-tests) · AGPL-3.0 · 223★ · t1 · install
@@ -507,7 +507,7 @@ See also: `web3.l2.zk-rollups`, `web3.defi.data-analytics`
 
 - [Anchor](https://github.com/otter-sec/anchor) · Apache-2.0 · 5.2k★ · t1 · install
 - [Anchor docs](https://www.anchor-lang.com/docs) · none · t1 · reference
-- [Solana program-examples](https://github.com/solana-foundation/program-examples) · MIT · 1.4k★ · t1 · template · **quarantine**
+- [Solana program-examples](https://github.com/solana-foundation/program-examples) · MIT · 1.4k★ · t1 · template · **reviewed**
 - [anchor-escrow-2024 (Dean Little)](https://github.com/deanmlittle/anchor-escrow-2024) · none · 55★ · t2 · reference
 - [Solana Foundation solana-dev skill](https://github.com/solana-foundation/solana-dev-skill/tree/HEAD/skills/solana-dev) · MIT · 581★ · t1 · skill · **quarantine**
 
@@ -520,7 +520,7 @@ See also: `web3.solana.pinocchio-native`, `web3.solana.local-testing`, `web3.age
 - [Pinocchio](https://github.com/anza-xyz/pinocchio) · Apache-2.0 · 969★ · t1 · install
 - [solana-sdk (Rust)](https://github.com/anza-xyz/solana-sdk) · Apache-2.0 · 261★ · t1 · install
 - [create-solana-program](https://github.com/solana-program/create-solana-program) · Apache-2.0 · 123★ · t2 · template · **quarantine**
-- [Solana program-examples (native + pinocchio folders)](https://github.com/solana-foundation/program-examples) · MIT · 1.4k★ · t1 · reference · **quarantine**
+- [Solana program-examples (native + pinocchio folders)](https://github.com/solana-foundation/program-examples) · MIT · 1.4k★ · t1 · reference · **reviewed**
 
 See also: `web3.solana.anchor`, `web3.solana.codama-clients`
 
@@ -568,9 +568,9 @@ See also: `web3.solana.codama-clients`, `web3.solana.wallets`, `web3.agents.mcp-
 
 See also: `web3.solana.kit-web3js`, `web3.solana.pinocchio-native`
 
-### Local testing (Surfpool, LiteSVM, Mollusk, test-validator)
+### Testing Solana programs (Surfpool, LiteSVM, Mollusk, Trident, test-validator)
 
-`web3.solana.local-testing`: Fast in-process tests and mainnet-forking local networks replace slow solana-test-validator runs.
+`web3.solana.local-testing`: Test Anchor and native programs fast: in-process SVMs for unit tests and a mainnet-forking local validator for integration tests replace slow solana-test-validator runs.
 
 - [Surfpool](https://github.com/solana-foundation/surfpool) · Apache-2.0 · 616★ · t1 · install
 - [LiteSVM](https://github.com/LiteSVM/litesvm) · Apache-2.0 · 645★ · t1 · install
@@ -678,7 +678,7 @@ See also: `web3.solana.security-pitfalls`, `web3.security.ctfs-wargames`
 
 - [create-solana-dapp](https://github.com/solana-foundation/create-solana-dapp) · MIT · 654★ · t1 · template · **quarantine**
 - [solana-foundation/templates](https://github.com/solana-foundation/templates) · MIT · 114★ · t1 · template · **quarantine**
-- [program-examples](https://github.com/solana-foundation/program-examples) · MIT · 1.4k★ · t1 · template · **quarantine**
+- [program-examples](https://github.com/solana-foundation/program-examples) · MIT · 1.4k★ · t1 · template · **reviewed**
 - [Solana Pay CLI / agentic payments](https://github.com/solana-foundation/pay) · MIT · 1.8k★ · t2 · install
 
 See also: `web3.evm.templates-hackathon`, `web3.solana.wallets`

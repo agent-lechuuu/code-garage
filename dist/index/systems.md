@@ -247,9 +247,9 @@ See also: `systems.perf.zero-copy-serialization`
 
 See also: `systems.concurrency.lock-free-queues-rcu`, `systems.concurrency.thread-pools-task-graphs`
 
-### Observability: tracing, tokio-console, OpenTelemetry
+### Logging and observability in Rust: tracing, log, tokio-console, OpenTelemetry
 
-`systems.rust.tracing`: Structured, span-based logging and diagnostics for Rust services.
+`systems.rust.tracing`: Structured, span-based logging and diagnostics for Rust services; tracing (with tracing-subscriber) is the logging library to pick.
 
 - [tracing](https://github.com/tokio-rs/tracing) · MIT · 6.9k★ · t1 · install
 - [tokio-console](https://github.com/tokio-rs/console) · MIT · 4.6k★ · t2 · install
@@ -449,13 +449,14 @@ See also: `systems.perf.cache-friendly-data-oriented-design`, `systems.perf.cpu-
 
 See also: `systems.concurrency.lock-free-queues-rcu`, `systems.concurrency.race-detection-model-checking`
 
-### Lock-free queues, RCU and wait-free structures
+### Lock-free queues and ring buffers (SPSC, MPMC), RCU and wait-free structures
 
-`systems.concurrency.lock-free-queues-rcu`: Passing data between threads without locks in hot paths (SPSC/MPMC queues, RCU, hazard pointers).
+`systems.concurrency.lock-free-queues-rcu`: Passing data between threads without locks in hot paths: SPSC ring buffers (circular buffers), MPMC queues, RCU, hazard pointers; C++ and Rust picks.
 
 - [awesome-lockfree](https://github.com/rigtorp/awesome-lockfree) · none · 2.1k★ · t1 · reference
-- [moodycamel::ConcurrentQueue](https://github.com/cameron314/concurrentqueue) · BSD-2-Clause · 12.5k★ · t1 · vendor · **quarantine**
-- [SPSCQueue](https://github.com/rigtorp/SPSCQueue) · MIT · 1.3k★ · t1 · vendor · **reviewed**
+- [SPSCQueue (rigtorp)](https://github.com/rigtorp/SPSCQueue) · MIT · 1.3k★ · t1 · vendor · **reviewed**
+- [moodycamel::ConcurrentQueue](https://github.com/cameron314/concurrentqueue) · BSD-2-Clause · 12.5k★ · t1 · vendor · **reviewed**
+- [rtrb (Rust SPSC ring buffer)](https://github.com/mgeier/rtrb) · MIT OR Apache-2.0 · 350★ · t2 · install
 - [1024cores (Dmitry Vyukov)](https://www.1024cores.net/) · none · t1 · reference
 - [Userspace RCU (liburcu)](https://github.com/urcu/userspace-rcu) · LGPL-2.1-or-later · 745★ · t2 · install
 

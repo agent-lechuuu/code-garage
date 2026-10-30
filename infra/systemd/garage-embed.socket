@@ -1,0 +1,16 @@
+# Search by meaning: the socket of the shared embedding service (garage-embed.service starts on the first request).
+# Mode 0666 under /data/apps/garage/run: every local user's garage CLI/MCP and the tailnet container (which mounts
+# /data/apps/garage read-only) can ask it for a query vector. Installed and enabled by infra/install.d/15-semantic.sh.
+[Unit]
+Description=garage: embedding service socket (search by meaning)
+
+[Socket]
+ListenStream=/data/apps/garage/run/embed.sock
+SocketUser=garage
+SocketGroup=garage
+SocketMode=0666
+DirectoryMode=0755
+Accept=no
+
+[Install]
+WantedBy=sockets.target

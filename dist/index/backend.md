@@ -389,6 +389,7 @@ See also: `backend.databases.backend-as-a-service`, `backend.safe-db.row-level-s
 - [Centrifugo](https://github.com/centrifugal/centrifugo) · Apache-2.0 · 10.9k★ · t1 · install
 - [websockets (Python)](https://github.com/python-websockets/websockets) · BSD-3-Clause · 5.7k★ · t1 · install
 - [coder/websocket](https://github.com/coder/websocket) · ISC · 5.5k★ · t1 · install
+- [tokio-tungstenite (Rust)](https://github.com/snapview/tokio-tungstenite) · MIT · 2.5k★ · t1 · install
 
 See also: `backend.api.server-sent-events`, `backend.runtimes.elixir-phoenix`
 
@@ -402,9 +403,9 @@ See also: `backend.api.server-sent-events`, `backend.runtimes.elixir-phoenix`
 - [go-sse](https://github.com/tmaxmax/go-sse) · MIT · 531★ · t2 · install
 - [eventsource-parser](https://github.com/rexxars/eventsource-parser) · MIT · 516★ · t2 · install
 
-### Webhooks (sending and receiving)
+### Webhooks (sending, receiving, verifying signatures)
 
-`backend.api.webhooks`: Deliver and consume event callbacks with signatures, retries and replay protection.
+`backend.api.webhooks`: Deliver and consume event callbacks: verify the HMAC signature and timestamp, retry with backoff, dedupe replays.
 
 - [Standard Webhooks](https://github.com/standard-webhooks/standard-webhooks) · Apache-2.0 · 1.8k★ · t1 · reference
 - [Svix](https://github.com/svix/svix-webhooks) · MIT · 3.5k★ · t1 · install
@@ -468,15 +469,16 @@ See also: `frontend.state.local-first-storage`, `backend.databases.backend-as-a-
 - [go-oidc](https://github.com/coreos/go-oidc) · Apache-2.0 · 2.5k★ · t1 · install
 - [node-oidc-provider](https://github.com/panva/node-oidc-provider) · MIT · 3.8k★ · t1 · install
 
-### Application authentication for TypeScript apps
+### Application authentication for TypeScript apps (login, sessions, 2FA)
 
-`backend.auth.app-auth-typescript`: Add email/password, social login, sessions, 2FA and organisations to a TS app with one maintained framework.
+`backend.auth.app-auth-typescript`: Add email/password, social login, sessions, 2FA, organisations and a ready-made login page to a TS app with one maintained framework.
 
 - [Better Auth](https://github.com/better-auth/better-auth) · MIT · 30.5k★ · t1 · install
 - [Auth.js (NextAuth)](https://github.com/nextauthjs/next-auth) · ISC · 28.4k★ · t2 · install
 - [Arctic](https://github.com/pilcrowonpaper/arctic) · MIT · 1.7k★ · t2 · install
 - [iron-session](https://github.com/vvo/iron-session) · MIT · 4.2k★ · t2 · install
 - [Lucia (auth guide)](https://github.com/lucia-auth/lucia) · MIT · 10.5k★ · t1 · reference
+- [better-auth-ui (login page components)](https://github.com/better-auth-ui/better-auth-ui) · MIT · 1.7k★ · t2 · install
 
 ### Application authentication for Python, Ruby and PHP
 
@@ -1580,12 +1582,12 @@ See also: `frontend.templates.nextjs-boilerplates-examples`
 
 ## agents
 
-### Database MCP servers
+### Database MCP servers (Postgres, MySQL, SQLite, MongoDB)
 
-`backend.agents.database-mcp-servers`: Let an agent inspect schemas, run queries and tune indexes against real databases with read-only guard rails.
+`backend.agents.database-mcp-servers`: Let an agent inspect schemas, run queries and tune indexes against a real Postgres, MySQL, SQLite or MongoDB database, with read-only guard rails.
 
-- [Postgres MCP Pro](https://github.com/crystaldba/postgres-mcp) · MIT · 3.4k★ · t1 · mcp · **quarantine**
-- [DBHub](https://github.com/bytebase/dbhub) · MIT · 3.7k★ · t1 · mcp · **quarantine**
+- [Postgres MCP Pro](https://github.com/crystaldba/postgres-mcp) · MIT · 3.4k★ · t1 · mcp · **reviewed**
+- [DBHub](https://github.com/bytebase/dbhub) · MIT · 3.7k★ · t1 · mcp · **reviewed**
 - [MCP Toolbox for Databases](https://github.com/googleapis/mcp-toolbox) · Apache-2.0 · 16.7k★ · t1 · mcp · **quarantine**
 - [MongoDB MCP Server](https://github.com/mongodb-js/mongodb-mcp-server) · Apache-2.0 · 1.2k★ · t1 · mcp · **quarantine**
 - [ClickHouse MCP](https://github.com/ClickHouse/mcp-clickhouse) · Apache-2.0 · 898★ · t1 · mcp · **quarantine**
@@ -1599,7 +1601,7 @@ See also: `ai.mcp.registry`, `security.ai.mcp-security`
 - [Laravel Boost](https://github.com/laravel/boost) · MIT · 3.7k★ · t1 · mcp · **quarantine**
 - [Tidewave (Phoenix)](https://github.com/tidewave-ai/tidewave_phoenix) · Apache-2.0 · 858★ · t1 · mcp · **quarantine**
 - [Stripe AI (agent toolkit, MCP, skills)](https://github.com/stripe/ai/tree/HEAD/skills) · MIT · 2k★ · t1 · mcp · **quarantine**
-- [Context7](https://github.com/upstash/context7) · MIT · 63.8k★ · t1 · mcp · **quarantine**
+- [Context7](https://github.com/upstash/context7) · MIT · 63.8k★ · t1 · mcp · **reviewed**
 - [FastMCP](https://github.com/PrefectHQ/fastmcp) · Apache-2.0 · 28.2k★ · t1 · install
 
 See also: `ai.mcp.building`

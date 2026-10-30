@@ -19,7 +19,7 @@ NEEDS = [
     ("zero-downtime Postgres migration", lambda t, b: t["id"].startswith("backend.safe-db.")),
     ("bash strict mode", lambda t, b: "strict-mode" in t["id"]),
     ("low-latency ring buffer C++", lambda t, b: t["id"].startswith("systems.concurrency.") and
-     "java" not in b["name"].lower()),
+     "java" not in b["name"].lower() and "queue" in b["name"].lower()),
     ("OWASP input validation", lambda t, b: "input-validation" in t["id"] and "cheat sheet" in b["name"].lower()),
     ("landing page hero animation", lambda t, b: t["id"].startswith(("frontend.components.animated", "frontend.anim"))),
     ("Claude skill for code review", lambda t, b: "code-review" in t["id"] and "skill" in (b["kind"], b["use"])),

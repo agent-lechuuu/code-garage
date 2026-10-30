@@ -493,7 +493,7 @@ See also: `engineering.devex.codemods-structural-refactoring`, `engineering.test
 - [Conventional Comments](https://conventionalcomments.org/) · none · t1 · reference
 - [How to do code reviews like a human](https://mtlynch.io/human-code-reviews-1/) · none · t1 · reference
 - [pr-review-toolkit plugin (Claude)](https://github.com/anthropics/claude-plugins-official/tree/HEAD/plugins/pr-review-toolkit) · Apache-2.0 · 45.1k★ · t1 · skill · **quarantine**
-- [code-review plugin (Claude)](https://github.com/anthropics/claude-plugins-official/tree/HEAD/plugins/code-review) · Apache-2.0 · 45.1k★ · t1 · skill · **quarantine**
+- [code-review plugin (Claude)](https://github.com/anthropics/claude-plugins-official/tree/HEAD/plugins/code-review) · Apache-2.0 · 45.1k★ · t1 · skill · **reviewed**
 
 See also: `engineering.ci.ai-code-review-in-ci`
 
@@ -515,7 +515,7 @@ See also: `engineering.docs.diagrams-as-code`
 
 - [adr.github.io](https://adr.github.io/) · none · t1 · reference
 - [architecture-decision-record collection](https://github.com/architecture-decision-record/architecture-decision-record) · CC-BY-NC-SA-4.0 · 17.3k★ · t1 · reference
-- [MADR](https://github.com/adr/madr) · MIT OR CC0-1.0 · 2.6k★ · t1 · template · **quarantine**
+- [MADR](https://github.com/adr/madr) · MIT OR CC0-1.0 · 2.6k★ · t1 · template · **reviewed**
 - [log4brains](https://github.com/thomvaill/log4brains) · Apache-2.0 · 1.6k★ · t2 · install
 - [create-architectural-decision-record skill](https://github.com/github/awesome-copilot/tree/HEAD/skills/create-architectural-decision-record) · MIT · 40.5k★ · t2 · skill · **quarantine**
 
@@ -671,7 +671,7 @@ See also: `frontend.testing.storybook`, `engineering.testing.browser-automation-
 
 `engineering.testing.browser-automation-for-agents`: Let an agent open the app, click through flows, read console/network and generate or heal Playwright tests.
 
-- [Playwright MCP](https://github.com/microsoft/playwright-mcp) · Apache-2.0 · 38.8k★ · t1 · mcp · **quarantine**
+- [Playwright MCP](https://github.com/microsoft/playwright-mcp) · Apache-2.0 · 38.8k★ · t1 · mcp · **reviewed**
 - [Playwright Test Agents](https://playwright.dev/docs/test-agents) · Apache-2.0 · t1 · reference
 - [webapp-testing skill (Anthropic)](https://github.com/anthropics/skills/tree/HEAD/skills/webapp-testing) · Apache-2.0 · 184.4k★ · t1 · skill · **trusted**
 - [Chrome DevTools MCP](https://github.com/ChromeDevTools/chrome-devtools-mcp) · Apache-2.0 · 54.3k★ · t1 · mcp · **quarantine**
@@ -899,7 +899,7 @@ See also: `engineering.architecture.c4-model-architecture-docs`
 
 - [llms.txt spec](https://llmstxt.org/) · Apache-2.0 · t1 · reference
 - [llms-txt tooling](https://github.com/AnswerDotAI/llms-txt) · Apache-2.0 · 2.7k★ · t2 · install
-- [Context7](https://github.com/upstash/context7) · MIT · 63.8k★ · t1 · mcp · **quarantine**
+- [Context7](https://github.com/upstash/context7) · MIT · 63.8k★ · t1 · mcp · **reviewed**
 - [context7 plugin (Claude)](https://github.com/anthropics/claude-plugins-official/tree/HEAD/external_plugins/context7) · Apache-2.0 · 45.1k★ · t2 · mcp · **quarantine**
 
 See also: `ai.mcp.servers-docs`, `engineering.agents.rules-and-instruction-files`
@@ -1107,7 +1107,7 @@ See also: `security.supplychain.dependency-updates`
 `engineering.ci.ai-code-review-in-ci`: Run Claude or other agents on PRs for review, fixes and triage.
 
 - [claude-code-action](https://github.com/anthropics/claude-code-action) · MIT · 9.7k★ · t1 · install
-- [code-review plugin (Claude)](https://github.com/anthropics/claude-plugins-official/tree/HEAD/plugins/code-review) · Apache-2.0 · 45.1k★ · t1 · skill · **quarantine**
+- [code-review plugin (Claude)](https://github.com/anthropics/claude-plugins-official/tree/HEAD/plugins/code-review) · Apache-2.0 · 45.1k★ · t1 · skill · **reviewed**
 - [PR-Agent](https://github.com/The-PR-Agent/pr-agent) · MIT · 13.7k★ · t2 · install
 - [GitHub Copilot code review](https://docs.github.com/en/copilot/concepts/agents/code-review) · CC-BY-4.0 · t2 · reference
 - [comprehensive-review plugin (wshobson)](https://github.com/wshobson/agents/tree/HEAD/plugins/comprehensive-review) · MIT · 41.9k★ · t2 · skill · **quarantine**
@@ -1162,9 +1162,9 @@ See also: `engineering.devops.terraform-opentofu`, `security.scanning.iac-kubern
 
 See also: `security.scanning.container-images`, `engineering.ci.container-image-builds`
 
-### Docker Compose for single-host deployments
+### Docker Compose for single-host production deployments
 
-`engineering.devops.docker-compose`: Run multi-container stacks on one server with healthchecks, profiles, secrets and image-update tooling.
+`engineering.devops.docker-compose`: Run multi-container stacks in production on one server with healthchecks, profiles, secrets and image-update tooling.
 
 - [Compose docs](https://docs.docker.com/compose/) · Apache-2.0 · t1 · reference
 - [Compose Specification](https://github.com/compose-spec/compose-spec) · Apache-2.0 · 2.7k★ · t1 · reference

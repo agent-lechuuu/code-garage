@@ -1153,6 +1153,7 @@ topics:
   - id: frontend.components.shadcn-ui
     title: shadcn/ui
     area: components
+    tags: [shadcn, shadcn-ui, components, blocks, login, login-page, dashboard, sidebar, registry]
     why: 'The default component foundation for React + Tailwind apps: copy-in components on Radix/Base UI with a registry and CLI.'
     practices:
       - text: Always review third-party registry code on installation; community registries are run by outside developers.
@@ -1169,7 +1170,7 @@ topics:
         archived: false
         tier: 1
         use: vendor
-        note: '`npx shadcn@latest add`; v4 registry, blocks, charts and themes. Code lands in your repo (MIT).'
+        note: '`npx shadcn@latest add`; v4 registry, blocks (login pages, sidebars, dashboards), charts and themes. Code lands in your repo (MIT).'
       - name: shadcn/ui MCP server
         url: https://ui.shadcn.com/docs/mcp
         kind: mcp

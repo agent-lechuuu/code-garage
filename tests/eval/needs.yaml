@@ -1,0 +1,428 @@
+# Code Garage search evaluation set (E1, 2026-10-30).
+#
+# About 60 needs an AI coding agent would type into `garage search`, weighted to the owner's interests: web3
+# (Solidity, Solana), AI agents / Claude skills / MCP, systems (C, C++, Rust), backend and safe databases, frontend,
+# security, engineering practice. The owner's ten real needs from the end-to-end test are included and marked
+# "Owner need N" in the note. Queries mix jargon and plain words on purpose ("ring buffer" vs "SPSC queue").
+#
+# The expected answers come from the author's knowledge of what is best, not from what the garage returns today.
+#
+# Schema: {needs: [{q, slice, ideal: [topic ids or rids], acceptable: [topic ids or rids], note}]}
+#   q           the query, as an agent would phrase it
+#   slice       the slice the need belongs to (for per-slice totals)
+#   ideal       best answers, best first. A topic id matches when the top result is that topic; a rid (normalized
+#               URL, GitHub .../tree/HEAD/<path> for sub-folders) matches when the top result's best resource is it.
+#   acceptable  relevant but not the ideal pick, best first.
+#   note        why these are the answers; anything a scorer or a reviewer should know.
+#
+# Scoring (tools/garage/evalset.py, the REPORT's 2/1/0 definitions):
+#   2  the top result is ideal and usable
+#   1  the top result is acceptable, or an ideal answer is in rank 2-3 (needs digging), or the top result is ideal
+#      but its best pick is a runnable item still in quarantine or archived (readable, not addable)
+#   0  nothing ideal or acceptable in the top 3
+
+needs:
+  # ---- web3: Solidity, EVM, Solana -----------------------------------------------------------------------------
+  - q: Solidity ERC-4626 vault
+    slice: web3
+    ideal: [web3.standards.erc4626-vaults]
+    acceptable: [web3.defi.vault-strategies, web3.standards.openzeppelin, web3.defi.lending]
+    note: "Owner need 1. The OZ ERC4626 implementation and its inflation-attack guide are the answer; Yearn V3 is a good second; a property-test suite alone is not the pick."
+
+  - q: Solana Anchor testing
+    slice: web3
+    ideal: [web3.solana.local-testing]
+    acceptable: [web3.solana.anchor, web3.solana.security-tools, web3.agents.skills-solana]
+    note: "Owner need 2. Testing an Anchor program in 2026 means Surfpool (the anchor test runner), LiteSVM or Mollusk for in-process tests, Trident for fuzzing. program-examples (template) shows tests but is a quarantine template."
+
+  - q: fuzz test Foundry invariants
+    slice: web3
+    ideal: [web3.evm.foundry-fuzz-invariant]
+    acceptable: [web3.security.fuzzing-property-testing, web3.agents.skills-security]
+    note: "Foundry's own invariant testing guide and handlers first; Echidna/Medusa are the alternative fuzzers."
+
+  - q: UUPS upgradeable proxy storage layout
+    slice: web3
+    ideal: [web3.upgrades.proxies]
+    acceptable: [web3.standards.openzeppelin, web3.upgrades.diamonds]
+    note: "OpenZeppelin Upgrades plugins validate storage layout; the proxies topic owns this."
+
+  - q: EIP-712 typed data signature verify
+    slice: web3
+    ideal: [web3.standards.eip712-signatures]
+    acceptable: [web3.standards.permit, web3.standards.siwe]
+    note: "EIP-712 spec plus ERC-1271 for contract signers; Permit is the main use of it."
+
+  - q: ERC-4337 account abstraction bundler
+    slice: web3
+    ideal: [web3.aa.erc4337]
+    acceptable: [web3.aa.erc7579-modules, web3.aa.eip7702, web3.aa.safe]
+    note: "eth-infinitism EntryPoint reference and bundler SDKs."
+
+  - q: Solana token-2022 transfer hook
+    slice: web3
+    ideal: [web3.solana.spl-token-2022]
+    acceptable: [web3.solana.anchor]
+    note: "Token-2022 extensions live in solana-program/token-2022; transfer hooks are one extension."
+
+  - q: Anchor escrow program PDA example
+    slice: web3
+    ideal: [web3.solana.anchor]
+    acceptable: [web3.solana.pinocchio-native, web3.solana.learning-ctf, web3.solana.hackathon-templates]
+    note: "program-examples has escrow and PDA patterns in Anchor, native and Pinocchio; anchor-escrow-2024 is the teaching version."
+
+  - q: smart contract audit checklist
+    slice: web3
+    ideal: [web3.security.checklists]
+    acceptable: [web3.security.best-practice-guides, web3.security.vulnerability-catalogs, web3.security.audit-workflow-reporting]
+    note: "Cyfrin/Solodit checklist, SCSVS and solcurity."
+
+  - q: Slither static analysis Solidity
+    slice: web3
+    ideal: [web3.security.static-analysis]
+    acceptable: [web3.agents.skills-security, web3.security.fuzzing-property-testing]
+    note: "Slither is the default; Aderyn and Wake are alternatives in the same topic."
+
+  - q: Uniswap v4 hook template
+    slice: web3
+    ideal: [web3.defi.uniswap-v4-hooks]
+    acceptable: [web3.defi.amm-reference, web3.evm.templates-hackathon]
+    note: "v4-core, v4-periphery and the official v4-template."
+
+  - q: MCP server for Solana
+    slice: web3
+    ideal: [web3.agents.mcp-solana]
+    acceptable: [web3.agents.skills-solana, web3.solana.rpc-indexing-streaming]
+    note: "The Solana Foundation docs MCP first; RPC MCPs second."
+
+  # ---- ai: agents, Claude skills, MCP ----------------------------------------------------------------------------
+  - q: Claude skill for code review
+    slice: ai
+    ideal:
+      - https://github.com/anthropics/claude-plugins-official/tree/HEAD/plugins/code-review
+      - https://github.com/anthropics/claude-plugins-official/tree/HEAD/plugins/pr-review-toolkit
+    acceptable: [ai.claude-code.dev-workflow-plugins, engineering.architecture.code-review, engineering.ci.ai-code-review-in-ci, ai.skills.workflow-packs, security.agents.claude-code-security-review]
+    note: "Owner need 8. The official code-review plugin (multi-agent review with confidence scoring) is the pick; pr-review-toolkit is the other official one. Reaches 2 only once reviewed: it is a plugin, so quarantine means not addable."
+
+  - q: MCP server for Postgres
+    slice: ai
+    ideal: [backend.agents.database-mcp-servers, ai.mcp.servers-data]
+    acceptable: [backend.agents.backend-skills]
+    note: "Owner need 9. Postgres MCP Pro (crystaldba) or DBHub (bytebase) in read-only mode. Both are MCPs, so quarantine caps the score at 1 until reviewed. A Postgres language server or linter is not an MCP."
+
+  - q: how to write a SKILL.md
+    slice: ai
+    ideal: [ai.skills.format, ai.skills.creator]
+    acceptable: [ai.skills.official, frontend.agent.skills-ecosystem]
+    note: "The Agent Skills spec and the skill-creator skill (trusted)."
+
+  - q: build an MCP server in Python FastMCP
+    slice: ai
+    ideal: [ai.mcp.building]
+    acceptable: [ai.mcp.sdks, ai.mcp.testing]
+    note: "mcp-builder skill (trusted) and the Python SDK's FastMCP."
+
+  - q: Claude Code hook to block dangerous commands
+    slice: ai
+    ideal: [security.ai.agent-guard-hooks]
+    acceptable: [ai.claude-code.hooks, security.ai.agent-sandboxing]
+    note: "Guard hooks (PreToolUse deny lists) are the answer; the hooks reference is the generic fallback."
+
+  - q: CLAUDE.md best practices
+    slice: ai
+    ideal: [ai.claude-code.memory, ai.claude-code.docs]
+    acceptable: [engineering.agents.rules-and-instruction-files, ai.context.agents-md, ai.claude-code.project-setup]
+    note: "The memory docs (CLAUDE.md hierarchy, rules) or Anthropic's official best-practices page, whose first section is CLAUDE.md; AGENTS.md collections second."
+
+  - q: prompt caching Anthropic API
+    slice: ai
+    ideal: [ai.llm-apps.messages-features]
+    acceptable: [ai.llm-apps.anthropic-sdks, ai.llm-apps.tokens-cost]
+    note: "Messages API capabilities topic (caching, tool use, batches)."
+
+  - q: run Claude Code in GitHub Actions
+    slice: ai
+    ideal: [ai.claude-code.headless-ci]
+    acceptable: [engineering.ci.ai-code-review-in-ci]
+    note: "Headless mode docs and claude-code-action."
+
+  - q: Playwright MCP browser automation
+    slice: ai
+    ideal: [ai.mcp.servers-browser, engineering.testing.browser-automation-for-agents]
+    acceptable: [frontend.agent.browser-and-devtools-mcp, ai.agents.computer-use]
+    note: "microsoft/playwright-mcp."
+
+  - q: MCP for library docs context7
+    slice: ai
+    ideal: [ai.mcp.servers-docs]
+    acceptable: [ai.context.llms-txt, frontend.agent.llms-txt-docs]
+    note: "upstash/context7; llms.txt is the no-server alternative."
+
+  - q: MCP tool poisoning security
+    slice: ai
+    ideal: [security.ai.mcp-security]
+    acceptable: [security.ai.mcp-skill-scanners, engineering.agents.mcp-runtime-safety]
+    note: "MCP spec security best practices and the tool-poisoning write-ups; scanners second."
+
+  - q: Claude Code subagents
+    slice: ai
+    ideal: [ai.claude-code.subagents]
+    acceptable: [engineering.agents.claude-code-plugins-and-subagents, ai.agents.multi-agent-coding]
+    note: "Official subagent docs first, collections second."
+
+  # ---- systems: C, C++, Rust, Linux ------------------------------------------------------------------------------
+  - q: low-latency ring buffer C++
+    slice: systems
+    ideal:
+      - https://github.com/rigtorp/SPSCQueue
+      - systems.concurrency.lock-free-queues-rcu
+      - https://github.com/cameron314/concurrentqueue
+    acceptable: [systems.perf.messaging-ipc-low-latency, systems.concurrency.atomics-memory-ordering, systems.perf.hft-low-latency-practices]
+    note: "Owner need 5. A ring buffer for low latency is an SPSC queue: rigtorp/SPSCQueue (MIT, reviewed) is the vendorable pick; moodycamel's ReaderWriterQueue is the other; the Java Disruptor is only background."
+
+  - q: SPSC lock-free queue
+    slice: systems
+    ideal:
+      - https://github.com/rigtorp/SPSCQueue
+      - systems.concurrency.lock-free-queues-rcu
+      - https://github.com/cameron314/concurrentqueue
+    acceptable: [systems.concurrency.atomics-memory-ordering, systems.perf.messaging-ipc-low-latency]
+    note: "Jargon form of the ring-buffer need; same answers."
+
+  - q: bash strict mode
+    slice: systems
+    ideal: [systems.shell.bash-strict-mode-pitfalls]
+    acceptable: [systems.shell.bash-idioms-references-cheatsheets, systems.shell.style-guides, systems.shell.shellcheck-shfmt-shellharden]
+    note: "Owner need 4. set -euo pipefail and its pitfalls (Unofficial Bash Strict Mode, BashPitfalls)."
+
+  - q: arena allocator C
+    slice: systems
+    ideal: [systems.memory.arena-allocators]
+    acceptable: [systems.memory.allocators-and-gc]
+    note: "Ryan Fleury's arena article and small arena libraries."
+
+  - q: JSON parser in C
+    slice: systems
+    ideal: [systems.c.single-header-libs, https://github.com/DaveGamble/cJSON]
+    acceptable: [systems.cpp.json-serialization, systems.c.safe-strings-memory]
+    note: "cJSON (MIT, trusted) is the vendorable pick; nlohmann/json is C++."
+
+  - q: Rust error handling anyhow thiserror
+    slice: systems
+    ideal: [systems.rust.error-handling]
+    acceptable: [systems.rust.idioms-api-guidelines]
+    note: "anyhow for applications, thiserror for libraries."
+
+  - q: io_uring async IO Linux
+    slice: systems
+    ideal: [systems.perf.io-uring-zero-copy-io]
+    acceptable: [systems.perf.epoll-event-loops]
+    note: "liburing and the io_uring guides."
+
+  - q: perf flame graph profiling Linux
+    slice: systems
+    ideal: [systems.profiling.perf-flamegraphs]
+    acceptable: [systems.linux.troubleshooting-performance-logs, systems.profiling.frame-trace-profilers]
+    note: "perf and Brendan Gregg's FlameGraph."
+
+  - q: systemd service hardening
+    slice: systems
+    ideal: [systems.linux.systemd-units-hardening, security.hardening.systemd-sandboxing]
+    acceptable: [systems.linux.daemons-sd-notify-dbus]
+    note: "systemd.exec(5) sandboxing directives and systemd-analyze security; two topics cover it."
+
+  - q: modern CMake project template
+    slice: systems
+    ideal: [systems.cpp.package-management-templates, systems.build.cmake]
+    acceptable: [systems.build.compile-commands-clangd]
+    note: "cpp-best-practices/cmake_template (a quarantine template) or the CMake docs."
+
+  - q: memory ordering acquire release atomics
+    slice: systems
+    ideal: [systems.concurrency.atomics-memory-ordering]
+    acceptable: [systems.concurrency.lock-free-queues-rcu]
+    note: "Rust Atomics and Locks (Mara Bos), Herb Sutter's atomic<> weapons."
+
+  # ---- backend and safe databases --------------------------------------------------------------------------------
+  - q: zero-downtime Postgres migration
+    slice: backend
+    ideal: [backend.safe-db.zero-downtime-migration-guides, backend.safe-db.migration-linters, backend.safe-db.declarative-online-schema-tools]
+    acceptable: [backend.safe-db.migration-runners, backend.safe-db.schema-review-checklists]
+    note: "Owner need 3. The rules (postgres.ai, GitLab), a linter (Squawk) or an online schema-change tool (pgroll) are all right."
+
+  - q: rate limiting algorithm
+    slice: backend
+    ideal: [engineering.algorithms.rate-limiting, backend.api.rate-limiting]
+    acceptable: [security.authn.abuse-prevention]
+    note: "Owner need 10. Token bucket / GCRA / sliding window; rate-limiter-flexible is the library pick."
+
+  - q: cursor pagination API
+    slice: backend
+    ideal: [backend.api.pagination]
+    acceptable: [backend.api.rest-design-guidelines]
+    note: "Keyset/cursor pagination guides."
+
+  - q: idempotency keys payments API
+    slice: backend
+    ideal: [backend.api.idempotency-keys]
+    acceptable: [engineering.system-design.retries-idempotency, backend.services.payments-stripe]
+    note: "Stripe-like idempotency keys in Postgres."
+
+  - q: Postgres as job queue SKIP LOCKED
+    slice: backend
+    ideal: [backend.jobs.postgres-as-queue]
+    acceptable: [backend.jobs.queues-node, backend.jobs.queues-go-rust, backend.jobs.queues-python]
+    note: "pgmq, Graphile Worker, River: FOR UPDATE SKIP LOCKED queues."
+
+  - q: row level security multi-tenant Postgres
+    slice: backend
+    ideal: [backend.safe-db.row-level-security-roles, backend.auth.multi-tenancy]
+    acceptable: [backend.databases.postgres-core]
+    note: "RLS policies per tenant; both topics are right."
+
+  - q: UUIDv7 primary key
+    slice: backend
+    ideal: [backend.safe-db.identifiers, engineering.system-design.distributed-ids]
+    acceptable: [backend.safe-db.data-modelling]
+    note: "RFC 9562 and UUIDv7 libraries; either topic."
+
+  - q: passkeys WebAuthn server
+    slice: backend
+    ideal: [backend.auth.passkeys-webauthn, security.authn.webauthn-passkeys]
+    acceptable: [backend.auth.app-auth-typescript]
+    note: "SimpleWebAuthn, webauthn-rs, py_webauthn."
+
+  - q: connection pooling Postgres pgbouncer
+    slice: backend
+    ideal: [backend.safe-db.connection-pooling]
+    acceptable: [backend.orm.node-postgres-drivers]
+    note: "PgBouncer, PgCat, Supavisor."
+
+  - q: verify webhook signature
+    slice: backend
+    ideal: [backend.api.webhooks]
+    acceptable: [backend.services.payments-stripe]
+    note: "Standard Webhooks and Svix; HMAC verification with timestamp tolerance."
+
+  # ---- frontend --------------------------------------------------------------------------------------------------
+  - q: landing page hero animation
+    slice: frontend
+    ideal: [frontend.components.animated-component-kits, frontend.animation.motion, frontend.animation.gsap-scroll, frontend.components.landing-page-blocks]
+    acceptable: [frontend.components.motion-micro-interaction-kits, frontend.templates.landing-pages, frontend.animation.text-particles-confetti]
+    note: "Owner need 7. Magic UI / React Bits / Aceternity hero sections, or Motion and GSAP for a hand-made one."
+
+  - q: accessible dialog headless React
+    slice: frontend
+    ideal: [frontend.components.headless-react]
+    acceptable: [frontend.a11y.focus-and-dialogs, frontend.components.shadcn-ui]
+    note: "Radix Primitives, React Aria, Base UI."
+
+  - q: shadcn admin dashboard template
+    slice: frontend
+    ideal: [frontend.templates.shadcn-dashboards]
+    acceptable: [frontend.templates.admin-frameworks, frontend.components.shadcn-ui]
+    note: "shadcn-admin and the official dashboard blocks."
+
+  - q: drag and drop sortable list React
+    slice: frontend
+    ideal: [frontend.interaction.drag-and-drop]
+    acceptable: [frontend.interaction.gestures-transform]
+    note: "dnd-kit (sortable preset), pragmatic-drag-and-drop."
+
+  - q: virtualized list React large data
+    slice: frontend
+    ideal: [frontend.data-display.virtualization]
+    acceptable: [frontend.data-display.tables]
+    note: "TanStack Virtual, react-window."
+
+  - q: form validation react-hook-form zod
+    slice: frontend
+    ideal: [frontend.forms.react-forms, frontend.forms.schema-validation]
+    acceptable: [backend.runtimes.validation-typescript]
+    note: "react-hook-form with the zod resolver."
+
+  - q: scroll triggered animation GSAP
+    slice: frontend
+    ideal: [frontend.animation.gsap-scroll]
+    acceptable: [frontend.animation.scroll-driven, frontend.animation.motion]
+    note: "GSAP ScrollTrigger; CSS scroll-driven animations are the no-JS alternative."
+
+  # ---- security --------------------------------------------------------------------------------------------------
+  - q: OWASP input validation
+    slice: security
+    ideal: [security.webvulns.input-validation]
+    acceptable: [security.standards.cheat-sheets, security.standards.proactive-controls]
+    note: "Owner need 6. The OWASP Input Validation Cheat Sheet is the pick, not a validation library."
+
+  - q: secret scanning pre-commit
+    slice: security
+    ideal: [security.secrets.detection-scanning]
+    acceptable: [engineering.git.hooks]
+    note: "gitleaks or trufflehog as a pre-commit hook."
+
+  - q: Content Security Policy nonce
+    slice: security
+    ideal: [security.web.csp]
+    acceptable: [security.web.security-headers]
+    note: "Strict CSP with nonces (web.dev, OWASP CSP cheat sheet)."
+
+  - q: password hashing argon2
+    slice: security
+    ideal: [security.authn.password-storage, backend.auth.password-hashing-otp]
+    acceptable: [security.crypto.right-answers]
+    note: "OWASP Password Storage Cheat Sheet (Argon2id parameters) or the argon2 libraries."
+
+  - q: pin GitHub Actions to SHA harden workflow
+    slice: security
+    ideal: [security.supplychain.github-actions-hardening, engineering.ci.github-actions-security-and-linting]
+    acceptable: [engineering.ci.github-actions-fundamentals, security.supplychain.slsa-provenance]
+    note: "GitHub's hardening guide, zizmor, pinact."
+
+  - q: sanitize HTML user content XSS
+    slice: security
+    ideal: [security.webvulns.html-sanitization]
+    acceptable: [security.webvulns.xss-output-encoding]
+    note: "DOMPurify (and the browser Sanitizer API); output encoding is the sibling topic."
+
+  - q: prompt injection defence for agents
+    slice: security
+    ideal: [security.ai.prompt-injection-defences]
+    acceptable: [security.ai.agentic-threats, security.ai.guardrails-runtime, security.ai.llm-top10]
+    note: "Lethal trifecta, CaMeL-style design patterns; guardrail classifiers are a partial answer."
+
+  # ---- engineering practice --------------------------------------------------------------------------------------
+  - q: conventional commits changelog release automation
+    slice: engineering
+    ideal: [engineering.git.conventional-commits, engineering.ci.release-automation, engineering.docs.changelogs-and-versioning]
+    acceptable: [engineering.git.hooks]
+    note: "Conventional Commits with release-please or semantic-release."
+
+  - q: README template
+    slice: engineering
+    ideal: [engineering.docs.readme-and-repo-docs]
+    acceptable: [engineering.git.repo-community-health]
+    note: "Best-README-Template (Unlicense, reviewed)."
+
+  - q: ADR architecture decision record template
+    slice: engineering
+    ideal: [engineering.architecture.architecture-decision-records]
+    acceptable: [engineering.architecture.c4-model-architecture-docs]
+    note: "MADR templates and adr-tools."
+
+  - q: property-based testing
+    slice: engineering
+    ideal: [engineering.testing.property-based-and-fuzzing, https://github.com/trailofbits/skills/tree/HEAD/plugins/property-based-testing]
+    acceptable: [security.agents.trailofbits-skills, web3.agents.skills-security, systems.rust.testing-cargo-tooling]
+    note: "Hypothesis, fast-check, proptest; the Trail of Bits skill (reviewed) teaches an agent to write them."
+
+  - q: retry with exponential backoff and jitter
+    slice: engineering
+    ideal: [engineering.system-design.retries-idempotency]
+    acceptable: [backend.runtimes.http-clients-resilience, engineering.system-design.circuit-breakers-backpressure]
+    note: "AWS backoff-and-jitter article; tenacity, cockatiel, backoff libraries."
+
+  - q: TDD skill for Claude
+    slice: engineering
+    ideal: [https://github.com/obra/superpowers/tree/HEAD/skills/test-driven-development]
+    acceptable: [engineering.testing.tdd-bdd-practice, ai.skills.workflow-packs, engineering.agents.process-skills]
+    note: "The superpowers test-driven-development skill (reviewed) is the addable pick."

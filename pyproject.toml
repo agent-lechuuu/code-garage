@@ -18,6 +18,15 @@ dependencies = [
   "mcp==2.3.0",
 ]
 
+[project.optional-dependencies]
+# Search by meaning in this process (no service on this machine): pip install 'code-garage[semantic]', then
+# `python -m garage.semantic fetch` (the pinned model, ~90 MB, sha256 checked) and GARAGE_SEMANTIC=local.
+semantic = [
+  "numpy==2.5.4",
+  "onnxruntime==1.31.1",
+  "tokenizers==0.23.3",
+]
+
 [project.scripts]
 garage = "garage.cli:main"
 garage-mcp = "garage.mcp_server:main"

@@ -55,6 +55,57 @@ https://github.com/DaveGamble/cJSON:
   approved_by: owner
   approved: '2026-10-29'
   approval: 10
+https://github.com/Kiranism/next-shadcn-dashboard-starter:
+  trust: quarantine
+  sha: 9084ffd954d24591d9b1d279c4b18e119b02b34e
+  scans:
+  - tool: skillspector
+    version: 2.13.2
+    date: '2026-10-30'
+    result: fail
+    findings: 180
+  - tool: aguara
+    version: 0.28.0
+    date: '2026-10-30'
+    result: fail
+    findings: 53
+  - tool: gitleaks
+    version: 8.16.0
+    date: '2026-10-30'
+    result: pass
+    findings: 0
+  - tool: mcp-scanner
+    version: '-'
+    date: '2026-10-30'
+    result: skipped
+    findings: 0
+  - tool: garage-checks
+    version: '1'
+    date: '2026-10-30'
+    result: warn
+    findings: 14
+  reviewed_by: Sonnet 5.5 reviewer, 2026-10-30
+  reviewed: '2026-10-30'
+  notes: 'KEPT IN QUARANTINE. Reason: C10. The template ships 8 agent skills in both .claude/skills/ and .agents/skills/;
+    web-design-guidelines/SKILL.md tells the agent to WebFetch raw.githubusercontent.com/vercel-labs/web-interface-guidelines/main/command.md
+    before each review and to follow the rules AND the output format found there, so what the agent does comes from a moving
+    upstream file, not the pinned snapshot. The shadcn skill also injects the output of npx shadcn@latest info --json at
+    load time and pre-approves Bash(npx shadcn@latest *). Everything else read looks clean: CLAUDE.md, AGENTS.md, pa'
+  summary: Next.js 16 + shadcn/ui admin dashboard starter (Clerk auth, TanStack Query/Table/Form, nuqs, Sentry) with bundled
+    agent skills
+  can:
+    shell: true
+    network: true
+    files: true
+    secrets: false
+  reasons:
+  - 'skillspector failed (180 findings; first: AE1 .agents/skills/kiranism-shadcn-dashboard/SKILL.md:42)'
+  - 'aguara failed (53 findings; first: PROMPT_INJECTION_011 docs/nav-rbac.md:18)'
+  - 'C10: fail: .claude/skills/web-design-guidelines/SKILL.md:12-35 (and its copy in .agents/skills/) tells the agent to
+    WebFetch https://raw.githubusercontent.com/vercel-labs/web-interface-guidelines/main/command.md before every review
+    and apply ''all rules and output format instructions'' from it: the instructions are loaded at run time and not in the
+    pinned files'
+  kind: template
 https://github.com/PaulRBerg/foundry-template:
   trust: quarantine
   sha: eee6d932bb48264b34c6aea431a110349c588dbf
@@ -169,6 +220,211 @@ https://github.com/Uniswap/v4-template:
     hex initcode blobs (19-51 KB each at hookmate 33408fbc) from a 2-star personal repo, not reproduced here from source;
     tests and local scripts run that bytecode (see C14). Snapshot itself is source only'
   kind: template
+https://github.com/VoltAgent/awesome-claude-code-subagents:
+  trust: quarantine
+  sha: 408d3c9eee2d0c75c12a3abb5de29e53c2ca6b9e
+  scans:
+  - tool: skillspector
+    version: 2.13.2
+    date: '2026-10-30'
+    result: fail
+    findings: 16
+  - tool: aguara
+    version: 0.28.0
+    date: '2026-10-30'
+    result: fail
+    findings: 26
+  - tool: gitleaks
+    version: 8.16.0
+    date: '2026-10-30'
+    result: pass
+    findings: 0
+  - tool: mcp-scanner
+    version: '-'
+    date: '2026-10-30'
+    result: skipped
+    findings: 0
+  - tool: garage-checks
+    version: '1'
+    date: '2026-10-30'
+    result: fail
+    findings: 11
+  reviewed_by: Sonnet 5.5 reviewer, 2026-10-30
+  reviewed: '2026-10-30'
+  notes: 'KEPT IN QUARANTINE. Reasons: (1) C11 categories/07-specialized-domains/healthcare-admin.md:197 pipes a third-party
+    raw.githubusercontent install.sh (ajhcs/healthcare-agents, main branch) into bash. (2) C10 tools/subagent-catalog/*.md
+    and config.sh, categories/09-meta-orchestration/agent-installer.md and install-agents.sh (remote mode) download catalog
+    and agent files from the upstream main branch at run time, so what the agent runs is not the pinned content. (3) C14/C18
+    .claude/settings.local.json ships a permission allow-list (Bash(python3:*), Bash(for:*), Bash(git status:*)) inside
+    the item;'
+  summary: VoltAgent's collection of 100+ Claude Code subagent definitions in 10 categories, plus an installer script and
+    a /subagent-catalog command set
+  can:
+    shell: true
+    network: true
+    files: true
+    secrets: false
+  reasons:
+  - 'skillspector failed (16 findings; first: PE3 .gitignore:4)'
+  - 'aguara failed (26 findings; first: NLP_CRED_EXFIL_COMBO categories/07-specialized-domains/README.md:92)'
+  - 'garage-checks failed (11 findings; first: encoded-payload README.md:513)'
+  - 'C10: fail: tools/subagent-catalog/{fetch,search,list,invalidate}.md + config.sh fetch the catalog and agent definitions
+    from raw.githubusercontent.com/.../main at run time and cache them; categories/09-meta-orchestration/agent-installer.md
+    and install-agents.sh remote mode download agents from main into ~/.claude/agents (unpinned, not the pinned files)'
+  - 'C11: fail: categories/07-specialized-domains/healthcare-admin.md:197 tells the agent/user to run curl -fsSL https://raw.githubusercontent.com/ajhcs/healthcare-agents/main/install.sh
+    | bash (third-party installer from an unrelated account)'
+  - 'C14: fail: 110+ agents declare bare Bash (plus Write/Edit) and .claude/settings.local.json pre-approves Bash(python3:*)
+    and Bash(for:*)'
+  - 'C18: fail: .claude/settings.local.json (permission allow-list) sits inside the item and takes effect when the repo
+    is a project root'
+  kind: vendor
+https://github.com/adr/madr:
+  trust: reviewed
+  sha: ba75bb1b20d42af5746b246ad348c202419ae681
+  scans:
+  - tool: skillspector
+    version: 2.13.2
+    date: '2026-10-30'
+    result: fail
+    findings: 8
+  - tool: aguara
+    version: 0.28.0
+    date: '2026-10-30'
+    result: fail
+    findings: 18
+  - tool: gitleaks
+    version: 8.16.0
+    date: '2026-10-30'
+    result: pass
+    findings: 0
+  - tool: mcp-scanner
+    version: '-'
+    date: '2026-10-30'
+    result: skipped
+    findings: 0
+  - tool: garage-checks
+    version: '1'
+    date: '2026-10-30'
+    result: fail
+    findings: 1
+  reviewed_by: Sonnet 5.5 reviewer, 2026-10-30
+  reviewed: '2026-10-30'
+  notes: 'Read template/ (all 6 templates + de), README, CONTRIBUTING, package.json (no scripts), the three workflows, .gitpod.yml
+    and the repo file list; grepped the other docs/ files (65 files, 136 KB total) for hidden characters, HTML comments
+    and executable content. Pure Markdown with {placeholders}; HTML comments in templates are authoring hints (checked all,
+    no instructions to an agent); no invisible characters. Only executable surface is CI: lint.yaml:35 runs curl -Ls https://sh.jbang.dev
+    | bash (jbang''s official installer) in a GitHub runner job; it is not part of the templates and nobody copies'
+  summary: 'MADR 4.0: Markdown Architectural Decision Record templates (full, minimal, bare, de) plus a Jekyll docs site'
+  can:
+    shell: false
+    network: false
+    files: true
+    secrets: false
+  waivers:
+  - tool: skillspector
+    reason: SC2 .github/workflows/lint.yaml:35 is jbang's official installer in upstream CI only; P9 README.md:36 is table
+      padding; RP1 README.md:78 and docs/README.md:23 are docker run docs for local Jekyll preview, none run on template
+      use
+  - tool: aguara
+    reason: SUPPLY_003 .github/workflows/lint.yaml:35 same CI-only jbang installer; THIRDPARTY_002 CHANGELOG.md:51/80/82
+      are links to markdownlint docs, not fetched
+  - tool: garage-checks
+    reason: curl-pipe-shell .github/workflows/lint.yaml:35 upstream CI step (jbang official installer); not in template/
+      and never run by garage add/new
+  kind: template
+https://github.com/anthropics/claude-plugins-official/tree/HEAD/plugins/code-review:
+  trust: reviewed
+  sha: f8c5e7a1dcb71b10cb74586224b5401f3de5db28
+  scans:
+  - tool: skillspector
+    version: 2.13.2
+    date: '2026-10-30'
+    result: pass
+    findings: 0
+  - tool: aguara
+    version: 0.28.0
+    date: '2026-10-30'
+    result: pass
+    findings: 1
+  - tool: gitleaks
+    version: 8.16.0
+    date: '2026-10-30'
+    result: pass
+    findings: 0
+  - tool: mcp-scanner
+    version: '-'
+    date: '2026-10-30'
+    result: skipped
+    findings: 0
+  - tool: garage-checks
+    version: '1'
+    date: '2026-10-30'
+    result: pass
+    findings: 0
+  reviewed_by: Sonnet 5.5 reviewer, 2026-10-30
+  reviewed: '2026-10-30'
+  notes: 'Scope: plugins/code-review only (4 files: LICENSE Apache-2.0, README, plugin.json, commands/code-review.md read
+    in full). The command is the only instruction surface. allowed-tools is narrow: Bash(gh issue view/search/list, gh pr
+    comment/diff/view/list) plus the inline-comment MCP tool supplied by claude-code-action; no bare Bash, no Write/Edit.
+    It only writes to GitHub with --comment (gh pr comment / inline comments), otherwise prints to the terminal. No hooks,
+    no .mcp.json, no scripts, no network fetch of instructions, no hidden characters or HTML comments. Scanners all pass;
+    aguara EXTDL_01'
+  summary: 'Anthropic official /code-review plugin: one slash command that runs a multi-agent PR review with confidence
+    filtering and optionally posts inline comments via gh'
+  can:
+    shell: true
+    network: true
+    files: false
+    secrets: false
+  kind: skill
+https://github.com/anthropics/claude-plugins-official/tree/HEAD/plugins/pr-review-toolkit:
+  trust: quarantine
+  sha: f8c5e7a1dcb71b10cb74586224b5401f3de5db28
+  scans:
+  - tool: skillspector
+    version: 2.13.2
+    date: '2026-10-30'
+    result: warn
+    findings: 1
+  - tool: aguara
+    version: 0.28.0
+    date: '2026-10-30'
+    result: pass
+    findings: 0
+  - tool: gitleaks
+    version: 8.16.0
+    date: '2026-10-30'
+    result: pass
+    findings: 0
+  - tool: mcp-scanner
+    version: '-'
+    date: '2026-10-30'
+    result: skipped
+    findings: 0
+  - tool: garage-checks
+    version: '1'
+    date: '2026-10-30'
+    result: fail
+    findings: 2
+  reviewed_by: Sonnet 5.5 reviewer, 2026-10-30
+  reviewed: '2026-10-30'
+  notes: 'KEPT IN QUARANTINE. Reason: C14. commands/review-pr.md:4 pre-approves bare Bash (allowed-tools: Bash, Glob, Grep,
+    Read, Task), and the agents declare no tools: line so they inherit every tool of the session, including Write/Edit (code-simplifier
+    edits code by design). Everything else is clean: all 8 files read in full (command, 6 agents, README, plugin.json, Apache-2.0
+    LICENSE); no network, no hooks, no .mcp.json, no scripts, no hidden characters, no run-time fetches; scanner hits are
+    README.md:162 (an example prompt) and silent-failure-hunter.md:86 (''without informing the user'' describes bad '
+  summary: 'Anthropic official pr-review-toolkit plugin: /review-pr command plus six reviewer agents (code-reviewer, code-simplifier,
+    comment-analyzer, pr-test-analyzer, silent-failure-hunter, type-design-analyze'
+  can:
+    shell: true
+    network: false
+    files: true
+    secrets: false
+  reasons:
+  - 'garage-checks failed (2 findings; first: override-phrase agents/silent-failure-hunter.md:86)'
+  - 'C14: fail: commands/review-pr.md:4 allowed-tools: ["Bash", "Glob", "Grep", "Read", "Task"] pre-approves bare Bash for
+    the whole session; the command only needs git diff --name-only, git status and gh pr view'
+  kind: skill
 https://github.com/anthropics/skills/tree/HEAD/skills/frontend-design:
   trust: trusted
   sha: dbd4588f9e1033efb41dad4bef2f7947c8993d44
@@ -381,6 +637,118 @@ https://github.com/anthropics/skills/tree/HEAD/skills/webapp-testing:
   approved_by: owner
   approved: '2026-10-29'
   approval: 10
+https://github.com/bytebase/dbhub:
+  trust: reviewed
+  sha: 1f3fa031ed2c3f24b4f2259d3909548933fcd977
+  scans:
+  - tool: skillspector
+    version: 2.13.2
+    date: '2026-10-30'
+    result: warn
+    findings: 5
+  - tool: aguara
+    version: 0.28.0
+    date: '2026-10-30'
+    result: fail
+    findings: 101
+  - tool: gitleaks
+    version: 8.16.0
+    date: '2026-10-30'
+    result: fail
+    findings: 5
+  - tool: mcp-scanner
+    version: 4.8.7
+    date: '2026-10-30'
+    result: skipped
+    findings: 0
+  - tool: garage-checks
+    version: '1'
+    date: '2026-10-30'
+    result: fail
+    findings: 62
+  reviewed_by: Sonnet 5.5 reviewer, 2026-10-30
+  reviewed: '2026-10-30'
+  notes: 'Read package.json, plugin/ (.mcp.json, plugin.json, dbhub.toml, 2 skills), skills/dbhub/SKILL.md, mcpb/manifest.json,
+    docs/config/*, src/server.ts, src/config/env.ts, src/tools/*, src/utils/ssh-tunnel.ts and ssh-config-parser.ts, demo-loader.ts,
+    the 4 workflows. Read-only is NOT the default of the standalone server: readonly must be set per tool in TOML ([[tools]]
+    readonly = true; the old --readonly flag now errors). The plugin and MCPB bundle ship readonly=true, max_rows=1000,
+    and the plugin pins @bytebase/dbhub@1.5.0 over stdio: use that config for agents, with a least-privilege DB account. '
+  summary: 'DBHub: token-light MCP server for PostgreSQL, MySQL, MariaDB, SQL Server, Oracle and SQLite (execute_sql, search_objects,
+    optional explain_sql/health_check), with a read-only Claude Code plugin'
+  can:
+    shell: false
+    network: true
+    files: true
+    secrets: true
+  waivers:
+  - tool: skillspector
+    reason: RP1 plugin/skills/setup/SKILL.md:29,33,41 unversioned npx in a troubleshooting/'when not enough' section the
+      user runs by choice; the plugin's own .mcp.json pins 1.5.0
+  - tool: aguara
+    reason: CRED_005/CRED_006/CRED_007/CRED_002 in src/**/__tests__/*.test.ts, dbhub.toml.example:90,106, docs/config/toml.mdx,
+      docs/installation.mdx:101, docs/blog/dbhub-1-0-0.mdx:35 are example DSNs with placeholder passwords and fake key blocks
+      in tests; CRED_021 CLAUDE.md:122 tells maintainers to copy .env.
+  - tool: gitleaks
+    reason: src/connectors/__tests__/dsn-parser.test.ts, src/utils/__tests__/ssh-config-parser.test.ts:448-489, ssh-tunnel.test.ts:133
+      hold fake key blocks ('client', 'MIIEvQIBADANBg==') and a sample AWS RDS IAM URL as test inputs, not credentials
+  - tool: garage-checks
+    reason: curl-pipe-shell .github/workflows/mcpb-release.yml:81 and npm-publish.yml:70 are 'curl registry.npmjs.org/npm/latest
+      | node -p' used to read JSON in upstream release CI, nothing is executed from it; sensitive-path hits are the SSH/AWS/Azure
+      credential features and docs; persistence docs/installation
+  kind: mcp
+https://github.com/cameron314/concurrentqueue:
+  trust: reviewed
+  sha: 36c5755dc0789e5bcddbbb9a201d3af2bbf3024c
+  scans:
+  - tool: skillspector
+    version: 2.13.2
+    date: '2026-10-30'
+    result: fail
+    findings: 80
+  - tool: aguara
+    version: 0.28.0
+    date: '2026-10-30'
+    result: fail
+    findings: 41
+  - tool: gitleaks
+    version: 8.16.0
+    date: '2026-10-30'
+    result: pass
+    findings: 0
+  - tool: mcp-scanner
+    version: '-'
+    date: '2026-10-30'
+    result: skipped
+    findings: 0
+  - tool: garage-checks
+    version: '1'
+    date: '2026-10-30'
+    result: warn
+    findings: 2
+  reviewed_by: Sonnet 5.5 reviewer, 2026-10-30
+  reviewed: '2026-10-30'
+  notes: 'Read concurrentqueue.h, blockingconcurrentqueue.h, lightweightsemaphore.h (grepped for system/popen/fopen/getenv/socket/exec/asm:
+    none), c_api/, CMakeLists.txt, build/makefile(.inc), tests/CDSChecker makefile, .github/workflows/ci.yml, LICENSE.md,
+    README. Library has no I/O, no network, no process or file access; it only allocates memory and uses atomics/threads.
+    Use it by copying the 3 headers (concurrentqueue.h, blockingconcurrentqueue.h, lightweightsemaphore.h), not the whole
+    repo: the 12 MB is vendored benchmark code (benchmarks/boost, tbb, dlib) and Visual Studio/Xcode projects that nobod'
+  summary: 'moodycamel::ConcurrentQueue: header-only C++11 lock-free multi-producer multi-consumer queue (plus BlockingConcurrentQueue
+    and a C API)'
+  can:
+    shell: false
+    network: false
+    files: false
+    secrets: false
+  waivers:
+  - tool: skillspector
+    reason: 'TM2/PE2 .github/workflows/ci.yml:14-16,35-37 are ''sudo apt-get install g++ / qemu'' on GitHub runners; MP2/P9
+      in benchmarks/boost/preprocessor/**, benchmarks/boost/parameter/*.hpp are Boost preprocessor macro tables and padding;
+      AR2 benchmarks/tbb/atomic.h:222 and MP3 benchmarks/tbb/flow_graph.h:741 '
+  - tool: aguara
+    reason: THIRDPARTY_007 benchmarks/dlib/serialize.h:43 is dlib's serialisation header (vendored benchmark dependency,
+      never included by the queue); SUPPLY_019 benchmarks/tbb/tbb_misc_ex.cpp:124 and tools_api/ittnotify_static.c:729 call
+      getpid in TBB sources; THIRDPARTY_009 build/msvc11-15/*.vcxproj(.filters)
+  kind: vendor
 https://github.com/cpp-best-practices/cmake_template:
   trust: quarantine
   sha: b86318abbf55a657a11a0cf2acce69f221841b22
@@ -451,6 +819,174 @@ https://github.com/cpp-best-practices/cmake_template:
     by movable tag; PackageProject.cmake:179 ycm v0.13.0 tag zip and Doxygen.cmake:34 theme zip without URL_HASH (fargs
     is commit-pinned); jsdelivr water.css@2 without SRI. OSV not run (C++ deps, no lockfile)'
   kind: template
+https://github.com/crystaldba/postgres-mcp:
+  trust: reviewed
+  sha: 15c8e33353546148acc2d8bd784551cf3905d1e2
+  scans:
+  - tool: skillspector
+    version: 2.13.2
+    date: '2026-10-30'
+    result: fail
+    findings: 40
+  - tool: aguara
+    version: 0.28.0
+    date: '2026-10-30'
+    result: fail
+    findings: 15
+  - tool: gitleaks
+    version: 8.16.0
+    date: '2026-10-30'
+    result: pass
+    findings: 0
+  - tool: mcp-scanner
+    version: 4.8.7
+    date: '2026-10-30'
+    result: pass
+    findings: 0
+  - tool: garage-checks
+    version: '1'
+    date: '2026-10-30'
+    result: fail
+    findings: 2
+  reviewed_by: Sonnet 5.5 reviewer, 2026-10-30
+  reviewed: '2026-10-30'
+  notes: 'Read src/postgres_mcp/server.py in full, safe_sql.py, sql_driver.py, extension_utils.py, llm_opt.py, index_opt_base.py,
+    Dockerfile, docker-entrypoint.sh, pyproject.toml, smithery.yaml, both workflows and the README sections on access modes
+    and install. Tools (list_schemas, list_objects, get_object_details, explain_query, get_top_queries, analyze_workload_indexes,
+    analyze_query_indexes, analyze_db_health, execute_sql); descriptions are plain. DEFAULT IS UNRESTRICTED: --access-mode
+    defaults to unrestricted and the README examples use it, so for agents always pass --access-mode=restricted (SQL pa'
+  summary: 'Postgres MCP Pro: PostgreSQL MCP server with EXPLAIN plans, index tuning, health checks and top-queries, with
+    a restricted (read-only) access mode'
+  can:
+    shell: false
+    network: true
+    files: false
+    secrets: true
+  waivers:
+  - tool: skillspector
+    reason: 'PE3 README.md:66-70 are the words ''access credentials'' (prerequisites), .gitignore:131 lists .env, tests/unit/sql/test_safe_sql.py:365-366
+      test that /etc/passwd reads are rejected, tests/utils.py:18 docker.from_env() for integration tests; TM1/TM2 Dockerfile,
+      tests/Dockerfile.postgres-hypopg:17 and '
+  - tool: aguara
+    reason: PROMPT_INJECTION_011 README.md:224,614 is the word 'Unrestricted Mode' (the access mode name); MCP_005 server.py:608,617
+      mcp.add_tool registers execute_sql with a mode-specific description at startup (read, both variants plain); SUPPLY_020
+      .github/workflows/docker-build-dockerhub.yml:29 uses a workf
+  - tool: garage-checks
+    reason: curl-pipe-shell README.md:631 is astral's official uv installer in the 'Local Development Setup' section; the
+      server never runs it
+  kind: mcp
+https://github.com/magicuidesign/magicui:
+  trust: reviewed
+  sha: efe76fc5755eca1142dd4f74c1d6f0ace2887e3c
+  scans:
+  - tool: skillspector
+    version: 2.13.2
+    date: '2026-10-30'
+    result: warn
+    findings: 9
+  - tool: aguara
+    version: 0.28.0
+    date: '2026-10-30'
+    result: fail
+    findings: 351
+  - tool: gitleaks
+    version: 8.16.0
+    date: '2026-10-30'
+    result: fail
+    findings: 2
+  - tool: mcp-scanner
+    version: '-'
+    date: '2026-10-30'
+    result: skipped
+    findings: 0
+  - tool: garage-checks
+    version: '1'
+    date: '2026-10-30'
+    result: fail
+    findings: 21
+  reviewed_by: Sonnet 5.5 reviewer, 2026-10-30
+  reviewed: '2026-10-30'
+  notes: 'SCOPE: the vendorable part: apps/www/registry/magicui/ (79 component files, grepped for fetch/XHR/eval/Function/cookie/localStorage/window.open/dangerouslySetInnerHTML
+    and imports: only react-tweet, next-themes, cva, canvas-confetti, cobe, svg-dotted-map, rough-notation, shiki, radix),
+    skills/magic-ui (SKILL.md and 2 references read in full), AGENTS.md, package.json, apps/www/package.json, lefthook.yml,
+    .cursor/mcp.json, registry.json, the 3 workflows, middleware.ts, build-registry script. The docs site (apps/www app/,
+    content/, blog, public/) was only scanned. Components are plain client-side'
+  summary: 'Magic UI: animated React/Tailwind/Motion components (marquee, blur-fade, globe, bento grid, ...) distributed
+    as a shadcn registry, plus a magic-ui agent skill'
+  can:
+    shell: false
+    network: false
+    files: true
+    secrets: false
+  waivers:
+  - tool: aguara
+    reason: THIRDPARTY_009 apps/www/components/icons.tsx, tech-stack.tsx, docs-copy-page.tsx, content/blog/*.mdx and public/llms-full.txt
+      are remote logo/image URLs in the docs site; CRED_002 apps/www/app/og/geistmono-regular-otf.json:1 is a base64 font
+      file matching an AWS key pattern; SUPPLY_018 content/blog/
+  - tool: gitleaks
+    reason: apps/www/app/og/geist-regular-otf.json:1 and geistmono-regular-otf.json:1 are base64-embedded font files (one-line
+      JSON) that happen to contain an AKIA-like sequence, not credentials
+  - tool: garage-checks
+    reason: hidden-unicode apps/www/content/blog/{bootstrap-vs-react,app-landing-page,component-library-examples}.mdx are
+      stray U+200B/U+200D in blog headings, no instructions, not in registry/ or skills/; install-hook package.json (preinstall
+      npx only-allow pnpm) and apps/www/package.json (postinstall fumadocs
+  kind: vendor
+https://github.com/microsoft/playwright-mcp:
+  trust: reviewed
+  sha: 0c4107acbecb75472b23c05c0e42471a0011874f
+  scans:
+  - tool: skillspector
+    version: 2.13.2
+    date: '2026-10-30'
+    result: fail
+    findings: 49
+  - tool: aguara
+    version: 0.28.0
+    date: '2026-10-30'
+    result: fail
+    findings: 42
+  - tool: gitleaks
+    version: 8.16.0
+    date: '2026-10-30'
+    result: fail
+    findings: 1
+  - tool: mcp-scanner
+    version: 4.8.7
+    date: '2026-10-30'
+    result: skipped
+    findings: 0
+  - tool: garage-checks
+    version: '1'
+    date: '2026-10-30'
+    result: warn
+    findings: 10
+  reviewed_by: Sonnet 5.5 reviewer, 2026-10-30
+  reviewed: '2026-10-30'
+  notes: 'Read package.json, cli.js, index.js, CLAUDE.md, .claude/skills/release.md, Dockerfile, server.json, roll.js, update-readme.js,
+    both workflows, tests/fixtures.ts, README (options table and the whole tool list). The snapshot is only the launcher:
+    the tool code is in the playwright-core npm dependency (pinned alpha 1.64.0-alpha-1790635538000 in package-lock.json),
+    which was NOT read. What it does: starts Chromium/Firefox/WebKit (persistent profile in a cache dir by default; --isolated
+    keeps it in memory), navigates anywhere (origins unrestricted by default; --allowed-origins is not a security bou'
+  summary: 'Microsoft''s official Playwright MCP server: thin launcher (cli.js) over playwright-core that drives a real
+    browser through accessibility-snapshot tools'
+  can:
+    shell: true
+    network: true
+    files: true
+    secrets: false
+  waivers:
+  - tool: skillspector
+    reason: PE3 Dockerfile:24,43 and utils/docker/build.sh:16,36 mount an optional npmrc build secret for the publish image;
+      TM1 Dockerfile:32 rm -rf /var/lib/apt/lists/* image cleanup; PE3 .gitignore:7 and tests/fixtures.ts:105 are '.env'
+      in a gitignore and a test env helper; PE5 tests/fixtures.ts:191 docker -
+  - tool: aguara
+    reason: GHA_OIDC_001 .github/workflows/publish.yml:8,44,62 npm trusted-publishing OIDC in upstream release jobs; CMDEXEC_004
+      roll.js:34-46 and update-readme.js:163 maintainer scripts (npm install, node cli.js --help), tests/cli.spec.ts:23
+      and tests/library.spec.ts:27 run the local cli.js; THIRDPARTY_003 tes
+  - tool: gitleaks
+    reason: private-key tests/testserver/key.pem:1 is the self-signed test TLS key generated by the openssl command in san.cnf
+      for the local test server, not a credential
+  kind: mcp
 https://github.com/modelcontextprotocol/servers/tree/HEAD/src/fetch:
   trust: trusted
   sha: ef9808f71090d0db3eda99e2af2ba78f1086f4fb
@@ -986,6 +1522,66 @@ https://github.com/rigtorp/SPSCQueue:
     files: false
     secrets: false
   kind: vendor
+https://github.com/solana-foundation/program-examples:
+  trust: reviewed
+  sha: 782440834198a9ff761e9bad48bafa246e0c4336
+  scans:
+  - tool: skillspector
+    version: 2.13.2
+    date: '2026-10-30'
+    result: fail
+    findings: 718
+  - tool: aguara
+    version: 0.28.0
+    date: '2026-10-30'
+    result: fail
+    findings: 21
+  - tool: gitleaks
+    version: 8.16.0
+    date: '2026-10-30'
+    result: fail
+    findings: 30
+  - tool: mcp-scanner
+    version: '-'
+    date: '2026-10-30'
+    result: skipped
+    findings: 0
+  - tool: garage-checks
+    version: '1'
+    date: '2026-10-30'
+    result: fail
+    findings: 21
+  reviewed_by: Sonnet 5.5 reviewer, 2026-10-30
+  reviewed: '2026-10-30'
+  notes: 'SCOPE, stated exactly. Read in full: the 46 anchor/ folders (442 files: Anchor.toml x46, Cargo.toml x~90, 209
+    .rs files grepped for std::fs/process/net/env, Command, include_bytes, unsafe-asm, reqwest; dependencies listed: anchor-lang,
+    anchor-spl, spl-* , sha2/sha3, getrandom, borsh, pyth-solana-receiver-sdk, session-keys; litesvm in dev-dependencies),
+    root Cargo.toml/Cargo.lock/rust-toolchain.toml/package.json/AGENTS.md/CONTRIBUTING.md, all 10 workflows and .github/actions/setup,
+    scripts/, all 6 postinstall prepare.mjs files, both build.rs, and a sample of the cicd.sh files. Only scanned and '
+  summary: Solana Foundation program examples (basics, tokens, compression, oracles, cryptography, games) in Anchor, native
+    Rust, Pinocchio and a few asm flavours, each with tests
+  can:
+    shell: true
+    network: true
+    files: true
+    secrets: false
+  waivers:
+  - tool: skillspector
+    reason: 'TM1 (20) .github/actions/setup/action.yml:135-190 rm -rf ~/.cache/solana, ~/.local/share/solana, ~/.solana,
+      ~/.config/solana, ~/.cargo/bin/cargo-build-sbf, anchor, ~/.avm: a CI-runner cleanup step in the setup composite action,
+      not part of any example; SC9 .github/actions/setup/scripts/channel-info.'
+  - tool: aguara
+    reason: SUPPLY_020 .github/workflows/pr-hygiene.yml:34,169,196,197 PR title/body used in upstream repo-hygiene workflow
+      (pull_request_target without checkout of PR code, labels/comments only), not copied; MCP_002 basics/cross-program-invocation/anchor/idls/lever.json:25
+      and games/gacha/pinocchio/tests/.../c
+  - tool: gitleaks
+    reason: games/gacha/pinocchio/idl/gacha.json (13), games/world-cup/pinocchio/idl/world_cup.json (10) are Solana public
+      keys / program ids in Codama IDL JSON; the Anchor.toml hits in tokens/{create-token,external-delegate-token-master,merkle-tree-token-claimer,pda-mint-authority,token-2022/*,transfer-tokens}
+  - tool: garage-checks
+    reason: encoded-blob cryptography/bls12-381 and bn254 tests (hex test vectors, 384 chars); curl-pipe-shell .github/actions/setup/action.yml:165,184
+      'sh -c "$(curl -sSfL https://release.anza.xyz/<version>/install)"' is Anza's official Solana installer in CI; install-hook
+      tokens/*/native|pinocchio/package.jso
+  kind: template
 https://github.com/trailofbits/skills/tree/HEAD/plugins/property-based-testing:
   trust: reviewed
   sha: 2be6433b39e009cd2b6fd3be1895f6b1faa5af9a
@@ -1149,3 +1745,64 @@ https://github.com/trailofbits/skills/tree/HEAD/plugins/supply-chain-risk-audito
     ''uv run .../collect.py|render.py'' and ''gh auth status''; the agent then reads attacker-controllable registry text
     in findings.json/report.md'
   kind: skill
+https://github.com/upstash/context7:
+  trust: reviewed
+  sha: eabe36965ec69b2f3487c4eb329c448dd60b817c
+  scans:
+  - tool: skillspector
+    version: 2.13.2
+    date: '2026-10-30'
+    result: warn
+    findings: 21
+  - tool: aguara
+    version: 0.28.0
+    date: '2026-10-30'
+    result: fail
+    findings: 644
+  - tool: gitleaks
+    version: 8.16.0
+    date: '2026-10-30'
+    result: fail
+    findings: 10
+  - tool: mcp-scanner
+    version: 4.8.7
+    date: '2026-10-30'
+    result: pass
+    findings: 0
+  - tool: garage-checks
+    version: '1'
+    date: '2026-10-30'
+    result: fail
+    findings: 53
+  reviewed_by: Sonnet 5.5 reviewer, 2026-10-30
+  reviewed: '2026-10-30'
+  notes: 'SCOPE: reviewed as the documentation MCP (packages/mcp: index.ts, lib/api.ts, encryption.ts headers, telemetry-config.ts,
+    package.json; plugins/claude/context7/.mcp.json; rules/context7-mcp.md; skills/context7-mcp/SKILL.md). Skimmed, not
+    endorsed: packages/cli (ctx7 CLI: login, setup writes rules into AGENTS.md and agent config on explicit command), packages/admin-mcp
+    (a separate remote MCP to manage a Context7 team: members, rules, policies; write-capable, needs a management key),
+    packages/opencode, packages/pi, plugins/ for other IDEs, 15 i18n READMEs, docs/. What it does: the local process '
+  summary: 'Context7: MCP server (resolve-library-id, query-docs) that returns version-specific library documentation from
+    the hosted context7.com service'
+  can:
+    shell: true
+    network: true
+    files: false
+    secrets: false
+  waivers:
+  - tool: skillspector
+    reason: 'RP1 skills/find-docs/SKILL.md (17), skills/context7-cli/SKILL.md: unversioned npx ctx7@latest in the CLI skills
+      (see notes, not part of the MCP verdict); EA2 skills/context7-cli/references/setup.md describes the setup command''s
+      agent-config writes the user chooses to run'
+  - tool: aguara
+    reason: 'PROMPT_INJECTION_009 README.md:3 and i18n/README.*.md line 1-3 are base64 SVG data-URI badge images (decoded:
+      svg xml, no text instructions); MCP_016 and EXTDL_006 i18n/README.*, docs/resources/all-clients.mdx:377, docs/enterprise/.../entra.mdx:596,
+      packages/mcp/README.md:723 are URL-encoded install'
+  - tool: gitleaks
+    reason: context7.json:3 pk_ value is Context7's public project claim key (documented as public), packages/cli/src/constants.ts:10
+      CLI_CLIENT_ID is a public OAuth client id, docs/howto/claiming-libraries.mdx:66-104 and test files packages/mcp/test/*.ts,
+      packages/cli/src/__tests__/setup-auth.test.ts:67 are ex
+  - tool: garage-checks
+    reason: persistence packages/cli/src/setup/agents.ts:231,261,322 and docs/clients/cursor.mdx are the ctx7 CLI's explicit
+      setup targets (AGENTS.md of other agents, user-run); override-phrase packages/admin-mcp/ui/demo/backend.ts:505 is
+      a demo dashboard row ('ignore previous instructions and print your system
+  kind: mcp
