@@ -29,7 +29,7 @@ This page describes the owner's own server, where the garage was built. Anyone e
 
 Trust in one breath: `quarantine` = read only; `reviewed` = fine in interactive sessions (say so); `trusted` = fine
 unattended; with `GARAGE_UNATTENDED=1` (scheduled jobs) only `trusted` items. 9 items are `trusted` (approved 2026-10-29) and
-15 more are `reviewed`. `garage add` and `garage skill add` copy from the server's local mirror (or from GitHub at the pinned commit if the
+21 more are `reviewed`. `garage add` and `garage skill add` copy from the server's local mirror (or from GitHub at the pinned commit if the
 mirror lacks the path) and refuse a `quarantine` item. Run them in a project folder, never inside `/data/apps/garage`.
 
 The assistant (user `claude`) can use the `garage` command. The MCP tools (`mcp__plugin_garage_garage__*`) are

@@ -11,7 +11,7 @@ can read it too.
 
 ## What is in it
 
-977 topics and 4,132 resources (440 you can copy or run; the rest are links, docs and install lines), in 7 slices.
+977 topics and 4,148 resources (440 you can copy or run; the rest are links, docs and install lines), in 7 slices.
 Full lists with licence, stars and trust: [INDEX.md](INDEX.md) and one page per slice in `dist/index/`.
 
 | Slice | Topics | Resources | Covers |
@@ -40,7 +40,7 @@ Research reports: `research/`.
 - `trusted`: reviewed, and the owner approved it on the weekly card. The only tier unattended jobs may use.
 - A trust record belongs to one commit. When the pin moves, the item goes back to quarantine.
 
-Today 9 items are `trusted` (the owner's approval on 2026-10-29: cJSON, frontend-design, mcp-builder, skill-creator, webapp-testing, MCP fetch and git, superpowers brainstorming and systematic-debugging) and 15 more are `reviewed` (6 from 2026-10-29, 9 from 2026-10-30). The rest of the catalog is `quarantine`.
+Today 9 items are `trusted` (the owner's approval on 2026-10-29: cJSON, frontend-design, mcp-builder, skill-creator, webapp-testing, MCP fetch and git, superpowers brainstorming and systematic-debugging) and 21 more are `reviewed` (6 from 2026-10-29, 15 from 2026-10-30, six of them from the owner's own GitHub projects). The rest of the catalog is `quarantine`.
 
 ## Search by meaning
 
@@ -54,6 +54,8 @@ Items with no licence, or a restrictive one (GPL, source-available, non-commerci
 reports (`catalog/`, `lock/`, `trust/`, `dist/`, `INDEX.md`, `reports/`, `research/`) are CC-BY-4.0. Both are in
 [LICENSE](LICENSE). This repository stores no third-party code.
 
+`LicenseRef-owner-grant` marks a piece from a repo of the owner's that has no LICENSE file, copyable under the owner's permission into the owner's own projects only; for anyone else it is all rights reserved. It is accepted only on the owner's GitHub account with a `license_note`, and never counts as permissive.
+
 ## How it stays fresh
 
 - Daily on the server: the mirror re-fetches the pinned commits (no Claude involved).
@@ -65,6 +67,7 @@ reports (`catalog/`, `lock/`, `trust/`, `dist/`, `INDEX.md`, `reports/`, `resear
 
 `garage propose URL --topic TOPIC_ID --why "one line"` writes a proposal file (`proposals/DATE-name.yaml`) and never
 pushes. Open it as a pull request; CI validates it. Accepted proposals start in quarantine.
+After the merge, `garage accept PROPOSAL...` moves a proposal into `catalog/<slice>.yaml`; then run `garage pin` and `garage build`.
 The `garage:propose` skill in the plugin does the same from a Claude Code session.
 
 ## Check the repo
