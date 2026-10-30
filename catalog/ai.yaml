@@ -1047,7 +1047,7 @@ topics:
         license: Apache-2.0
         pushed: 2026-10-17
         tier: 3
-        use: reference
+        use: vendor
         note: 'Stdlib only, no network. Env-steered behaviours: reply text, harness file edits, is_error results, max-budget
           overshoot, empty result, 60 s hang, delivered files, a call log, and flags omitted from --help to test flag
           probing. Event shapes mirror Claude Code 2.1.302. Put it first on PATH as `claude` in tests. Quality: Clear
@@ -3310,7 +3310,7 @@ topics:
         license: Apache-2.0
         pushed: 2026-06-21
         tier: 3
-        use: reference
+        use: vendor
         note: '118 lines. Format by extension with magic-byte fallback; 200k-character cap; reports image-only PDFs instead
           of returning empty text; strips NUL bytes. No native binaries; Node >= 22. Quality: Small and readable; no unit
           tests; depends on unpdf, mammoth and word-extractor.'

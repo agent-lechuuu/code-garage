@@ -310,7 +310,7 @@ See also: `web3.aa.erc7579-modules`, `web3.aa.eip7702`, `web3.aa.safe`
 - [Solady EIP7702Proxy + LibEIP7702 + ERC7821](https://github.com/Vectorized/solady/tree/HEAD/src/accounts) · MIT · 3.4k★ · t1 · install
 - [Ithaca account](https://github.com/ithacaxyz/account) · MIT · 327★ · t2 · reference
 - [MetaMask Delegation Framework](https://github.com/MetaMask/delegation-framework) · Apache-2.0 · 231★ · t2 · reference
-- [BrainBudget delegation.ts: ERC-7710 budget delegation and A2A sub-delegation (MetaMask smart-accounts-kit)](https://github.com/AaroneGeorge/Brain-Budget/blob/main/packages/shared/src/delegation.ts) · none · t3 · reference · **quarantine**
+- [BrainBudget delegation.ts: ERC-7710 budget delegation and A2A sub-delegation (MetaMask smart-accounts-kit)](https://github.com/AaroneGeorge/Brain-Budget/blob/main/packages/shared/src/delegation.ts) · LicenseRef-owner-grant · t3 · vendor · **quarantine**
 
 See also: `web3.aa.erc4337`, `web3.aa.erc7579-modules`
 
@@ -614,7 +614,7 @@ See also: `web3.solana.security-pitfalls`, `web3.security.formal-verification`
 - [wallet-ui](https://github.com/wallet-ui/wallet-ui) · MIT · 43★ · t2 · install
 - [Mobile Wallet Adapter](https://github.com/solana-mobile/mobile-wallet-adapter) · Apache-2.0 · 329★ · t1 · install
 - [Sign In With Solana](https://github.com/phantom/sign-in-with-solana) · MIT · 158★ · t1 · install
-- [Ledger-gated signing demo: agent proposes, a Ledger (Speculos) approves, Solana devnet](https://github.com/AaroneGeorge/Ledger-Gated-Signing) · none · t3 · reference
+- [Ledger-gated signing demo: agent proposes, a Ledger (Speculos) approves, Solana devnet](https://github.com/AaroneGeorge/Ledger-Gated-Signing) · LicenseRef-owner-grant · t3 · template · **quarantine**
 
 See also: `web3.solana.kit-web3js`, `web3.standards.siwe`
 
@@ -1335,8 +1335,8 @@ See also: `web3.agents.skills-solana`, `web3.solana.kit-web3js`
 - [Solana Agent Kit](https://github.com/sendaifun/solana-agent-kit) · Apache-2.0 · 1.7k★ · t2 · install
 - [Solana Pay CLI (x402/MPP/AP2)](https://github.com/solana-foundation/pay) · MIT · 1.8k★ · t2 · install
 - [ERC-8004 Trustless Agents](https://eips.ethereum.org/EIPS/eip-8004) · CC0-1.0 · t3 · reference
-- [FirstBuyer: x402 seller compliance checker with 13 failure fixtures and an eval matrix](https://github.com/AaroneGeorge/First-Buy) · none · t3 · reference
+- [FirstBuyer: x402 seller compliance checker with 13 failure fixtures and an eval matrix](https://github.com/AaroneGeorge/First-Buy) · LicenseRef-owner-grant · t3 · reference
 - [Ouroboros Press: ownerless contract that pays an agent swarm per job (Foundry)](https://github.com/AaroneGeorge/ouroboros-press) · MIT · t3 · reference
-- [Warden: x402 spend-control proxy for agents (policy engine, Merkle receipts, anchor contracts)](https://github.com/AaroneGeorge/warden) · none · t3 · reference
+- [Warden: x402 spend-control proxy for agents (policy engine, Merkle receipts, anchor contracts)](https://github.com/AaroneGeorge/warden) · LicenseRef-owner-grant · t3 · reference
 
 See also: `web3.aa.erc7579-modules`, `web3.solana.hackathon-templates`

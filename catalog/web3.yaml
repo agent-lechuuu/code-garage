@@ -1390,11 +1390,12 @@ topics:
       - name: 'BrainBudget delegation.ts: ERC-7710 budget delegation and A2A sub-delegation (MetaMask smart-accounts-kit)'
         url: https://github.com/AaroneGeorge/Brain-Budget/blob/main/packages/shared/src/delegation.ts
         kind: snippet
-        license: none
-        license_note: No LICENSE file in the repo; link only. The owner (AaroneGeorge) could add MIT to allow copying.
+        license: LicenseRef-owner-grant
+        license_note: "No LICENSE file. The author and owner (AaroneGeorge) allows copying it into the owner's own
+          projects (2026-10-30). Anyone else: all rights reserved; ask the author."
         pushed: 2026-06-15
         tier: 3
-        use: reference
+        use: vendor
         note: '151 lines over @metamask/smart-accounts-kit + viem. Scope Erc20TransferAmount with LimitedCalls and Timestamp
           caveats; sub-delegation uses parentDelegation + random salt; redemption always SingleDefault mode (batch modes
           break some caveats). Pairs with x402 erc7710 settlement and EIP-7702 accounts in accounts.ts. New topic wanted:
@@ -2741,11 +2742,12 @@ topics:
       - name: 'Ledger-gated signing demo: agent proposes, a Ledger (Speculos) approves, Solana devnet'
         url: https://github.com/AaroneGeorge/Ledger-Gated-Signing
         kind: repo
-        license: none
-        license_note: No LICENSE file in the repo; link only. The owner (AaroneGeorge) could add MIT to allow copying.
+        license: LicenseRef-owner-grant
+        license_note: "No LICENSE file. The author and owner (AaroneGeorge) allows copying it into the owner's own
+          projects (2026-10-30). Anyone else: all rights reserved; ask the author."
         pushed: 2026-06-11
         tier: 3
-        use: reference
+        use: template
         note: '215-line CommonJS script over @ledgerhq/device-management-kit, device-signer-kit-solana, device-transport-kit-speculos
           and @solana/web3.js 1.x. setup.sh builds the Ledger Solana app ELF in Ledger''s Docker builder; run-speculos.sh
           serves the device at :5000. Devnet only; derivation path 44''/501''/0''. Quality: Works as a demo; no tests;
@@ -5885,8 +5887,9 @@ topics:
       - name: 'FirstBuyer: x402 seller compliance checker with 13 failure fixtures and an eval matrix'
         url: https://github.com/AaroneGeorge/First-Buy
         kind: repo
-        license: none
-        license_note: No LICENSE file in the repo; link only. The owner (AaroneGeorge) could add MIT to allow copying.
+        license: LicenseRef-owner-grant
+        license_note: "No LICENSE file. The author and owner (AaroneGeorge) allows copying it into the owner's own
+          projects (2026-10-30). Anyone else: all rights reserved; ask the author."
         pushed: 2026-07-20
         tier: 3
         use: reference
@@ -5911,8 +5914,9 @@ topics:
       - name: 'Warden: x402 spend-control proxy for agents (policy engine, Merkle receipts, anchor contracts)'
         url: https://github.com/AaroneGeorge/warden
         kind: repo
-        license: none
-        license_note: No LICENSE file in the repo; link only. The owner (AaroneGeorge) could add MIT to allow copying.
+        license: LicenseRef-owner-grant
+        license_note: "No LICENSE file. The author and owner (AaroneGeorge) allows copying it into the owner's own
+          projects (2026-10-30). Anyone else: all rights reserved; ask the author."
         pushed: 2026-08-10
         tier: 3
         use: reference

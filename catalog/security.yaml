@@ -1063,11 +1063,12 @@ topics:
       - name: 'FirstBuyer ssrf.ts: DNS-resolving, IP-pinned, redirect-guarded fetch for Node'
         url: https://github.com/AaroneGeorge/First-Buy/blob/main/src/core/ssrf.ts
         kind: snippet
-        license: none
-        license_note: No LICENSE file in the repo; link only. The owner (AaroneGeorge) could add MIT to allow copying.
+        license: LicenseRef-owner-grant
+        license_note: "No LICENSE file. The author and owner (AaroneGeorge) allows copying it into the owner's own
+          projects (2026-10-30). Anyone else: all rights reserved; ask the author."
         pushed: 2026-07-20
         tier: 3
-        use: reference
+        use: vendor
         note: '298 lines over undici. Also exports createGuardedFetch for handing a host-locked fetch to a payment wrapper.
           SSRF_ALLOW_PRIVATE=1 is a dev-only escape hatch: make sure it is unset in production. IPv6 allows only 2000::/3.
           Quality: Sound approach (resolve, pin the IP, manual redirects). No unit tests for the IP classifier; the repo''s
@@ -6504,7 +6505,7 @@ topics:
         license: Apache-2.0
         pushed: 2026-06-21
         tier: 3
-        use: reference
+        use: vendor
         note: 'Wraps each document in <document id= title=> tags with escaped attributes; builds single-turn and multi-turn
           prompts and a web-augmented variant that keeps <document> and <web> sources apart. apps/server/docs/sample-records/03-scanned-note-with-injection.md
           is a planted-injection fixture; server.ts reports injectionSuspected. Model-agnostic message arrays. Quality:
@@ -7064,7 +7065,7 @@ topics:
     see_also: [security.scanning.semgrep, security.scanning.codeql, security.fuzzing.native, web3.agents.skills-security]
 
   - id: security.agents.claude-code-security-review
-    title: Claude Code security review (/security-review, GitHub Action, claude-security plugin)
+    title: Claude Code vulnerability scanning (/security-review, GitHub Action, claude-security plugin)
     area: agents
     why: Built-in and official ways to have Claude review a diff or a whole repo for vulnerabilities, in the terminal, in CI, or as an in-session multi-agent scan.
     practices:

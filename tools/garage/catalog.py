@@ -27,6 +27,12 @@ PERMISSIVE = {"MIT", "MIT-0", "Apache-2.0", "BSD-2-Clause", "BSD-3-Clause", "ISC
               "Zlib", "BSL-1.0", "PostgreSQL", "MPL-2.0", "Apache-2.0 WITH LLVM-exception", "MIT OR Apache-2.0",
               "NCSA", "CC-BY-4.0", "W3C-20150513", "OFL-1.1", "Python-2.0", "BlueOak-1.0.0"}
 
+# The owner's written permission for the owner's own repos that carry no LICENSE file (owner, 2026-10-30: "take
+# whatever you want ... no need to add license"). It covers the owner's own projects, not anyone else's: still not
+# `is_permissive`. policy.py allows it only on the accounts in OWNER_ACCOUNTS.
+OWNER_GRANT = "LicenseRef-owner-grant"
+OWNER_ACCOUNTS = {"aaronegeorge"}
+
 PACKAGED = Path(__file__).resolve().parent / "_dist" / "catalog.json"   # in the wheel (uvx/pip installs)
 
 _cache = {}
@@ -71,6 +77,10 @@ def is_permissive(lic):
     if " AND " in lic:
         return all(is_permissive(x) for x in lic.split(" AND "))
     return False
+
+
+def owner_grant(lic):
+    return str(lic or "").strip() == OWNER_GRANT
 
 
 def github_repo(url):
