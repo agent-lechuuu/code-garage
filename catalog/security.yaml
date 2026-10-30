@@ -1060,6 +1060,18 @@ topics:
         tier: 3
         use: reference
         note: Offensive fuzzer; authorised scope only.
+      - name: 'FirstBuyer ssrf.ts: DNS-resolving, IP-pinned, redirect-guarded fetch for Node'
+        url: https://github.com/AaroneGeorge/First-Buy/blob/main/src/core/ssrf.ts
+        kind: snippet
+        license: none
+        license_note: No LICENSE file in the repo; link only. The owner (AaroneGeorge) could add MIT to allow copying.
+        pushed: 2026-07-20
+        tier: 3
+        use: reference
+        note: '298 lines over undici. Also exports createGuardedFetch for handing a host-locked fetch to a payment wrapper.
+          SSRF_ALLOW_PRIVATE=1 is a dev-only escape hatch: make sure it is unset in production. IPv6 allows only 2000::/3.
+          Quality: Sound approach (resolve, pin the IP, manual redirects). No unit tests for the IP classifier; the repo''s
+          eval disables the guard. Compare with the libraries already in this topic before copying.'
 
   - id: security.webvulns.sqli
     title: SQL injection prevention and DB access control
@@ -6486,6 +6498,18 @@ topics:
         license: none
         tier: 1
         use: reference
+      - name: 'Sanctum corpus.ts: injection-resistant document Q&A prompt builder'
+        url: https://github.com/AaroneGeorge/Sanctum/blob/main/apps/server/src/corpus.ts
+        kind: snippet
+        license: Apache-2.0
+        pushed: 2026-06-21
+        tier: 3
+        use: reference
+        note: 'Wraps each document in <document id= title=> tags with escaped attributes; builds single-turn and multi-turn
+          prompts and a web-augmented variant that keeps <document> and <web> sources apart. apps/server/docs/sample-records/03-scanned-note-with-injection.md
+          is a planted-injection fixture; server.ts reports injectionSuspected. Model-agnostic message arrays. Quality:
+          Clear. The defence is prompt-level only (no classifier or output filter), which the file says. The system prompt''s
+          medical wording needs editing for other domains.'
     see_also: [security.ai.agent-sandboxing, security.ai.guardrails-runtime]
 
   - id: security.ai.guardrails-runtime
@@ -7276,6 +7300,17 @@ topics:
         tier: 2
         use: reference
         note: Index of Claude Code resources incl. security hooks and commands; verify each entry.
+      - name: 'buidl-kit subagents: EVM and Solana security auditors, test-gap finder, repo scout'
+        url: https://github.com/AaroneGeorge/build-kit/tree/main/agents
+        kind: skill
+        license: MIT
+        pushed: 2026-08-29
+        tier: 3
+        use: reference
+        note: 'Subagent .md files (name, description, tools, model). evm-security-auditor and solana-security-auditor
+          run slither, aderyn or x-ray only when already installed. Paths use ${CLAUDE_PLUGIN_ROOT}/knowledge/..., so
+          copy the knowledge folder too or edit the paths. ''skill'' is the nearest catalog kind for subagent files. Quality:
+          Clear method and output sections; model hints (opus for the auditors). Depends on the plugin''s knowledge/ folder.'
     see_also: [security.agents.trailofbits-skills, engineering.agents.claude-code-plugins-and-subagents]
 
   - id: security.agents.autonomous-vuln-discovery

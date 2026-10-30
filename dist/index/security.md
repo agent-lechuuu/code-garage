@@ -257,6 +257,7 @@ See also: `security.web.cookies`
 - [y-mehta/ssrf-req-filter (Node)](https://github.com/y-mehta/ssrf-req-filter) · MIT · 22★ · t3 · install
 - [cujanovic/SSRF-Testing](https://github.com/cujanovic/SSRF-Testing) · none · 2.5k★ · t2 · reference
 - [swisskyrepo/SSRFmap](https://github.com/swisskyrepo/SSRFmap) · MIT · 3.6k★ · t3 · reference
+- [FirstBuyer ssrf.ts: DNS-resolving, IP-pinned, redirect-guarded fetch for Node](https://github.com/AaroneGeorge/First-Buy/blob/main/src/core/ssrf.ts) · none · t3 · reference · **quarantine**
 
 ### SQL injection prevention and DB access control
 
@@ -1488,6 +1489,7 @@ See also: `security.ai.agentic-threats`, `security.ai.prompt-injection-defences`
 - [google-research/camel-prompt-injection (CaMeL)](https://github.com/google-research/camel-prompt-injection) · Apache-2.0 · 411★ · t2 · reference
 - [tldrsec/prompt-injection-defenses](https://github.com/tldrsec/prompt-injection-defenses) · none · 741★ · t2 · reference
 - [Anthropic - Mitigate jailbreaks and prompt injections](https://platform.claude.com/docs/en/test-and-evaluate/strengthen-guardrails/mitigate-jailbreaks) · none · t1 · reference
+- [Sanctum corpus.ts: injection-resistant document Q&A prompt builder](https://github.com/AaroneGeorge/Sanctum/blob/main/apps/server/src/corpus.ts) · Apache-2.0 · t3 · reference · **quarantine**
 
 See also: `security.ai.agent-sandboxing`, `security.ai.guardrails-runtime`
 
@@ -1655,6 +1657,7 @@ See also: `security.offense.scope-rules`, `security.ai.agent-sandboxing`
 - [github/awesome-copilot (security agents)](https://github.com/github/awesome-copilot/tree/HEAD/agents) · MIT · 40.5k★ · t2 · skill · **quarantine**
 - [microsoft/hve-core (security skills)](https://github.com/microsoft/hve-core/tree/HEAD/.github/skills/security) · MIT · 1.6k★ · t2 · skill · **quarantine**
 - [hesreallyhim/awesome-claude-code](https://github.com/hesreallyhim/awesome-claude-code) · NOASSERTION · 56.7k★ · t2 · reference
+- [buidl-kit subagents: EVM and Solana security auditors, test-gap finder, repo scout](https://github.com/AaroneGeorge/build-kit/tree/main/agents) · MIT · t3 · reference · **quarantine**
 
 See also: `security.agents.trailofbits-skills`, `engineering.agents.claude-code-plugins-and-subagents`
 

@@ -7,6 +7,7 @@
   skill add|list    agent skills in .claude/skills/
   new NAME          start a project (optionally from a template) with a CLAUDE.md that says: search the garage first
   propose URL       write proposals/<date>-<slug>.yaml for review (never pushes)
+  accept FILE...    move approved proposals into catalog/<slice>.yaml
   index             rebuild the search index        build      regenerate INDEX.md + dist/
   validate          check the catalog (CI)          doctor     health of every module
   pin pins mirror verify (mirror track) · scan review promote (safety track): garage.<cmd>.main(argv)
@@ -172,6 +173,16 @@ def cmd_propose(a):
     return _result(r, a)
 
 
+def cmd_accept(a):
+    from . import propose
+    r = propose.accept(a.files, dry_run=a.dry_run)
+    emit(r, a.json, lambda d: print("\n".join([f"{'would accept' if d['dry_run'] else 'accepted'}: {x['rid']} -> "
+                                               f"{x['file']} {x['topic']}" for x in d["accepted"]]
+                                              + [f"next: {d['next']}"]) if d["ok"]
+                                    else print("\n".join(d["errors"]), file=sys.stderr)))
+    return 0 if r["ok"] else 1
+
+
 def cmd_index(a):
     from . import index
     r = index.build(db=a.db)
@@ -285,6 +296,9 @@ def parser():
     p.add_argument("--use")
     p.add_argument("--license")
     p.add_argument("--out", help="folder for the proposal (default $GARAGE_REPO/proposals)")
+    p.add_argument("--dry-run", action="store_true")
+    p = cmd("accept", cmd_accept, "move approved proposals into the catalog (then pin, validate, build)")
+    p.add_argument("files", nargs="+")
     p.add_argument("--dry-run", action="store_true")
     p = cmd("index", cmd_index, "rebuild the search index")
     p.add_argument("--db", help="index file (default $GARAGE_HOME/index/garage.db)")
