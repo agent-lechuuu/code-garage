@@ -7813,7 +7813,7 @@ topics:
         license: none
         tier: 2
         use: reference
-        note: CSS-only shapes, loaders, puzzles; his sites below are the copyable versions.
+        note: CSS-only shapes, loaders, puzzles; the author's sites below are the copyable versions.
       - name: Ana Tudor (thebabydino)
         url: https://codepen.io/thebabydino
         kind: codepen
@@ -7909,7 +7909,7 @@ topics:
         license: none
         tier: 2
         use: reference
-        note: CSS-only background patterns (css-only.art for his CSS art).
+        note: CSS-only background patterns (css-only.art for the author's CSS art).
       - name: a-single-div
         url: https://github.com/lynnandtonic/a-single-div
         kind: repo
