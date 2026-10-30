@@ -310,7 +310,7 @@ See also: `web3.aa.erc7579-modules`, `web3.aa.eip7702`, `web3.aa.safe`
 - [Solady EIP7702Proxy + LibEIP7702 + ERC7821](https://github.com/Vectorized/solady/tree/HEAD/src/accounts) · MIT · 3.4k★ · t1 · install
 - [Ithaca account](https://github.com/ithacaxyz/account) · MIT · 327★ · t2 · reference
 - [MetaMask Delegation Framework](https://github.com/MetaMask/delegation-framework) · Apache-2.0 · 231★ · t2 · reference
-- [BrainBudget delegation.ts: ERC-7710 budget delegation and A2A sub-delegation (MetaMask smart-accounts-kit)](https://github.com/AaroneGeorge/Brain-Budget/blob/main/packages/shared/src/delegation.ts) · LicenseRef-owner-grant · t3 · vendor · **quarantine**
+- [BrainBudget delegation.ts: ERC-7710 budget delegation and A2A sub-delegation (MetaMask smart-accounts-kit)](https://github.com/AaroneGeorge/Brain-Budget/blob/main/packages/shared/src/delegation.ts) · LicenseRef-owner-grant · t3 · vendor · **reviewed**
 
 See also: `web3.aa.erc4337`, `web3.aa.erc7579-modules`
 
@@ -614,7 +614,7 @@ See also: `web3.solana.security-pitfalls`, `web3.security.formal-verification`
 - [wallet-ui](https://github.com/wallet-ui/wallet-ui) · MIT · 43★ · t2 · install
 - [Mobile Wallet Adapter](https://github.com/solana-mobile/mobile-wallet-adapter) · Apache-2.0 · 329★ · t1 · install
 - [Sign In With Solana](https://github.com/phantom/sign-in-with-solana) · MIT · 158★ · t1 · install
-- [Ledger-gated signing demo: agent proposes, a Ledger (Speculos) approves, Solana devnet](https://github.com/AaroneGeorge/Ledger-Gated-Signing) · LicenseRef-owner-grant · t3 · template · **quarantine**
+- [Ledger-gated signing demo: agent proposes, a Ledger (Speculos) approves, Solana devnet](https://github.com/AaroneGeorge/Ledger-Gated-Signing) · LicenseRef-owner-grant · t3 · template · **reviewed**
 
 See also: `web3.solana.kit-web3js`, `web3.standards.siwe`
 

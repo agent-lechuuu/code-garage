@@ -3,6 +3,386 @@
 # A record counts only while its sha equals lock/pins.yaml's sha for the rid. Missing = quarantine. Don't hand-edit
 # `trusted`: CI (garage validate -> garage.policy) refuses it without approved_by: owner + approval.
 
+https://github.com/AaroneGeorge/Brain-Budget/tree/HEAD/packages/shared/src/delegation.ts:
+  trust: reviewed
+  sha: 261b4754d3021ee3ddf9317d7d66196c6e4f49f2
+  scans:
+  - tool: skillspector
+    version: 2.13.2
+    date: '2026-10-30'
+    result: pass
+    findings: 0
+  - tool: aguara
+    version: 0.28.0
+    date: '2026-10-30'
+    result: pass
+    findings: 0
+  - tool: gitleaks
+    version: 8.16.0
+    date: '2026-10-30'
+    result: pass
+    findings: 0
+  - tool: mcp-scanner
+    version: '-'
+    date: '2026-10-30'
+    result: skipped
+    findings: 0
+  - tool: garage-checks
+    version: '1'
+    date: '2026-10-30'
+    result: warn
+    findings: 3
+  reviewed_by: Sonnet 5.5 (safety reviewer)
+  reviewed: '2026-10-30'
+  notes: 'C1-C25 ok/n.a. except C23 (not run). Read all 151 lines. Pure helpers: no env, no files, no hard-coded hosts.
+    Signing uses the MetaMaskSmartAccount the caller passes (signDelegation); redeemAsEoaTransfer sends a transaction with
+    the caller''s walletClient, so it moves funds if misused. Fails closed on-chain via caveats. No unit tests; fast-moving
+    dependency; imports ./chains.js (ChainConfig) not in this snapshot. Licence: LicenseRef-owner-grant (owner''s own projects
+    only).'
+  summary: ERC-7710 budget delegation (capped USDC, call limit, expiry) and A2A sub-delegation with redemption calldata,
+    over @metamask/smart-accounts-kit and viem
+  can:
+    shell: false
+    network: true
+    files: false
+    secrets: true
+  waivers:
+  - tool: garage-checks
+    reason: delegation.ts:9-11 sensitive-path matches are the @metamask package name
+  kind: snippet
+https://github.com/AaroneGeorge/First-Buy/tree/HEAD/src/core/ssrf.ts:
+  trust: reviewed
+  sha: d40d3777c0aa093c5cca05af2fa26a62a4802c10
+  scans:
+  - tool: skillspector
+    version: 2.13.2
+    date: '2026-10-30'
+    result: fail
+    findings: 1
+  - tool: aguara
+    version: 0.28.0
+    date: '2026-10-30'
+    result: fail
+    findings: 1
+  - tool: gitleaks
+    version: 8.16.0
+    date: '2026-10-30'
+    result: pass
+    findings: 0
+  - tool: mcp-scanner
+    version: '-'
+    date: '2026-10-30'
+    result: skipped
+    findings: 0
+  - tool: garage-checks
+    version: '1'
+    date: '2026-10-30'
+    result: pass
+    findings: 0
+  reviewed_by: Sonnet 5.5 (safety reviewer)
+  reviewed: '2026-10-30'
+  notes: 'C1-C25 ok/n.a. except C23 (not run, by rule). Read all 298 lines. Can: network by design (fetches caller-supplied
+    https URLs, guarded). SSRF_ALLOW_PRIVATE=1 env (line 27) allows http and private/reserved addresses; labelled dev/eval
+    only; do not set in prod; IP pinning and redirect checks stay on. Gaps: IPv6 treats all of 2000::/3 as public, so 6to4
+    2002::/16 and Teredo with an embedded private v4 pass; no unit tests for the classifier; ipv4 range list omits nothing
+    important otherwise. Needs npm undici (not in snapshot). Licence: no LICENSE, catalog LicenseRef-owner-grant (owner''s
+    own project'
+  summary: 'SSRF guard in TypeScript: https only, DNS-resolve and reject private/reserved v4+v6 (fail-closed), IP-pinned
+    undici socket, re-guarded redirects, host-locked fetch'
+  can:
+    shell: false
+    network: true
+    files: false
+    secrets: false
+  waivers:
+  - tool: skillspector
+    reason: ssrf.ts:84 SSRF1 is the 169.254.0.0/16 entry in the blocklist, i.e. the defence, no request to it
+  - tool: aguara
+    reason: ssrf.ts:279 EXFIL_004 is a template string putting the rejected hostname in an error message; no DNS exfiltration
+  kind: snippet
+https://github.com/AaroneGeorge/Ledger-Gated-Signing:
+  trust: reviewed
+  sha: 3054606d9f5bb6e38b5bb30afa8c6106ee951d80
+  scans:
+  - tool: skillspector
+    version: 2.13.2
+    date: '2026-10-30'
+    result: warn
+    findings: 14
+  - tool: aguara
+    version: 0.28.0
+    date: '2026-10-30'
+    result: pass
+    findings: 2
+  - tool: gitleaks
+    version: 8.16.0
+    date: '2026-10-30'
+    result: pass
+    findings: 0
+  - tool: mcp-scanner
+    version: '-'
+    date: '2026-10-30'
+    result: skipped
+    findings: 0
+  - tool: garage-checks
+    version: '1'
+    date: '2026-10-30'
+    result: pass
+    findings: 0
+  reviewed_by: Sonnet 5.5 (safety reviewer)
+  reviewed: '2026-10-30'
+  notes: 'C1-C25 ok/n.a. with caveats; C23 not run. Read src/agent.cjs (215 lines), scripts/setup.sh, scripts/run-speculos.sh,
+    package.json, README. Needs Docker. setup.sh: npm install, git clone LedgerHQ/app-solana at tag v1.0.2 (a tag, not a
+    sha) into the fixed path /tmp/app-solana (rm -rf first), docker pull ledger-app-builder:latest and speculos:latest,
+    compiles in the container. Docker images are unpinned (skillspector RP1 x4): pin by digest. run-speculos.sh uses -p
+    5000:5000, which binds all interfaces: the emulator''s button API is then open to the LAN and anyone could press Approve;
+    use -p 127.0.'
+  summary: 'Demo: agent proposes a Solana devnet transfer, a Speculos-emulated Ledger must approve before broadcast (Docker
+    + from-source Ledger Solana app build)'
+  can:
+    shell: true
+    network: true
+    files: true
+    secrets: false
+  kind: template
+https://github.com/AaroneGeorge/Sanctum/tree/HEAD/apps/server/src/corpus.ts:
+  trust: reviewed
+  sha: e5a7f50e2705887e4d513a07c1c2c9f87da02e68
+  scans:
+  - tool: skillspector
+    version: 2.13.2
+    date: '2026-10-30'
+    result: fail
+    findings: 2
+  - tool: aguara
+    version: 0.28.0
+    date: '2026-10-30'
+    result: pass
+    findings: 0
+  - tool: gitleaks
+    version: 8.16.0
+    date: '2026-10-30'
+    result: pass
+    findings: 0
+  - tool: mcp-scanner
+    version: '-'
+    date: '2026-10-30'
+    result: skipped
+    findings: 0
+  - tool: garage-checks
+    version: '1'
+    date: '2026-10-30'
+    result: fail
+    findings: 1
+  reviewed_by: Sonnet 5.5 (safety reviewer)
+  reviewed: '2026-10-30'
+  notes: 'C1-C25 ok/n.a. except C23. Read all 9.8 KB. Prompt-level defence only: escapeAttr only swaps double quotes in
+    attributes; document and web text is not escaped, so a document containing </document> can close its own delimiter.
+    WEB_SYSTEM_PROMPT tells the model not to add untrusted-source disclaimers and to use web results; web results are still
+    marked data. Medical wording (''clinical analyst'') to edit. loadCorpus reads every .md/.txt in the dir the caller passes
+    (no path checks; caller must not pass user input). Imports ./search (WebSource), not in this snapshot. Licence Apache-2.0.'
+  summary: 'Document Q&A prompt builder: loads .md/.txt corpus, wraps docs in delimiters, data-not-instructions rules, per-claim
+    citations, web-augmented variant'
+  can:
+    shell: false
+    network: false
+    files: true
+    secrets: false
+  waivers:
+  - tool: skillspector
+    reason: corpus.ts:5 P1/YR4 is a code comment quoting 'Ignore previous instructions' as the attack example
+  - tool: garage-checks
+    reason: corpus.ts:5 override-phrase is the same comment; the file's prompts say to refuse such text
+  kind: snippet
+https://github.com/AaroneGeorge/Sanctum/tree/HEAD/apps/server/src/extract.ts:
+  trust: reviewed
+  sha: e5a7f50e2705887e4d513a07c1c2c9f87da02e68
+  scans:
+  - tool: skillspector
+    version: 2.13.2
+    date: '2026-10-30'
+    result: pass
+    findings: 0
+  - tool: aguara
+    version: 0.28.0
+    date: '2026-10-30'
+    result: pass
+    findings: 0
+  - tool: gitleaks
+    version: 8.16.0
+    date: '2026-10-30'
+    result: pass
+    findings: 0
+  - tool: mcp-scanner
+    version: '-'
+    date: '2026-10-30'
+    result: skipped
+    findings: 0
+  - tool: garage-checks
+    version: '1'
+    date: '2026-10-30'
+    result: pass
+    findings: 0
+  reviewed_by: Sonnet 5.5 (safety reviewer)
+  reviewed: '2026-10-30'
+  notes: 'C1-C25 ok/n.a. except C23 and C21 (npm deps unpin/unlocked in snapshot: unpdf, mammoth, word-extractor; advisories
+    not checked). Read all 118 lines. No I/O: takes a Buffer or base64, returns text. Can: nothing itself, but it feeds
+    untrusted uploads to three third-party parsers; the size cap applies to the output only, not the input. No tests. Licence
+    Apache-2.0.'
+  summary: PDF/DOCX/DOC/text to plain text in pure JS, magic-byte fallback, output cap 200k chars, scanned-PDF detection
+  can:
+    shell: false
+    network: false
+    files: false
+    secrets: false
+  kind: snippet
+https://github.com/AaroneGeorge/build-kit:
+  trust: quarantine
+  sha: a38505ef73e159386d79fd6e33b7b42e88a5f4a9
+  scans:
+  - tool: skillspector
+    version: 2.13.2
+    date: '2026-10-30'
+    result: pass
+    findings: 0
+  - tool: aguara
+    version: 0.28.0
+    date: '2026-10-30'
+    result: fail
+    findings: 21
+  - tool: gitleaks
+    version: 8.16.0
+    date: '2026-10-30'
+    result: pass
+    findings: 0
+  - tool: mcp-scanner
+    version: '-'
+    date: '2026-10-30'
+    result: skipped
+    findings: 0
+  - tool: garage-checks
+    version: '1'
+    date: '2026-10-30'
+    result: fail
+    findings: 33
+  reviewed_by: Sonnet 5.5 (safety reviewer)
+  reviewed: '2026-10-30'
+  notes: 'Quarantine, owner''s own repo, same bar as anyone''s. C10 fail: commands/update.md:2-16 clones upstream main at
+    run time and installs it (marketplace entry is unpinned), which bypasses the garage pin. C14 fail: bare Bash in allowed-tools
+    of burn, handoff, scout, kb-update, update, doctor; brief/build/debrief/ship/audit have no allowed-tools (inherit all);
+    all 6 agents list bare Bash. C13/C18: .mcp.json declares remote HTTP MCP https://mcp.solana.com/mcp (starts without
+    a prompt under claude -p); its tool descriptions are served live and cannot be pinned or read by the garage. scout/kb-update
+    wri'
+  summary: 'buidl-kit: Claude Code plugin (11 commands, 6 subagents, 1 skill, knowledge base) for Solana/EVM builds; declares
+    remote HTTP MCP mcp.solana.com'
+  can:
+    shell: true
+    network: true
+    files: true
+    secrets: false
+  reasons:
+  - 'aguara failed (21 findings; first: EXTDL_013 commands/doctor.md:20)'
+  - 'garage-checks failed (33 findings; first: curl-pipe-shell commands/doctor.md:23)'
+  - 'Quarantine, owner''s own repo, same bar as anyone''s. C10 fail: commands/update.md:2-16 clones upstream main at run
+    time and installs it (marketplace entry is unpinned), which bypasses the garage pin. C14 fail: bare Bash in allowed-tools
+    of burn, handoff, scout, kb-update, update, doctor; brief/build/'
+  kind: plugin
+https://github.com/AaroneGeorge/build-kit/tree/HEAD/agents:
+  trust: quarantine
+  sha: a38505ef73e159386d79fd6e33b7b42e88a5f4a9
+  scans:
+  - tool: skillspector
+    version: 2.13.2
+    date: '2026-10-30'
+    result: pass
+    findings: 0
+  - tool: aguara
+    version: 0.28.0
+    date: '2026-10-30'
+    result: pass
+    findings: 0
+  - tool: gitleaks
+    version: 8.16.0
+    date: '2026-10-30'
+    result: pass
+    findings: 0
+  - tool: mcp-scanner
+    version: '-'
+    date: '2026-10-30'
+    result: skipped
+    findings: 0
+  - tool: garage-checks
+    version: '1'
+    date: '2026-10-30'
+    result: pass
+    findings: 0
+  reviewed_by: Sonnet 5.5 (safety reviewer)
+  reviewed: '2026-10-30'
+  notes: 'Quarantine. Scanners pass (skillspector, aguara, gitleaks, garage-checks) and text is plain, no override phrases,
+    no hidden text. C14 fail: tools lists bare Bash in all six (solana/evm auditors, latency-reviewer, logic-explainer,
+    test-gap-finder, repo-scout) and WebFetch/WebSearch on four, while these agents are meant to read untrusted third-party
+    repos (audit targets), so injection in a target repo has shell and network. Bash is only needed for slither/aderyn/git.
+    They depend on ${CLAUDE_PLUGIN_ROOT}/knowledge, outside this entry. Same reason as pr-review-toolkit. Re-review once
+    Bash is narro'
+  summary: Six Claude Code subagent definitions (EVM and Solana security auditors, latency reviewer, logic explainer, test-gap
+    finder, repo scout); read their knowledge from the plugin root
+  can:
+    shell: true
+    network: true
+    files: false
+    secrets: false
+  reasons:
+  - 'Quarantine. Scanners pass (skillspector, aguara, gitleaks, garage-checks) and text is plain, no override phrases, no
+    hidden text. C14 fail: tools lists bare Bash in all six (solana/evm auditors, latency-reviewer, logic-explainer, test-gap-finder,
+    repo-scout) and WebFetch/WebSearch on four, while the'
+  kind: skill
+https://github.com/AaroneGeorge/harness2-cc/tree/HEAD/tests/fakes/fake_claude.py:
+  trust: reviewed
+  sha: 45d137b8090b121416d894faf16234f9ffe27ab9
+  scans:
+  - tool: skillspector
+    version: 2.13.2
+    date: '2026-10-30'
+    result: warn
+    findings: 1
+  - tool: aguara
+    version: 0.28.0
+    date: '2026-10-30'
+    result: pass
+    findings: 0
+  - tool: gitleaks
+    version: 8.16.0
+    date: '2026-10-30'
+    result: pass
+    findings: 0
+  - tool: mcp-scanner
+    version: '-'
+    date: '2026-10-30'
+    result: skipped
+    findings: 0
+  - tool: garage-checks
+    version: '1'
+    date: '2026-10-30'
+    result: pass
+    findings: 0
+  reviewed_by: Sonnet 5.5 (safety reviewer)
+  reviewed: '2026-10-30'
+  notes: C1-C25 ok/n.a. except C23. Read all 11 KB. Never touches the network, no subprocess, no claude call. Writes under
+    cwd and the FAKE_CLAUDE_LOG dir; FAKE_CLAUDE_EDIT=relpath=content writes or deletes a file under ./context/harness with
+    no check for '..' in relpath, so it can write outside if the env is attacker-set. FAKE_CLAUDE_HANG sleeps 60 s. Event
+    schema pinned to Claude Code 2.1.302, may drift. Licence Apache-2.0.
+  summary: 'Stdlib test double for the claude CLI: emits stream-json/json events, errors, hangs; steered by FAKE_CLAUDE_*
+    env'
+  can:
+    shell: false
+    network: false
+    files: true
+    secrets: false
+  waivers:
+  - tool: skillspector
+    reason: fake_claude.py:133 TT2 is the optional FAKE_CLAUDE_LOG dir the test harness sets; it logs argv, stdin, cwd and
+      env variable NAMES (not values)
+  kind: snippet
 https://github.com/DaveGamble/cJSON:
   trust: trusted
   sha: 6d9f2443ab071f86e5d9b43025a40929ec41c46c

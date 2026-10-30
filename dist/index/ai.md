@@ -255,7 +255,7 @@ See also: `ai.agents.multi-agent-coding`
 - [anthropics/claude-code-action](https://github.com/anthropics/claude-code-action) · MIT · 9.7k★ · t1 · install
 - [anthropics/claude-code-security-review](https://github.com/anthropics/claude-code-security-review) · MIT · 6.6k★ · t2 · install · **quarantine**
 - [Scheduled tasks / routines (docs)](https://code.claude.com/docs/en/scheduled-tasks.md) · none · t2 · reference
-- [fake_claude.py: stdlib stand-in for the claude CLI (stream-json events) for tests](https://github.com/AaroneGeorge/harness2-cc/blob/main/tests/fakes/fake_claude.py) · Apache-2.0 · t3 · vendor · **quarantine**
+- [fake_claude.py: stdlib stand-in for the claude CLI (stream-json events) for tests](https://github.com/AaroneGeorge/harness2-cc/blob/main/tests/fakes/fake_claude.py) · Apache-2.0 · t3 · vendor · **reviewed**
 - [Harness2 for Claude Code (harness2-cc): improve CLAUDE.md, skills and hooks with a fixed model](https://github.com/AaroneGeorge/harness2-cc) · Apache-2.0 · t3 · reference
 
 See also: `ai.llm-apps.claude-agent-sdk`, `engineering.ci.github-actions-fundamentals`
@@ -839,7 +839,7 @@ See also: `ai.llm-apps.document-ingestion`, `backend.services.search-engines`
 - [opendatalab/MinerU](https://github.com/opendatalab/MinerU) · LicenseRef-Custom · 82.7k★ · t2 · install
 - [microsoft/markitdown](https://github.com/microsoft/markitdown) · MIT · 192.7k★ · t1 · install
 - [Unstructured-IO/unstructured](https://github.com/Unstructured-IO/unstructured) · Apache-2.0 · 15.6k★ · t2 · install
-- [Sanctum extract.ts: PDF, DOCX and DOC to text in pure JS with magic-byte fallback](https://github.com/AaroneGeorge/Sanctum/blob/main/apps/server/src/extract.ts) · Apache-2.0 · t3 · vendor · **quarantine**
+- [Sanctum extract.ts: PDF, DOCX and DOC to text in pure JS with magic-byte fallback](https://github.com/AaroneGeorge/Sanctum/blob/main/apps/server/src/extract.ts) · Apache-2.0 · t3 · vendor · **reviewed**
 
 See also: `ai.llm-apps.ocr`
 
