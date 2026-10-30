@@ -11,7 +11,7 @@ can read it too.
 
 ## What is in it
 
-977 topics and 4,129 resources (440 you can copy or run; the rest are links, docs and install lines), in 7 slices.
+977 topics and 4,132 resources (440 you can copy or run; the rest are links, docs and install lines), in 7 slices.
 Full lists with licence, stars and trust: [INDEX.md](INDEX.md) and one page per slice in `dist/index/`.
 
 | Slice | Topics | Resources | Covers |
@@ -40,7 +40,11 @@ Research reports: `research/`.
 - `trusted`: reviewed, and the owner approved it on the weekly card. The only tier unattended jobs may use.
 - A trust record belongs to one commit. When the pin moves, the item goes back to quarantine.
 
-Today 9 items are `trusted` (the owner's approval on 2026-10-29: cJSON, frontend-design, mcp-builder, skill-creator, webapp-testing, MCP fetch and git, superpowers brainstorming and systematic-debugging) and 6 more are `reviewed`.
+Today 9 items are `trusted` (the owner's approval on 2026-10-29: cJSON, frontend-design, mcp-builder, skill-creator, webapp-testing, MCP fetch and git, superpowers brainstorming and systematic-debugging) and 15 more are `reviewed` (6 from 2026-10-29, 9 from 2026-10-30). The rest of the catalog is `quarantine`.
+
+## Search by meaning
+
+Search matches words (SQLite FTS5) and, where a model is available, meaning too: "lock down a background service" finds systemd hardening. On the owner's server a shared service gives the query vector, so this works by default. Elsewhere it is an optional extra (`pip install 'code-garage[semantic]'`, see [docs/use-anywhere.md](docs/use-anywhere.md)). With no model, a slow one, or `GARAGE_SEMANTIC=0`, search is keyword only and returns the same results as before. `python3 -m garage.evalset` scores search on 65 written needs (`tests/eval/needs.yaml`): 123 of 130 with meaning, 121 of 130 with keywords only.
 
 ## Licences
 

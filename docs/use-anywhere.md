@@ -33,5 +33,10 @@ Pin a release instead of following the default branch: `claude plugin marketplac
 - Trust tiers: `quarantine` (read only), `reviewed` (interactive use; say so), `trusted` (fine unattended;
   `GARAGE_UNATTENDED=1` allows only these). The trust records ship in the repo, so what the owner reviewed shows as
   `reviewed` for everyone. Most of the catalog is still `quarantine`, which `add` refuses.
+- Search by meaning is optional and off by default here. Without it, search is keyword only. To turn it on:
+  `pip install 'code-garage[semantic]'` (numpy, onnxruntime, tokenizers), then `python -m garage.semantic fetch`,
+  then `export GARAGE_SEMANTIC=local`. The model does not download by itself: `fetch` gets it once (about 90 MB, from
+  Hugging Face at a pinned revision, each file checked by sha256) into `$GARAGE_HOME/models`. Each run then loads it in
+  its own process, which takes about a second. Leave the extra out and nothing changes.
 - `garage grep` needs a local snapshot; off the server there is none ("not mirrored here").
 - There is no hosted garage MCP for the public; the server behind the owner's MCP is private.

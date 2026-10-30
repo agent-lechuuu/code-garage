@@ -29,7 +29,7 @@ This page describes the owner's own server, where the garage was built. Anyone e
 
 Trust in one breath: `quarantine` = read only; `reviewed` = fine in interactive sessions (say so); `trusted` = fine
 unattended; with `GARAGE_UNATTENDED=1` (scheduled jobs) only `trusted` items. 9 items are `trusted` (approved 2026-10-29) and
-6 more are `reviewed`. `garage add` and `garage skill add` copy from the server's local mirror (or from GitHub at the pinned commit if the
+15 more are `reviewed`. `garage add` and `garage skill add` copy from the server's local mirror (or from GitHub at the pinned commit if the
 mirror lacks the path) and refuse a `quarantine` item. Run them in a project folder, never inside `/data/apps/garage`.
 
 The assistant (user `claude`) can use the `garage` command. The MCP tools (`mcp__plugin_garage_garage__*`) are
@@ -57,3 +57,15 @@ command only.
   without a model call).
 - Turn the plugin off for everyone: `sudo /data/apps/garage/repo/infra/install.d/40-access.sh remove`.
 - The tailnet MCP for the Mac is the `garage` stack: see `use-on-mac.md`.
+
+### Search by meaning (the embed service)
+
+- `garage-embed.service` runs one small model (all-MiniLM-L6-v2, on the CPU) for the whole server, so no session loads
+  its own. It gives search the vector of the query. It is started by `garage-embed.socket`
+  (`/data/apps/garage/run/embed.sock`) on the first search and exits after 1 hour idle. It uses about 260 MB while
+  running and is capped at 512 MB. The model is in `/opt/garage/models` and its files are checked by sha256.
+- The topic vectors are in the search index. `garage-sync` rebuilds the index daily, so they stay current.
+- Check: `systemctl status garage-embed.socket` (the service itself is often stopped; that is normal).
+- If the service is missing or slower than 0.3 s, search is keyword only, with the same results and no error.
+- Off for one command or session: `GARAGE_SEMANTIC=0`. Off for the whole server:
+  `sudo SEMANTIC=0 /data/apps/garage/repo/infra/install.d/15-semantic.sh` (stops and removes the units, the venv and the model). Back on: run it without `SEMANTIC=0`.
