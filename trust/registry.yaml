@@ -1648,6 +1648,57 @@ https://github.com/obra/superpowers:
     harmless, but anything upstream puts there after the pin would be followed as instructions.'
   - 'C24: fail: C10 fails, so the verdict is quarantine'
   kind: skill
+https://github.com/obra/superpowers/tree/HEAD/skills:
+  trust: quarantine
+  sha: 2ce8aa15d05bd57213e6f746f953aafb7ded7a8b
+  scans:
+  - tool: skillspector
+    version: 2.13.2
+    date: '2026-11-01'
+    result: fail
+    findings: 49
+  - tool: aguara
+    version: 0.28.0
+    date: '2026-11-01'
+    result: fail
+    findings: 17
+  - tool: gitleaks
+    version: 8.16.0
+    date: '2026-11-01'
+    result: pass
+    findings: 0
+  - tool: mcp-scanner
+    version: '-'
+    date: '2026-11-01'
+    result: skipped
+    findings: 0
+  - tool: garage-checks
+    version: '1'
+    date: '2026-11-01'
+    result: warn
+    findings: 4
+  reviewed_by: garage-review job (sonnet)
+  reviewed: '2026-11-01'
+  notes: 'Read in full: every SKILL.md (15), all prompt/template/reference files in brainstorming, diagnosing-superpowers,
+    subagent-driven-development, executing-plans, requesting-code-review, systematic-debugging (incl. CREATION-LOG, tests,
+    example .ts), test-driven-development, writing-skills (incl. 46 KB anthropic-best-practices.md, persuasion-principles.md),
+    using-superpowers references (7), and all scripts: brainstorming start/stop-server.sh, server.cjs, helper.js, frame-template.html,
+    executing-plans task-start/task-done, sdd-workspace/task-brief/review-package, find-polluter.sh, render-graphs.js.'
+  summary: 'Superpowers skills folder (15 skills, MIT): brainstorming, planning, TDD, debugging, subagent/inline plan execution,
+    code review, worktrees, skill-writing, plus helper scripts and a local brainstormin'
+  can:
+    shell: true
+    network: true
+    files: true
+    secrets: true
+  reasons:
+  - 'skillspector failed (49 findings; first: TM1 brainstorming/scripts/stop-server.sh:22): the job''s proposed waiver needs
+    an interactive reviewer'
+  - 'aguara failed (17 findings; first: SUPPLY_018 using-superpowers/references/hermes-tools.md:46): the job''s proposed
+    waiver needs an interactive reviewer'
+  - skillspector and aguara report fail; a failed scanner keeps the item in quarantine until a person confirms the proposed
+    waivers. Reviewer found no reason to refuse them.
+  kind: skill
 https://github.com/obra/superpowers/tree/HEAD/skills/brainstorming:
   trust: trusted
   sha: 2ce8aa15d05bd57213e6f746f953aafb7ded7a8b
