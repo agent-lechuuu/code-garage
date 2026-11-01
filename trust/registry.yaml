@@ -1587,6 +1587,67 @@ https://github.com/nextjs/saas-starter:
     sharp 0.34.5 libvips (HIGH); plus dev-only tar/shell-quote/esbuild. And package.json:7-8 ''npx tsx'' runs an unpinned
     tsx not in the lockfile'
   kind: template
+https://github.com/obra/superpowers:
+  trust: quarantine
+  sha: 2ce8aa15d05bd57213e6f746f953aafb7ded7a8b
+  scans:
+  - tool: skillspector
+    version: 2.13.2
+    date: '2026-10-29'
+    result: fail
+    findings: 49
+  - tool: aguara
+    version: 0.28.0
+    date: '2026-10-29'
+    result: fail
+    findings: 74
+  - tool: gitleaks
+    version: 8.16.0
+    date: '2026-10-29'
+    result: fail
+    findings: 1
+  - tool: mcp-scanner
+    version: '-'
+    date: '2026-10-29'
+    result: skipped
+    findings: 0
+  - tool: garage-checks
+    version: '1'
+    date: '2026-10-29'
+    result: fail
+    findings: 11
+  reviewed_by: garage-review job (sonnet)
+  reviewed: '2026-11-01'
+  notes: 'Read in full: hooks/hooks.json, hooks-cursor.json, run-hook.cmd, session-start; .opencode/plugins/superpowers.js,
+    index.js, .opencode/INSTALL.md; .pi/extensions/superpowers.ts; .hermes-plugin/__init__.py and plugin.yaml; package.json;
+    every manifest (.claude-plugin, .codex-plugin, .cursor-plugin, .devin-plugin, .kimi-plugin, .muse-plugin, .antigravity-plugin,
+    .agents, gemini-extension.json); README.md, AGENTS.md, GEMINI.md, LICENSE, .github/PULL_REQUEST_TEMPLATE.md, .version-bump.json,
+    .gitattributes, .pre-commit-config.yaml; scripts/bump-version.sh, lint-shell.sh, package-codex-plugin.sh, ren'
+  summary: 'Superpowers plugin repo (MIT): the 15-skill library plus a SessionStart hook and in-process bootstrap plugins
+    for Claude Code, Cursor, Codex, OpenCode, Pi, Hermes, Muse and others, with maintainer scr'
+  can:
+    shell: true
+    network: true
+    files: true
+    secrets: true
+  reasons:
+  - 'skillspector failed (49 findings; first: TM1 skills/brainstorming/scripts/stop-server.sh:22): the job''s proposed waiver
+    needs an interactive reviewer'
+  - 'aguara failed (74 findings; first: SUPPLY_018 skills/using-superpowers/references/hermes-tools.md:46): the job''s proposed
+    waiver needs an interactive reviewer'
+  - 'gitleaks failed (1 findings; first: generic-api-key tests/brainstorm-server/ws-protocol.test.js:53): the job''s proposed
+    waiver needs an interactive reviewer'
+  - 'garage-checks failed (11 findings; first: runtime-instructions README.md:232): the job''s proposed waiver needs an
+    interactive reviewer'
+  - 'C10 fail: README.md:232 tells an agent to fetch and follow instructions from the unpinned main branch (raw.githubusercontent.com/obra/superpowers/refs/heads/main/.opencode/INSTALL.md).
+    The pinned copy'
+  - skillspector, aguara, gitleaks and garage-checks all report fail; a person has to confirm the proposed waivers. Everything
+    else in the repo read clean, and the skills-only item (rid https://github.com
+  - 'C10: fail: README.md:232 tells an agent (OpenCode) to ''Fetch and follow instructions from https://raw.githubusercontent.com/obra/superpowers/refs/heads/main/.opencode/INSTALL.md''.
+    That URL follows the moving main branch, not the pinned sha. The pinned copy (.opencode/INSTALL.md, read in full) is
+    harmless, but anything upstream puts there after the pin would be followed as instructions.'
+  - 'C24: fail: C10 fails, so the verdict is quarantine'
+  kind: skill
 https://github.com/obra/superpowers/tree/HEAD/skills/brainstorming:
   trust: trusted
   sha: 2ce8aa15d05bd57213e6f746f953aafb7ded7a8b
