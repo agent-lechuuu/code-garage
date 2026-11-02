@@ -1,5 +1,7 @@
 # Using the garage anywhere
 
+Shortcut: tell Claude Code "Set up the Code Garage: https://github.com/agent-lechuuu/code-garage/blob/main/SETUP.md" and it does the steps below itself.
+
 Nothing here talks to the owner's
 server: everything runs on your own machine over the public catalog.
 

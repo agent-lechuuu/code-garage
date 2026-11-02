@@ -1,5 +1,7 @@
 # Code Garage
 
+> Set up with one sentence: tell Claude Code "Set up the Code Garage: https://github.com/agent-lechuuu/code-garage/blob/main/SETUP.md".
+
 A curated, pinned library of existing code for AI coding agents: repos, agent skills, MCP servers, starter templates,
 docs and practices, for most of what people build. Every entry has a licence, a pinned commit and a trust level.
 
