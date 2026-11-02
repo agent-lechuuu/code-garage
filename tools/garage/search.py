@@ -392,8 +392,14 @@ def _fuse(order, vscore, limit):
     return top, {t: round(fused[t] * 100, 2) for t in top}
 
 
+# A single tier asked for is a floor, as the skills and the librarian read it: reviewed = reviewed or trusted, and
+# packages and references (trust n/a: nothing the garage copies or runs) always pass. A comma list stays exact.
+TRUST_FLOOR = {"reviewed": "reviewed,trusted,n/a", "trusted": "trusted,n/a"}
+
+
 def search(q, kind=None, use=None, slice=None, trust=None, license=None, limit=5):
     limit = max(1, min(int(limit or 5), 50))
+    trust = TRUST_FLOOR.get(str(trust or "").strip().lower(), trust or None)
     cat = catalog.load()
     synonyms = cat.get("synonyms") or {}
     pos, neg = terms_of(q, synonyms)

@@ -160,7 +160,7 @@ class Fusion(Case):
         self.start()
         index.build()
         self.assertEqual(self.ids("deferred task runner", slice="frontend"), [])
-        for r in search.search("popup overlay", kind="template") + search.search("popup overlay", trust="trusted"):
+        for r in search.search("popup overlay", kind="template") + search.search("popup overlay", trust="trusted,reviewed"):
             self.fail(f"a filtered-out topic came back: {r['id']}")
 
     def test_minus_word_drops_vector_results(self):

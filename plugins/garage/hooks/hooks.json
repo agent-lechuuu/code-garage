@@ -1,0 +1,14 @@
+{
+  "description": "Code Garage: a short note at session start (and for coding subagents) to search the garage before building something new.",
+  "hooks": {
+    "SessionStart": [
+      {"hooks": [{"type": "command", "command": "${CLAUDE_PLUGIN_ROOT}/hooks/garage-first", "args": ["session"], "timeout": 10}]}
+    ],
+    "UserPromptSubmit": [
+      {"hooks": [{"type": "command", "command": "${CLAUDE_PLUGIN_ROOT}/hooks/garage-first", "args": ["prompt"], "timeout": 10}]}
+    ],
+    "SubagentStart": [
+      {"hooks": [{"type": "command", "command": "${CLAUDE_PLUGIN_ROOT}/hooks/garage-first", "args": ["subagent"], "timeout": 10}]}
+    ]
+  }
+}

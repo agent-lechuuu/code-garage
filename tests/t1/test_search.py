@@ -74,6 +74,16 @@ class Filters(SearchCase):
     def test_trust_filter(self):
         self.assertEqual(self.ids("frontend", trust="quarantine"), ["frontend.agent.skills", "frontend.forms.validation"])
 
+    def test_one_tier_is_a_floor(self):
+        # reviewed = reviewed or trusted, and packages/references (trust n/a) always pass; a comma list stays exact
+        floor = {r["best"]["trust"] for r in search.search("session", trust="reviewed", limit=10)}
+        exact = {r["best"]["trust"] for r in search.search("session", trust="reviewed,trusted", limit=10)}
+        self.assertTrue(floor <= {"reviewed", "trusted", "n/a"}, floor)
+        self.assertNotIn("quarantine", floor)
+        self.assertTrue(exact <= {"reviewed", "trusted"}, exact)
+        self.assertGreaterEqual(len(search.search("session", trust="reviewed", limit=10)),
+                                len(search.search("session", trust="reviewed,trusted", limit=10)))
+
 
 class TrustFallback(SearchCase):
     def test_without_trust_module(self):

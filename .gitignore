@@ -29,3 +29,5 @@ trust/*.lock
 .DS_Store
 *.swp
 *~
+# plugin eval output (claude plugin eval)
+plugins/garage/evals/results/

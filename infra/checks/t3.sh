@@ -45,7 +45,7 @@ else
   echo "WAIT  claude plugin validate: no claude for this user"; wait=$((wait + 1))
 fi
 check "bin scripts are shellcheck-clean (when shellcheck exists)" bash -c "! command -v shellcheck || shellcheck -x \
-  '$REPO/plugins/garage/bin/garage' '$REPO/plugins/garage/bin/garage-mcp' '$REPO/infra/install.sh' \
+  '$REPO/plugins/garage/bin/garage' '$REPO/plugins/garage/bin/garage-mcp' '$REPO/plugins/garage/hooks/garage-first' '$REPO/infra/install.sh' \
   '$REPO/infra/install.d/10-base.sh' '$REPO/infra/install.d/40-access.sh' '$REPO/infra/check.sh' '$SELF'"
 for d in use-on-server use-on-mac use-anywhere; do check "docs/$d.md" test -s "$REPO/docs/$d.md"; done
 
