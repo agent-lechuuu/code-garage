@@ -1311,6 +1311,61 @@ https://github.com/magicuidesign/magicui:
       stray U+200B/U+200D in blog headings, no instructions, not in registry/ or skills/; install-hook package.json (preinstall
       npx only-allow pnpm) and apps/www/package.json (postinstall fumadocs
   kind: vendor
+https://github.com/mattpocock/skills/tree/HEAD/skills:
+  trust: quarantine
+  sha: 59db609eb1e18aaf59b63284d0e52255aff0c63c
+  scans:
+  - tool: skillspector
+    version: 2.13.2
+    date: '2026-11-08'
+    result: fail
+    findings: 16
+  - tool: aguara
+    version: 0.28.0
+    date: '2026-11-08'
+    result: fail
+    findings: 6
+  - tool: gitleaks
+    version: 8.16.0
+    date: '2026-11-08'
+    result: pass
+    findings: 0
+  - tool: mcp-scanner
+    version: '-'
+    date: '2026-11-08'
+    result: skipped
+    findings: 0
+  - tool: garage-checks
+    version: '1'
+    date: '2026-11-08'
+    result: fail
+    findings: 1
+  reviewed_by: garage-review job (sonnet)
+  reviewed: '2026-11-08'
+  notes: 'Read in full: git-guardrails-claude-code/SKILL.md and scripts/block-dangerous-git.sh, wizard/template.sh, diagnosing-bugs/scripts/hitl-loop.template.sh,
+    to-tickets/SKILL.md, setup-ts-deep-modules/SKILL.md, ask-matt/SKILL.md lines 86-91, pr/SKILL.md top. Others only grepped.
+    Findings opened: skillspector P6 hitl-loop.template.sh:10 is a comment describing the ''step'' helper (harmless). TM2
+    to-tickets/SKILL.md:40 is advice on expand-contract refactors, not tool chaining (harmless). PE3 wizard/template.sh:106
+    is a comment about re-run defaults from .env (harmless as text, but see C15). AS1 git-gua'
+  summary: Large bundle of prompt-only engineering/productivity skills (TDD, triage, tickets, PRs, wizard scripts, git-guardrails
+    hook installer) by Matt Pocock.
+  can:
+    shell: true
+    network: true
+    files: true
+    secrets: true
+  reasons:
+  - 'skillspector failed (16 findings; first: P6 engineering/diagnosing-bugs/scripts/hitl-loop.template.sh:10)'
+  - 'aguara failed (6 findings; first: CRED_021 engineering/ask-matt/SKILL.md:90)'
+  - 'garage-checks failed (1 findings; first: persistence in-progress/setup-ts-deep-modules/SKILL.md:95)'
+  - Scanners skillspector, aguara and garage-checks report fail; a failed scanner keeps the item in quarantine
+  - 'C17/C18: the git-guardrails skill edits ~/.claude/settings.json and adds a hook; setup skills edit CLAUDE.md/AGENTS.md'
+  - 'C15: wizard skill handles .env files and GitHub secrets'
+  - 'C8: this pass did not read every instruction file in full; the snapshot is larger than the file list given'
+  - 'C8: fail: not every file was read in full. The snapshot holds more files than the 3-item list (productivity/, misc/
+    extra skills); only the flagged files and the git-guardrails and ts-deep-modules skills were read in full, the rest
+    were grepped for override phrases and hidden text (no hits)'
+  kind: skill
 https://github.com/microsoft/playwright-mcp:
   trust: reviewed
   sha: 0c4107acbecb75472b23c05c0e42471a0011874f
