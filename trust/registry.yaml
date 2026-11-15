@@ -543,6 +543,63 @@ https://github.com/PaulRBerg/foundry-template:
     deletes files and, via third-party stefanzweifel/git-auto-commit-action@v4 (mutable tag), amends the pushed commit and
     force-pushes (:39-45). Skills declare no allowed-tools'
   kind: template
+https://github.com/TheAlgorithms/Python:
+  trust: quarantine
+  sha: 6e03a48579ca212a08b36be00378f887dc41a003
+  scans:
+  - tool: skillspector
+    version: 2.13.2
+    date: '2026-11-15'
+    result: pass
+    findings: 0
+  - tool: aguara
+    version: 0.28.0
+    date: '2026-11-15'
+    result: fail
+    findings: 27
+  - tool: gitleaks
+    version: 8.16.0
+    date: '2026-11-15'
+    result: pass
+    findings: 0
+  - tool: mcp-scanner
+    version: '-'
+    date: '2026-11-15'
+    result: skipped
+    findings: 0
+  - tool: garage-checks
+    version: '1'
+    date: '2026-11-15'
+    result: warn
+    findings: 9
+  reviewed_by: garage-review job (sonnet)
+  reviewed: '2026-11-15'
+  notes: 'Read AGENTS.md, the three .github/skills/*/SKILL.md (code-review, new-pull-request, review-open-issue) and .devcontainer/post_install
+    in full: they only describe how to contribute to the repo; the skills ask a runner to run ruff/pytest and open PRs,
+    which is not harmless to load blindly but nothing hides or overrides. Opened aguara findings at xor_cipher.py:41, first_law_of_thermodynamics.py:6,
+    dictionary.txt:1, words.txt:1, password.py:88, sharpe_ratio.py:144: all false positives as listed in waivers. The remaining
+    ~21 aguara findings, the other CI workflows (.github/workflows/*), .devcontain'
+  summary: Large educational collection of Python algorithm implementations (about 11 MB), with repo CI files, a devcontainer
+    and three contributor-workflow skills under .github/skills.
+  can:
+    shell: false
+    network: false
+    files: false
+    secrets: false
+  reasons:
+  - 'aguara failed (27 findings; first: SC-EX-002 ciphers/xor_cipher.py:41): the job''s proposed waiver needs an interactive
+    reviewer'
+  - aguara is fail (27 findings); a failed scanner keeps the item in quarantine until a person confirms a waiver
+  - 'C22: text files over 1 MB (strings/words.txt, strings/anagrams.txt) and item over 10 MB'
+  - 'C17: .devcontainer/post_install:27 edits ~/.zshrc (devcontainer only)'
+  - 'Review incomplete: about 1000 files, I read only the instruction files and the findings I opened. A person should confirm
+    the remaining aguara findings.'
+  - 'C6: fail: aguara fail is still open for a person to waive; I opened 6 of 27 findings (all harmless, see notes) and
+    did not open the rest, and the garage-checks warns are real (C22)'
+  - 'C17: fail: .devcontainer/post_install:27 rewrites ~/.zshrc with sed (devcontainer only, but it is a shell-profile write)'
+  - 'C22: fail: strings/words.txt is 2493 kB and strings/anagrams.txt 1366 kB (over 1 MB); the item is 11 MB (over 10 MB);
+    .garage.json is 231 kB'
+  kind: vendor
 https://github.com/Uniswap/v4-template:
   trust: quarantine
   sha: 1fbf95547791f0821a170b88c750cb2e04e6818b
