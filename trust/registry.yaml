@@ -1423,6 +1423,51 @@ https://github.com/mattpocock/skills/tree/HEAD/skills:
     extra skills); only the flagged files and the git-guardrails and ts-deep-modules skills were read in full, the rest
     were grepped for override phrases and hidden text (no hits)'
   kind: skill
+https://github.com/mattpocock/skills/tree/HEAD/skills/productivity/grilling:
+  trust: reviewed
+  sha: 59db609eb1e18aaf59b63284d0e52255aff0c63c
+  scans:
+  - tool: skillspector
+    version: 2.13.2
+    date: '2026-11-15'
+    result: warn
+    findings: 1
+  - tool: aguara
+    version: 0.28.0
+    date: '2026-11-15'
+    result: pass
+    findings: 0
+  - tool: gitleaks
+    version: 8.16.0
+    date: '2026-11-15'
+    result: pass
+    findings: 0
+  - tool: mcp-scanner
+    version: '-'
+    date: '2026-11-15'
+    result: skipped
+    findings: 0
+  - tool: garage-checks
+    version: '1'
+    date: '2026-11-15'
+    result: pass
+    findings: 0
+  reviewed_by: garage-review job (sonnet)
+  reviewed: '2026-11-15'
+  notes: 'Read SKILL.md (31 lines) and agents/openai.yaml in full. Non-ASCII characters exist only on SKILL.md lines 13-21
+    and are the visible emoji in the question template; no zero-width, bidi or tag characters, no HTML comments. Scanner
+    finding skillspector EA2 SKILL.md:28 (''don''t ask the user''): the line says the agent should look up environment facts
+    itself (via a sub-agent) instead of asking the user, while decisions stay with the user and it waits for their answers.
+    It is about not pestering the user, not hiding anything or skipping consent; line 30 also says not to act until the
+    user confirms. H'
+  summary: Instruction-only skill that interviews the user in rounds of numbered questions with recommended answers to stress-test
+    a plan.
+  can:
+    shell: false
+    network: false
+    files: false
+    secrets: false
+  kind: skill
 https://github.com/microsoft/playwright-mcp:
   trust: reviewed
   sha: 0c4107acbecb75472b23c05c0e42471a0011874f
