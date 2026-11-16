@@ -51,6 +51,8 @@
 "https://github.com/Amanieu/parking_lot": {repo: "Amanieu/parking_lot", sha: "85827ffa2ffb0b60d416e2e2a091f36b0e8e5a91", path: "", pinned: "2026-10-29", license_at_pin: "Apache-2.0", size_kb: 2113, policy: "readme"}
 "https://github.com/AmazingAng/WTF-Solidity": {repo: "AmazingAng/WTF-Solidity", sha: "dd722e66b7c5716b614a85fa089f70dfdf4ae1d7", path: "", pinned: "2026-10-29", license_at_pin: "NOASSERTION", size_kb: 235817, policy: "readme"}
 "https://github.com/AmbireTech/signature-validator": {repo: "AmbireTech/signature-validator", sha: "6c57f4a8029521c1b5163f0f79c647a835193398", path: "", pinned: "2026-10-29", license_at_pin: "none", size_kb: 760, policy: "link"}
+"https://github.com/AndrewPrifer/liquid-dom": {repo: "AndrewPrifer/liquid-dom", sha: "dd342ab663d718e8b4edf4cd39983b9a873360a7", path: "", pinned: "2026-11-16", license_at_pin: "MIT", size_kb: 9745, policy: "readme"}
+"https://github.com/AnmolSaini16/mapcn": {repo: "AnmolSaini16/mapcn", sha: "fd8ce8f7581a80376d7a9426364edeed17c99f35", path: "", pinned: "2026-11-16", license_at_pin: "MIT", size_kb: 7979, policy: "readme"}
 "https://github.com/AnswerDotAI/llms-txt": {repo: "AnswerDotAI/llms-txt", sha: "3700a0a624a4a004c6a246789b37f389940b1b58", path: "", pinned: "2026-10-29", license_at_pin: "Apache-2.0", size_kb: 1378, policy: "readme"}
 "https://github.com/AnswerDotAI/nbdev": {repo: "AnswerDotAI/nbdev", sha: "d7e339501a78cd9dceb10dc419be4d76f6cbd532", path: "", pinned: "2026-10-29", license_at_pin: "Apache-2.0", size_kb: 17435, policy: "readme"}
 "https://github.com/AnswerDotAI/rerankers": {repo: "AnswerDotAI/rerankers", sha: "5b9cbb073335b0246bc33e939600f51f934c460d", path: "", pinned: "2026-10-29", license_at_pin: "Apache-2.0", size_kb: 515, policy: "readme"}
@@ -88,6 +90,7 @@
 "https://github.com/C2SP/wycheproof": {repo: "C2SP/wycheproof", sha: "d17cc89fa5c8f4f4d378b5385ebf75da5d0926c9", path: "", pinned: "2026-10-29", license_at_pin: "Apache-2.0", size_kb: 77146, policy: "snapshot"}
 "https://github.com/CISOfy/lynis": {repo: "CISOfy/lynis", sha: "9319416fa0726369ab0a48f686155a90363f3f9c", path: "", pinned: "2026-10-29", license_at_pin: "GPL-3.0", size_kb: 9089, policy: "readme"}
 "https://github.com/CLIUtils/CLI11": {repo: "CLIUtils/CLI11", sha: "1764a057b760e8873eab03f4635b4aaed5303a04", path: "", pinned: "2026-10-29", license_at_pin: "NOASSERTION", size_kb: 5707, policy: "readme"}
+"https://github.com/CameronFoxly/Ascii-Motion": {repo: "CameronFoxly/Ascii-Motion", sha: "909d3013712677cbc957b88cd69ae79fb2eb229d", path: "", pinned: "2026-11-16", license_at_pin: "MIT", size_kb: 18562, policy: "readme"}
 "https://github.com/Canop/bacon": {repo: "Canop/bacon", sha: "775b9f58b82fda417f75cd1c34c402579c6f5ee9", path: "", pinned: "2026-10-29", license_at_pin: "AGPL-3.0", size_kb: 3582, policy: "readme"}
 "https://github.com/Certora/CertoraProver": {repo: "Certora/CertoraProver", sha: "4ef546d00cd67d333914845dead2d72081e1f014", path: "", pinned: "2026-10-29", license_at_pin: "GPL-3.0", size_kb: 35727, policy: "readme"}
 "https://github.com/Checkmarx/kics": {repo: "Checkmarx/kics", sha: "0f99087a58fb0aa47bf3813e66eafbfeb5404f0e", path: "", pinned: "2026-10-29", license_at_pin: "Apache-2.0", size_kb: 1058941, policy: "readme"}
@@ -126,6 +129,7 @@
 "https://github.com/DaveGamble/cJSON": {repo: "DaveGamble/cJSON", sha: "6d9f2443ab071f86e5d9b43025a40929ec41c46c", path: "", pinned: "2026-10-29", license_at_pin: "MIT", size_kb: 2764, policy: "snapshot"}
 "https://github.com/David-Haim/concurrencpp": {repo: "David-Haim/concurrencpp", sha: "7a88f5401e15e1b64acae70077e40df1a5a9f6bf", path: "", pinned: "2026-10-29", license_at_pin: "MIT", size_kb: 1020, policy: "readme"}
 "https://github.com/DavidAnson/markdownlint-cli2": {repo: "DavidAnson/markdownlint-cli2", sha: "341e2a331ba578029e66c2e01183e7a6b5ca9ab4", path: "", pinned: "2026-10-29", license_at_pin: "MIT", size_kb: 4158, policy: "readme"}
+"https://github.com/DavidHDev/canvas-ui": {repo: "DavidHDev/canvas-ui", sha: "a0be3b7e1f42d0d1bafde470b6794b39f6729502", path: "", pinned: "2026-11-16", license_at_pin: "NOASSERTION", size_kb: 16483, policy: "readme"}
 "https://github.com/DavidHDev/react-bits": {repo: "DavidHDev/react-bits", sha: "e12c22192ac7b4b452c5e2feb9b586d74765d696", path: "", pinned: "2026-10-29", license_at_pin: "NOASSERTION", size_kb: 373484, policy: "readme"}
 "https://github.com/Decurity/semgrep-smart-contracts": {repo: "Decurity/semgrep-smart-contracts", sha: "2e878a89ac7bba1f8435e8a68e3ecb7700096cd5", path: "", pinned: "2026-10-29", license_at_pin: "NOASSERTION", size_kb: 439, policy: "readme"}
 "https://github.com/DefectDojo/django-DefectDojo": {repo: "DefectDojo/django-DefectDojo", sha: "4ac58d79e70039e6cf0d8ff913758a7744ce343a", path: "", pinned: "2026-10-29", license_at_pin: "BSD-3-Clause", size_kb: 893794, policy: "readme"}
@@ -133,6 +137,7 @@
 "https://github.com/DefiLlama/chainlist": {repo: "DefiLlama/chainlist", sha: "762fba27379fdafbf341039147910863b1354eb9", path: "", pinned: "2026-10-29", license_at_pin: "GPL-3.0", size_kb: 16573, policy: "readme"}
 "https://github.com/DependencyTrack/dependency-track": {repo: "DependencyTrack/dependency-track", sha: "e1e3c8f0189bd445a0f09cc90d211afd2a681d8f", path: "", pinned: "2026-10-29", license_at_pin: "Apache-2.0", size_kb: 142597, policy: "readme"}
 "https://github.com/Dicklesworthstone/destructive_command_guard": {repo: "Dicklesworthstone/destructive_command_guard", sha: "c4d3ad3dfe5f36c048f6379ea2e70d3e9b99a501", path: "", pinned: "2026-10-29", license_at_pin: "NOASSERTION", size_kb: 55180, policy: "snapshot"}
+"https://github.com/Dksie09/RetroUI": {repo: "Dksie09/RetroUI", sha: "b9d978006cbbd770dfe094b93822811efd3b1284", path: "", pinned: "2026-11-16", license_at_pin: "BSD-3-Clause", size_kb: 30210, policy: "readme"}
 "https://github.com/DoctorWkt/acwj": {repo: "DoctorWkt/acwj", sha: "84855ea20dcd2f300ba8e91951cf6aa1e7810225", path: "", pinned: "2026-10-29", license_at_pin: "GPL-3.0", size_kb: 4062, policy: "readme"}
 "https://github.com/Dokploy/dokploy": {repo: "Dokploy/dokploy", sha: "96fb00478f1caecf98f391f82c51b5481d8fec7e", path: "", pinned: "2026-10-29", license_at_pin: "NOASSERTION", size_kb: 35089, policy: "readme"}
 "https://github.com/DouyinFE/semi-design": {repo: "DouyinFE/semi-design", sha: "0580665e20da61422b5269b0c5c44aa2b389d2dc", path: "", pinned: "2026-10-29", license_at_pin: "NOASSERTION", size_kb: 66299, policy: "readme"}
@@ -160,6 +165,7 @@
 "https://github.com/Flagsmith/flagsmith": {repo: "Flagsmith/flagsmith", sha: "f4735b64807f742f81ece1f18e715d3044e2e222", path: "", pinned: "2026-10-29", license_at_pin: "BSD-3-Clause", size_kb: 381410, policy: "readme"}
 "https://github.com/FluentValidation/FluentValidation": {repo: "FluentValidation/FluentValidation", sha: "f95dbd5c8166a10e38f7a8bca4d752abd641a453", path: "", pinned: "2026-10-29", license_at_pin: "Apache-2.0", size_kb: 20039, policy: "readme"}
 "https://github.com/Flux159/mcp-server-kubernetes": {repo: "Flux159/mcp-server-kubernetes", sha: "5536776f7338dc7c5239e6dc1ef07581434a7bf5", path: "", pinned: "2026-10-29", license_at_pin: "MIT", size_kb: 3000, policy: "snapshot"}
+"https://github.com/FortAwesome/Font-Awesome": {repo: "FortAwesome/Font-Awesome", sha: "14c65a3747d0f3b751f15831fc719236aea8729d", path: "", pinned: "2026-11-16", license_at_pin: "NOASSERTION", size_kb: 162598, policy: "readme"}
 "https://github.com/FreeRTOS/FreeRTOS-Kernel": {repo: "FreeRTOS/FreeRTOS-Kernel", sha: "640d0c43705e64cd53f46b31d882de6cd8433933", path: "", pinned: "2026-10-29", license_at_pin: "MIT", size_kb: 128104, policy: "readme"}
 "https://github.com/FuelLabs/sway": {repo: "FuelLabs/sway", sha: "7dafb1c7ae52ae8247e41e8e7b36a6f444b40b71", path: "", pinned: "2026-10-29", license_at_pin: "Apache-2.0", size_kb: 119937, policy: "readme"}
 "https://github.com/FullHuman/purgecss": {repo: "FullHuman/purgecss", sha: "b5c112b8e082e9b5c4f8908e788e729c28148c38", path: "", pinned: "2026-10-29", license_at_pin: "MIT", size_kb: 23050, policy: "readme"}
@@ -188,6 +194,7 @@
 "https://github.com/Hexagon/croner": {repo: "Hexagon/croner", sha: "2df1672da4738c1ec806acf2d2d93ed487c9d146", path: "", pinned: "2026-10-29", license_at_pin: "MIT", size_kb: 3621, policy: "readme"}
 "https://github.com/HumanSignal/label-studio": {repo: "HumanSignal/label-studio", sha: "c5f817e6258e8bc9cab824ec6f447bca1a4ee361", path: "", pinned: "2026-10-29", license_at_pin: "Apache-2.0", size_kb: 2929950, policy: "readme"}
 "https://github.com/Hyperfoil/Hyperfoil": {repo: "Hyperfoil/Hyperfoil", sha: "5b0604eed4d03c5a13435bcad9c0af0836e75e9c", path: "", pinned: "2026-10-29", license_at_pin: "Apache-2.0", size_kb: 7777, policy: "readme"}
+"https://github.com/Hyperiux-Immersion-Labs/hyperiux-components": {repo: "Hyperiux-Immersion-Labs/hyperiux-components", sha: "2259d85decd13ad20e1ab65fbbc871ae3fc414ae", path: "", pinned: "2026-11-16", license_at_pin: "MIT", size_kb: 673573, policy: "readme"}
 "https://github.com/HypoPG/hypopg": {repo: "HypoPG/hypopg", sha: "4e564ebbd46e1ab365ad0d05ca4a2f19cf316ba7", path: "", pinned: "2026-10-29", license_at_pin: "NOASSERTION", size_kb: 867, policy: "readme"}
 "https://github.com/HypothesisWorks/hypothesis": {repo: "HypothesisWorks/hypothesis", sha: "5e93693373ff843f2e94c1b4809f34da1456c624", path: "", pinned: "2026-10-29", license_at_pin: "NOASSERTION", size_kb: 44987, policy: "readme"}
 "https://github.com/IUCompilerCourse/Essentials-of-Compilation": {repo: "IUCompilerCourse/Essentials-of-Compilation", sha: "8a900dea59f01817521c4a52d99e16164c968f58", path: "", pinned: "2026-10-29", license_at_pin: "none", size_kb: 18493, policy: "link"}
@@ -195,6 +202,7 @@
 "https://github.com/Infisical/infisical": {repo: "Infisical/infisical", sha: "35c55afff318e3a2b5a3a8c70ccedc9aaa049e75", path: "", pinned: "2026-10-29", license_at_pin: "NOASSERTION", size_kb: 1977639, policy: "readme"}
 "https://github.com/Instagram/LibCST": {repo: "Instagram/LibCST", sha: "d9a255843b5cdbecc6834684d233bce1f2987f9d", path: "", pinned: "2026-10-29", license_at_pin: "NOASSERTION", size_kb: 4564, policy: "readme"}
 "https://github.com/InternLM/lmdeploy": {repo: "InternLM/lmdeploy", sha: "0667bae67c2d82b80854627354300915ae776cd5", path: "", pinned: "2026-10-29", license_at_pin: "Apache-2.0", size_kb: 17531, policy: "readme"}
+"https://github.com/JCodesMore/ai-website-cloner-template": {repo: "JCodesMore/ai-website-cloner-template", sha: "5426e0e2ec35dbc173a7a18f47a3dfe2a765313e", path: "", pinned: "2026-11-16", license_at_pin: "MIT", size_kb: 1519, policy: "snapshot"}
 "https://github.com/JaidedAI/EasyOCR": {repo: "JaidedAI/EasyOCR", sha: "363afb184047ce452e436f4224f3098422df872e", path: "", pinned: "2026-10-29", license_at_pin: "Apache-2.0", size_kb: 161635, policy: "readme"}
 "https://github.com/JasperFx/marten": {repo: "JasperFx/marten", sha: "f7d8885576582d803c4fc6a4cbc9d9b5f0a364d5", path: "", pinned: "2026-10-29", license_at_pin: "MIT", size_kb: 58764, policy: "readme"}
 "https://github.com/JasperFx/wolverine": {repo: "JasperFx/wolverine", sha: "9daa5165a0499aae3dd7e64152e1e726f7466cea", path: "", pinned: "2026-10-29", license_at_pin: "MIT", size_kb: 93982, policy: "readme"}
@@ -247,6 +255,7 @@
 "https://github.com/MasterKale/SimpleWebAuthn": {repo: "MasterKale/SimpleWebAuthn", sha: "96f0f243fe4ce9beca89f83f9e86663308db20df", path: "", pinned: "2026-10-29", license_at_pin: "MIT", size_kb: 5293, policy: "readme"}
 "https://github.com/MattPD/cpplinks": {repo: "MattPD/cpplinks", sha: "fb667a2f760f31866740c5849f5538a048c333bc", path: "", pinned: "2026-10-29", license_at_pin: "none", size_kb: 5984, policy: "link"}
 "https://github.com/Melkeydev/go-blueprint": {repo: "Melkeydev/go-blueprint", sha: "81f56f8c24637d2fd2adb5f37071c6d4cb72b571", path: "", pinned: "2026-10-29", license_at_pin: "MIT", size_kb: 9613, policy: "snapshot"}
+"https://github.com/MengTo/threeui": {repo: "MengTo/threeui", sha: "68802d5428071ada5c20db8094b1649e6bb770ed", path: "", pinned: "2026-11-16", license_at_pin: "MIT", size_kb: 42596, policy: "readme"}
 "https://github.com/MetaMask/delegation-framework": {repo: "MetaMask/delegation-framework", sha: "b4b8c41fc912455a1af2300bfcd1276676b92a2e", path: "", pinned: "2026-10-29", license_at_pin: "Apache-2.0", size_kb: 6939, policy: "readme"}
 "https://github.com/MetaMask/eth-sig-util": {repo: "MetaMask/eth-sig-util", sha: "996ac292fe455429e76eff9576a5bd896cfe0952", path: "", pinned: "2026-10-29", license_at_pin: "ISC", size_kb: 3416, policy: "readme"}
 "https://github.com/MeteoraAg/damm-v2": {repo: "MeteoraAg/damm-v2", sha: "5398b5c7c534de014091132da37c6478cce671a8", path: "", pinned: "2026-10-29", license_at_pin: "NOASSERTION", size_kb: 2819, policy: "readme"}
@@ -540,11 +549,13 @@
 "https://github.com/aidenybai/react-scan": {repo: "aidenybai/react-scan", sha: "0fb31862b697ef3ed2d8ed6990878a35a4ca8a75", path: "", pinned: "2026-10-29", license_at_pin: "MIT", size_kb: 44947, policy: "readme"}
 "https://github.com/aimhubio/aim": {repo: "aimhubio/aim", sha: "6e098e38065364c76b2bb7c028f266e53b647642", path: "", pinned: "2026-10-29", license_at_pin: "Apache-2.0", size_kb: 67617, policy: "readme"}
 "https://github.com/aip-dev/google.aip.dev": {repo: "aip-dev/google.aip.dev", sha: "2ccc61a4e09882bdd63aea1a42dceebc37bf3bd5", path: "", pinned: "2026-10-29", license_at_pin: "NOASSERTION", size_kb: 43073, policy: "readme"}
+"https://github.com/airbnb/javascript": {repo: "airbnb/javascript", sha: "8ed19247bef145e3cc41b24a02dd1fe6d9b5e681", path: "", pinned: "2026-11-16", license_at_pin: "MIT", size_kb: 3738, policy: "readme"}
 "https://github.com/airbnb/lottie-web": {repo: "airbnb/lottie-web", sha: "bede03d25d232826e0c9dca1733d542d8a7754fb", path: "", pinned: "2026-10-29", license_at_pin: "MIT", size_kb: 358131, policy: "readme"}
 "https://github.com/airbnb/visx": {repo: "airbnb/visx", sha: "485c0359664ee8e612992defb16e1f035ed40b23", path: "", pinned: "2026-10-29", license_at_pin: "MIT", size_kb: 16763, policy: "readme"}
 "https://github.com/airbytehq/airbyte": {repo: "airbytehq/airbyte", sha: "e1b1236710b12a1e897b3adc47d510a8c8e33d8e", path: "", pinned: "2026-10-29", license_at_pin: "NOASSERTION", size_kb: 953169, policy: "readme"}
 "https://github.com/ajeetdsouza/zoxide": {repo: "ajeetdsouza/zoxide", sha: "f0b31631d295b0623bc440016ed0aba3c7c49dde", path: "", pinned: "2026-10-29", license_at_pin: "MIT", size_kb: 5005, policy: "readme"}
 "https://github.com/ajv-validator/ajv": {repo: "ajv-validator/ajv", sha: "f177fe323420ccb23e1a79445fd470cbf80aee7c", path: "", pinned: "2026-10-29", license_at_pin: "MIT", size_kb: 39056, policy: "readme"}
+"https://github.com/akaieuan/trickle-UI-kit": {repo: "akaieuan/trickle-UI-kit", sha: "51d33487383659c395688d01e38bf92b594857df", path: "", pinned: "2026-11-16", license_at_pin: "MIT", size_kb: 416, policy: "readme"}
 "https://github.com/akto-api-security/akto": {repo: "akto-api-security/akto", sha: "335eea9db0014a046fac989cdb3b6f1bd24a705c", path: "", pinned: "2026-10-29", license_at_pin: "MIT", size_kb: 394507, policy: "readme"}
 "https://github.com/akuity/kargo": {repo: "akuity/kargo", sha: "d9365d6946cbf5585552ed6836ad436872fc8725", path: "", pinned: "2026-10-29", license_at_pin: "Apache-2.0", size_kb: 159532, policy: "readme"}
 "https://github.com/alchemyplatform/alchemy-mcp-server": {repo: "alchemyplatform/alchemy-mcp-server", sha: "fb4ceabd2360651c367e1dccebcc8c6ceaf995df", path: "", pinned: "2026-10-29", license_at_pin: "MIT", size_kb: 462, policy: "snapshot"}
@@ -902,6 +913,7 @@
 "https://github.com/capawesome-team/capacitor-plugins": {repo: "capawesome-team/capacitor-plugins", sha: "3b30457b2607b7cae535fa6357da5b569ec9671a", path: "", pinned: "2026-10-29", license_at_pin: "none", size_kb: 28204, policy: "readme"}
 "https://github.com/capnproto/capnproto": {repo: "capnproto/capnproto", sha: "808bc37ae4f6dd32fe6d06be2687460ecdc8a549", path: "", pinned: "2026-10-29", license_at_pin: "NOASSERTION", size_kb: 27853, policy: "readme"}
 "https://github.com/capstone-engine/capstone": {repo: "capstone-engine/capstone", sha: "8b95af3e9441051e080f6ae32a624e5d435b944f", path: "", pinned: "2026-10-29", license_at_pin: "none", size_kb: 73685, policy: "readme"}
+"https://github.com/carbon-app/carbon": {repo: "carbon-app/carbon", sha: "3e9efcc506bdccb6d3834f66f30f8e883f80e49d", path: "", pinned: "2026-11-16", license_at_pin: "MIT", size_kb: 24185, policy: "readme"}
 "https://github.com/carbon-design-system/carbon": {repo: "carbon-design-system/carbon", sha: "27575bbb1b6af1d7e564b3dcc1b3f5f2c587028b", path: "", pinned: "2026-10-29", license_at_pin: "Apache-2.0", size_kb: 8035045, policy: "readme"}
 "https://github.com/cargo-generate/cargo-generate": {repo: "cargo-generate/cargo-generate", sha: "e161c25598a6fb3143736feed27e05e36c8247fa", path: "", pinned: "2026-10-29", license_at_pin: "Apache-2.0", size_kb: 5034, policy: "readme"}
 "https://github.com/caronc/apprise": {repo: "caronc/apprise", sha: "31661d2fdf5e2572b07295ab8dcb2f0785de3e00", path: "", pinned: "2026-10-29", license_at_pin: "BSD-2-Clause", size_kb: 16115, policy: "readme"}
@@ -1408,6 +1420,7 @@
 "https://github.com/fravoll/solidity-patterns": {repo: "fravoll/solidity-patterns", sha: "7055dfbc45c94df69b42bf41e237548064a3cb5f", path: "", pinned: "2026-10-29", license_at_pin: "MIT", size_kb: 211, policy: "readme"}
 "https://github.com/frida/frida": {repo: "frida/frida", sha: "55e4c515440e4ad6e4433277f832ef2ba73e4d3e", path: "", pinned: "2026-10-29", license_at_pin: "NOASSERTION", size_kb: 21160, policy: "readme"}
 "https://github.com/friendlyanon/cmake-init": {repo: "friendlyanon/cmake-init", sha: "7e0c52fc73f235b073501407b71a27a94b5f7e42", path: "", pinned: "2026-10-29", license_at_pin: "GPL-3.0", size_kb: 2924, policy: "readme"}
+"https://github.com/froala/wysiwyg-editor": {repo: "froala/wysiwyg-editor", sha: "fd6f6719bf6a2dd9301b05597cd17e1e4ef74e5a", path: "", pinned: "2026-11-16", license_at_pin: "NOASSERTION", size_kb: 87504, policy: "readme"}
 "https://github.com/frohoff/ysoserial": {repo: "frohoff/ysoserial", sha: "218bcffcaaa904a4e392f0c15d9e2874533635a3", path: "", pinned: "2026-10-29", license_at_pin: "MIT", size_kb: 460, policy: "readme"}
 "https://github.com/fullstorydev/grpcurl": {repo: "fullstorydev/grpcurl", sha: "1bac0f73832fa58af6af5c4c19a581886e1fe7a0", path: "", pinned: "2026-10-29", license_at_pin: "MIT", size_kb: 652, policy: "readme"}
 "https://github.com/fuma-nama/fumadocs": {repo: "fuma-nama/fumadocs", sha: "c308d523f3e20e9f07aa14ae48ab00ef9e610b9d", path: "", pinned: "2026-10-29", license_at_pin: "MIT", size_kb: 147102, policy: "snapshot"}
@@ -1794,6 +1807,7 @@
 "https://github.com/kaaveland/eugene": {repo: "kaaveland/eugene", sha: "3356eea43f3fa30e2e61d206d5f96c253cd8c6e3", path: "", pinned: "2026-10-29", license_at_pin: "MIT", size_kb: 1872, policy: "readme"}
 "https://github.com/kadenzipfel/smart-contract-vulnerabilities": {repo: "kadenzipfel/smart-contract-vulnerabilities", sha: "c3f75317fca76bbd40471a89ec8024d7c2298286", path: "", pinned: "2026-10-29", license_at_pin: "MIT", size_kb: 3039, policy: "readme"}
 "https://github.com/kanidm/webauthn-rs": {repo: "kanidm/webauthn-rs", sha: "be696b79800bd1953df78e87d0215571733cc26f", path: "", pinned: "2026-10-29", license_at_pin: "MPL-2.0", size_kb: 8083, policy: "readme"}
+"https://github.com/kapishdima/fonttrio": {repo: "kapishdima/fonttrio", sha: "8af7098ada0b90f076fbfe260244d11b05dd2403", path: "", pinned: "2026-11-16", license_at_pin: "MIT", size_kb: 38649, policy: "readme"}
 "https://github.com/karanpratapsingh/system-design": {repo: "karanpratapsingh/system-design", sha: "6dcea405d41401bfbe4031b6b80f7a2d87b712ba", path: "", pinned: "2026-10-29", license_at_pin: "NOASSERTION", size_kb: 5461, policy: "readme"}
 "https://github.com/karpathy/nanochat": {repo: "karpathy/nanochat", sha: "92d63d4e8bb4df75c3b71618f31ddde2378b2bcd", path: "", pinned: "2026-10-29", license_at_pin: "MIT", size_kb: 2520, policy: "readme"}
 "https://github.com/karpathy/nn-zero-to-hero": {repo: "karpathy/nn-zero-to-hero", sha: "73c3fcc741f0ec104ca850b1fb0df90e7e8d4cde", path: "", pinned: "2026-10-29", license_at_pin: "MIT", size_kb: 50, policy: "readme"}
@@ -1806,6 +1820,7 @@
 "https://github.com/kenryu42/cc-safety-net": {repo: "kenryu42/cc-safety-net", sha: "a84eb80e5e93433b026b6dcf78044e0b2f2cf721", path: "", pinned: "2026-10-29", license_at_pin: "MIT", size_kb: 49866, policy: "snapshot"}
 "https://github.com/keon/algorithms": {repo: "keon/algorithms", sha: "bd1d152f9ec7331c69be662831610b003b10fc7a", path: "", pinned: "2026-10-29", license_at_pin: "MIT", size_kb: 2043, policy: "snapshot"}
 "https://github.com/keplergl/kepler.gl": {repo: "keplergl/kepler.gl", sha: "f26ee603bf5377bdf99009841d02adc11b320134", path: "", pinned: "2026-10-29", license_at_pin: "MIT", size_kb: 63218, policy: "readme"}
+"https://github.com/keshav-exe/gradii": {repo: "keshav-exe/gradii", sha: "6a492df048ba30de6f5f469ff08aea67cebe28a7", path: "", pinned: "2026-11-16", license_at_pin: "MIT", size_kb: 39439, policy: "readme"}
 "https://github.com/kestra-io/kestra": {repo: "kestra-io/kestra", sha: "13065ebddab3d99036c1ccbf1435c5ae37347d7a", path: "", pinned: "2026-10-29", license_at_pin: "Apache-2.0", size_kb: 151002, policy: "readme"}
 "https://github.com/kettanaito/naming-cheatsheet": {repo: "kettanaito/naming-cheatsheet", sha: "7b90cd7b2d3ccb104a4443d5e7e152b8fd400533", path: "", pinned: "2026-10-29", license_at_pin: "MIT", size_kb: 56, policy: "readme"}
 "https://github.com/kevin-wayne/algs4": {repo: "kevin-wayne/algs4", sha: "7bb62c32f03fec900f0cc796a548ab992feffe4e", path: "", pinned: "2026-10-29", license_at_pin: "GPL-3.0", size_kb: 2347, policy: "readme"}
@@ -1933,6 +1948,7 @@
 "https://github.com/m-bain/whisperX": {repo: "m-bain/whisperX", sha: "5d3678b8535698a2826a5db9eb3e4105aef85dd9", path: "", pinned: "2026-10-29", license_at_pin: "BSD-2-Clause", size_kb: 41993, policy: "readme"}
 "https://github.com/m-ou-se/rust-atomics-and-locks": {repo: "m-ou-se/rust-atomics-and-locks", sha: "d945e828bd08719a2d7cb6d758be4611bd90ba2b", path: "", pinned: "2026-10-29", license_at_pin: "NOASSERTION", size_kb: 37, policy: "readme"}
 "https://github.com/m4b/goblin": {repo: "m4b/goblin", sha: "cc6beec889d74680d8f77626f508cb9d949dfc23", path: "", pinned: "2026-10-29", license_at_pin: "MIT", size_kb: 3460, policy: "readme"}
+"https://github.com/madebymustafa/design-taste": {repo: "madebymustafa/design-taste", sha: "c4a6bff0871eb4b15371b0e7d2751628b0ed4608", path: "", pinned: "2026-11-16", license_at_pin: "MIT", size_kb: 17004, policy: "snapshot"}
 "https://github.com/madhuakula/kubernetes-goat": {repo: "madhuakula/kubernetes-goat", sha: "723a0db478f050d173d23b4ce5044b65bce0bdd0", path: "", pinned: "2026-10-29", license_at_pin: "MIT", size_kb: 130233, policy: "readme"}
 "https://github.com/mage-ai/mage-ai": {repo: "mage-ai/mage-ai", sha: "1826a3795ead8c62e56e81497edd824efb1d5472", path: "", pinned: "2026-10-29", license_at_pin: "Apache-2.0", size_kb: 249114, policy: "readme"}
 "https://github.com/magicblock-labs/bolt": {repo: "magicblock-labs/bolt", sha: "719060783fe67a786cb179eab8d60ddfec7de25f", path: "", pinned: "2026-10-29", license_at_pin: "MIT", size_kb: 8683, policy: "snapshot"}
@@ -1955,6 +1971,7 @@
 "https://github.com/marmelab/shadcn-admin-kit": {repo: "marmelab/shadcn-admin-kit", sha: "c1503ddeb3df26e913e8014e5c4f64a72f31f31c", path: "", pinned: "2026-10-29", license_at_pin: "MIT", size_kb: 40013, policy: "snapshot"}
 "https://github.com/martinus/nanobench": {repo: "martinus/nanobench", sha: "7252da9d96bd0d71f508e9b2813ab1f57fdfaec1", path: "", pinned: "2026-10-29", license_at_pin: "MIT", size_kb: 8022, policy: "snapshot"}
 "https://github.com/martinus/unordered_dense": {repo: "martinus/unordered_dense", sha: "7c58a8b7a48e790fe72f6508eb3b46317cbba9d5", path: "", pinned: "2026-10-29", license_at_pin: "MIT", size_kb: 7047, policy: "snapshot"}
+"https://github.com/marvkr/better-design": {repo: "marvkr/better-design", sha: "175e7ba49bcf83857abc32933686b5aa3abb197e", path: "", pinned: "2026-11-16", license_at_pin: "MIT", size_kb: 1319, policy: "snapshot"}
 "https://github.com/mastra-ai/mastra": {repo: "mastra-ai/mastra", sha: "381bcd079dbeee62bd49d6c11180bf07d09f723b", path: "", pinned: "2026-10-29", license_at_pin: "NOASSERTION", size_kb: 1725069, policy: "readme"}
 "https://github.com/matejak/argbash": {repo: "matejak/argbash", sha: "eeb6aff74486b84bb05fe1c15f3d3d815122fa6e", path: "", pinned: "2026-10-29", license_at_pin: "NOASSERTION", size_kb: 1243, policy: "readme"}
 "https://github.com/matiassingers/awesome-readme": {repo: "matiassingers/awesome-readme", sha: "3bf5155bf52b1fc30c4b1f7ef4fc09e640e8c60d", path: "", pinned: "2026-10-29", license_at_pin: "none", size_kb: 392, policy: "link"}
@@ -2213,6 +2230,7 @@
 "https://github.com/olcf/cuda-training-series": {repo: "olcf/cuda-training-series", sha: "9cd77d539d85ee3457e09a083ba299b787b7a16e", path: "", pinned: "2026-10-29", license_at_pin: "none", size_kb: 174, policy: "link"}
 "https://github.com/ollama/ollama": {repo: "ollama/ollama", sha: "46d2e4e8fbf9329601452ede6d21b4030faa5607", path: "", pinned: "2026-10-29", license_at_pin: "MIT", size_kb: 96859, policy: "readme"}
 "https://github.com/omgovich/react-colorful": {repo: "omgovich/react-colorful", sha: "8506e8c4b777e0056ce3567dc3a06ced143034bc", path: "", pinned: "2026-10-29", license_at_pin: "MIT", size_kb: 3457, policy: "readme"}
+"https://github.com/once-ui-system/core": {repo: "once-ui-system/core", sha: "0a3e5446dd2e79c87bc0d0771d52b3ff769b84c6", path: "", pinned: "2026-11-16", license_at_pin: "MIT", size_kb: 91041, policy: "readme"}
 "https://github.com/onqtam/awesome-cmake": {repo: "onqtam/awesome-cmake", sha: "40dfb5e378c52cba5710e8041a70c7bca91d883e", path: "", pinned: "2026-10-29", license_at_pin: "NOASSERTION", size_kb: 171, policy: "readme"}
 "https://github.com/open-circle/valibot": {repo: "open-circle/valibot", sha: "d72f76fcf70ccfa0a5ca341b80da1d440ac60b11", path: "", pinned: "2026-10-29", license_at_pin: "MIT", size_kb: 15254, policy: "readme"}
 "https://github.com/open-feature/spec": {repo: "open-feature/spec", sha: "ec6f3d095ebde7eef72886395ac2ac51602bfb52", path: "", pinned: "2026-10-29", license_at_pin: "Apache-2.0", size_kb: 152124, policy: "readme"}
@@ -2306,6 +2324,7 @@
 "https://github.com/panva/jose": {repo: "panva/jose", sha: "408077285541d63e37590604ff7946ef90595463", path: "", pinned: "2026-10-29", license_at_pin: "MIT", size_kb: 16614, policy: "readme"}
 "https://github.com/panva/node-oidc-provider": {repo: "panva/node-oidc-provider", sha: "ad39e1a5109b8f8916c83df6feff4c0eb00838df", path: "", pinned: "2026-10-29", license_at_pin: "MIT", size_kb: 8639, policy: "readme"}
 "https://github.com/panva/openid-client": {repo: "panva/openid-client", sha: "f396c7f1b55b64e1b9b5c4bef80339c80a928549", path: "", pinned: "2026-10-29", license_at_pin: "MIT", size_kb: 2919, policy: "readme"}
+"https://github.com/paper-design/shaders": {repo: "paper-design/shaders", sha: "e7003a2d4e6e932e30b8fa11ec1239e6ea48e16a", path: "", pinned: "2026-11-16", license_at_pin: "Apache-2.0", size_kb: 224104, policy: "readme"}
 "https://github.com/paperclipai/paperclip": {repo: "paperclipai/paperclip", sha: "c4b6168e08be4f669e78fdbcee49e9b6a52b58c0", path: "", pinned: "2026-10-29", license_at_pin: "MIT", size_kb: 432964, policy: "readme"}
 "https://github.com/papers-we-love/papers-we-love": {repo: "papers-we-love/papers-we-love", sha: "9b92363eac4d4fbea0f5fdc7766ef68d22037ca8", path: "", pinned: "2026-10-29", license_at_pin: "none", size_kb: 230761, policy: "link"}
 "https://github.com/paradedb/paradedb": {repo: "paradedb/paradedb", sha: "cb78a9469c2e31e2085248cda8c1dfd919d4c129", path: "", pinned: "2026-10-29", license_at_pin: "AGPL-3.0", size_kb: 231425, policy: "readme"}
@@ -2372,6 +2391,7 @@
 "https://github.com/pimlicolabs/permissionless.js": {repo: "pimlicolabs/permissionless.js", sha: "a536891b73e38058c5308e0df3409cb7ed433970", path: "", pinned: "2026-10-29", license_at_pin: "MIT", size_kb: 12596, policy: "readme"}
 "https://github.com/pingcap/tidb": {repo: "pingcap/tidb", sha: "4150cef7a280246667f8bf0b97c6cd53bcd09f56", path: "", pinned: "2026-10-29", license_at_pin: "Apache-2.0", size_kb: 832409, policy: "readme"}
 "https://github.com/pipecat-ai/pipecat": {repo: "pipecat-ai/pipecat", sha: "86b75012c8e110d0544ad019be2a7a3db5a19771", path: "", pinned: "2026-10-29", license_at_pin: "BSD-2-Clause", size_kb: 216731, policy: "readme"}
+"https://github.com/pixelact-ui/pixelact-ui": {repo: "pixelact-ui/pixelact-ui", sha: "165eacd56d274e4998835a0b3d3fa6d725c7bf71", path: "", pinned: "2026-11-16", license_at_pin: "MIT", size_kb: 2700, policy: "readme"}
 "https://github.com/pixijs/pixijs": {repo: "pixijs/pixijs", sha: "2e8cacbe1ed4ed0fc31d5b59b9895c811ac0e003", path: "", pinned: "2026-10-29", license_at_pin: "MIT", size_kb: 137647, policy: "readme"}
 "https://github.com/pkivolowitz/asm_book": {repo: "pkivolowitz/asm_book", sha: "4f02c5fc668930f3fdf9b2152cfa0bd010fed717", path: "", pinned: "2026-10-29", license_at_pin: "NOASSERTION", size_kb: 128606, policy: "readme"}
 "https://github.com/plantuml/plantuml": {repo: "plantuml/plantuml", sha: "552caee3defac3ec4a216ac8f81e98db0f593bf9", path: "", pinned: "2026-10-29", license_at_pin: "LGPL-3.0", size_kb: 1409543, policy: "readme"}
@@ -2564,6 +2584,7 @@
 "https://github.com/riscv/riscv-isa-manual": {repo: "riscv/riscv-isa-manual", sha: "e17d92a1cbc06d5281d483eed670a010c27aa26c", path: "", pinned: "2026-10-29", license_at_pin: "CC-BY-4.0", size_kb: 64002, policy: "readme"}
 "https://github.com/risingwavelabs/risingwave": {repo: "risingwavelabs/risingwave", sha: "0ff82f14792748b93d93a05e2d32dcce77071019", path: "", pinned: "2026-10-29", license_at_pin: "Apache-2.0", size_kb: 242011, policy: "readme"}
 "https://github.com/rive-app/rive-react": {repo: "rive-app/rive-react", sha: "22c8f9d3c3cdc272450e5b6aded44059e746e646", path: "", pinned: "2026-10-29", license_at_pin: "MIT", size_kb: 11539, policy: "readme"}
+"https://github.com/rive-app/rive-runtime": {repo: "rive-app/rive-runtime", sha: "b36f5c868b3bc39aef2cfe114c98302b10dee0f5", path: "", pinned: "2026-11-16", license_at_pin: "MIT", size_kb: 150668, policy: "readme"}
 "https://github.com/rive-app/rive-wasm": {repo: "rive-app/rive-wasm", sha: "96cb9159816c0445ed8c29056cb0bf0716ba873f", path: "", pinned: "2026-10-29", license_at_pin: "MIT", size_kb: 29132, policy: "readme"}
 "https://github.com/riverqueue/river": {repo: "riverqueue/river", sha: "fc6c1d57cc72459050d36165c65bb73b05dcfa90", path: "", pinned: "2026-10-29", license_at_pin: "MPL-2.0", size_kb: 10461, policy: "readme"}
 "https://github.com/rizsotto/Bear": {repo: "rizsotto/Bear", sha: "9084d67616da9c995fbafad89ba485bc67646d1a", path: "", pinned: "2026-10-29", license_at_pin: "GPL-3.0", size_kb: 5829, policy: "readme"}
@@ -2893,6 +2914,8 @@
 "https://github.com/supabase/postgres": {repo: "supabase/postgres", sha: "12931793f8fa7ef7bd0eb0aea01e8a2c931a2c67", path: "", pinned: "2026-10-29", license_at_pin: "PostgreSQL", size_kb: 11261, policy: "readme"}
 "https://github.com/supabase/supabase": {repo: "supabase/supabase", sha: "5846d362a175189ef3d130da4899bc09aa7e3f04", path: "", pinned: "2026-10-29", license_at_pin: "Apache-2.0", size_kb: 2512000, policy: "readme"}
 "https://github.com/supabase/supavisor": {repo: "supabase/supavisor", sha: "4dc1fbbc89fd53510e94a1b8e56b531b7c6dd6c5", path: "", pinned: "2026-10-29", license_at_pin: "Apache-2.0", size_kb: 5890, policy: "readme"}
+"https://github.com/superdesigndev/superdesign": {repo: "superdesigndev/superdesign", sha: "49e2b9dd9615c6dae936b326b1ddb85d4f1d6f19", path: "", pinned: "2026-11-16", license_at_pin: "NOASSERTION", size_kb: 1318, policy: "readme"}
+"https://github.com/superdesigndev/superdesign-skill": {repo: "superdesigndev/superdesign-skill", sha: "f9f05cd988c247dce6c072eaf9ac6b162f2ffc4b", path: "", pinned: "2026-11-16", license_at_pin: "MIT", size_kb: 1083, policy: "snapshot"}
 "https://github.com/superfly/litefs": {repo: "superfly/litefs", sha: "a51e72d84eeb96ad210ef407230161192120ab96", path: "", pinned: "2026-10-29", license_at_pin: "Apache-2.0", size_kb: 840, policy: "readme"}
 "https://github.com/supermacro/neverthrow": {repo: "supermacro/neverthrow", sha: "5ef3a018bda74fb960e44b68fc3672635ee8037d", path: "", pinned: "2026-10-29", license_at_pin: "MIT", size_kb: 2007, policy: "readme"}
 "https://github.com/superradcompany/microsandbox": {repo: "superradcompany/microsandbox", sha: "8ff916f38a628390fff21e26339495272f20d782", path: "", pinned: "2026-10-29", license_at_pin: "Apache-2.0", size_kb: 1033769, policy: "readme"}
@@ -3102,6 +3125,7 @@
 "https://github.com/udecode/plate": {repo: "udecode/plate", sha: "12f01d9cc0eb89552848239fa885c670da46c0f1", path: "", pinned: "2026-10-29", license_at_pin: "NOASSERTION", size_kb: 335712, policy: "readme"}
 "https://github.com/uds-se/fuzzingbook": {repo: "uds-se/fuzzingbook", sha: "ba366ece058f1841e1b8d0fb52a42113ece4668a", path: "", pinned: "2026-10-29", license_at_pin: "NOASSERTION", size_kb: 1285308, policy: "readme"}
 "https://github.com/ueberdosis/tiptap": {repo: "ueberdosis/tiptap", sha: "4b803a093ba2aaffb7b14297804d66cbb62011b6", path: "", pinned: "2026-10-29", license_at_pin: "MIT", size_kb: 89445, policy: "readme"}
+"https://github.com/ui-layouts/cursify": {repo: "ui-layouts/cursify", sha: "b3a173c33f12e74550389c9555f9ce85c30c46f6", path: "", pinned: "2026-11-16", license_at_pin: "none", size_kb: 2607, policy: "link"}
 "https://github.com/ui-layouts/uilayouts": {repo: "ui-layouts/uilayouts", sha: "88d827d7ec342917ca06f6894e5add65fabbe5d8", path: "", pinned: "2026-10-29", license_at_pin: "MIT", size_kb: 168613, policy: "snapshot"}
 "https://github.com/uidotdev/usehooks": {repo: "uidotdev/usehooks", sha: "945436df0037bc21133379a5e13f1bd73f1ffc36", path: "", pinned: "2026-10-29", license_at_pin: "MIT", size_kb: 3209, policy: "snapshot"}
 "https://github.com/uiverse-io/galaxy": {repo: "uiverse-io/galaxy", sha: "adbd2adde0a299a3956ea288fb444ec01891ca41", path: "", pinned: "2026-10-29", license_at_pin: "MIT", size_kb: 5373, policy: "snapshot"}

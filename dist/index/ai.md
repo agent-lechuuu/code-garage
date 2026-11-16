@@ -55,7 +55,7 @@ See also: `ai.skills.planning`, `engineering.testing.tdd-bdd-practice`, `enginee
 
 - [brainstorming (superpowers)](https://github.com/obra/superpowers/tree/HEAD/skills/brainstorming) · MIT · 307k★ · t1 · skill · **trusted**
 - [writing-plans / executing-plans (superpowers)](https://github.com/obra/superpowers/tree/HEAD/skills/writing-plans) · MIT · t1 · skill · **reviewed**
-- [grill-me / grilling (mattpocock/skills)](https://github.com/mattpocock/skills/tree/HEAD/skills/productivity/grilling) · MIT · 305.4k★ · t1 · skill · **quarantine**
+- [grill-me / grilling (mattpocock/skills)](https://github.com/mattpocock/skills/tree/HEAD/skills/productivity/grilling) · MIT · 305.4k★ · t1 · skill · **reviewed**
 - [to-spec / implement-spec / to-tickets (mattpocock/skills)](https://github.com/mattpocock/skills/tree/HEAD/skills/engineering/to-spec) · MIT · t2 · skill · **quarantine**
 
 See also: `ai.context.spec-driven`

@@ -7927,3 +7927,684 @@ topics:
         tier: 2
         use: reference
         note: Community CSS/Tailwind elements (MIT, see uiverse-io/galaxy).
+
+  - id: frontend.ui.component-kits
+    title: 'UI sources: component kits to copy (owner''s picks)'
+    area: ui
+    why: 'The owner''s own component sources: copy-paste React/Tailwind/shadcn kits for landing pages, animated sections, maps, design systems. Look here first for any website or app UI; check each licence (two are Commons Clause).'
+    tags: [owner-ui, ui-sources, bookmarks, inspiration, components, react, tailwind, shadcn]
+    resources:
+      - name: shadcn/ui
+        url: 'https://github.com/shadcn-ui/ui'
+        kind: repo
+        license: MIT
+        stars: 128304
+        pushed: 2026-11-13
+        archived: false
+        tier: 1
+        use: vendor
+        install: 'npx shadcn@latest init'
+        note: 'Owner bookmark. Accessible copy-paste React components (Radix + Tailwind) with CLI and registry; the base most other kits build on. Site: ui.shadcn.com.'
+      - name: React Bits
+        url: 'https://github.com/DavidHDev/react-bits'
+        kind: repo
+        license: LicenseRef-Commons-Clause
+        license_note: MIT + Commons Clause
+        stars: 52094
+        pushed: 2026-11-16
+        archived: false
+        tier: 1
+        use: reference
+        note: 'Owner bookmark. Animated React components (text, backgrounds, cards, cursors) with live demos at reactbits.dev. Use in apps is fine; never redistribute or re-sell the components.'
+      - name: 21st.dev
+        url: 'https://github.com/serafimcloud/21st'
+        kind: repo
+        license: MIT
+        stars: 5566
+        pushed: 2025-05-28
+        archived: false
+        tier: 2
+        use: reference
+        note: 'Owner bookmark. Marketplace of 12,000+ community React/Tailwind/shadcn components (21st.dev); copy, install by command, or use the Magic MCP. Repo stale since 2025-05; each component keeps its author''s licence.'
+      - name: Once UI
+        url: 'https://github.com/once-ui-system/core'
+        kind: repo
+        license: MIT
+        stars: 272
+        pushed: 2026-11-15
+        archived: false
+        tier: 1
+        use: reference
+        note: 'Owner bookmark. Design system for React/Next.js with components, tokens, agent rules and starters (once-ui.com); Pro tier is paid.'
+      - name: Launch UI
+        url: 'https://github.com/launch-ui/launch-ui'
+        kind: repo
+        license: MIT
+        stars: 875
+        pushed: 2026-11-04
+        archived: false
+        tier: 1
+        use: vendor
+        note: Owner bookmark. Landing-page components and blocks for React + shadcn + Tailwind (launchuicomponents.com); free tier is open source.
+      - name: mapcn
+        url: 'https://github.com/AnmolSaini16/mapcn'
+        kind: repo
+        license: MIT
+        stars: 12394
+        pushed: 2026-11-15
+        archived: false
+        tier: 1
+        use: reference
+        note: 'Owner bookmark. Map components for React on MapLibre GL, Tailwind-styled, installed through the shadcn registry. Site: mapcn.dev.'
+      - name: Motion Primitives
+        url: 'https://github.com/ibelick/motion-primitives'
+        kind: repo
+        license: MIT
+        stars: 6972
+        pushed: 2026-09-28
+        archived: false
+        tier: 1
+        use: vendor
+        note: 'From the owner''s bookmarked X post on design repos for AI agents. Animated micro-interactions, morphing dialogs, text effects (motion-primitives.com).'
+      - name: UI Layouts
+        url: 'https://github.com/ui-layouts/uilayouts'
+        kind: repo
+        license: MIT
+        stars: 3863
+        pushed: 2026-10-31
+        archived: false
+        tier: 1
+        use: vendor
+        note: 'From the owner''s bookmarked X post on design repos for AI agents. Creative React components and blocks: image ripples, 3D blobs, draggable elements, reveals (ui-layouts.com).'
+      - name: Hyperiux components
+        url: 'https://github.com/Hyperiux-Immersion-Labs/hyperiux-components'
+        kind: repo
+        license: MIT AND MPL-2.0
+        stars: 113
+        pushed: 2026-11-03
+        archived: false
+        tier: 2
+        use: reference
+        note: 'From the owner''s bookmarked X post on design repos for AI agents. 75+ free Next.js effects (image trails, cinematic nav, WebGL), CLI-installable; the effects in registry/ are MPL-2.0, Pro is paid.'
+      - name: Trickle UI Kit
+        url: 'https://github.com/akaieuan/trickle-UI-kit'
+        kind: repo
+        license: MIT
+        stars: 57
+        pushed: 2026-11-12
+        archived: false
+        tier: 2
+        use: reference
+        note: 'From the owner''s bookmarked X post on design repos for AI agents. 47 pure-CSS text animations for React, zero runtime, SSR-safe (tricklekit.dev).'
+      - name: Cursify
+        url: 'https://github.com/ui-layouts/cursify'
+        kind: repo
+        license: none
+        stars: 2140
+        pushed: 2026-03-31
+        archived: false
+        tier: 2
+        use: reference
+        note: 'From the owner''s bookmarked X post on design repos for AI agents. Cursor effects for React (spotlights, trails, springs). No licence: read and learn only, never copy.'
+      - name: Froala editor
+        url: 'https://github.com/froala/wysiwyg-editor'
+        kind: repo
+        license: LicenseRef-proprietary
+        license_note: paid licence required
+        stars: 5392
+        pushed: 2026-09-30
+        archived: false
+        tier: 3
+        use: reference
+        note: Owner bookmark. Commercial WYSIWYG rich-text editor; source visible but needs a paid licence. Prefer the open editors in frontend.editors.rich-text.
+    see_also: [frontend.components.shadcn-registries, frontend.components.animated-component-kits, frontend.components.landing-page-blocks]
+
+  - id: frontend.ui.inspiration
+    title: 'UI sources: inspiration galleries (owner''s picks)'
+    area: ui
+    why: 'The owner''s go-to places for layout, page and app ideas: real product screenshots, component anatomy across design systems, bento grids, templates, snippet collections. Open two or three before designing a page.'
+    tags: [owner-ui, ui-sources, bookmarks, inspiration, design, layouts, gallery, landing-page]
+    resources:
+      - name: Mobbin
+        url: 'https://mobbin.com/'
+        kind: list
+        license: none
+        tier: 1
+        use: reference
+        note: 'Owner bookmark. 600,000+ screenshots and flows from shipped mobile and web apps; search by screen or pattern. Free to join, paid plans; has an MCP.'
+      - name: The Component Gallery
+        url: 'https://component.gallery/'
+        kind: list
+        license: none
+        tier: 1
+        use: reference
+        note: 'Owner bookmark. 60 component types with 2,671 examples from 95 design systems; best for naming, anatomy and states of a component.'
+      - name: Bento Grids
+        url: 'https://bentogrids.com/'
+        kind: list
+        license: none
+        tier: 2
+        use: reference
+        note: Owner bookmark. Curated bento-grid layout designs.
+      - name: FreeFrontend
+        url: 'https://freefrontend.com/'
+        kind: list
+        license: none
+        tier: 1
+        use: reference
+        note: 'Owner bookmark. Curated HTML/CSS/JS/Tailwind snippets with previews; licence varies per snippet, so treat as reference.'
+      - name: Variant
+        url: 'https://variant.com/'
+        kind: tool
+        license: none
+        tier: 2
+        use: reference
+        note: 'Owner bookmark. AI design generator: type an app or site idea and scroll through endless design variations (sign-up).'
+      - name: Framer template marketplace
+        url: 'https://www.framer.com/marketplace/templates/'
+        kind: list
+        license: none
+        tier: 2
+        use: reference
+        note: 'Owner bookmark. Website templates (many free); they only run inside Framer, so use them as layout and style ideas.'
+      - name: CodePen
+        url: 'https://codepen.io/'
+        kind: list
+        license: none
+        tier: 2
+        use: reference
+        note: 'Owner bookmark. Front-end playground; search pens for any effect. Blocks automated fetches: use the server-browser skill.'
+      - name: Rick and Morty style guide (Behance)
+        url: 'https://www.behance.net/gallery/90220333/Rick-and-Morty-Style-Guide'
+        kind: guide
+        license: none
+        tier: 3
+        use: reference
+        note: 'Owner bookmark. Style-guide artwork by Sangho Bang: how a full visual style guide is laid out. Copyrighted art, look only.'
+    see_also: [frontend.design.inspiration-galleries, frontend.design.design-systems-reference]
+
+  - id: frontend.ui.3d-shaders-motion
+    title: 'UI sources: 3D, shaders, liquid glass and motion (owner''s picks)'
+    area: ui
+    why: 'The owner''s sources for hero scenes and wow effects: Three.js components, WebGPU liquid glass, canvas shaders and mesh gradients, interactive animation runtimes, and two cloth-simulation pens they saved.'
+    tags: [owner-ui, ui-sources, bookmarks, inspiration, 3d, threejs, webgl, shaders, animation, motion]
+    resources:
+      - name: ThreeUI
+        url: 'https://github.com/MengTo/threeui'
+        kind: repo
+        license: MIT
+        stars: 7312
+        pushed: 2026-09-03
+        archived: false
+        tier: 1
+        use: reference
+        note: 'Owner bookmark. Copy-ready Three.js components, WebGL backgrounds, heroes and shaders (threeui.com/browse). The repo holds the 50 free Community components; Pro is paid.'
+      - name: liquid-dom
+        url: 'https://github.com/AndrewPrifer/liquid-dom'
+        kind: repo
+        license: MIT
+        stars: 2598
+        pushed: 2026-09-06
+        archived: false
+        tier: 1
+        use: reference
+        note: 'Owner bookmark. WebGPU liquid-glass rendering for the DOM with React 19, Three.js and R3F adapters; demo at liquid-dom-showcase.vercel.app. Needs WebGPU.'
+      - name: Paper Shaders
+        url: 'https://github.com/paper-design/shaders'
+        kind: repo
+        license: Apache-2.0
+        stars: 3981
+        pushed: 2026-11-13
+        archived: false
+        tier: 1
+        use: install
+        install: 'npm install @paper-design/shaders-react'
+        note: 'From the owner''s bookmarked X post on design repos for AI agents. Zero-dependency canvas shaders: mesh gradients, fluid backgrounds (shaders.paper.design).'
+      - name: Canvas UI
+        url: 'https://github.com/DavidHDev/canvas-ui'
+        kind: repo
+        license: LicenseRef-Commons-Clause
+        license_note: MIT + Commons Clause
+        stars: 5424
+        pushed: 2026-11-08
+        archived: false
+        tier: 1
+        use: reference
+        note: 'From the owner''s bookmarked X post on design repos for AI agents. WebGL effects over real HTML (liquid distortion, glass shatter, particles) for React, Vue, Svelte, vanilla (canvasui.dev). Same no-redistribution rule as React Bits.'
+      - name: Rive runtime
+        url: 'https://github.com/rive-app/rive-runtime'
+        kind: repo
+        license: MIT
+        stars: 1264
+        pushed: 2026-11-16
+        archived: false
+        tier: 1
+        use: install
+        install: 'npm install @rive-app/react-canvas'
+        note: 'Owner bookmark. Interactive animations with state machines; design in the Rive editor (rive.app, freemium), ship with the open runtimes (rive-react, rive-wasm).'
+      - name: Unicorn Studio
+        url: 'https://www.unicorn.studio/docs/'
+        kind: docs
+        license: none
+        tier: 2
+        use: reference
+        note: 'Owner bookmark. No-code WebGL scenes and effects with an embed SDK and MCP. Free plan is personal, non-commercial; the SDK is proprietary.'
+      - name: Old Cloth with Wind (Sabo Sugi)
+        url: 'https://codepen.io/sabosugi/full/ByzLYpb'
+        kind: codepen
+        license: none
+        tier: 2
+        use: reference
+        note: 'Owner bookmark. Three.js r160 plane with a vertex shader layering sine waves into wind, pinned at the top, image or video as the cloth.'
+      - name: Draggable receipt cloth (Chetas)
+        url: 'https://codepen.io/editor/ChetasLua/pen/019cce0b-5745-7c83-9b36-5824bd4954fe'
+        kind: codepen
+        license: none
+        tier: 2
+        use: reference
+        note: 'Owner bookmark. Saved as ''real bill'', pen title ''gemini'': a receipt drawn on a 2D canvas, used as a texture on a raw-WebGL cloth simulation with pointer drag, no Three.js.'
+    see_also: [frontend.3d.threejs, frontend.3d.shaders-and-gpu-fundamentals, frontend.animation.lottie-rive]
+
+  - id: frontend.ui.retro-pixel-ascii
+    title: 'UI sources: retro, pixel-art and ASCII styles (owner''s picks)'
+    area: ui
+    why: 'The owner likes retro looks: pixelated React component kits and tools that turn images or video into ASCII, dither and halftone art, or animate ASCII frame by frame.'
+    tags: [owner-ui, ui-sources, bookmarks, inspiration, retro, pixel-art, ascii, 8bit]
+    resources:
+      - name: Pixelact UI
+        url: 'https://github.com/pixelact-ui/pixelact-ui'
+        kind: repo
+        license: MIT
+        stars: 122
+        pushed: 2026-07-29
+        archived: false
+        tier: 1
+        use: reference
+        note: Owner bookmark. Pixel-art React component library built on shadcn/ui (pixelactui.com).
+      - name: RetroUI
+        url: 'https://github.com/Dksie09/RetroUI'
+        kind: repo
+        license: BSD-3-Clause
+        stars: 493
+        pushed: 2025-05-11
+        archived: false
+        tier: 2
+        use: reference
+        note: Owner bookmark. Pixelated retro React components for Tailwind + TypeScript (retroui.io). No push since 2025-05.
+      - name: ASCII Motion
+        url: 'https://github.com/CameronFoxly/Ascii-Motion'
+        kind: repo
+        license: MIT
+        stars: 939
+        pushed: 2026-11-14
+        archived: false
+        tier: 1
+        use: reference
+        note: 'Owner bookmark. Browser editor to draw and animate ASCII art frame by frame, or convert image/video, with many export formats (ascii-motion.com).'
+      - name: ASCII Magic
+        url: 'https://www.ascii-magic.com/'
+        kind: tool
+        license: none
+        tier: 1
+        use: reference
+        note: 'Owner bookmark. Turns images and video into ASCII, dither, pixel, halftone and 100+ effects; shader library and MCP. Core free, Pro $4-8/month.'
+    see_also: [frontend.3d.generative-art-tools, frontend.components.react-styled-libraries]
+
+  - id: frontend.ui.fonts
+    title: 'UI sources: fonts and font pairings (owner''s picks)'
+    area: ui
+    why: 'Where the owner picks typefaces: big free libraries, contemporary display faces, and ready heading/body/mono pairings for shadcn projects. Check each font''s licence before self-hosting.'
+    tags: [owner-ui, ui-sources, bookmarks, inspiration, fonts, typography, typefaces]
+    resources:
+      - name: Google Fonts
+        url: 'https://fonts.google.com/'
+        kind: list
+        license: NOASSERTION
+        license_note: 'per-font licences, mostly OFL-1.1'
+        tier: 1
+        use: reference
+        note: Owner bookmark. Open-source web fonts with CSS embed or download; mostly SIL OFL 1.1 (source repo google/fonts).
+      - name: Fontshare
+        url: 'https://www.fontshare.com/'
+        kind: list
+        license: none
+        tier: 1
+        use: reference
+        note: 'Owner bookmark. Free fonts by Indian Type Foundry, free for commercial use; ITF Free Font License or OFL per font, so check before mirroring files.'
+      - name: Uncut
+        url: 'https://uncut.wtf/'
+        kind: list
+        license: none
+        tier: 2
+        use: reference
+        note: 'Owner bookmark. 163 free contemporary typefaces (sans, serif, mono, display); each font links to its own licence.'
+      - name: Fonttrio
+        url: 'https://github.com/kapishdima/fonttrio'
+        kind: repo
+        license: MIT
+        stars: 455
+        pushed: 2026-05-27
+        archived: false
+        tier: 1
+        use: reference
+        note: 'Owner bookmark. Curated heading + body + mono pairings for shadcn/ui, installed with one CLI command (fonttrio.xyz).'
+    see_also: [frontend.design.fonts, frontend.design.typography-scales-and-loading]
+
+  - id: frontend.ui.color-gradients
+    title: 'UI sources: colour palettes and gradients (owner''s picks)'
+    area: ui
+    why: 'The owner''s colour tools: a fast palette generator, curated gradients with hex values, and a mesh-gradient and shader studio that exports CSS.'
+    tags: [owner-ui, ui-sources, bookmarks, inspiration, color, colour, palette, gradients]
+    resources:
+      - name: Coolors
+        url: 'https://coolors.co/'
+        kind: tool
+        license: none
+        tier: 1
+        use: reference
+        note: 'Owner bookmark. Palette generator: lock colours, hit space for new ones, export as CSS/Tailwind; also contrast checker and gradient maker.'
+      - name: Gradii
+        url: 'https://github.com/keshav-exe/gradii'
+        kind: repo
+        license: MIT
+        stars: 286
+        pushed: 2026-11-13
+        archived: false
+        tier: 1
+        use: reference
+        note: 'Owner bookmark. Mesh-gradient and fluid-shader studio, exports CSS/MP4/canvas, free, no sign-up, at gradii.kshv.me. The bookmarked gradii.fun domain is now parked.'
+      - name: Design Gradients
+        url: 'https://www.designgradients.com/'
+        kind: list
+        license: none
+        tier: 2
+        use: reference
+        note: Owner bookmark. 48 curated linear gradients with hex values.
+    see_also: [frontend.design.color-systems, frontend.design.css-tools-generators]
+
+  - id: frontend.ui.icons-assets
+    title: 'UI sources: icons, emoji, photos and clipart (owner''s picks)'
+    area: ui
+    why: 'The owner''s asset sources: icon sets (static and animated), SVG-to-React conversion, emoji, stock photos, transparent clipart. Mind attribution rules (Flaticon free use needs credit; clipart rights are unclear).'
+    tags: [owner-ui, ui-sources, bookmarks, inspiration, icons, svg, emoji, photos, assets]
+    resources:
+      - name: lucide-animated
+        url: 'https://github.com/pqoqubbw/icons'
+        kind: repo
+        license: MIT
+        stars: 8298
+        pushed: 2026-11-15
+        archived: false
+        tier: 1
+        use: vendor
+        note: Owner bookmark. 350+ animated React icons built with Motion and Lucide; copy-paste or shadcn CLI (lucide-animated.com).
+      - name: Font Awesome Free
+        url: 'https://github.com/FortAwesome/Font-Awesome'
+        kind: repo
+        license: CC-BY-4.0 AND OFL-1.1 AND MIT
+        stars: 77043
+        pushed: 2026-07-15
+        archived: false
+        tier: 1
+        use: install
+        install: 'npm install @fortawesome/fontawesome-free'
+        note: 'Owner bookmark. Icon toolkit (SVG, web font, CSS). Free icons CC BY 4.0, fonts OFL, code MIT; Pro icons are paid.'
+      - name: SVGR
+        url: 'https://github.com/gregberge/svgr'
+        kind: repo
+        license: MIT
+        stars: 11061
+        pushed: 2026-03-01
+        archived: false
+        tier: 1
+        use: install
+        install: 'npm install --save-dev @svgr/cli'
+        note: 'Owner bookmark. Turns SVG files into React components: CLI, playground (react-svgr.com) and bundler plugins.'
+      - name: Flaticon
+        url: 'https://www.flaticon.com/icons'
+        kind: list
+        license: none
+        tier: 2
+        use: reference
+        note: 'Owner bookmark. Huge icon library (SVG, PNG, icon font); free use requires attribution.'
+      - name: Pexels
+        url: 'https://www.pexels.com/'
+        kind: list
+        license: none
+        tier: 2
+        use: reference
+        note: Owner bookmark. Free stock photos and videos under the Pexels licence.
+      - name: GetEmoji
+        url: 'https://getemoji.com/'
+        kind: list
+        license: none
+        tier: 3
+        use: reference
+        note: Owner bookmark. Copy-paste list of every emoji by category.
+      - name: HiClipart
+        url: 'https://www.hiclipart.com/'
+        kind: list
+        license: none
+        tier: 3
+        use: reference
+        note: 'Owner bookmark. Transparent-background PNG clipart; image rights unclear, use for mock-ups only.'
+    see_also: [frontend.design.icon-sets, frontend.design.icon-tooling-svg, frontend.design.illustrations-and-backgrounds]
+
+  - id: frontend.ui.image-tools
+    title: 'UI sources: image editing, favicons and code screenshots (owner''s picks)'
+    area: ui
+    why: 'Quick tools the owner uses to prepare site assets: browser photo editors, background removal, resizing, favicon sets, pretty code screenshots, graphic templates.'
+    tags: [owner-ui, ui-sources, bookmarks, inspiration, images, favicon, photo-editor, assets]
+    resources:
+      - name: RealFaviconGenerator
+        url: 'https://realfavicongenerator.net/'
+        kind: tool
+        license: none
+        tier: 1
+        use: reference
+        note: Owner bookmark. Generates the full favicon set plus HTML for every platform and checks an existing site; its core library is RealFaviconGenerator/core (MIT).
+      - name: favicon.cc
+        url: 'https://www.favicon.cc/'
+        kind: tool
+        license: none
+        tier: 2
+        use: reference
+        note: Owner bookmark. Pixel editor to draw a favicon.ico by hand.
+      - name: Photopea
+        url: 'https://www.photopea.com/'
+        kind: tool
+        license: none
+        tier: 1
+        use: reference
+        note: Owner bookmark. Browser photo editor with PSD support (free with ads); not open source.
+      - name: Pixlr
+        url: 'https://pixlr.com/'
+        kind: tool
+        license: none
+        tier: 2
+        use: reference
+        note: Owner bookmark. Online photo editor with AI image tools.
+      - name: remove.bg
+        url: 'https://www.remove.bg/'
+        kind: tool
+        license: none
+        tier: 2
+        use: reference
+        note: Owner bookmark. Automatic background removal (freemium).
+      - name: Image Resizer
+        url: 'https://imageresizer.com/'
+        kind: tool
+        license: none
+        tier: 2
+        use: reference
+        note: 'Owner bookmark. Free online resize, crop and compress.'
+      - name: Carbon
+        url: 'https://github.com/carbon-app/carbon'
+        kind: repo
+        license: MIT
+        stars: 36145
+        pushed: 2026-11-05
+        archived: false
+        tier: 2
+        use: reference
+        note: 'Owner bookmark. Styled images of source code for docs, slides and social posts (carbon.now.sh).'
+      - name: Canva
+        url: 'https://www.canva.com/'
+        kind: tool
+        license: none
+        tier: 2
+        use: reference
+        note: 'Owner bookmark. Template-based graphic design (social images, OG images, slides); no code output.'
+      - name: Adobe Express
+        url: 'https://express.adobe.com/sp'
+        kind: tool
+        license: none
+        tier: 3
+        use: reference
+        note: 'Owner bookmark. Adobe''s online design tool with templates; no code output.'
+    see_also: [frontend.perf.images, frontend.pwa.assets-manifest-push, frontend.seo.head-metadata-og]
+
+  - id: frontend.ui.ai-design-builders
+    title: 'UI sources: AI design tools and design skills for agents (owner''s picks)'
+    area: ui
+    why: 'Tools that make AI-built UIs look less generic: design skills and MCPs for Claude Code, a site-cloning template, the skills directory, and hosted AI site and design generators the owner bookmarked.'
+    tags: [owner-ui, ui-sources, bookmarks, inspiration, ai, agent-skills, design-skills, mcp, website-builder]
+    resources:
+      - name: Superdesign skill
+        url: 'https://github.com/superdesigndev/superdesign-skill'
+        kind: skill
+        license: MIT
+        stars: 1015
+        pushed: 2026-08-21
+        archived: false
+        tier: 1
+        use: skill
+        install: npx skills add superdesigndev/superdesign-skill
+        note: 'From the owner''s bookmarked X post on design repos for AI agents. Gives Claude Code a design canvas to explore several UI directions before coding; powered by superdesign.dev.'
+      - name: Design Taste
+        url: 'https://github.com/madebymustafa/design-taste'
+        kind: skill
+        license: MIT
+        stars: 226
+        pushed: 2026-08-15
+        archived: false
+        tier: 1
+        use: skill
+        note: 'From the owner''s bookmarked X post on design repos for AI agents. 24 agent skills that turn design taste into rules: typography, colour, layout, styles like quiet luxury and Japanese minimalism.'
+      - name: Better Design
+        url: 'https://github.com/marvkr/better-design'
+        kind: mcp
+        license: MIT
+        stars: 580
+        pushed: 2026-10-25
+        archived: false
+        tier: 1
+        use: mcp
+        note: 'From the owner''s bookmarked X post on design repos for AI agents. Design MCP + shadcn registry: 31 brand-style themes with tokens, UI principles and WCAG rules for agents. Don''t ship a theme that imitates a real brand as-is.'
+      - name: AI website cloner template
+        url: 'https://github.com/JCodesMore/ai-website-cloner-template'
+        kind: template
+        license: MIT
+        stars: 39258
+        pushed: 2026-11-10
+        archived: false
+        tier: 1
+        use: template
+        note: 'Owner bookmark. Template and skill that has Claude Code recreate a given website as a Next.js app. Clone only sites you own or for study; copying others'' design and content has copyright limits.'
+      - name: skills.sh
+        url: 'https://skills.sh/'
+        kind: list
+        license: none
+        tier: 1
+        use: reference
+        note: 'Owner bookmark. Vercel''s directory of agent skills (`npx skills add`); search it for design and frontend skills. Each skill has its own licence.'
+      - name: Superdesign (app)
+        url: 'https://github.com/superdesigndev/superdesign'
+        kind: repo
+        license: AGPL-3.0-only
+        license_note: AGPL-3.0 plus commercial Enterprise files
+        stars: 7611
+        pushed: 2026-06-29
+        archived: false
+        tier: 2
+        use: reference
+        note: 'Owner bookmark. AI product-design agent (superdesign.dev): prompts to UI, landing pages, animations. AGPL plus commercial Enterprise files: use the hosted app or the MIT skill above, never copy its code.'
+      - name: Webild
+        url: 'https://www.webild.io/'
+        kind: tool
+        license: none
+        tier: 3
+        use: reference
+        note: Owner bookmark. Hosted AI website builder (from $24.99/month); idea to site with hosting.
+      - name: Design Rocket
+        url: 'https://designrocket.io/'
+        kind: course
+        license: none
+        tier: 3
+        use: reference
+        note: 'Owner bookmark. Paid course on building websites with AI, with templates and motion backgrounds.'
+    see_also: [frontend.agent.design-skills, frontend.agent.skills-ecosystem, frontend.agent.shadcn-registry-mcp]
+
+  - id: frontend.ui.learning-and-utilities
+    title: 'UI sources: CSS learning, style guides and web-dev extras (owner''s picks)'
+    area: ui
+    why: 'The owner''s reference reading and small web-dev helpers: CSS techniques, a JS style guide, tutorials, typesafe APIs for the app behind the UI, and embed generators for X posts and YouTube buttons.'
+    tags: [owner-ui, ui-sources, bookmarks, inspiration, css, learning, style-guide, embeds]
+    resources:
+      - name: CSS-Tricks
+        url: 'https://css-tricks.com/'
+        kind: docs
+        license: none
+        tier: 1
+        use: reference
+        note: 'Owner bookmark. Articles, guides and almanac for CSS/HTML/JS techniques (flexbox and grid guides).'
+      - name: Airbnb JavaScript style guide
+        url: 'https://github.com/airbnb/javascript'
+        kind: guide
+        license: MIT
+        stars: 148007
+        pushed: 2026-04-16
+        archived: false
+        tier: 2
+        use: reference
+        note: Owner bookmark. JavaScript and React style guide with ESLint configs.
+      - name: tRPC
+        url: 'https://github.com/trpc/trpc'
+        kind: repo
+        license: MIT
+        stars: 40810
+        pushed: 2026-11-16
+        archived: false
+        tier: 2
+        use: install
+        install: 'npm install @trpc/server @trpc/client'
+        note: Owner bookmark. End-to-end typesafe APIs for TypeScript apps (trpc.io).
+      - name: W3Schools HTML
+        url: 'https://www.w3schools.com/html/'
+        kind: course
+        license: none
+        tier: 3
+        use: reference
+        note: Owner bookmark. HTML tutorial with runnable examples.
+      - name: John Smilga
+        url: 'https://www.johnsmilga.com/'
+        kind: course
+        license: none
+        tier: 3
+        use: reference
+        note: Owner bookmark. Project-based web-dev video courses (paid).
+      - name: X embed publisher
+        url: 'https://publish.x.com/'
+        kind: tool
+        license: none
+        tier: 3
+        use: reference
+        note: 'Owner bookmark. Generates embed code for X posts, timelines and follow buttons.'
+      - name: YouTube Subscribe button
+        url: 'https://developers.google.com/youtube/youtube_subscribe_button'
+        kind: docs
+        license: none
+        tier: 3
+        use: reference
+        note: Owner bookmark. Configurator for an embeddable YouTube Subscribe button.
+    see_also: [frontend.styling.css-best-practices-and-resets, frontend.build.lint-format]

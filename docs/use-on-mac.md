@@ -11,7 +11,7 @@ Two parts. Part 1, the **plugin** (skills, the librarian, a search over the cata
    Why: it tells Claude Code where the garage plugin lives.
 3. Install the plugin: `claude plugin install garage@code-garage`.
    Why: this copies the plugin into Claude Code; new sessions load it.
-4. Check: start `claude`, type `/plugin`, and look for **garage** (3 skills: find, use, propose; the agent librarian).
+4. Check: start `claude`, type `/plugin`, and look for **garage** (4 skills: find, use, propose, ui-sources; the agent librarian).
    Why: it confirms the plugin loaded. The first search takes longer: `uvx` downloads the garage once.
 5. Later, to get the newest catalog: `claude plugin marketplace update code-garage`, then
    `claude plugin update garage@code-garage`, then restart Claude Code.

@@ -12,7 +12,7 @@ server: everything runs on your own machine over the public catalog.
 2. `claude plugin marketplace add agent-lechuuu/code-garage`
    Why: registers the garage's marketplace (a public GitHub repo, no login needed).
 3. `claude plugin install garage@code-garage`
-   Why: installs the skills (find, use, propose), the librarian agent, the `garage` command and the local MCP server.
+   Why: installs the skills (find, use, propose, ui-sources), the librarian agent, the `garage` command and the local MCP server.
 4. Start `claude` and ask for what you need ("a rate limiter in Go").
    Why: the `find` skill makes Claude search the garage before it writes code from scratch.
 

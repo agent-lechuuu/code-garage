@@ -13,7 +13,7 @@ can read it too.
 
 ## What is in it
 
-977 topics and 4,148 resources (440 you can copy or run; the rest are links, docs and install lines), in 7 slices.
+987 topics and 4,206 resources (452 you can copy or run; the rest are links, docs and install lines), in 7 slices.
 Full lists with licence, stars and trust: [INDEX.md](INDEX.md) and one page per slice in `dist/index/`.
 
 | Slice | Topics | Resources | Covers |
@@ -21,13 +21,19 @@ Full lists with licence, stars and trust: [INDEX.md](INDEX.md) and one page per 
 | [ai](dist/index/ai.md) | 105 | 439 | skills, Claude Code, MCP, agents, prompting, LLM apps |
 | [backend](dist/index/backend.md) | 150 | 736 | runtimes, APIs, auth, jobs, databases, safe DB practice |
 | [engineering](dist/index/engineering.md) | 158 | 774 | algorithms, architecture, testing, git, CI, DevOps, SRE |
-| [frontend](dist/index/frontend.md) | 150 | 717 | frameworks, components, design, animation, 3D, a11y, performance, codepens |
+| [frontend](dist/index/frontend.md) | 160 | 787 | frameworks, components, design, animation, 3D, a11y, performance, codepens, the owner's UI sources |
 | [security](dist/index/security.md) | 150 | 675 | web vulnerabilities, crypto, secrets, supply chain, scanning, hardening |
 | [systems](dist/index/systems.md) | 150 | 714 | C, C++, Rust, Go, memory, concurrency, shell, Linux, WASM |
 | [web3](dist/index/web3.md) | 114 | 500 | EVM, Solidity, DeFi, Solana, L2, zero knowledge |
 
 The data: `catalog/*.yaml` (one file per slice), `lock/pins.yaml` (the exact commit of each item), `dist/catalog.json`.
 Research reports: `research/`.
+
+## The owner's UI sources
+
+The owner's own UI bookmarks (component kits, inspiration galleries, fonts, colours, icons, 3D and shaders, retro and
+ASCII styles, AI design tools) are the 10 `frontend.ui.*` topics, tag `owner-ui`. The plugin's `ui-sources` skill
+makes every UI, website or design task open them first. Source list and checks: [research/ui-bookmarks/](research/ui-bookmarks/).
 
 ## Three ways to use it
 

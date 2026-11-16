@@ -12,7 +12,7 @@ This page describes the owner's own server, where the garage was built. Anyone e
 2. Ask for what you need in plain words, for example "I need a headless dialog in React".
    Why: the plugin's `find` skill tells Claude to search the garage before it builds anything.
 3. If you want to see it is there, type `/plugin` and look for **garage** (from **code-garage**).
-   Why: it confirms the plugin loaded; it lists 3 skills (find, use, propose), 1 agent (librarian) and the MCP server.
+   Why: it confirms the plugin loaded; it lists 4 skills (find, use, propose, ui-sources), 1 agent (librarian) and the MCP server.
 4. Claude says "reviewed, not yet trusted" when it uses an item you haven't approved yet. That is expected.
    Why: only your weekly tap makes an item `trusted`; until then it may be used only while you are watching.
 
