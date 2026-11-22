@@ -4,7 +4,7 @@
 # `trusted`: CI (garage validate -> garage.policy) refuses it without approved_by: owner + approval.
 
 https://github.com/AaroneGeorge/Brain-Budget/tree/HEAD/packages/shared/src/delegation.ts:
-  trust: reviewed
+  trust: trusted
   sha: 261b4754d3021ee3ddf9317d7d66196c6e4f49f2
   scans:
   - tool: skillspector
@@ -50,8 +50,11 @@ https://github.com/AaroneGeorge/Brain-Budget/tree/HEAD/packages/shared/src/deleg
   - tool: garage-checks
     reason: delegation.ts:9-11 sensitive-path matches are the @metamask package name
   kind: snippet
+  approved_by: owner
+  approved: '2026-11-22'
+  approval: 14
 https://github.com/AaroneGeorge/First-Buy/tree/HEAD/src/core/ssrf.ts:
-  trust: reviewed
+  trust: trusted
   sha: d40d3777c0aa093c5cca05af2fa26a62a4802c10
   scans:
   - tool: skillspector
@@ -100,8 +103,11 @@ https://github.com/AaroneGeorge/First-Buy/tree/HEAD/src/core/ssrf.ts:
   - tool: aguara
     reason: ssrf.ts:279 EXFIL_004 is a template string putting the rejected hostname in an error message; no DNS exfiltration
   kind: snippet
+  approved_by: owner
+  approved: '2026-11-22'
+  approval: 14
 https://github.com/AaroneGeorge/Ledger-Gated-Signing:
-  trust: reviewed
+  trust: trusted
   sha: 3054606d9f5bb6e38b5bb30afa8c6106ee951d80
   scans:
   - tool: skillspector
@@ -145,8 +151,11 @@ https://github.com/AaroneGeorge/Ledger-Gated-Signing:
     files: true
     secrets: false
   kind: template
+  approved_by: owner
+  approved: '2026-11-22'
+  approval: 14
 https://github.com/AaroneGeorge/Sanctum/tree/HEAD/apps/server/src/corpus.ts:
-  trust: reviewed
+  trust: trusted
   sha: e5a7f50e2705887e4d513a07c1c2c9f87da02e68
   scans:
   - tool: skillspector
@@ -194,8 +203,11 @@ https://github.com/AaroneGeorge/Sanctum/tree/HEAD/apps/server/src/corpus.ts:
   - tool: garage-checks
     reason: corpus.ts:5 override-phrase is the same comment; the file's prompts say to refuse such text
   kind: snippet
+  approved_by: owner
+  approved: '2026-11-22'
+  approval: 14
 https://github.com/AaroneGeorge/Sanctum/tree/HEAD/apps/server/src/extract.ts:
-  trust: reviewed
+  trust: trusted
   sha: e5a7f50e2705887e4d513a07c1c2c9f87da02e68
   scans:
   - tool: skillspector
@@ -236,6 +248,9 @@ https://github.com/AaroneGeorge/Sanctum/tree/HEAD/apps/server/src/extract.ts:
     files: false
     secrets: false
   kind: snippet
+  approved_by: owner
+  approved: '2026-11-22'
+  approval: 14
 https://github.com/AaroneGeorge/build-kit:
   trust: quarantine
   sha: a38505ef73e159386d79fd6e33b7b42e88a5f4a9
@@ -337,7 +352,7 @@ https://github.com/AaroneGeorge/build-kit/tree/HEAD/agents:
     repo-scout) and WebFetch/WebSearch on four, while the'
   kind: skill
 https://github.com/AaroneGeorge/harness2-cc/tree/HEAD/tests/fakes/fake_claude.py:
-  trust: reviewed
+  trust: trusted
   sha: 45d137b8090b121416d894faf16234f9ffe27ab9
   scans:
   - tool: skillspector
@@ -383,6 +398,9 @@ https://github.com/AaroneGeorge/harness2-cc/tree/HEAD/tests/fakes/fake_claude.py
     reason: fake_claude.py:133 TT2 is the optional FAKE_CLAUDE_LOG dir the test harness sets; it logs argv, stdin, cwd and
       env variable NAMES (not values)
   kind: snippet
+  approved_by: owner
+  approved: '2026-11-22'
+  approval: 14
 https://github.com/DaveGamble/cJSON:
   trust: trusted
   sha: 6d9f2443ab071f86e5d9b43025a40929ec41c46c
@@ -716,7 +734,7 @@ https://github.com/VoltAgent/awesome-claude-code-subagents:
     is a project root'
   kind: vendor
 https://github.com/adr/madr:
-  trust: reviewed
+  trust: trusted
   sha: ba75bb1b20d42af5746b246ad348c202419ae681
   scans:
   - tool: skillspector
@@ -769,8 +787,11 @@ https://github.com/adr/madr:
     reason: curl-pipe-shell .github/workflows/lint.yaml:35 upstream CI step (jbang official installer); not in template/
       and never run by garage add/new
   kind: template
+  approved_by: owner
+  approved: '2026-11-22'
+  approval: 14
 https://github.com/anthropics/claude-plugins-official/tree/HEAD/plugins/code-review:
-  trust: reviewed
+  trust: trusted
   sha: f8c5e7a1dcb71b10cb74586224b5401f3de5db28
   scans:
   - tool: skillspector
@@ -814,6 +835,9 @@ https://github.com/anthropics/claude-plugins-official/tree/HEAD/plugins/code-rev
     files: false
     secrets: false
   kind: skill
+  approved_by: owner
+  approved: '2026-11-22'
+  approval: 14
 https://github.com/anthropics/claude-plugins-official/tree/HEAD/plugins/pr-review-toolkit:
   trust: quarantine
   sha: f8c5e7a1dcb71b10cb74586224b5401f3de5db28
