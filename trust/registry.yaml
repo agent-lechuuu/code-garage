@@ -2394,6 +2394,66 @@ https://github.com/trailofbits/skills/tree/HEAD/plugins/supply-chain-risk-audito
     ''uv run .../collect.py|render.py'' and ''gh auth status''; the agent then reads attacker-controllable registry text
     in findings.json/report.md'
   kind: skill
+https://github.com/trekhleb/javascript-algorithms:
+  trust: quarantine
+  sha: 85293e3e2b88f4d2ce330d956b139cf628aa1e82
+  scans:
+  - tool: skillspector
+    version: 2.13.2
+    date: '2026-11-22'
+    result: fail
+    findings: 45
+  - tool: aguara
+    version: 0.28.0
+    date: '2026-11-22'
+    result: fail
+    findings: 59
+  - tool: gitleaks
+    version: 8.16.0
+    date: '2026-11-22'
+    result: pass
+    findings: 0
+  - tool: mcp-scanner
+    version: '-'
+    date: '2026-11-22'
+    result: skipped
+    findings: 0
+  - tool: garage-checks
+    version: '1'
+    date: '2026-11-22'
+    result: fail
+    findings: 7
+  reviewed_by: garage-review job (sonnet)
+  reviewed: '2026-11-22'
+  notes: 'Read in full: package.json, .npmrc, .husky/pre-commit, .github/workflows/CI.yml, jest.config.js, .eslintrc, CONTRIBUTING.md,
+    BACKERS.md, README.md (lines 240-381), LICENSE header, resizeImageWidth.node.js, and the pascal-triangle README. Opened
+    scanner findings: .garage.json:48, the 5 ''rm -rf ./node_modules'' hits (grep found exactly those 5 in the READMEs),
+    README.ru-RU.md:143 and README.tr-TR.md:144 (grep for zero-width/bidi/tag characters over the whole tree, excluding
+    package-lock.json, found only these two files), pascal-triangle/README.md:27. I did not read the 29 translated READMEs
+    or ev'
+  summary: MIT-licensed JavaScript collection of algorithms and data structures with explanations and jest tests (no skill,
+    agent, MCP or hook files).
+  can:
+    shell: false
+    network: false
+    files: true
+    secrets: false
+  reasons:
+  - 'skillspector failed (45 findings; first: PE3 .garage.json:48): the job''s proposed waiver needs an interactive reviewer'
+  - 'aguara failed (59 findings; first: PROMPT_INJECTION_004 README.ru-RU.md:143): the job''s proposed waiver needs an interactive
+    reviewer'
+  - 'garage-checks failed (7 findings; first: hidden-unicode README.ru-RU.md:143): the job''s proposed waiver needs an interactive
+    reviewer'
+  - Three required scanners (skillspector, aguara, garage-checks) are at fail, which keeps the item in quarantine until
+    a person confirms waivers.
+  - 'C6: only part of the findings were in the facts (6 of 45, 6 of 59, 6 of 7), so I could not open every one; the ones
+    I opened look harmless.'
+  - C1-C3 could not be checked offline.
+  - 'C6: fail: the facts list only 6 of 45 skillspector, 6 of 59 aguara and 6 of 7 garage-checks findings, so I could not
+    open all of them. The ones I opened are harmless (see notes).'
+  - 'C24: fail: skillspector, aguara and garage-checks are in ''fail'', so the item stays in quarantine until a person confirms
+    the waivers below; C6 also could not be completed'
+  kind: vendor
 https://github.com/upstash/context7:
   trust: reviewed
   sha: eabe36965ec69b2f3487c4eb329c448dd60b817c
