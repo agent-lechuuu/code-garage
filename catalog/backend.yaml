@@ -17,7 +17,7 @@ topics:
         kind: repo
         license: MIT
         stars: 32736
-        pushed: 2026-10-28
+        pushed: "2026-10-30"
         archived: false
         tier: 1
         use: install
@@ -27,7 +27,7 @@ topics:
         kind: repo
         license: MIT
         stars: 37315
-        pushed: 2026-10-27
+        pushed: "2026-10-29"
         archived: false
         tier: 1
         use: install
@@ -37,7 +37,7 @@ topics:
         kind: repo
         license: MIT
         stars: 76931
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: install
@@ -57,7 +57,7 @@ topics:
         kind: repo
         license: MIT
         stars: 19173
-        pushed: 2026-10-22
+        pushed: "2026-10-30"
         archived: false
         tier: 2
         use: install
@@ -74,7 +74,7 @@ topics:
         kind: repo
         license: NOASSERTION
         stars: 96444
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: install
@@ -84,7 +84,7 @@ topics:
         kind: repo
         license: MIT
         stars: 108789
-        pushed: 2026-10-26
+        pushed: "2026-10-29"
         archived: false
         tier: 1
         use: install
@@ -125,7 +125,7 @@ topics:
         kind: repo
         license: MIT
         stars: 104241
-        pushed: 2026-10-27
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: install
@@ -135,7 +135,7 @@ topics:
         kind: repo
         license: BSD-3-Clause
         stars: 91532
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: install
@@ -145,7 +145,7 @@ topics:
         kind: repo
         license: MIT
         stars: 8532
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 2
         use: install
@@ -155,7 +155,7 @@ topics:
         kind: repo
         license: MIT
         stars: 9224
-        pushed: 2026-10-26
+        pushed: "2026-10-31"
         archived: false
         tier: 2
         use: install
@@ -165,7 +165,7 @@ topics:
         kind: repo
         license: BSD-3-Clause
         stars: 74926
-        pushed: 2026-10-07
+        pushed: "2026-10-30"
         archived: false
         tier: 2
         use: install
@@ -201,7 +201,7 @@ topics:
         kind: repo
         license: BSD-3-Clause
         stars: 12689
-        pushed: 2026-10-24
+        pushed: "2026-10-29"
         archived: false
         tier: 1
         use: install
@@ -249,7 +249,7 @@ topics:
         kind: repo
         license: MIT
         stars: 32783
-        pushed: 2026-10-28
+        pushed: "2026-10-30"
         archived: false
         tier: 1
         use: install
@@ -285,7 +285,7 @@ topics:
         kind: repo
         license: MIT
         stars: 27639
-        pushed: 2026-10-28
+        pushed: "2026-10-30"
         archived: false
         tier: 1
         use: install
@@ -295,7 +295,7 @@ topics:
         kind: repo
         license: Apache-2.0
         stars: 24892
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: install
@@ -341,7 +341,7 @@ topics:
         kind: repo
         license: Apache-2.0
         stars: 81775
-        pushed: 2026-10-28
+        pushed: "2026-10-30"
         archived: false
         tier: 1
         use: install
@@ -351,7 +351,7 @@ topics:
         kind: repo
         license: Apache-2.0
         stars: 15970
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: install
@@ -361,7 +361,7 @@ topics:
         kind: repo
         license: Apache-2.0
         stars: 14557
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: install
@@ -371,7 +371,7 @@ topics:
         kind: repo
         license: Apache-2.0
         stars: 6436
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 2
         use: install
@@ -397,7 +397,7 @@ topics:
         kind: repo
         license: MIT
         stars: 23209
-        pushed: 2026-10-28
+        pushed: "2026-10-30"
         archived: false
         tier: 1
         use: install
@@ -407,7 +407,7 @@ topics:
         kind: repo
         license: MIT
         stars: 6834
-        pushed: 2026-10-27
+        pushed: "2026-10-30"
         archived: false
         tier: 1
         use: install
@@ -417,7 +417,7 @@ topics:
         kind: repo
         license: Apache-2.0
         stars: 6501
-        pushed: 2026-10-26
+        pushed: "2026-10-29"
         archived: false
         tier: 1
         use: install
@@ -427,7 +427,7 @@ topics:
         kind: repo
         license: none
         stars: 2545
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 2
         use: install
@@ -444,7 +444,7 @@ topics:
         kind: repo
         license: MIT
         stars: 38500
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: install
@@ -461,7 +461,7 @@ topics:
         kind: repo
         license: MIT
         stars: 6022
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 2
         use: install
@@ -471,7 +471,7 @@ topics:
         kind: repo
         license: MIT
         stars: 2394
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 2
         use: install
@@ -488,7 +488,7 @@ topics:
         kind: repo
         license: MIT
         stars: 34985
-        pushed: 2026-10-28
+        pushed: "2026-10-30"
         archived: false
         tier: 1
         use: install
@@ -498,7 +498,7 @@ topics:
         kind: repo
         license: MIT
         stars: 31213
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: install
@@ -508,7 +508,7 @@ topics:
         kind: repo
         license: MIT
         stars: 11487
-        pushed: 2026-10-27
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: install
@@ -518,7 +518,7 @@ topics:
         kind: repo
         license: MIT
         stars: 4051
-        pushed: 2026-10-26
+        pushed: "2026-10-30"
         archived: false
         tier: 2
         use: install
@@ -544,7 +544,7 @@ topics:
         kind: repo
         license: MIT
         stars: 58856
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: install
@@ -554,7 +554,7 @@ topics:
         kind: repo
         license: BSD-3-Clause
         stars: 7922
-        pushed: 2026-10-25
+        pushed: "2026-10-30"
         archived: false
         tier: 1
         use: install
@@ -574,7 +574,7 @@ topics:
         kind: repo
         license: MIT
         stars: 6429
-        pushed: 2026-10-25
+        pushed: "2026-10-30"
         archived: false
         tier: 3
         use: install
@@ -584,7 +584,7 @@ topics:
         kind: repo
         license: MIT
         stars: 2237
-        pushed: 2026-10-28
+        pushed: "2026-10-30"
         archived: false
         tier: 3
         use: install
@@ -603,7 +603,7 @@ topics:
         kind: repo
         license: MIT
         stars: 44217
-        pushed: 2026-10-19
+        pushed: "2026-10-30"
         archived: false
         tier: 1
         use: install
@@ -613,7 +613,7 @@ topics:
         kind: repo
         license: MIT
         stars: 9053
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 2
         use: install
@@ -623,7 +623,7 @@ topics:
         kind: repo
         license: MIT
         stars: 7886
-        pushed: 2026-10-28
+        pushed: "2026-10-30"
         archived: false
         tier: 2
         use: install
@@ -633,7 +633,7 @@ topics:
         kind: repo
         license: NOASSERTION
         stars: 7015
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 2
         use: install
@@ -643,7 +643,7 @@ topics:
         kind: repo
         license: MIT
         stars: 3663
-        pushed: 2026-10-20
+        pushed: "2026-10-30"
         archived: false
         tier: 1
         use: reference
@@ -659,7 +659,7 @@ topics:
         kind: repo
         license: MIT
         stars: 29221
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: install
@@ -679,7 +679,7 @@ topics:
         kind: repo
         license: MIT
         stars: 20211
-        pushed: 2026-10-27
+        pushed: "2026-10-29"
         archived: false
         tier: 1
         use: install
@@ -718,7 +718,7 @@ topics:
         kind: repo
         license: MIT
         stars: 1492
-        pushed: 2026-10-28
+        pushed: "2026-10-30"
         archived: false
         tier: 1
         use: install
@@ -738,7 +738,7 @@ topics:
         kind: repo
         license: BSD-3-Clause
         stars: 5860
-        pushed: 2026-10-28
+        pushed: "2026-10-30"
         archived: false
         tier: 2
         use: install
@@ -814,7 +814,7 @@ topics:
         kind: repo
         license: MIT
         stars: 2828
-        pushed: 2026-10-28
+        pushed: "2026-10-30"
         archived: false
         tier: 2
         use: install
@@ -870,7 +870,7 @@ topics:
         kind: repo
         license: Apache-2.0
         stars: 24479
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: reference
@@ -887,7 +887,7 @@ topics:
         kind: repo
         license: NOASSERTION
         stars: 49576
-        pushed: 2026-10-28
+        pushed: "2026-10-30"
         archived: false
         tier: 1
         use: install
@@ -897,7 +897,7 @@ topics:
         kind: repo
         license: MIT
         stars: 10593
-        pushed: 2026-10-28
+        pushed: "2026-10-30"
         archived: false
         tier: 1
         use: install
@@ -917,7 +917,7 @@ topics:
         kind: repo
         license: Apache-2.0
         stars: 2813
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 2
         use: install
@@ -947,7 +947,7 @@ topics:
         kind: repo
         license: MIT
         stars: 7726
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: install
@@ -977,7 +977,7 @@ topics:
         kind: repo
         license: BSD-3-Clause
         stars: 14257
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: install
@@ -1004,7 +1004,7 @@ topics:
         kind: repo
         license: Apache-2.0
         stars: 4674
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: install
@@ -1014,7 +1014,7 @@ topics:
         kind: repo
         license: MIT-0
         stars: 3301
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: install
@@ -1024,7 +1024,7 @@ topics:
         kind: repo
         license: MIT-0
         stars: 1796
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: install
@@ -1044,7 +1044,7 @@ topics:
         kind: repo
         license: NOASSERTION
         stars: 11321
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 2
         use: install
@@ -1077,7 +1077,7 @@ topics:
         kind: guide
         license: NOASSERTION
         stars: 23340
-        pushed: 2026-08-05
+        pushed: "2026-10-30"
         archived: false
         tier: 1
         use: reference
@@ -1130,7 +1130,7 @@ topics:
         kind: tool
         license: Apache-2.0
         stars: 3247
-        pushed: 2026-10-22
+        pushed: "2026-10-30"
         archived: false
         tier: 1
         use: install
@@ -1140,7 +1140,7 @@ topics:
         kind: tool
         license: MIT
         stars: 1141
-        pushed: 2026-10-28
+        pushed: "2026-10-30"
         archived: false
         tier: 2
         use: install
@@ -1150,7 +1150,7 @@ topics:
         kind: tool
         license: Apache-2.0
         stars: 1441
-        pushed: 2026-10-26
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: install
@@ -1160,7 +1160,7 @@ topics:
         kind: tool
         license: MIT
         stars: 1543
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 2
         use: install
@@ -1176,7 +1176,7 @@ topics:
         kind: tool
         license: MIT
         stars: 5532
-        pushed: 2026-09-30
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: install
@@ -1196,7 +1196,7 @@ topics:
         kind: tool
         license: MIT
         stars: 6566
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 2
         use: install
@@ -1206,7 +1206,7 @@ topics:
         kind: tool
         license: Apache-2.0
         stars: 26837
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: install
@@ -1216,7 +1216,7 @@ topics:
         kind: tool
         license: MIT
         stars: 3839
-        pushed: 2026-10-28
+        pushed: "2026-10-30"
         archived: false
         tier: 2
         use: install
@@ -1232,7 +1232,7 @@ topics:
         kind: repo
         license: MIT
         stars: 1002
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: install
@@ -1253,7 +1253,7 @@ topics:
         kind: repo
         license: MIT
         stars: 1099
-        pushed: 2026-10-09
+        pushed: "2026-10-29"
         archived: false
         tier: 1
         use: install
@@ -1263,7 +1263,7 @@ topics:
         kind: repo
         license: MIT
         stars: 3977
-        pushed: 2026-10-27
+        pushed: "2026-10-30"
         archived: false
         tier: 2
         use: install
@@ -1289,7 +1289,7 @@ topics:
         kind: tool
         license: Apache-2.0
         stars: 8633
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: install
@@ -1345,7 +1345,7 @@ topics:
         kind: repo
         license: MIT
         stars: 16333
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: install
@@ -1355,7 +1355,7 @@ topics:
         kind: repo
         license: MIT
         stars: 25987
-        pushed: 2026-10-22
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: install
@@ -1365,7 +1365,7 @@ topics:
         kind: repo
         license: Apache-2.0
         stars: 29056
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: install
@@ -1375,7 +1375,7 @@ topics:
         kind: repo
         license: Apache-2.0
         stars: 2472
-        pushed: 2026-10-28
+        pushed: "2026-10-30"
         archived: false
         tier: 2
         use: install
@@ -1385,7 +1385,7 @@ topics:
         kind: repo
         license: MIT
         stars: 1904
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 3
         use: install
@@ -1401,7 +1401,7 @@ topics:
         kind: tool
         license: Apache-2.0
         stars: 5061
-        pushed: 2026-10-22
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: install
@@ -1411,7 +1411,7 @@ topics:
         kind: tool
         license: MIT
         stars: 8463
-        pushed: 2026-10-28
+        pushed: "2026-10-30"
         archived: false
         tier: 1
         use: install
@@ -1421,7 +1421,7 @@ topics:
         kind: tool
         license: Apache-2.0
         stars: 7413
-        pushed: 2026-10-28
+        pushed: "2026-10-29"
         archived: false
         tier: 1
         use: install
@@ -1441,7 +1441,7 @@ topics:
         kind: tool
         license: MIT
         stars: 1657
-        pushed: 2026-10-26
+        pushed: "2026-10-29"
         archived: false
         tier: 2
         use: install
@@ -1458,7 +1458,7 @@ topics:
         kind: tool
         license: Apache-2.0
         stars: 19283
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: install
@@ -1468,7 +1468,7 @@ topics:
         kind: tool
         license: MIT
         stars: 3719
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: install
@@ -1478,7 +1478,7 @@ topics:
         kind: tool
         license: MIT
         stars: 47905
-        pushed: 2026-10-28
+        pushed: "2026-10-30"
         archived: false
         tier: 1
         use: install
@@ -1488,7 +1488,7 @@ topics:
         kind: tool
         license: MIT
         stars: 80705
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 2
         use: install
@@ -1498,7 +1498,7 @@ topics:
         kind: tool
         license: MIT
         stars: 8154
-        pushed: 2026-10-23
+        pushed: "2026-10-29"
         archived: false
         tier: 2
         use: install
@@ -1599,7 +1599,7 @@ topics:
         kind: repo
         license: MIT
         stars: 4997
-        pushed: 2026-10-26
+        pushed: "2026-10-31"
         archived: false
         tier: 2
         use: install
@@ -1622,7 +1622,7 @@ topics:
         kind: repo
         license: MIT
         stars: 313
-        pushed: 2026-10-26
+        pushed: "2026-10-31"
         archived: false
         tier: 2
         use: install
@@ -1686,7 +1686,7 @@ topics:
         kind: repo
         license: MIT-0
         stars: 3301
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 2
         use: install
@@ -1716,7 +1716,7 @@ topics:
         kind: repo
         license: MIT
         stars: 2069
-        pushed: 2026-10-27
+        pushed: "2026-10-29"
         archived: false
         tier: 1
         use: install
@@ -1765,7 +1765,7 @@ topics:
         kind: repo
         license: MIT
         stars: 8535
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: install
@@ -1775,7 +1775,7 @@ topics:
         kind: repo
         license: ISC
         stars: 2628
-        pushed: 2026-10-22
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: install
@@ -1785,7 +1785,7 @@ topics:
         kind: repo
         license: MIT
         stars: 4724
-        pushed: 2026-10-27
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: install
@@ -1795,7 +1795,7 @@ topics:
         kind: repo
         license: MIT
         stars: 10770
-        pushed: 2026-10-22
+        pushed: "2026-10-29"
         archived: false
         tier: 1
         use: install
@@ -1821,7 +1821,7 @@ topics:
         kind: repo
         license: MIT
         stars: 27732
-        pushed: 2026-10-26
+        pushed: "2026-10-30"
         archived: false
         tier: 1
         use: install
@@ -1831,7 +1831,7 @@ topics:
         kind: repo
         license: MIT
         stars: 12935
-        pushed: 2026-10-28
+        pushed: "2026-10-30"
         archived: false
         tier: 1
         use: install
@@ -1841,7 +1841,7 @@ topics:
         kind: repo
         license: Apache-2.0
         stars: 3361
-        pushed: 2026-10-28
+        pushed: "2026-10-30"
         archived: false
         tier: 2
         use: install
@@ -1851,7 +1851,7 @@ topics:
         kind: repo
         license: Apache-2.0
         stars: 32124
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 2
         use: install
@@ -1871,7 +1871,7 @@ topics:
         kind: tool
         license: Apache-2.0
         stars: 11508
-        pushed: 2026-10-27
+        pushed: "2026-10-29"
         archived: false
         tier: 1
         use: install
@@ -1881,7 +1881,7 @@ topics:
         kind: repo
         license: Apache-2.0
         stars: 4132
-        pushed: 2026-10-26
+        pushed: "2026-10-30"
         archived: false
         tier: 1
         use: install
@@ -1891,7 +1891,7 @@ topics:
         kind: repo
         license: Apache-2.0
         stars: 1823
-        pushed: 2026-10-27
+        pushed: "2026-10-29"
         archived: false
         tier: 1
         use: install
@@ -1901,7 +1901,7 @@ topics:
         kind: repo
         license: MIT
         stars: 12512
-        pushed: 2026-10-27
+        pushed: "2026-10-30"
         archived: false
         tier: 1
         use: install
@@ -1927,7 +1927,7 @@ topics:
         kind: repo
         license: MIT
         stars: 40738
-        pushed: 2026-10-27
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: install
@@ -1937,7 +1937,7 @@ topics:
         kind: repo
         license: MIT
         stars: 5733
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 2
         use: install
@@ -1961,7 +1961,7 @@ topics:
         kind: repo
         license: MIT
         stars: 17414
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 2
         use: install
@@ -1977,7 +1977,7 @@ topics:
         kind: repo
         license: MIT
         stars: 22813
-        pushed: 2026-10-23
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: install
@@ -1997,7 +1997,7 @@ topics:
         kind: repo
         license: Apache-2.0
         stars: 10930
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: install
@@ -2007,7 +2007,7 @@ topics:
         kind: repo
         license: BSD-3-Clause
         stars: 5741
-        pushed: 2026-10-27
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: install
@@ -2017,7 +2017,7 @@ topics:
         kind: repo
         license: ISC
         stars: 5544
-        pushed: 2026-10-26
+        pushed: "2026-10-30"
         archived: false
         tier: 1
         use: install
@@ -2101,7 +2101,7 @@ topics:
         kind: docs
         license: Apache-2.0
         stars: 1784
-        pushed: 2026-10-28
+        pushed: "2026-10-30"
         archived: false
         tier: 1
         use: reference
@@ -2111,7 +2111,7 @@ topics:
         kind: repo
         license: MIT
         stars: 3467
-        pushed: 2026-10-28
+        pushed: "2026-10-30"
         archived: false
         tier: 1
         use: install
@@ -2161,7 +2161,7 @@ topics:
         kind: repo
         license: Apache-2.0
         stars: 17260
-        pushed: 2026-10-28
+        pushed: "2026-10-30"
         archived: false
         tier: 1
         use: install
@@ -2171,7 +2171,7 @@ topics:
         kind: repo
         license: MIT
         stars: 65398
-        pushed: 2026-10-28
+        pushed: "2026-10-30"
         archived: false
         tier: 1
         use: install
@@ -2181,7 +2181,7 @@ topics:
         kind: repo
         license: Apache-2.0
         stars: 3107
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 2
         use: install
@@ -2191,7 +2191,7 @@ topics:
         kind: repo
         license: Apache-2.0
         stars: 2697
-        pushed: 2026-10-21
+        pushed: "2026-10-30"
         archived: false
         tier: 2
         use: install
@@ -2208,7 +2208,7 @@ topics:
         kind: docs
         license: Apache-2.0
         stars: 1282
-        pushed: 2026-10-28
+        pushed: "2026-10-30"
         archived: false
         tier: 1
         use: reference
@@ -2218,7 +2218,7 @@ topics:
         kind: repo
         license: AGPL-3.0
         stars: 13910
-        pushed: 2026-10-28
+        pushed: "2026-10-30"
         archived: false
         tier: 1
         use: install
@@ -2228,7 +2228,7 @@ topics:
         kind: repo
         license: BSD-3-Clause
         stars: 6629
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: install
@@ -2238,7 +2238,7 @@ topics:
         kind: repo
         license: MIT
         stars: 2126
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 2
         use: install
@@ -2248,7 +2248,7 @@ topics:
         kind: repo
         license: NOASSERTION
         stars: 4930
-        pushed: 2026-10-28
+        pushed: "2026-10-29"
         archived: false
         tier: 2
         use: install
@@ -2274,7 +2274,7 @@ topics:
         kind: repo
         license: Apache-2.0
         stars: 16204
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: install
@@ -2284,7 +2284,7 @@ topics:
         kind: repo
         license: Apache-2.0
         stars: 3427
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 2
         use: install
@@ -2294,7 +2294,7 @@ topics:
         kind: repo
         license: NOASSERTION
         stars: 396
-        pushed: 2026-10-28
+        pushed: "2026-10-30"
         archived: false
         tier: 2
         use: install
@@ -2304,7 +2304,7 @@ topics:
         kind: repo
         license: MIT
         stars: 3962
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 2
         use: install
@@ -2321,7 +2321,7 @@ topics:
         kind: tool
         license: MIT
         stars: 5904
-        pushed: 2026-10-28
+        pushed: "2026-10-30"
         archived: false
         tier: 1
         use: install
@@ -2331,7 +2331,7 @@ topics:
         kind: tool
         license: Apache-2.0
         stars: 2383
-        pushed: 2026-10-28
+        pushed: "2026-10-30"
         archived: false
         tier: 2
         use: install
@@ -2351,7 +2351,7 @@ topics:
         kind: docs
         license: NOASSERTION
         stars: 5200
-        pushed: 2026-10-27
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: reference
@@ -2382,7 +2382,7 @@ topics:
         kind: repo
         license: MIT
         stars: 7849
-        pushed: 2026-10-21
+        pushed: "2026-10-29"
         archived: false
         tier: 1
         use: install
@@ -2392,7 +2392,7 @@ topics:
         kind: repo
         license: MIT
         stars: 2438
-        pushed: 2026-10-12
+        pushed: "2026-10-28"
         archived: false
         tier: 1
         use: install
@@ -2422,7 +2422,7 @@ topics:
         kind: repo
         license: MIT
         stars: 3843
-        pushed: 2026-10-28
+        pushed: "2026-10-29"
         archived: false
         tier: 1
         use: install
@@ -2439,7 +2439,7 @@ topics:
         kind: repo
         license: MIT
         stars: 30501
-        pushed: 2026-10-28
+        pushed: "2026-10-30"
         archived: false
         tier: 1
         use: install
@@ -2505,7 +2505,7 @@ topics:
         kind: repo
         license: MIT
         stars: 10381
-        pushed: 2026-10-26
+        pushed: "2026-10-30"
         archived: false
         tier: 1
         use: install
@@ -2619,7 +2619,7 @@ topics:
         kind: repo
         license: MIT
         stars: 2377
-        pushed: 2026-10-27
+        pushed: "2026-10-28"
         archived: false
         tier: 1
         use: install
@@ -2639,7 +2639,7 @@ topics:
         kind: repo
         license: BSD-3-Clause
         stars: 1356
-        pushed: 2026-10-28
+        pushed: "2026-10-29"
         archived: false
         tier: 1
         use: install
@@ -2649,7 +2649,7 @@ topics:
         kind: repo
         license: MPL-2.0
         stars: 715
-        pushed: 2026-10-28
+        pushed: "2026-10-30"
         archived: false
         tier: 1
         use: install
@@ -2672,7 +2672,7 @@ topics:
         kind: repo
         license: Apache-2.0
         stars: 37571
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: install
@@ -2682,7 +2682,7 @@ topics:
         kind: repo
         license: NOASSERTION
         stars: 26155
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: install
@@ -2692,7 +2692,7 @@ topics:
         kind: repo
         license: BSD-2-Clause
         stars: 9791
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 2
         use: install
@@ -2702,7 +2702,7 @@ topics:
         kind: repo
         license: AGPL-3.0
         stars: 15459
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 2
         use: install
@@ -2728,7 +2728,7 @@ topics:
         kind: repo
         license: Apache-2.0
         stars: 29431
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: install
@@ -2738,7 +2738,7 @@ topics:
         kind: repo
         license: MIT
         stars: 15283
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: install
@@ -2748,7 +2748,7 @@ topics:
         kind: repo
         license: AGPL-3.0
         stars: 8439
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 2
         use: install
@@ -2758,7 +2758,7 @@ topics:
         kind: repo
         license: Apache-2.0
         stars: 5079
-        pushed: 2026-10-28
+        pushed: "2026-10-30"
         archived: false
         tier: 2
         use: install
@@ -2768,7 +2768,7 @@ topics:
         kind: repo
         license: Apache-2.0
         stars: 11219
-        pushed: 2026-10-27
+        pushed: "2026-10-30"
         archived: false
         tier: 2
         use: install
@@ -2788,7 +2788,7 @@ topics:
         kind: repo
         license: Apache-2.0
         stars: 6051
-        pushed: 2026-10-28
+        pushed: "2026-10-30"
         archived: false
         tier: 1
         use: install
@@ -2798,7 +2798,7 @@ topics:
         kind: repo
         license: Apache-2.0
         stars: 7177
-        pushed: 2026-10-28
+        pushed: "2026-10-30"
         archived: false
         tier: 1
         use: install
@@ -2808,7 +2808,7 @@ topics:
         kind: repo
         license: Apache-2.0
         stars: 20472
-        pushed: 2026-10-21
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: install
@@ -2818,7 +2818,7 @@ topics:
         kind: repo
         license: Apache-2.0
         stars: 4636
-        pushed: 2026-10-28
+        pushed: "2026-10-29"
         archived: false
         tier: 2
         use: install
@@ -2828,7 +2828,7 @@ topics:
         kind: repo
         license: Apache-2.0
         stars: 12412
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: install
@@ -2844,7 +2844,7 @@ topics:
         kind: repo
         license: MIT
         stars: 7105
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: install
@@ -2874,7 +2874,7 @@ topics:
         kind: repo
         license: NOASSERTION
         stars: 3921
-        pushed: 2026-10-23
+        pushed: "2026-10-29"
         archived: false
         tier: 2
         use: install
@@ -2927,7 +2927,7 @@ topics:
         kind: repo
         license: MIT
         stars: 4424
-        pushed: 2026-10-27
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: install
@@ -2964,7 +2964,7 @@ topics:
         kind: repo
         license: NOASSERTION
         stars: 5481
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 2
         use: reference
@@ -3014,7 +3014,7 @@ topics:
         kind: repo
         license: BSD-3-Clause
         stars: 3353
-        pushed: 2026-10-27
+        pushed: "2026-10-30"
         archived: false
         tier: 1
         use: install
@@ -3024,7 +3024,7 @@ topics:
         kind: repo
         license: MIT
         stars: 2301
-        pushed: 2026-10-25
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: install
@@ -3054,7 +3054,7 @@ topics:
         kind: repo
         license: MIT
         stars: 9557
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: install
@@ -3064,7 +3064,7 @@ topics:
         kind: repo
         license: MIT
         stars: 4101
-        pushed: 2026-10-27
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: install
@@ -3084,7 +3084,7 @@ topics:
         kind: repo
         license: NOASSERTION
         stars: 4038
-        pushed: 2026-10-27
+        pushed: "2026-10-29"
         archived: false
         tier: 3
         use: install
@@ -3100,7 +3100,7 @@ topics:
         kind: repo
         license: NOASSERTION
         stars: 29089
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: install
@@ -3110,7 +3110,7 @@ topics:
         kind: repo
         license: LGPL-3.0
         stars: 5334
-        pushed: 2026-10-27
+        pushed: "2026-10-29"
         archived: false
         tier: 1
         use: install
@@ -3130,7 +3130,7 @@ topics:
         kind: repo
         license: MIT
         stars: 1436
-        pushed: 2026-10-26
+        pushed: "2026-10-31"
         archived: false
         tier: 2
         use: install
@@ -3156,7 +3156,7 @@ topics:
         kind: repo
         license: MPL-2.0
         stars: 5825
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: install
@@ -3186,7 +3186,7 @@ topics:
         kind: repo
         license: MIT
         stars: 1473
-        pushed: 2026-10-25
+        pushed: "2026-10-30"
         archived: false
         tier: 2
         use: install
@@ -3222,7 +3222,7 @@ topics:
         kind: repo
         license: NOASSERTION
         stars: 13563
-        pushed: 2026-10-23
+        pushed: "2026-10-30"
         archived: false
         tier: 1
         use: install
@@ -3232,7 +3232,7 @@ topics:
         kind: repo
         license: Apache-2.0
         stars: 3997
-        pushed: 2026-10-26
+        pushed: "2026-10-29"
         archived: false
         tier: 1
         use: install
@@ -3242,7 +3242,7 @@ topics:
         kind: repo
         license: NOASSERTION
         stars: 10153
-        pushed: 2026-10-21
+        pushed: "2026-10-30"
         archived: false
         tier: 1
         use: install
@@ -3252,7 +3252,7 @@ topics:
         kind: repo
         license: NOASSERTION
         stars: 3100
-        pushed: 2026-10-27
+        pushed: "2026-10-30"
         archived: false
         tier: 2
         use: install
@@ -3309,7 +3309,7 @@ topics:
         kind: repo
         license: MIT
         stars: 24037
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: install
@@ -3319,7 +3319,7 @@ topics:
         kind: repo
         license: MIT
         stars: 8195
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 2
         use: install
@@ -3329,7 +3329,7 @@ topics:
         kind: repo
         license: MIT
         stars: 1653
-        pushed: 2026-10-28
+        pushed: "2026-10-30"
         archived: false
         tier: 2
         use: install
@@ -3339,7 +3339,7 @@ topics:
         kind: repo
         license: Apache-2.0
         stars: 16642
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 2
         use: install
@@ -3349,7 +3349,7 @@ topics:
         kind: repo
         license: NOASSERTION
         stars: 5998
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 2
         use: reference
@@ -3369,7 +3369,7 @@ topics:
         kind: repo
         license: MIT
         stars: 2607
-        pushed: 2026-10-28
+        pushed: "2026-10-30"
         archived: false
         tier: 1
         use: install
@@ -3425,7 +3425,7 @@ topics:
         kind: repo
         license: Apache-2.0
         stars: 20953
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: install
@@ -3435,7 +3435,7 @@ topics:
         kind: repo
         license: NOASSERTION
         stars: 13949
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: install
@@ -3445,7 +3445,7 @@ topics:
         kind: repo
         license: Apache-2.0
         stars: 34152
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: install
@@ -3465,7 +3465,7 @@ topics:
         kind: repo
         license: Apache-2.0
         stars: 15355
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 2
         use: install
@@ -3492,7 +3492,7 @@ topics:
         kind: repo
         license: NOASSERTION
         stars: 524
-        pushed: 2026-10-28
+        pushed: "2026-10-29"
         archived: false
         tier: 1
         use: install
@@ -3502,7 +3502,7 @@ topics:
         kind: repo
         license: MIT
         stars: 2013
-        pushed: 2026-10-27
+        pushed: "2026-10-28"
         archived: false
         tier: 1
         use: install
@@ -3558,7 +3558,7 @@ topics:
         kind: repo
         license: MIT
         stars: 2394
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 2
         use: install
@@ -3578,7 +3578,7 @@ topics:
         kind: repo
         license: MIT
         stars: 2488
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 2
         use: install
@@ -3595,7 +3595,7 @@ topics:
         kind: repo
         license: MIT
         stars: 3467
-        pushed: 2026-10-27
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: install
@@ -3625,7 +3625,7 @@ topics:
         kind: repo
         license: MIT
         stars: 1556
-        pushed: 2026-10-28
+        pushed: "2026-10-29"
         archived: false
         tier: 2
         use: install
@@ -3652,7 +3652,7 @@ topics:
         kind: repo
         license: MIT
         stars: 15348
-        pushed: 2026-10-28
+        pushed: "2026-10-30"
         archived: false
         tier: 1
         use: install
@@ -3662,7 +3662,7 @@ topics:
         kind: repo
         license: MIT
         stars: 13651
-        pushed: 2026-10-28
+        pushed: "2026-10-30"
         archived: false
         tier: 1
         use: install
@@ -3672,7 +3672,7 @@ topics:
         kind: repo
         license: BSD-2-Clause
         stars: 22280
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: install
@@ -3682,7 +3682,7 @@ topics:
         kind: repo
         license: NOASSERTION
         stars: 4269
-        pushed: 2026-10-28
+        pushed: "2026-10-30"
         archived: false
         tier: 1
         use: install
@@ -3692,7 +3692,7 @@ topics:
         kind: repo
         license: MIT
         stars: 5784
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: install
@@ -3760,7 +3760,7 @@ topics:
         kind: repo
         license: BSD-3-Clause
         stars: 27545
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: install
@@ -3770,7 +3770,7 @@ topics:
         kind: repo
         license: NOASSERTION
         stars: 77143
-        pushed: 2026-10-28
+        pushed: "2026-10-30"
         archived: false
         tier: 1
         use: reference
@@ -3780,7 +3780,7 @@ topics:
         kind: repo
         license: NOASSERTION
         stars: 31827
-        pushed: 2026-10-28
+        pushed: "2026-10-30"
         archived: false
         tier: 2
         use: install
@@ -3790,7 +3790,7 @@ topics:
         kind: repo
         license: MIT
         stars: 12064
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 2
         use: install
@@ -3800,7 +3800,7 @@ topics:
         kind: repo
         license: Apache-2.0
         stars: 4480
-        pushed: 2026-10-28
+        pushed: "2026-10-30"
         archived: false
         tier: 3
         use: install
@@ -3826,7 +3826,7 @@ topics:
         kind: repo
         license: MIT
         stars: 2790
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: install
@@ -3896,7 +3896,7 @@ topics:
         kind: repo
         license: MIT
         stars: 1013
-        pushed: 2026-10-16
+        pushed: "2026-10-29"
         archived: false
         tier: 2
         use: install
@@ -3932,7 +3932,7 @@ topics:
         kind: repo
         license: Apache-2.0
         stars: 35792
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: install
@@ -3942,7 +3942,7 @@ topics:
         kind: repo
         license: Apache-2.0
         stars: 35491
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 2
         use: install
@@ -3952,7 +3952,7 @@ topics:
         kind: repo
         license: Apache-2.0
         stars: 3076
-        pushed: 2026-10-28
+        pushed: "2026-10-30"
         archived: false
         tier: 2
         use: install
@@ -3962,7 +3962,7 @@ topics:
         kind: repo
         license: AGPL-3.0
         stars: 4364
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 3
         use: install
@@ -3982,7 +3982,7 @@ topics:
         kind: repo
         license: Apache-2.0
         stars: 3679
-        pushed: 2026-10-28
+        pushed: "2026-10-30"
         archived: false
         tier: 1
         use: install
@@ -3992,7 +3992,7 @@ topics:
         kind: repo
         license: Apache-2.0
         stars: 9923
-        pushed: 2026-10-28
+        pushed: "2026-10-30"
         archived: false
         tier: 1
         use: install
@@ -4002,7 +4002,7 @@ topics:
         kind: repo
         license: Apache-2.0
         stars: 3679
-        pushed: 2026-10-27
+        pushed: "2026-10-30"
         archived: false
         tier: 1
         use: install
@@ -4012,7 +4012,7 @@ topics:
         kind: repo
         license: Apache-2.0
         stars: 330
-        pushed: 2026-10-26
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: install
@@ -4022,7 +4022,7 @@ topics:
         kind: repo
         license: Apache-2.0
         stars: 5433
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 2
         use: install
@@ -4058,7 +4058,7 @@ topics:
         kind: repo
         license: MIT
         stars: 31052
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: install
@@ -4078,7 +4078,7 @@ topics:
         kind: repo
         license: Apache-2.0
         stars: 536
-        pushed: 2026-10-21
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: install
@@ -4095,7 +4095,7 @@ topics:
         kind: repo
         license: Apache-2.0
         stars: 32807
-        pushed: 2026-10-23
+        pushed: "2026-10-29"
         archived: false
         tier: 1
         use: install
@@ -4115,7 +4115,7 @@ topics:
         kind: repo
         license: LGPL-2.1
         stars: 11769
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: install
@@ -4125,7 +4125,7 @@ topics:
         kind: repo
         license: NOASSERTION
         stars: 13936
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: install
@@ -4135,7 +4135,7 @@ topics:
         kind: repo
         license: NOASSERTION
         stars: 65946
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: reference
@@ -4151,7 +4151,7 @@ topics:
         kind: repo
         license: MIT
         stars: 13466
-        pushed: 2026-10-27
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: install
@@ -4161,7 +4161,7 @@ topics:
         kind: repo
         license: BSD-3-Clause
         stars: 9737
-        pushed: 2026-10-27
+        pushed: "2026-10-30"
         archived: false
         tier: 1
         use: install
@@ -4171,7 +4171,7 @@ topics:
         kind: repo
         license: Apache-2.0
         stars: 56864
-        pushed: 2026-10-28
+        pushed: "2026-10-30"
         archived: false
         tier: 1
         use: install
@@ -4181,7 +4181,7 @@ topics:
         kind: repo
         license: MIT
         stars: 5978
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: install
@@ -4210,7 +4210,7 @@ topics:
         kind: repo
         license: NOASSERTION
         stars: 17696
-        pushed: 2026-10-26
+        pushed: "2026-10-29"
         archived: false
         tier: 1
         use: install
@@ -4230,7 +4230,7 @@ topics:
         kind: repo
         license: MIT
         stars: 1505
-        pushed: 2026-10-27
+        pushed: "2026-10-30"
         archived: false
         tier: 1
         use: install
@@ -4250,7 +4250,7 @@ topics:
         kind: repo
         license: MIT
         stars: 971
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 2
         use: install
@@ -4266,7 +4266,7 @@ topics:
         kind: repo
         license: MIT
         stars: 19886
-        pushed: 2026-10-28
+        pushed: "2026-10-30"
         archived: false
         tier: 1
         use: install
@@ -4286,7 +4286,7 @@ topics:
         kind: repo
         license: MIT
         stars: 1620
-        pushed: 2026-10-25
+        pushed: "2026-10-31"
         archived: false
         tier: 2
         use: install
@@ -4296,7 +4296,7 @@ topics:
         kind: tool
         license: MIT
         stars: 10779
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: install
@@ -4332,7 +4332,7 @@ topics:
         kind: repo
         license: MIT
         stars: 16899
-        pushed: 2026-10-20
+        pushed: "2026-10-30"
         archived: false
         tier: 1
         use: install
@@ -4342,7 +4342,7 @@ topics:
         kind: repo
         license: AGPL-3.0
         stars: 24017
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: install
@@ -4352,7 +4352,7 @@ topics:
         kind: repo
         license: GPL-3.0
         stars: 6117
-        pushed: 2026-10-27
+        pushed: "2026-10-31"
         archived: false
         tier: 2
         use: install
@@ -4362,7 +4362,7 @@ topics:
         kind: repo
         license: MIT
         stars: 5628
-        pushed: 2026-10-17
+        pushed: "2026-10-30"
         archived: false
         tier: 2
         use: install
@@ -4383,7 +4383,7 @@ topics:
         kind: repo
         license: MIT
         stars: 4545
-        pushed: 2026-10-27
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: install
@@ -4423,7 +4423,7 @@ topics:
         kind: tool
         license: Apache-2.0
         stars: 2215
-        pushed: 2026-10-28
+        pushed: "2026-10-30"
         archived: false
         tier: 1
         use: install
@@ -4440,7 +4440,7 @@ topics:
         kind: repo
         license: Apache-2.0
         stars: 10436
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 2
         use: install
@@ -4450,7 +4450,7 @@ topics:
         kind: repo
         license: AGPL-3.0
         stars: 10714
-        pushed: 2026-10-27
+        pushed: "2026-10-30"
         archived: false
         tier: 2
         use: install
@@ -4460,7 +4460,7 @@ topics:
         kind: repo
         license: Apache-2.0
         stars: 45422
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 2
         use: install
@@ -4496,7 +4496,7 @@ topics:
         kind: repo
         license: Apache-2.0
         stars: 35132
-        pushed: 2026-10-27
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: install
@@ -4506,7 +4506,7 @@ topics:
         kind: repo
         license: BSD-2-Clause
         stars: 17660
-        pushed: 2026-10-25
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: install
@@ -4516,7 +4516,7 @@ topics:
         kind: repo
         license: NOASSERTION
         stars: 40216
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: install
@@ -4536,7 +4536,7 @@ topics:
         kind: repo
         license: Apache-2.0
         stars: 1750
-        pushed: 2026-10-26
+        pushed: "2026-10-29"
         archived: false
         tier: 1
         use: install
@@ -4553,7 +4553,7 @@ topics:
         kind: repo
         license: NOASSERTION
         stars: 59695
-        pushed: 2026-10-28
+        pushed: "2026-10-29"
         archived: false
         tier: 1
         use: install
@@ -4563,7 +4563,7 @@ topics:
         kind: repo
         license: GPL-3.0
         stars: 27061
-        pushed: 2026-10-28
+        pushed: "2026-10-30"
         archived: false
         tier: 1
         use: install
@@ -4573,7 +4573,7 @@ topics:
         kind: repo
         license: Apache-2.0
         stars: 13921
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: install
@@ -4583,7 +4583,7 @@ topics:
         kind: repo
         license: NOASSERTION
         stars: 78420
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 2
         use: reference
@@ -4593,7 +4593,7 @@ topics:
         kind: repo
         license: Apache-2.0
         stars: 11748
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 2
         use: install
@@ -4609,7 +4609,7 @@ topics:
         kind: repo
         license: MIT
         stars: 16357
-        pushed: 2026-10-27
+        pushed: "2026-10-30"
         archived: false
         tier: 1
         use: install
@@ -4629,7 +4629,7 @@ topics:
         kind: repo
         license: Apache-2.0
         stars: 3598
-        pushed: 2026-10-28
+        pushed: "2026-10-30"
         archived: false
         tier: 1
         use: install
@@ -4679,7 +4679,7 @@ topics:
         kind: repo
         license: AGPL-3.0
         stars: 9453
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 2
         use: install
@@ -4719,7 +4719,7 @@ topics:
         kind: repo
         license: NOASSERTION
         stars: 23515
-        pushed: 2026-10-27
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: install
@@ -4729,7 +4729,7 @@ topics:
         kind: repo
         license: Apache-2.0
         stars: 35298
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: install
@@ -4739,7 +4739,7 @@ topics:
         kind: repo
         license: Apache-2.0
         stars: 11798
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 2
         use: install
@@ -4749,7 +4749,7 @@ topics:
         kind: repo
         license: Apache-2.0
         stars: 46510
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 2
         use: install
@@ -4776,7 +4776,7 @@ topics:
         kind: repo
         license: GPL-2.0
         stars: 2252
-        pushed: 2026-10-24
+        pushed: "2026-10-30"
         archived: false
         tier: 1
         use: install
@@ -4786,7 +4786,7 @@ topics:
         kind: repo
         license: Apache-2.0
         stars: 6658
-        pushed: 2026-10-23
+        pushed: "2026-10-29"
         archived: false
         tier: 1
         use: install
@@ -4796,7 +4796,7 @@ topics:
         kind: repo
         license: Apache-2.0
         stars: 4030
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: install
@@ -4899,7 +4899,7 @@ topics:
         kind: repo
         license: NOASSERTION
         stars: 23769
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: install
@@ -4909,7 +4909,7 @@ topics:
         kind: repo
         license: AGPL-3.0
         stars: 12828
-        pushed: 2026-10-28
+        pushed: "2026-10-30"
         archived: false
         tier: 2
         use: install
@@ -4919,7 +4919,7 @@ topics:
         kind: repo
         license: MIT
         stars: 3276
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 2
         use: install
@@ -4929,7 +4929,7 @@ topics:
         kind: repo
         license: NOASSERTION
         stars: 4816
-        pushed: 2026-10-28
+        pushed: "2026-10-30"
         archived: false
         tier: 1
         use: install
@@ -4966,7 +4966,7 @@ topics:
         kind: repo
         license: NOASSERTION
         stars: 23769
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 2
         use: install
@@ -4982,7 +4982,7 @@ topics:
         kind: repo
         license: Apache-2.0
         stars: 114246
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: install
@@ -5002,7 +5002,7 @@ topics:
         kind: repo
         license: PostgreSQL
         stars: 1800
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 2
         use: install
@@ -5022,7 +5022,7 @@ topics:
         kind: repo
         license: Apache-2.0
         stars: 9500
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: install
@@ -5039,7 +5039,7 @@ topics:
         kind: repo
         license: Apache-2.0
         stars: 114246
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: install
@@ -5056,7 +5056,7 @@ topics:
         kind: repo
         license: BSD-3-Clause
         stars: 57787
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 2
         use: install
@@ -5066,7 +5066,7 @@ topics:
         kind: repo
         license: NOASSERTION
         stars: 12765
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 2
         use: install
@@ -5126,7 +5126,7 @@ topics:
         kind: repo
         license: MIT
         stars: 4381
-        pushed: 2026-10-27
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: install
@@ -5159,7 +5159,7 @@ topics:
         kind: repo
         license: MIT
         stars: 4454
-        pushed: 2026-10-27
+        pushed: "2026-10-29"
         archived: false
         tier: 1
         use: install
@@ -5169,7 +5169,7 @@ topics:
         kind: repo
         license: MIT
         stars: 1131
-        pushed: 2026-10-26
+        pushed: "2026-10-31"
         archived: false
         tier: 2
         use: install
@@ -5195,7 +5195,7 @@ topics:
         kind: tool
         license: Apache-2.0
         stars: 14547
-        pushed: 2026-10-27
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: install
@@ -5215,7 +5215,7 @@ topics:
         kind: repo
         license: MIT
         stars: 25076
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 2
         use: install
@@ -5225,7 +5225,7 @@ topics:
         kind: repo
         license: MIT
         stars: 17877
-        pushed: 2026-10-28
+        pushed: "2026-10-30"
         archived: false
         tier: 2
         use: install
@@ -5235,7 +5235,7 @@ topics:
         kind: tool
         license: Apache-2.0
         stars: 4907
-        pushed: 2026-05-11
+        pushed: "2026-10-30"
         archived: false
         tier: 3
         use: install
@@ -5252,7 +5252,7 @@ topics:
         kind: repo
         license: MIT
         stars: 42658
-        pushed: 2026-10-28
+        pushed: "2026-10-30"
         archived: false
         tier: 1
         use: install
@@ -5269,7 +5269,7 @@ topics:
         kind: repo
         license: MIT
         stars: 3336
-        pushed: 2026-10-28
+        pushed: "2026-10-29"
         archived: false
         tier: 2
         use: install
@@ -5279,7 +5279,7 @@ topics:
         kind: repo
         license: MIT
         stars: 2153
-        pushed: 2026-10-28
+        pushed: "2026-10-29"
         archived: false
         tier: 2
         use: install
@@ -5289,7 +5289,7 @@ topics:
         kind: repo
         license: MIT
         stars: 981
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 2
         use: install
@@ -5306,7 +5306,7 @@ topics:
         kind: repo
         license: Apache-2.0
         stars: 50648
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: install
@@ -5316,7 +5316,7 @@ topics:
         kind: repo
         license: Apache-2.0
         stars: 2921
-        pushed: 2026-10-13
+        pushed: "2026-10-31"
         archived: false
         tier: 2
         use: install
@@ -5326,7 +5326,7 @@ topics:
         kind: repo
         license: Apache-2.0
         stars: 12212
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 2
         use: install
@@ -5336,7 +5336,7 @@ topics:
         kind: repo
         license: Apache-2.0
         stars: 16152
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 2
         use: install
@@ -5346,7 +5346,7 @@ topics:
         kind: repo
         license: Apache-2.0
         stars: 13381
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 2
         use: install
@@ -5363,7 +5363,7 @@ topics:
         kind: repo
         license: NOASSERTION
         stars: 23769
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: install
@@ -5373,7 +5373,7 @@ topics:
         kind: repo
         license: Apache-2.0
         stars: 17476
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 2
         use: install
@@ -5383,7 +5383,7 @@ topics:
         kind: repo
         license: Apache-2.0
         stars: 31788
-        pushed: 2026-10-27
+        pushed: "2026-10-30"
         archived: false
         tier: 2
         use: install
@@ -5393,7 +5393,7 @@ topics:
         kind: repo
         license: AGPL-3.0
         stars: 25177
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 3
         use: install
@@ -5410,7 +5410,7 @@ topics:
         kind: repo
         license: NOASSERTION
         stars: 28662
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: reference
@@ -5420,7 +5420,7 @@ topics:
         kind: repo
         license: MIT
         stars: 27462
-        pushed: 2026-10-27
+        pushed: "2026-10-30"
         archived: false
         tier: 1
         use: install
@@ -5440,7 +5440,7 @@ topics:
         kind: repo
         license: MIT
         stars: 3544
-        pushed: 2026-10-24
+        pushed: "2026-10-29"
         archived: false
         tier: 2
         use: install
@@ -5450,7 +5450,7 @@ topics:
         kind: repo
         license: Apache-2.0
         stars: 6993
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 3
         use: install
@@ -5466,7 +5466,7 @@ topics:
         kind: repo
         license: GPL-2.0
         stars: 8466
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: install
@@ -5476,7 +5476,7 @@ topics:
         kind: repo
         license: Apache-2.0
         stars: 21395
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 2
         use: install
@@ -5496,7 +5496,7 @@ topics:
         kind: repo
         license: Apache-2.0
         stars: 24764
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 2
         use: install
@@ -5506,7 +5506,7 @@ topics:
         kind: repo
         license: MIT
         stars: 4390
-        pushed: 2026-10-28
+        pushed: "2026-10-30"
         archived: false
         tier: 1
         use: install
@@ -5522,7 +5522,7 @@ topics:
         kind: repo
         license: Apache-2.0
         stars: 40685
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: install
@@ -5532,7 +5532,7 @@ topics:
         kind: repo
         license: NOASSERTION
         stars: 10636
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 2
         use: install
@@ -5542,7 +5542,7 @@ topics:
         kind: repo
         license: NOASSERTION
         stars: 32591
-        pushed: 2026-10-21
+        pushed: "2026-10-29"
         archived: false
         tier: 2
         use: reference
@@ -5552,7 +5552,7 @@ topics:
         kind: repo
         license: Apache-2.0
         stars: 10126
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 2
         use: install
@@ -5562,7 +5562,7 @@ topics:
         kind: repo
         license: Apache-2.0
         stars: 16819
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 3
         use: install
@@ -5599,7 +5599,7 @@ topics:
         kind: repo
         license: MIT
         stars: 1887
-        pushed: 2026-10-28
+        pushed: "2026-10-30"
         archived: false
         tier: 2
         use: install
@@ -5609,7 +5609,7 @@ topics:
         kind: repo
         license: Apache-2.0
         stars: 21817
-        pushed: 2026-10-27
+        pushed: "2026-10-30"
         archived: false
         tier: 2
         use: install
@@ -5619,7 +5619,7 @@ topics:
         kind: repo
         license: NOASSERTION
         stars: 4634
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 3
         use: install
@@ -5631,11 +5631,11 @@ topics:
     why: Persist ordered key-value data inside a process when SQLite is too heavy or you are building a database/queue.
     resources:
       - name: RocksDB
-        url: https://github.com/facebook/rocksdb
+        url: https://github.com/meta/rocksdb
         kind: repo
         license: GPL-2.0
         stars: 32232
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: install
@@ -5645,7 +5645,7 @@ topics:
         kind: repo
         license: Apache-2.0
         stars: 4874
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: install
@@ -5655,7 +5655,7 @@ topics:
         kind: repo
         license: BSD-3-Clause
         stars: 6069
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 2
         use: install
@@ -5691,7 +5691,7 @@ topics:
         kind: tool
         license: Apache-2.0
         stars: 52230
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: install
@@ -5711,7 +5711,7 @@ topics:
         kind: tool
         license: MIT
         stars: 10161
-        pushed: 2026-10-19
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: install
@@ -5747,7 +5747,7 @@ topics:
         kind: tool
         license: Apache-2.0
         stars: 3720
-        pushed: 2026-10-28
+        pushed: "2026-10-30"
         archived: false
         tier: 1
         use: install
@@ -5767,7 +5767,7 @@ topics:
         kind: tool
         license: Apache-2.0
         stars: 5155
-        pushed: 2026-10-27
+        pushed: "2026-10-30"
         archived: false
         tier: 2
         use: install
@@ -5777,7 +5777,7 @@ topics:
         kind: tool
         license: AGPL-3.0
         stars: 23027
-        pushed: 2026-10-22
+        pushed: "2026-10-31"
         archived: false
         tier: 2
         use: install
@@ -5807,7 +5807,7 @@ topics:
         kind: repo
         license: Apache-2.0
         stars: 36171
-        pushed: 2026-10-28
+        pushed: "2026-10-30"
         archived: false
         tier: 1
         use: install
@@ -5817,7 +5817,7 @@ topics:
         kind: repo
         license: Apache-2.0
         stars: 47669
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: install
@@ -5827,7 +5827,7 @@ topics:
         kind: repo
         license: MIT
         stars: 14311
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: install
@@ -5837,7 +5837,7 @@ topics:
         kind: repo
         license: MIT
         stars: 9264
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 2
         use: install
@@ -5847,7 +5847,7 @@ topics:
         kind: repo
         license: MIT
         stars: 36663
-        pushed: 2026-10-25
+        pushed: "2026-10-29"
         archived: false
         tier: 2
         use: install
@@ -5873,7 +5873,7 @@ topics:
         kind: repo
         license: Unlicense
         stars: 8737
-        pushed: 2026-09-02
+        pushed: "2026-10-29"
         archived: false
         tier: 1
         use: install
@@ -5883,7 +5883,7 @@ topics:
         kind: tool
         license: MIT
         stars: 3285
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 2
         use: install
@@ -5893,7 +5893,7 @@ topics:
         kind: tool
         license: MIT
         stars: 1184
-        pushed: 2026-10-26
+        pushed: "2026-10-31"
         archived: false
         tier: 2
         use: install
@@ -5922,7 +5922,7 @@ topics:
         kind: repo
         license: MIT
         stars: 12269
-        pushed: 2026-10-27
+        pushed: "2026-10-30"
         archived: false
         tier: 1
         use: install
@@ -5942,7 +5942,7 @@ topics:
         kind: repo
         license: LGPL-3.0
         stars: 2515
-        pushed: 2026-10-27
+        pushed: "2026-10-29"
         archived: false
         tier: 1
         use: install
@@ -5962,7 +5962,7 @@ topics:
         kind: repo
         license: Apache-2.0
         stars: 5638
-        pushed: 2026-10-25
+        pushed: "2026-10-31"
         archived: false
         tier: 2
         use: install
@@ -5981,7 +5981,7 @@ topics:
         kind: tool
         license: MIT
         stars: 18419
-        pushed: 2026-10-26
+        pushed: "2026-10-30"
         archived: false
         tier: 1
         use: install
@@ -5991,7 +5991,7 @@ topics:
         kind: repo
         license: MIT
         stars: 14360
-        pushed: 2026-10-27
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: install
@@ -6021,7 +6021,7 @@ topics:
         kind: repo
         license: BSD-2-Clause
         stars: 5003
-        pushed: 2026-10-26
+        pushed: "2026-10-29"
         archived: false
         tier: 2
         use: install
@@ -6037,7 +6037,7 @@ topics:
         kind: repo
         license: Apache-2.0
         stars: 17608
-        pushed: 2026-10-27
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: install
@@ -6047,7 +6047,7 @@ topics:
         kind: repo
         license: Apache-2.0
         stars: 14223
-        pushed: 2026-10-26
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: install
@@ -6057,7 +6057,7 @@ topics:
         kind: repo
         license: Apache-2.0
         stars: 9943
-        pushed: 2026-10-25
+        pushed: "2026-10-30"
         archived: false
         tier: 2
         use: install
@@ -6077,7 +6077,7 @@ topics:
         kind: repo
         license: MIT
         stars: 4454
-        pushed: 2026-10-27
+        pushed: "2026-10-29"
         archived: false
         tier: 1
         use: install
@@ -6093,7 +6093,7 @@ topics:
         kind: repo
         license: Apache-2.0
         stars: 3295
-        pushed: 2026-10-26
+        pushed: "2026-10-29"
         archived: false
         tier: 1
         use: install
@@ -6103,7 +6103,7 @@ topics:
         kind: repo
         license: NOASSERTION
         stars: 6800
-        pushed: 2026-10-28
+        pushed: "2026-10-30"
         archived: false
         tier: 1
         use: install
@@ -6113,7 +6113,7 @@ topics:
         kind: repo
         license: Apache-2.0
         stars: 9302
-        pushed: 2026-10-28
+        pushed: "2026-10-30"
         archived: false
         tier: 1
         use: install
@@ -6123,7 +6123,7 @@ topics:
         kind: repo
         license: MIT
         stars: 14811
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: install
@@ -6149,7 +6149,7 @@ topics:
         kind: repo
         license: MIT
         stars: 58856
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: install
@@ -6159,7 +6159,7 @@ topics:
         kind: repo
         license: MIT
         stars: 5099
-        pushed: 2026-10-23
+        pushed: "2026-10-30"
         archived: false
         tier: 2
         use: install
@@ -6169,7 +6169,7 @@ topics:
         kind: repo
         license: MIT
         stars: 10168
-        pushed: 2026-10-26
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: install
@@ -6179,7 +6179,7 @@ topics:
         kind: repo
         license: Apache-2.0
         stars: 6501
-        pushed: 2026-10-26
+        pushed: "2026-10-29"
         archived: false
         tier: 1
         use: install
@@ -6243,7 +6243,7 @@ topics:
         kind: tool
         license: Apache-2.0
         stars: 1238
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: install
@@ -6332,7 +6332,7 @@ topics:
         kind: tool
         license: MIT
         stars: 4458
-        pushed: 2026-10-22
+        pushed: "2026-10-30"
         archived: false
         tier: 1
         use: install
@@ -6342,7 +6342,7 @@ topics:
         kind: tool
         license: Apache-2.0
         stars: 10175
-        pushed: 2026-10-22
+        pushed: "2026-10-30"
         archived: false
         tier: 1
         use: install
@@ -6368,7 +6368,7 @@ topics:
         kind: tool
         license: Apache-2.0
         stars: 1075
-        pushed: 2026-10-28
+        pushed: "2026-10-30"
         archived: false
         tier: 2
         use: install
@@ -6450,7 +6450,7 @@ topics:
         kind: repo
         license: NOASSERTION
         stars: 1744
-        pushed: 2026-10-25
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: install
@@ -6610,7 +6610,7 @@ topics:
         kind: repo
         license: NOASSERTION
         stars: 4421
-        pushed: 2026-10-28
+        pushed: "2026-10-30"
         archived: false
         tier: 1
         use: install
@@ -6627,7 +6627,7 @@ topics:
         kind: repo
         license: AGPL-3.0
         stars: 5588
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 2
         use: install
@@ -6637,7 +6637,7 @@ topics:
         kind: repo
         license: Apache-2.0
         stars: 2281
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 2
         use: install
@@ -6647,7 +6647,7 @@ topics:
         kind: repo
         license: BSD-3-Clause
         stars: 3636
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 2
         use: install
@@ -6666,7 +6666,7 @@ topics:
         kind: tool
         license: NOASSERTION
         stars: 4463
-        pushed: 2026-10-26
+        pushed: "2026-10-30"
         archived: false
         tier: 1
         use: install
@@ -6676,7 +6676,7 @@ topics:
         kind: tool
         license: NOASSERTION
         stars: 4323
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: install
@@ -6737,7 +6737,7 @@ topics:
         kind: tool
         license: MIT
         stars: 4427
-        pushed: 2026-10-27
+        pushed: "2026-10-31"
         archived: false
         tier: 2
         use: install
@@ -7006,7 +7006,7 @@ topics:
         kind: repo
         license: MIT
         stars: 6809
-        pushed: 2026-10-28
+        pushed: "2026-10-29"
         archived: false
         tier: 1
         use: install
@@ -7060,7 +7060,7 @@ topics:
         kind: tool
         license: MIT
         stars: 5264
-        pushed: 2026-10-26
+        pushed: "2026-10-31"
         archived: false
         tier: 2
         use: install
@@ -7070,7 +7070,7 @@ topics:
         kind: tool
         license: MIT
         stars: 445
-        pushed: 2026-10-26
+        pushed: "2026-10-28"
         archived: false
         tier: 3
         use: install
@@ -7087,7 +7087,7 @@ topics:
         kind: tool
         license: MIT
         stars: 9997
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: install
@@ -7097,7 +7097,7 @@ topics:
         kind: tool
         license: Apache-2.0
         stars: 1413
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 2
         use: install
@@ -7117,7 +7117,7 @@ topics:
         kind: repo
         license: MIT
         stars: 9730
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: install
@@ -7156,7 +7156,7 @@ topics:
         kind: repo
         license: MIT
         stars: 5019
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: install
@@ -7166,7 +7166,7 @@ topics:
         kind: repo
         license: Apache-2.0
         stars: 16204
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: install
@@ -7203,7 +7203,7 @@ topics:
         kind: repo
         license: NOASSERTION
         stars: 15536
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: install
@@ -7213,7 +7213,7 @@ topics:
         kind: repo
         license: MIT
         stars: 19468
-        pushed: 2026-10-09
+        pushed: "2026-10-28"
         archived: false
         tier: 1
         use: install
@@ -7233,7 +7233,7 @@ topics:
         kind: tool
         license: Apache-2.0
         stars: 1798
-        pushed: 2026-10-27
+        pushed: "2026-10-29"
         archived: false
         tier: 1
         use: install
@@ -7276,7 +7276,7 @@ topics:
         kind: tool
         license: BSD-3-Clause
         stars: 900
-        pushed: 2026-10-26
+        pushed: "2026-10-28"
         archived: false
         tier: 2
         use: install
@@ -7286,7 +7286,7 @@ topics:
         kind: tool
         license: MIT
         stars: 2755
-        pushed: 2026-10-23
+        pushed: "2026-10-30"
         archived: false
         tier: 1
         use: install
@@ -7392,7 +7392,7 @@ topics:
         kind: tool
         license: Apache-2.0
         stars: 437
-        pushed: 2026-10-26
+        pushed: "2026-10-31"
         archived: false
         tier: 2
         use: install
@@ -7422,7 +7422,7 @@ topics:
         kind: repo
         license: MIT
         stars: 40223
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: install
@@ -7432,7 +7432,7 @@ topics:
         kind: repo
         license: BSD-3-Clause
         stars: 50330
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: install
@@ -7442,7 +7442,7 @@ topics:
         kind: repo
         license: Apache-2.0
         stars: 17243
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: install
@@ -7452,7 +7452,7 @@ topics:
         kind: repo
         license: Apache-2.0
         stars: 9542
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: install
@@ -7462,7 +7462,7 @@ topics:
         kind: repo
         license: Apache-2.0
         stars: 6684
-        pushed: 2026-10-27
+        pushed: "2026-10-30"
         archived: false
         tier: 2
         use: install
@@ -7479,7 +7479,7 @@ topics:
         kind: tool
         license: Apache-2.0
         stars: 14093
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: install
@@ -7489,7 +7489,7 @@ topics:
         kind: tool
         license: Apache-2.0
         stars: 3337
-        pushed: 2026-10-26
+        pushed: "2026-10-31"
         archived: false
         tier: 2
         use: install
@@ -7499,7 +7499,7 @@ topics:
         kind: repo
         license: MIT
         stars: 4501
-        pushed: 2026-10-28
+        pushed: "2026-10-30"
         archived: false
         tier: 1
         use: install
@@ -7509,7 +7509,7 @@ topics:
         kind: tool
         license: Apache-2.0
         stars: 11908
-        pushed: 2026-10-22
+        pushed: "2026-10-30"
         archived: false
         tier: 2
         use: install
@@ -7535,7 +7535,7 @@ topics:
         kind: tool
         license: Apache-2.0
         stars: 16345
-        pushed: 2026-10-28
+        pushed: "2026-10-30"
         archived: false
         tier: 1
         use: install
@@ -7545,7 +7545,7 @@ topics:
         kind: tool
         license: Apache-2.0
         stars: 47298
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: install
@@ -7555,7 +7555,7 @@ topics:
         kind: tool
         license: Apache-2.0
         stars: 24091
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 2
         use: install
@@ -7565,7 +7565,7 @@ topics:
         kind: tool
         license: Apache-2.0
         stars: 30052
-        pushed: 2026-10-28
+        pushed: "2026-10-30"
         archived: false
         tier: 2
         use: install
@@ -7592,7 +7592,7 @@ topics:
         kind: tool
         license: Apache-2.0
         stars: 26434
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: install
@@ -7602,7 +7602,7 @@ topics:
         kind: tool
         license: Apache-2.0
         stars: 9394
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 2
         use: install
@@ -7612,7 +7612,7 @@ topics:
         kind: tool
         license: Apache-2.0
         stars: 5069
-        pushed: 2026-10-27
+        pushed: "2026-10-29"
         archived: false
         tier: 2
         use: install
@@ -7622,7 +7622,7 @@ topics:
         kind: tool
         license: NOASSERTION
         stars: 2177
-        pushed: 2026-10-28
+        pushed: "2026-10-30"
         archived: false
         tier: 2
         use: install
@@ -7632,7 +7632,7 @@ topics:
         kind: tool
         license: Apache-2.0
         stars: 2066
-        pushed: 2026-10-25
+        pushed: "2026-10-31"
         archived: false
         tier: 3
         use: install
@@ -7652,7 +7652,7 @@ topics:
         kind: tool
         license: Apache-2.0
         stars: 13280
-        pushed: 2026-10-28
+        pushed: "2026-10-30"
         archived: false
         tier: 1
         use: install
@@ -7669,7 +7669,7 @@ topics:
         kind: tool
         license: Apache-2.0
         stars: 1205
-        pushed: 2026-10-23
+        pushed: "2026-10-30"
         archived: false
         tier: 2
         use: install
@@ -7689,7 +7689,7 @@ topics:
         kind: tool
         license: AGPL-3.0
         stars: 3310
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 2
         use: install
@@ -7706,7 +7706,7 @@ topics:
         kind: repo
         license: Apache-2.0
         stars: 6022
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: install
@@ -7716,7 +7716,7 @@ topics:
         kind: tool
         license: NOASSERTION
         stars: 22280
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 2
         use: install
@@ -7726,7 +7726,7 @@ topics:
         kind: tool
         license: MIT
         stars: 2670
-        pushed: 2026-10-28
+        pushed: "2026-10-30"
         archived: false
         tier: 2
         use: install
@@ -7736,7 +7736,7 @@ topics:
         kind: tool
         license: GPL-3.0
         stars: 917
-        pushed: 2026-10-27
+        pushed: "2026-10-30"
         archived: false
         tier: 2
         use: install
@@ -7746,7 +7746,7 @@ topics:
         kind: tool
         license: Apache-2.0
         stars: 9767
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 3
         use: install
@@ -7763,7 +7763,7 @@ topics:
         kind: docs
         license: Apache-2.0
         stars: 9380
-        pushed: 2026-10-28
+        pushed: "2026-10-30"
         archived: false
         tier: 1
         use: reference
@@ -7773,7 +7773,7 @@ topics:
         kind: repo
         license: Apache-2.0
         stars: 3350
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: install
@@ -7803,7 +7803,7 @@ topics:
         kind: repo
         license: NOASSERTION
         stars: 72137
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: install
@@ -7820,7 +7820,7 @@ topics:
         kind: tool
         license: NOASSERTION
         stars: 49890
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: install
@@ -7830,7 +7830,7 @@ topics:
         kind: tool
         license: Apache-2.0
         stars: 75339
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: install
@@ -7840,7 +7840,7 @@ topics:
         kind: tool
         license: MIT
         stars: 7074
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 2
         use: install
@@ -7850,7 +7850,7 @@ topics:
         kind: tool
         license: Apache-2.0
         stars: 2970
-        pushed: 2026-10-28
+        pushed: "2026-10-30"
         archived: false
         tier: 2
         use: install
@@ -7860,7 +7860,7 @@ topics:
         kind: tool
         license: NOASSERTION
         stars: 6207
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 3
         use: install
@@ -7897,7 +7897,7 @@ topics:
         kind: template
         license: BSD-3-Clause
         stars: 13633
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: template
@@ -7990,7 +7990,7 @@ topics:
         kind: template
         license: NOASSERTION
         stars: 84330
-        pushed: 2026-08-26
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: reference
@@ -8020,7 +8020,7 @@ topics:
         kind: template
         license: MIT
         stars: 1890
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 2
         use: template
@@ -8071,7 +8071,7 @@ topics:
         kind: mcp
         license: Apache-2.0
         stars: 16745
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: mcp
@@ -8081,7 +8081,7 @@ topics:
         kind: mcp
         license: Apache-2.0
         stars: 1152
-        pushed: 2026-10-28
+        pushed: "2026-10-30"
         archived: false
         tier: 1
         use: mcp
@@ -8108,7 +8108,7 @@ topics:
         kind: mcp
         license: MIT
         stars: 3668
-        pushed: 2026-10-17
+        pushed: "2026-10-29"
         archived: false
         tier: 1
         use: mcp
@@ -8118,7 +8118,7 @@ topics:
         kind: mcp
         license: Apache-2.0
         stars: 858
-        pushed: 2026-10-27
+        pushed: "2026-10-30"
         archived: false
         tier: 1
         use: mcp
@@ -8128,7 +8128,7 @@ topics:
         kind: mcp
         license: MIT
         stars: 1980
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: mcp
@@ -8139,7 +8139,7 @@ topics:
         kind: mcp
         license: MIT
         stars: 63832
-        pushed: 2026-10-28
+        pushed: "2026-10-30"
         archived: false
         tier: 1
         use: mcp
@@ -8149,7 +8149,7 @@ topics:
         kind: repo
         license: Apache-2.0
         stars: 28225
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: install
@@ -8191,7 +8191,7 @@ topics:
         kind: skill
         license: MIT
         stars: 76
-        pushed: 2026-10-27
+        pushed: "2026-10-30"
         archived: false
         tier: 2
         use: skill
@@ -8233,7 +8233,7 @@ topics:
         kind: plugin
         license: Apache-2.0
         stars: 45055
-        pushed: 2026-10-28
+        pushed: "2026-10-31"
         archived: false
         tier: 1
         use: plugin
@@ -8244,7 +8244,7 @@ topics:
         kind: plugin
         license: MIT
         stars: 41911
-        pushed: 2026-10-26
+        pushed: "2026-10-30"
         archived: false
         tier: 1
         use: plugin
@@ -8255,7 +8255,7 @@ topics:
         kind: list
         license: MIT
         stars: 40495
-        pushed: 2026-10-28
+        pushed: "2026-10-30"
         archived: false
         tier: 1
         use: reference
@@ -8266,7 +8266,7 @@ topics:
         kind: plugin
         license: MIT
         stars: 26138
-        pushed: 2026-10-11
+        pushed: "2026-10-30"
         archived: false
         tier: 2
         use: skill
